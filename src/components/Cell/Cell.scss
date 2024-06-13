@@ -1,0 +1,23 @@
+.cell {
+    width: 4rem;
+    height: 4rem;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--selected {
+      background-color: rgb(248, 178, 86);
+    }
+
+    &--highlighted {
+      background-color: rgb(49, 49, 245);
+    }
+
+    &__text {
+        font-size: 2rem;
+      }
+
+  }
+
+  

@@ -1,0 +1,47 @@
+
+// media breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+// Default Theme Variables
+$default-background-color: #ffffff;
+$default-text-color: #000000;
+$default-button-background-color: #007bff;
+$default-button-text-color: #ffffff;
+$default-error-background-color: #ffffff00;
+$default-error-text-color: #a61717;
+
+// Dark Theme Variables
+$dark-background-color: #333333;
+$dark-text-color: #ffffff;
+$dark-button-background-color: #ffffff;
+$dark-button-text-color: #000000;
+$dark-error-background-color: #a61717;
+$dark-error-text-color: #ffffff;
+
+// CSS Variables
+// :root
+//     --background-color: #{$default-background-color}
+//     --text-color: #{$default-text-color}
+//     --button-background-color: #{$default-button-background-color}
+//     --button-text-color: #{$default-button-text-color}
+//     --modal-background-color: #{$default-modal-background-color}
+
+.default-theme {
+    --background-color: #{$default-background-color};
+    --text-color: #{$default-text-color};
+    --button-background-color: #{$default-button-background-color};
+    --button-text-color: #{$default-button-text-color};
+    --error-text-color: #{$default-error-text-color};
+    --error-background-color: #{$default-error-background-color};
+}
+
+.dark-theme {
+    --background-color: #{$dark-background-color};
+    --text-color: #{$dark-text-color};
+    --button-background-color: #{$dark-button-background-color};
+    --button-text-color: #{$dark-button-text-color};
+    --error-text-color: #{$dark-error-text-color};
+    --error-background-color: #{$dark-error-background-color};
+}
+

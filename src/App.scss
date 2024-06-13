@@ -1,0 +1,87 @@
+@use "./styles/partials/global" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  height: 100vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: solid 1px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+
+  @include tablet {
+    font-size: 1.75rem;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    border: solid 1px white;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    min-width: 4rem;
+    min-height: 4rem;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: relative;
+
+    &--selected {
+      background-color: rgb(248, 248, 86);
+    }
+
+    &--highlighted {
+      background-color: rgb(49, 49, 245);
+    }
+
+  }
+
+  &__cell-text {
+    // position: absolute;
+    font-size: 2rem;
+  }
+
+
+}

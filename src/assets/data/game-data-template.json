@@ -1,0 +1,20 @@
+{
+  "gameId": 0,
+  "darkThemeEnabled": true,
+  "playedBefore": false,
+  "numRows": 5,
+  "numCols": 5,
+  "winState": false,
+  "questions": [
+    {
+      "id": 0,
+      "question": "Is it bigger than a duck?",
+      "answer": 0
+    },
+    {
+      "id": 1,
+      "question": "Can it swim?",
+      "answer": 0
+    }
+  ]
+}

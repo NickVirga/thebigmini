@@ -1,0 +1,21 @@
+.settings {
+  &__title {
+    padding-bottom: 1rem;
+  }
+
+  &__option {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+  }
+}

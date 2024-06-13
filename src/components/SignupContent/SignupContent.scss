@@ -1,0 +1,134 @@
+@use "../../styles/partials/global" as *;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+//   box-shadow: 0 0 0px 1000px white inset !important;
+//   -webkit-text-fill-color: #000 !important;
+// -webkit-text-fill-color: grey;
+//   transition: background-color 5000s ease-in-out 0s;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        font-size: 1.3rem;
+        padding: 4rem 0 2rem 0;
+        text-align: center;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__fieldset {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+    }
+
+    &__field-label {
+        padding-bottom: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600
+    }
+
+    &__field-input {
+        height: 2.75rem;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        border: 1px solid black;
+        width: 100%;
+        padding-left: 0.75rem;
+        background-color: var(--button-background-color);       
+
+        &--error {
+            border-color: rgb(208, 2, 27)
+        }
+
+        &--disabled {
+            color: rgb(120, 120, 120);
+            border: 1px solid rgb(120, 120, 120);
+
+            &:-webkit-autofill {
+                -webkit-text-fill-color: rgb(120, 120, 120);
+            }
+
+        }
+
+        &:focus {
+            outline: none;
+
+        }
+
+
+    }
+
+    &__field-btn {
+        cursor: pointer;
+        background: none;
+        border-top: 1px;
+        border-right: 1px;
+        border-bottom: 1px;
+        border-left: none;
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        position: absolute;
+        top: 28px;
+        right: 1px;
+        font-weight: 600;
+        height: 42px;
+        width: 50px;
+
+        &--disabled {
+            color: rgb(120, 120, 120);
+        }
+
+        &:hover {
+            background-color: rgb(240, 240, 240);
+        }
+
+    }
+
+
+    &__error-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.25rem;
+        background-color: var(--error-background-color);
+        border-radius: 0.25rem;
+        padding-left: 0.25rem;
+    }
+
+    &__error-msg {
+        font-size: 0.875rem;
+        color: var(--error-text-color);
+    }
+
+    &__error-icon {
+        font-size: 12px;
+        color: var(--error-text-color);
+    }
+
+    &__submit-btn {
+        margin-top: 1rem;
+        padding: 0.90625rem 0;
+        text-align: center;
+        border-radius: 0.25rem;
+        background-color: var(--button-background-color);
+        color: var(--button-text-color);
+        font-weight: 700;
+        border: none;
+    }
+
+
+
+}
