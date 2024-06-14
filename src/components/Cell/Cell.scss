@@ -1,23 +1,32 @@
 .cell {
-    width: 4rem;
-    height: 4rem;
-    border: solid 1px white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: solid 1px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
-    &--selected {
-      background-color: rgb(248, 178, 86);
-    }
-
-    &--highlighted {
-      background-color: rgb(49, 49, 245);
-    }
-
-    &__text {
-        font-size: 2rem;
-      }
-
+  &--blank {
+    background-color: black;
   }
 
-  
+  &--selected {
+    background-color: rgb(248, 178, 86);
+  }
+
+  &--highlighted {
+    background-color: rgb(49, 49, 245);
+  }
+
+  &__label {
+    position: absolute;
+    left: 5px;
+    top: -1px;
+  }
+
+  &__text {
+    font-size: 2rem;
+  }
+
+}

@@ -17,15 +17,18 @@ function App() {
   const numRows = gameData.numRows;
   const numCols = gameData.numCols;
 
-  const [selectedCell, setSelectedCell] = useState({ row: null, col: null });
+  const gridContainerStyle = {
+    gridTemplateColumns: `repeat(${numCols}, 1fr)`,
+    // gridTemplateRows: `repeat(${numRows})`,
+  };
+
+  // const [selectedCell, setSelectedCell] = useState({ row: null, col: null });
   const [rowColToggle, setRowColToggle] = useState(0);
 
-  const initialLetterGrid = Array.from({ length: numRows }, () =>
-    Array(numCols).fill("")
-  );
-  const [letterGrid, setLetterGrid] = useState(initialLetterGrid);
-
-  
+  // const initialLetterGrid = Array.from({ length: numRows }, () =>
+  //   Array(numCols).fill("")
+  // );
+  // const [letterGrid, setLetterGrid] = useState(initialLetterGrid);
 
   const [modalOpen, setModalOpen] = useState(
     gameData.playedBefore ? false : true
@@ -43,8 +46,8 @@ function App() {
     setModalOpen(true);
   };
 
-  const handleClickCell = (rowIndex, colIndex) => {
-    if (rowIndex === selectedCell.row && colIndex === selectedCell.col) {
+  const handleClickCell = (index) => {
+    if (index === gameData.selectedCellIndex) {
       setRowColToggle(!rowColToggle);
     }
 
@@ -52,132 +55,127 @@ function App() {
       inputRef.current.focus();
     }
 
-    setSelectedCell({ row: rowIndex, col: colIndex });
+    if (!gameData.cells[index].blank) updateGameData({ ...gameData, selectedCellIndex: index });  
   };
 
-  const isHighlighted = (rowIndex, colIndex) => {
-    if (
-      (!rowColToggle && selectedCell.row === rowIndex) ||
-      (rowColToggle && selectedCell.col === colIndex)
-    ) {
-      return true;
-    }
-    return false;
+  const isSelected = (index) => {
+    return index === gameData.selectedCellIndex;
   };
 
-  const isSelected = (rowIndex, colIndex) => {
-    return selectedCell.row === rowIndex && selectedCell.col === colIndex;
+  const isHighlighted = (index) => {
+    if (!gameData.selectedCellIndex) return false
+    const clueNum = gameData.cells[index].clues[rowColToggle ? 0 : 1]
+    const selectedClue = gameData.cells[gameData.selectedCellIndex].clues[rowColToggle ? 0 : 1]
+    return selectedClue === clueNum
   };
 
-  const changeLetter = (newValue, rowPos, colPos) => {
-    setLetterGrid((prevLetterGrid) => {
-      const newLetterGrid = prevLetterGrid.map((row) => [...row]);
-      newLetterGrid[rowPos][colPos] = newValue;
-      return newLetterGrid;
-    });
+  const changeLetter = (newValue, index) => {
+    updateGameData({ ...gameData, cells: gameData.cells.map((cell, i) =>
+      i === index ? { ...cell, value: newValue } : cell
+    ) });
   };
 
   const handleKeyDown = (event) => {
-    let { row, col } = selectedCell;
+    let selectedCellIndex = gameData.selectedCellIndex;
     const key = event.key;
 
-    if (selectedCell.row !== null && selectedCell.col !== null) {
+    if (selectedCellIndex !== null) {
       switch (key) {
-        case "Backspace":
-          if (letterGrid[row][col] !== "") {
-            changeLetter("", row, col);
-          } else {
-            if (rowColToggle) {
-              if (row > 0) {
-                if (letterGrid[row - 1][col] !== "") {
-                  changeLetter("", row - 1, col);
-                }
-                setSelectedCell({ row: row - 1, col });
-              }
-            } else {
-              if (col > 0) {
-                if (letterGrid[row][col - 1] !== "") {
-                  changeLetter("", row, col - 1);
-                }
-                setSelectedCell({ row, col: col - 1 });
-              }
-            }
-          }
-          break;
+        // case "Backspace":
+        //   if (letterGrid[row][col] !== "") {
+        //     changeLetter("", row, col);
+        //   } else {
+        //     if (rowColToggle) {
+        //       if (row > 0) {
+        //         if (letterGrid[row - 1][col] !== "") {
+        //           changeLetter("", row - 1, col);
+        //         }
+        //         setSelectedCell({ row: row - 1, col });
+        //       }
+        //     } else {
+        //       if (col > 0) {
+        //         if (letterGrid[row][col - 1] !== "") {
+        //           changeLetter("", row, col - 1);
+        //         }
+        //         setSelectedCell({ row, col: col - 1 });
+        //       }
+        //     }
+        //   }
+        //   break;
 
         case "Delete":
-          changeLetter("", row, col);
+          changeLetter("", selectedCellIndex);
           break;
-        case " ":
-          changeLetter("", row, col);
-          if (rowColToggle) {
-            if (row < numRows - 1) setSelectedCell({ row: row + 1, col });
-          } else {
-            if (col < numCols - 1) setSelectedCell({ row, col: col + 1 });
-          }
-          break;
-        case "Home":
-          if (rowColToggle) {
-            setSelectedCell({ row: 0, col });
-          } else {
-            setSelectedCell({ row, col: 0 });
-          }
-          break;
-        case "End":
-          if (rowColToggle) {
-            setSelectedCell({ row: numRows - 1, col });
-          } else {
-            setSelectedCell({ row, col: numCols - 1 });
-          }
-          break;
-        case "ArrowUp":
-          if (row > 0) {
-            setSelectedCell({ row: row - 1, col });
-          }
-          break;
-        case "ArrowDown":
-          if (row < numRows - 1) {
-            setSelectedCell({ row: row + 1, col });
-          }
-          break;
-        case "ArrowLeft":
-          if (col > 0) {
-            setSelectedCell({ row, col: col - 1 });
-          }
-          break;
-        case "ArrowRight":
-          if (col < numCols - 1) {
-            setSelectedCell({ row, col: col + 1 });
-          }
-          break;
+        // case " ":
+        //   changeLetter("", row, col);
+        //   if (rowColToggle) {
+        //     if (row < numRows - 1) setSelectedCell({ row: row + 1, col });
+        //   } else {
+        //     if (col < numCols - 1) setSelectedCell({ row, col: col + 1 });
+        //   }
+        //   break;
+        // case "Home":
+        //   if (rowColToggle) {
+        //     setSelectedCell({ row: 0, col });
+        //   } else {
+        //     setSelectedCell({ row, col: 0 });
+        //   }
+        //   break;
+        // case "End":
+        //   if (rowColToggle) {
+        //     setSelectedCell({ row: numRows - 1, col });
+        //   } else {
+        //     setSelectedCell({ row, col: numCols - 1 });
+        //   }
+        //   break;
+        // case "ArrowUp":
+        //   if (row > 0) {
+        //     setSelectedCell({ row: row - 1, col });
+        //   }
+        //   break;
+        // case "ArrowDown":
+        //   if (row < numRows - 1) {
+        //     setSelectedCell({ row: row + 1, col });
+        //   }
+        //   break;
+        // case "ArrowLeft":
+        //   if (col > 0) {
+        //     setSelectedCell({ row, col: col - 1 });
+        //   }
+        //   break;
+        // case "ArrowRight":
+        //   if (col < numCols - 1) {
+        //     setSelectedCell({ row, col: col + 1 });
+        //   }
+        //   break;
 
-        case "Tab":
-          event.preventDefault(); // Prevent the default tab behavior
-          if (rowColToggle) {
-            if (col < numCols - 1) {
-              setSelectedCell({ row, col: col + 1 });
-            } else {
-              setRowColToggle(false);
-              setSelectedCell({ row: 0, col: 0 });
-            }
-          } else {
-            if (row < numRows - 1) {
-              setSelectedCell({ row: row + 1, col });
-            } else {
-              setRowColToggle(true);
-              setSelectedCell({ row: 0, col: 0 });
-            }
-          }
-          break;
+        // case "Tab":
+        //   event.preventDefault(); // Prevent the default tab behavior
+        //   if (rowColToggle) {
+        //     if (col < numCols - 1) {
+        //       setSelectedCell({ row, col: col + 1 });
+        //     } else {
+        //       setRowColToggle(false);
+        //       setSelectedCell({ row: 0, col: 0 });
+        //     }
+        //   } else {
+        //     if (row < numRows - 1) {
+        //       setSelectedCell({ row: row + 1, col });
+        //     } else {
+        //       setRowColToggle(true);
+        //       setSelectedCell({ row: 0, col: 0 });
+        //     }
+        //   }
+        //   break;
       }
 
       if (key.length === 1 && key.match(/[a-zA-Z]/)) {
-        changeLetter(key.toUpperCase(), row, col);
-        if (rowColToggle) {
-          if (row < numRows - 1) setSelectedCell({ row: row + 1, col });
-        } else {
-          if (col < numCols - 1) setSelectedCell({ row, col: col + 1 });
-        }
+        changeLetter(key.toUpperCase(), selectedCellIndex);
+        // if (rowColToggle) {
+        //   if (row < numRows - 1) setSelectedCell({ row: row + 1, col });
+        // } else {
+        //   if (col < numCols - 1) setSelectedCell({ row, col: col + 1 });
+        // }
       }
     }
   };
@@ -187,7 +185,7 @@ function App() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedCell, letterGrid, rowColToggle]);
+  }, [gameData, rowColToggle]);
 
   if (!gameData) {
     return <div>Loading...</div>;
@@ -205,7 +203,7 @@ function App() {
         // modalMode={modalMode}
         winState={gameData.winState}
         gameId={gameData.gameId}
-        score={gameData.questions.length}
+        score={2}
       ></Modal>
       <header className="app__header">
         <h1 className="app__title">TheBigMini</h1>
@@ -230,27 +228,25 @@ function App() {
           ></FaGear>
         </div>
       </header>
-      <div className="app__container" onKeyDown={handleKeyDown}>
-        {Array.from({ length: numRows }, (_, rowIndex) => (
-          <div key={rowIndex} className="app__row">
-            {Array.from({ length: numCols }, (_, colIndex) => (
-              <Cell
-                key={colIndex}
-                rowIndex={rowIndex}
-                colIndex={colIndex}
-                letterGrid={letterGrid}
-                handleClickCell={handleClickCell}
-                isSelected={isSelected}
-                isHighlighted={isHighlighted}
-              ></Cell>
-            ))}
-          </div>
+      <div
+        className="app__container"
+        style={gridContainerStyle}
+        onKeyDown={handleKeyDown}
+      >
+        {gameData.cells.map((cell) => (
+          <Cell
+            key={cell.index}
+            cellData={cell}
+            isSelected={isSelected(cell.index)}
+            isHighlighted={isHighlighted(cell.index)}
+            handleClickCell={handleClickCell}
+          ></Cell>
         ))}
       </div>
       <input
         ref={inputRef}
         type="text"
-        inputmode=""
+        inputMode=""
         style={{
           position: "absolute",
           top: "-1000px",

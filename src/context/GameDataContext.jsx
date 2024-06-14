@@ -4,7 +4,7 @@ import gameDataTempl from "../assets/data/game-data-template.json";
 const GameDataContext = createContext();
 
 const GameDataProvider = ({ children }) => {
-    const storedGameDataString = localStorage.getItem("2dozenq-game-data");
+    const storedGameDataString = localStorage.getItem("2dozenq-game-datas");
 
     const [gameData, setGameData] = useState(
         storedGameDataString ? JSON.parse(storedGameDataString) : gameDataTempl
