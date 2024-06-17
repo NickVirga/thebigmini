@@ -32,5 +32,11 @@
     {"index": 22, "blank": false, "value": "", "answer": "W", "label": "", "clues": [1 , 9]},
     {"index": 23, "blank": false, "value": "", "answer": "X", "label": "", "clues": [2 , 9]},
     {"index": 24, "blank": true, "value": "", "answer": "Y", "label": "", "clues": []}
-  ]
+  ],
+  "selected": {
+    "cellsIndex": null,
+    "cellsInClue": [],
+    "cluesIndex": 0,
+    "clueNum": 0
+  }
 }

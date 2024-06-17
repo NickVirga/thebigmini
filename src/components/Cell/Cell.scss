@@ -1,6 +1,7 @@
+@use "../../styles/partials/_mixins" as *;
+
 .cell {
-  width: 4rem;
-  height: 4rem;
+  
   border: solid 1px white;
   display: flex;
   justify-content: center;
@@ -20,13 +21,25 @@
   }
 
   &__label {
+    font-size: 1rem;
     position: absolute;
     left: 5px;
     top: -1px;
+
+    @include tablet {
+      font-size: 1.75rem;
+    }
+    
   }
 
   &__text {
     font-size: 2rem;
+
+    @include tablet {
+      font-size: 4rem;
+    }
   }
+
+  
 
 }

@@ -1,0 +1,15 @@
+{
+    "clues": [
+        {"index": 0, "clueText": "Furry animal pet"},
+        {"index": 1, "clueText": "Stars and stripes country"},
+        {"index": 2, "clueText": "Green vegetable in salad"},
+        {"index": 3, "clueText": "Opposite of hot season"},
+        {"index": 4, "clueText": "Highest mountain in the world"},
+        {"index": 5, "clueText": "Shakspearean play with star-crossed lovers"},
+        {"index": 6, "clueText": "Land of the rising sun"},
+        {"index": 7, "clueText": "Device for capturing photos and videos"},
+        {"index": 8, "clueText": "Capital city of the United Kingdom"},
+        {"index": 9, "clueText": "Plent known for its rings"}
+    ]
+    
+}
