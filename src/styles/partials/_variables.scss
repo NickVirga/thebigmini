@@ -3,6 +3,11 @@
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
+// General Color Variables
+$selected-cell-fill-color: #f8b256;
+$highlighted-cell-fill-color: #3131f5;
+$blank-cell-fill-color: #000000;
+
 // Default Theme Variables
 $default-background-color: #ffffff;
 $default-text-color: #000000;
@@ -10,6 +15,9 @@ $default-button-background-color: #007bff;
 $default-button-text-color: #ffffff;
 $default-error-background-color: #ffffff00;
 $default-error-text-color: #a61717;
+$default-outer-border-color: #000000;
+$default-inner-border-color: #575757;
+$default-text-highlight-color: #b4b4b4;
 
 // Dark Theme Variables
 $dark-background-color: #333333;
@@ -18,14 +26,9 @@ $dark-button-background-color: #ffffff;
 $dark-button-text-color: #000000;
 $dark-error-background-color: #a61717;
 $dark-error-text-color: #ffffff;
-
-// CSS Variables
-// :root
-//     --background-color: #{$default-background-color}
-//     --text-color: #{$default-text-color}
-//     --button-background-color: #{$default-button-background-color}
-//     --button-text-color: #{$default-button-text-color}
-//     --modal-background-color: #{$default-modal-background-color}
+$dark-outer-border-color: #000000;
+$dark-inner-border-color: #575757;
+$dark-text-highlight-color: #b4b4b4;
 
 .default-theme {
     --background-color: #{$default-background-color};
@@ -34,6 +37,9 @@ $dark-error-text-color: #ffffff;
     --button-text-color: #{$default-button-text-color};
     --error-text-color: #{$default-error-text-color};
     --error-background-color: #{$default-error-background-color};
+    --outer-border-color: #{$default-outer-border-color};
+    --inner-border-color: #{$default-inner-border-color};
+    --text-hightlight-color: #{$default-text-highlight-color};
 }
 
 .dark-theme {
@@ -43,5 +49,8 @@ $dark-error-text-color: #ffffff;
     --button-text-color: #{$dark-button-text-color};
     --error-text-color: #{$dark-error-text-color};
     --error-background-color: #{$dark-error-background-color};
+    --outer-border-color: #{$dark-outer-border-color};
+    --inner-border-color: #{$dark-inner-border-color};
+    --text-hightlight-color: #{$dark-text-highlight-color};
 }
 
