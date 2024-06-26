@@ -5,10 +5,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
-//   box-shadow: 0 0 0px 1000px white inset !important;
-//   -webkit-text-fill-color: #000 !important;
-// -webkit-text-fill-color: grey;
-//   transition: background-color 5000s ease-in-out 0s;
 }
 
 .signup {
@@ -16,8 +12,7 @@ input:-webkit-autofill:active {
     flex-direction: column;
 
     &__title {
-        font-size: 1.3rem;
-        padding: 4rem 0 2rem 0;
+        margin: 3.5rem 0 2rem 0;
         text-align: center;
     }
 
@@ -98,24 +93,48 @@ input:-webkit-autofill:active {
     }
 
 
-    &__error-wrapper {
+    &__notification-wrapper {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-top: 0.25rem;
-        background-color: var(--error-background-color);
         border-radius: 0.25rem;
         padding-left: 0.25rem;
+
+        &--error {
+            background-color: var(--error-background-color);
+        }
+
+        &--success {
+            background-color: var(--success-background-color);
+        }
+
     }
 
-    &__error-msg {
+    &__notification-msg {
         font-size: 0.875rem;
-        color: var(--error-text-color);
+        padding-right: 0.5rem;
+
+        &--error {
+            color: var(--error-text-color);
+        }
+
+        &--success {
+            color: var(--success-text-color);
+        }
     }
 
-    &__error-icon {
+    &__notification-icon {
         font-size: 12px;
-        color: var(--error-text-color);
+
+        &--error {
+            color: var(--error-text-color);
+        }
+
+        &--success {
+            color: var(--success-text-color);
+        }
+
     }
 
     &__submit-btn {

@@ -408,7 +408,6 @@ function App() {
       <Modal
         open={modalOpen}
         onClose={handleCloseModal}
-        // modalMode={modalMode}
         winState={gameData.winState}
         gameId={gameData.gameId}
         score={2}
