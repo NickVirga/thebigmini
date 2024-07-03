@@ -5,4 +5,13 @@
         margin: 3.5rem 0 2rem 0;
     }
 
+    &__list {
+        list-style-type: circle;
+        margin: 1rem
+    }
+
+    &__item {
+        margin-bottom: 1rem;
+    }
+
 }

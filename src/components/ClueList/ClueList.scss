@@ -1,0 +1,31 @@
+@use "../../styles/partials/_variables" as *;
+@use "../../styles/partials/_mixins" as *;
+
+.clue-list {
+  width: 90vmin;
+  margin-top: 1rem;
+  justify-content: space-between;
+  display: none;
+
+  @include tablet {
+    display: flex;
+  }
+
+  &__across {
+    margin-bottom: 1rem;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &--highlighted {
+      background-color: $highlighted-cell-fill-color;
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    margin-right: 0.75rem;
+  }
+
+}

@@ -20,8 +20,6 @@ function SignupContent() {
   const [submitErrorEnabled, setSubmitErrorEnabled] = useState(false);
   const [submitMsg, setSubmitMsg] = useState("")
 
-  console.log(submitMsgEnabled)
-
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
     setEmailInput(emailValue);

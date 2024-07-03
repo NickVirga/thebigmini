@@ -1,11 +1,14 @@
 import "./ResultsContent.scss";
+import { useContext } from "react";
+import { GameDataContext } from "../../context/GameDataContext";
 
-function ResultsContent({ winState, gameId, score}) {
+function ResultsContent() {
+  const { gameData } = useContext(GameDataContext);
+
   return (
     <>
-      <h2>{winState ? "Congratulations!" : "Good Try!"}</h2>
-      <p>Game ID: {gameId}</p>
-      <p>Score: {score}</p>
+      <p>Game #{gameData.gameId}</p>
+      <h2>{gameData.winState ? "Winner!" : "One or more cells are incorrect"}</h2>
     </>
   );
 }

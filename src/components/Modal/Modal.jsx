@@ -12,7 +12,7 @@ import SignupContent from "../SignupContent/SignupContent";
 
 import { FaX } from "react-icons/fa6";
 
-function Modal({ open, onClose, winState, gameId, score }) {
+function Modal({ open, onClose }) {
   if (!open) return null;
 
   const portalContainer = document.getElementById("portal");
@@ -37,13 +37,7 @@ function Modal({ open, onClose, winState, gameId, score }) {
       >
         {modalMode === 0 && <HelpContent></HelpContent>}
         {modalMode === 1 && <SettingsContent></SettingsContent>}
-        {modalMode === 2 && (
-          <ResultsContent
-            winState={winState}
-            gameId={gameId}
-            score={score}
-          ></ResultsContent>
-        )}
+        {modalMode === 2 && <ResultsContent></ResultsContent>}
         {modalMode === 3 && <StatsContent></StatsContent>}
         {modalMode === 4 && <LoginContent></LoginContent>}
         {modalMode === 5 && <SignupContent></SignupContent>}
