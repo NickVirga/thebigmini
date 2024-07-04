@@ -31,7 +31,6 @@ function Cell({ cellData, isSelected, isHighlighted, handleClickCell }) {
       onClick={() => handleClickCell(cellData.index)}
     >
       <p className="cell__label">{cellData.label}</p>
-      {/* <p className="cell__label">{cellData.dividers}</p> */}
       <p className="cell__text">{cellData.value}</p>
     </div>
   );

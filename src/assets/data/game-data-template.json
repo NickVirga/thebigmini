@@ -5,6 +5,14 @@
   "numRows": 15,
   "numCols": 15,
   "winState": false,
+  "magnified": false,
+  "selected": {
+    "initCellsIndex": 1,
+    "cellsIndex": null,
+    "cellsInClue": [],
+    "cluesIndex": 0,
+    "clueNum": null
+  },
   "cells": [
     {"index": 0, "blank": true, "value": "", "answer": "", "label": "", "clues": [], "hasDivider": false, "dividers": 0},
     {"index": 1, "blank": false, "value": "", "answer": "F", "label": "2", "clues": [0,5], "hasDivider": false, "dividers": 0},
@@ -231,12 +239,5 @@
     {"index": 222, "blank": false, "value": "X", "answer": "X", "label": "", "clues": [], "hasDivider": false, "dividers": 0},
     {"index": 223, "blank": false, "value": "X", "answer": "X", "label": "", "clues": [], "hasDivider": false, "dividers": 0},
     {"index": 224, "blank": false, "value": "X", "answer": "X", "label": "", "clues": [], "hasDivider": false, "dividers": 0}
-  ],
-  "selected": {
-    "initCellsIndex": 1,
-    "cellsIndex": null,
-    "cellsInClue": [],
-    "cluesIndex": 0,
-    "clueNum": null
-  }
+  ]
 }

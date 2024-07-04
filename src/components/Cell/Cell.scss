@@ -56,22 +56,25 @@
   }
 
   &__label {
-    font-size: 1rem;
+    font-size: 0.5rem;
     position: absolute;
-    left: 3px;
+    left: 2px;
     top: -2px;
+    
 
     @include tablet {
-      font-size: 1.25rem;
+      font-size: 0.9rem;
+      left: 2px;
+      top: -3px;
     }
   }
 
   &__text {
-    font-size: 2.5rem;
+    font-size: 0.8rem;
     // font-size: 1rem; //temp
 
     @include tablet {
-      font-size: 2rem;
+      font-size: 1.6rem;
       // font-size: 1rem; //temp
     }
   }

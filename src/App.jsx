@@ -14,6 +14,8 @@ import {
   FaChartSimple,
   FaAngleLeft,
   FaAngleRight,
+  FaMagnifyingGlassPlus,
+  FaMagnifyingGlassMinus,
 } from "react-icons/fa6";
 
 function App() {
@@ -25,8 +27,41 @@ function App() {
   const numRows = gameData.numRows;
   const numCols = gameData.numCols;
 
+  const determineZoomSection = () => {
+    const index = gameData.selected.cellsIndex
+
+    if (index === null) {
+      return "top left"
+    }
+
+    let vertOrient;
+    let horizOrient;
+
+    if (index < Math.floor(numCols * numRows / 3)) {
+      vertOrient = "top";
+    } else if (index < Math.floor(numCols * numRows * 2 / 3)) {
+      vertOrient = "center";
+    } else {
+      vertOrient = "bottom";
+    }
+
+    const modByCols = index % numCols;
+    if (modByCols < Math.floor(numCols / 3)) {
+      horizOrient = "left";
+    } else if (modByCols < Math.floor(numCols * 2 / 3)) {
+      horizOrient = "center";
+    } else {
+      horizOrient = "right";
+    }
+
+    return vertOrient + " " + horizOrient
+    
+  };
+
   const gridContainerStyle = {
-    gridTemplateColumns: `repeat(${numCols}, minmax(4rem, 1fr))`,
+    transformOrigin: determineZoomSection(),
+    gridTemplateColumns: `repeat(${numCols}, 1fr)`,
+    gridTemplateRows: `repeat(${numRows}, 1fr)`,
   };
 
   const [modalOpen, setModalOpen] = useState(
@@ -354,10 +389,9 @@ function App() {
         }
       }
 
-      if (emptyDetected || incorrectDetected) break;
+      if (emptyDetected) break;
     }
-    console.log("emptyDetected", emptyDetected)
-    console.log("incorrectDetected", incorrectDetected)
+
     if (!emptyDetected) {
       if (!incorrectDetected) {
         updateGameData({
@@ -369,6 +403,16 @@ function App() {
       setModalOpen(true);
     }
   };
+
+  const handleClickZoomIn = () => {
+    updateGameData({ ...gameData, magnified: true });
+  };
+
+  const handleClickZoomOut = () => {
+    updateGameData({ ...gameData, magnified: false });
+  };
+
+  
 
   useEffect(() => {
     checkIfGameComplete();
@@ -400,7 +444,10 @@ function App() {
     >
       <Modal open={modalOpen} onClose={handleCloseModal}></Modal>
       <header className="app__header">
-        <h1 className="app__title">The <span className="app__title-big">Big</span><span className="app__title-mini">Mini</span> Crossword</h1>
+        <h1 className="app__title">
+          The <span className="app__title-big">Big</span>
+          <span className="app__title-mini">Mini</span> Crossword
+        </h1>
         <div className="app__icons">
           <FaRegCircleQuestion
             className="app__icon"
@@ -423,8 +470,20 @@ function App() {
         </div>
       </header>
       <div className="app__container">
+        <div className="app__control-panel">
+          {!gameData.magnified && (
+            <FaMagnifyingGlassPlus
+              onClick={handleClickZoomIn}
+            ></FaMagnifyingGlassPlus>
+          )}
+          {gameData.magnified && (
+            <FaMagnifyingGlassMinus
+              onClick={handleClickZoomOut}
+            ></FaMagnifyingGlassMinus>
+          )}
+        </div>
         <div
-          className="app__grid-container"
+          className={`app__grid-container${gameData.magnified ? "--zoom" : ""}`}
           style={gridContainerStyle}
           onKeyDown={handleKeyDown}
         >
