@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 
-src/assets/data/clue-data.json
 .env
