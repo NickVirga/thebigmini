@@ -26,7 +26,7 @@ function Cell({ cellData, isSelected, isHighlighted, handleClickCell }) {
           : isHighlighted
           ? "cell--highlighted"
           : ""
-      } ${getBorderClasses(cellData)}
+      } ${getBorderClasses(cellData)} ${cellData.locked ? "cell--locked" : ""}
    `}
       onClick={() => handleClickCell(cellData.index)}
     >

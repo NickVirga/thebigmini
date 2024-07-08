@@ -3,10 +3,12 @@ import "./App.scss";
 import Modal from "./components/Modal/Modal";
 import Cell from "./components/Cell/Cell";
 import ClueList from "./components/ClueList/ClueList";
+import Keyboard from "./components/Keyboard/Keyboard";
 import { GameDataContext } from "./context/GameDataContext";
 import { ModalContext } from "./context/ModalContext";
 import "./styles/partials/_global.scss";
 import cluesData from "./assets/data/clue-data.json";
+import logo from "./assets/images/bigmini-logo.png";
 
 import {
   FaGear,
@@ -14,8 +16,6 @@ import {
   FaChartSimple,
   FaAngleLeft,
   FaAngleRight,
-  FaMagnifyingGlassPlus,
-  FaMagnifyingGlassMinus,
 } from "react-icons/fa6";
 
 function App() {
@@ -28,18 +28,18 @@ function App() {
   const numCols = gameData.numCols;
 
   const determineZoomSection = () => {
-    const index = gameData.selected.cellsIndex
+    const index = gameData.selected.cellsIndex;
 
     if (index === null) {
-      return "top left"
+      return "top left";
     }
 
     let vertOrient;
     let horizOrient;
 
-    if (index < Math.floor(numCols * numRows / 3)) {
+    if (index < Math.floor((numCols * numRows) / 3)) {
       vertOrient = "top";
-    } else if (index < Math.floor(numCols * numRows * 2 / 3)) {
+    } else if (index < Math.floor((numCols * numRows * 2) / 3)) {
       vertOrient = "center";
     } else {
       vertOrient = "bottom";
@@ -48,14 +48,13 @@ function App() {
     const modByCols = index % numCols;
     if (modByCols < Math.floor(numCols / 3)) {
       horizOrient = "left";
-    } else if (modByCols < Math.floor(numCols * 2 / 3)) {
+    } else if (modByCols < Math.floor((numCols * 2) / 3)) {
       horizOrient = "center";
     } else {
       horizOrient = "right";
     }
 
-    return vertOrient + " " + horizOrient
-    
+    return vertOrient + " " + horizOrient;
   };
 
   const gridContainerStyle = {
@@ -171,6 +170,7 @@ function App() {
   };
 
   const changeLetter = (newValue, index) => {
+    if (gameData.cells[index].locked) return
     updateGameData({
       ...gameData,
       cells: gameData.cells.map((cell, i) =>
@@ -197,20 +197,22 @@ function App() {
     return clues[pos + posShiftAmount];
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (key) => {
     let selectedCellsIndex = gameData.selected.cellsIndex;
-    const key = event.key;
 
     if (selectedCellsIndex !== null && !gameData.winState) {
       switch (key) {
         case "Backspace":
-          if (gameData.cells[selectedCellsIndex].value !== "") {
+          if (gameData.cells[selectedCellsIndex].value !== "" && !gameData.cells[selectedCellsIndex].locked) {
             changeLetter("", selectedCellsIndex);
           } else {
             const newCellsIndex = clueShift(-1);
-            const updatedCells = gameData.cells.map((cell, i) =>
-              i === newCellsIndex ? { ...cell, value: "" } : cell
-            );
+            let updatedCells = gameData.cells;
+            if (!gameData.cells[newCellsIndex].locked) {
+              updatedCells = gameData.cells.map((cell, i) =>
+                i === newCellsIndex ? { ...cell, value: "" } : cell
+              );
+            }
             updateGameData({
               ...gameData,
               cells: updatedCells,
@@ -226,9 +228,12 @@ function App() {
           changeLetter("", selectedCellsIndex);
           break;
         case " ":
-          const updatedCells = gameData.cells.map((cell, i) =>
+          let updatedCells = gameData.cells;
+          if (!gameData.cells[selectedCellsIndex].locked) {
+          updatedCells = gameData.cells.map((cell, i) =>
             i === selectedCellsIndex ? { ...cell, value: "" } : cell
           );
+          } 
           updateGameData({
             ...gameData,
             cells: updatedCells,
@@ -404,24 +409,17 @@ function App() {
     }
   };
 
-  const handleClickZoomIn = () => {
-    updateGameData({ ...gameData, magnified: true });
-  };
-
-  const handleClickZoomOut = () => {
-    updateGameData({ ...gameData, magnified: false });
-  };
-
-  
-
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
+    const handleKeyDownWrapper = (event) => handleKeyDown(event.key);
+
+    window.addEventListener("keydown", handleKeyDownWrapper);
+
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDownWrapper);
     };
   }, [gameData]);
 
@@ -444,10 +442,8 @@ function App() {
     >
       <Modal open={modalOpen} onClose={handleCloseModal}></Modal>
       <header className="app__header">
-        <h1 className="app__title">
-          The <span className="app__title-big">Big</span>
-          <span className="app__title-mini">Mini</span> Crossword
-        </h1>
+        <h1 className="app__title">The Big Mini Crossword</h1>
+        <img src={logo} className="app__logo" alt="logo" />
         <div className="app__icons">
           <FaRegCircleQuestion
             className="app__icon"
@@ -470,45 +466,44 @@ function App() {
         </div>
       </header>
       <div className="app__container">
-        <div className="app__control-panel">
-          {!gameData.magnified && (
-            <FaMagnifyingGlassPlus
-              onClick={handleClickZoomIn}
-            ></FaMagnifyingGlassPlus>
-          )}
-          {gameData.magnified && (
-            <FaMagnifyingGlassMinus
-              onClick={handleClickZoomOut}
-            ></FaMagnifyingGlassMinus>
-          )}
+        <div className="app__cluelist-container">
+          <div
+            className={`app__grid-container${
+              gameData.magnified ? "--zoom" : ""
+            }`}
+            style={gridContainerStyle}
+            onKeyDown={handleKeyDown}
+          >
+            {gameData.cells.map((cell) => (
+              <Cell
+                key={cell.index}
+                cellData={cell}
+                isSelected={isSelected(cell.index)}
+                isHighlighted={isHighlighted(cell.index)}
+                handleClickCell={handleClickCell}
+              ></Cell>
+            ))}
+          </div>
+          <ClueList
+            cluesData={cluesData}
+            getCellsInClue={getCellsInClue}
+          ></ClueList>
         </div>
-        <div
-          className={`app__grid-container${gameData.magnified ? "--zoom" : ""}`}
-          style={gridContainerStyle}
-          onKeyDown={handleKeyDown}
-        >
-          {gameData.cells.map((cell) => (
-            <Cell
-              key={cell.index}
-              cellData={cell}
-              isSelected={isSelected(cell.index)}
-              isHighlighted={isHighlighted(cell.index)}
-              handleClickCell={handleClickCell}
-            ></Cell>
-          ))}
-        </div>
-        {/* <div className="app__clue-container">
+        <div className="app__clue-container">
           <FaAngleLeft
             className="app__icon app__clue-icon"
             onClick={() => {
               shiftClueSelection(-1);
             }}
           ></FaAngleLeft>
-          <span className="app__clue-text">
+          <span
+            className="app__clue-text"
+            onClick={() => {
+              handleClickCell(gameData.selected.cellsIndex);
+            }}
+          >
             {gameData.selected.cellsIndex
-              ? cluesData.clues[
-                  gameData.selected.clueNum
-                ].clueText
+              ? cluesData.clues[gameData.selected.clueNum].clueText
               : ""}
           </span>
           <FaAngleRight
@@ -517,10 +512,11 @@ function App() {
               shiftClueSelection(1);
             }}
           ></FaAngleRight>
-        </div> */}
-        {/* <ClueList cluesData={cluesData} getCellsInClue={getCellsInClue}></ClueList> */}
+        </div>
+        <Keyboard handleKeyClick={handleKeyDown}></Keyboard>
       </div>
       <input
+        className="app__input-overlay"
         ref={inputRef}
         type="text"
         inputMode=""

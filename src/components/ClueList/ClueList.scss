@@ -2,9 +2,7 @@
 @use "../../styles/partials/_mixins" as *;
 
 .clue-list {
-  width: 90vmin;
-  margin-top: 1rem;
-  justify-content: space-between;
+  flex: 1;  
   display: none;
 
   @include tablet {
@@ -13,6 +11,11 @@
 
   &__across {
     margin-bottom: 1rem;
+    flex: 1;
+  }
+
+  &__down {
+    flex: 1;
   }
 
   &__item {

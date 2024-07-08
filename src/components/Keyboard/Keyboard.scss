@@ -1,0 +1,84 @@
+@use "../../styles/partials/mixins" as *;
+
+.keyboard {
+  display: block;
+  margin: 0.5rem 0;
+  width: 100%;
+
+  @include tablet {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  &__key-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.35rem;
+    width: 100%;
+  }
+
+  &__key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.4rem 0;
+    font-size: 1.4rem;
+    background-color: #888888;
+    border-radius: 5px;
+    user-select: none;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-shrink: 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.2) inset;
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:active {
+      background-color: #e0e0e0;
+      transform: translateY(2px);
+    }
+
+    &--auxiliary {
+      background-color: #5e5e5e;
+      flex-grow: 1.5;
+    }
+
+    &--controls {
+      font-size: 1.2rem;
+      padding: 0.2rem 0;
+    }
+
+  }
+
+  &__check-btn {
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+    position: relative;
+    
+  }
+
+  &__check-list {
+    position: absolute;
+    width: 100%;
+    flex-grow: 1;
+    top: 2.2rem;
+  }
+
+  &__check-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem 0;
+    background-color: #888888;
+    user-select: none;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+
+}

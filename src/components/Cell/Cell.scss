@@ -49,10 +49,20 @@
 
   &--selected {
     background-color: $selected-cell-fill-color;
+    color: black;
   }
 
   &--highlighted {
     background-color: $highlighted-cell-fill-color;
+    color: black;
+  }
+
+  &--locked {
+    color: rgb(26, 152, 224);
+  }
+
+  &--incorrect{
+    color: red
   }
 
   &__label {
