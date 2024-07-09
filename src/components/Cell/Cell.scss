@@ -20,7 +20,6 @@
   &--blank {
     background-color: $blank-cell-fill-color;
     background-color: rgb(14, 14, 14);
-
   }
 
   &--border-top {
@@ -57,35 +56,56 @@
     color: black;
   }
 
-  &--locked {
-    color: rgb(26, 152, 224);
-  }
+  &--incorrect {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+      background: red;
+      transform: rotate(-45deg);
+      transform-origin: top left;
 
-  &--incorrect{
-    color: red
+      @include tablet {
+        height: 2px;
+      }
+    }
+    
   }
 
   &__label {
-    font-size: 0.5rem;
+    font-size: 2vw;
     position: absolute;
     left: 2px;
     top: -2px;
-    
 
     @include tablet {
-      font-size: 0.9rem;
-      left: 2px;
-      top: -3px;
+      font-size: clamp(0.7rem, 1.4vw, 1rem);
+      left: 3px;
     }
   }
 
   &__text {
-    font-size: 0.8rem;
-    // font-size: 1rem; //temp
+    font-size: 3.5vw;
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    &--revealed {
+      color: rgb(26, 152, 224);
+    }
+
+    &--incorrect {
+      color: red;
+    }
 
     @include tablet {
-      font-size: 1.6rem;
-      // font-size: 1rem; //temp
+      font-size: 2.5vw;
+      font-size: clamp(1.25rem, 2.6vw, 2rem);
     }
   }
 }

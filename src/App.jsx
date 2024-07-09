@@ -170,11 +170,11 @@ function App() {
   };
 
   const changeLetter = (newValue, index) => {
-    if (gameData.cells[index].locked) return
+    if (gameData.cells[index].revealed) return
     updateGameData({
       ...gameData,
       cells: gameData.cells.map((cell, i) =>
-        i === index ? { ...cell, value: newValue } : cell
+        i === index ? { ...cell, value: newValue, incorrectFlag: false } : cell
       ),
     });
   };
@@ -203,12 +203,12 @@ function App() {
     if (selectedCellsIndex !== null && !gameData.winState) {
       switch (key) {
         case "Backspace":
-          if (gameData.cells[selectedCellsIndex].value !== "" && !gameData.cells[selectedCellsIndex].locked) {
+          if (gameData.cells[selectedCellsIndex].value !== "" && !gameData.cells[selectedCellsIndex].revealed) {
             changeLetter("", selectedCellsIndex);
           } else {
             const newCellsIndex = clueShift(-1);
             let updatedCells = gameData.cells;
-            if (!gameData.cells[newCellsIndex].locked) {
+            if (!gameData.cells[newCellsIndex].revealed) {
               updatedCells = gameData.cells.map((cell, i) =>
                 i === newCellsIndex ? { ...cell, value: "" } : cell
               );
@@ -229,7 +229,7 @@ function App() {
           break;
         case " ":
           let updatedCells = gameData.cells;
-          if (!gameData.cells[selectedCellsIndex].locked) {
+          if (!gameData.cells[selectedCellsIndex].revealed) {
           updatedCells = gameData.cells.map((cell, i) =>
             i === selectedCellsIndex ? { ...cell, value: "" } : cell
           );
@@ -365,7 +365,7 @@ function App() {
       if (key.length === 1 && key.match(/[a-zA-Z]/)) {
         const updatedCells = gameData.cells.map((cell, i) =>
           i === selectedCellsIndex
-            ? { ...cell, value: key.toUpperCase() }
+            ? { ...cell, value: key.toUpperCase(), incorrectFlag: false }
             : cell
         );
         updateGameData({

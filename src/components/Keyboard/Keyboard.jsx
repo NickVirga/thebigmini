@@ -7,7 +7,7 @@ import {
   FaMagnifyingGlassPlus,
   FaMagnifyingGlassMinus,
 } from "react-icons/fa6";
-import { TbReceiptYen } from "react-icons/tb";
+
 
 function Keyboard({ handleKeyClick }) {
   const { gameData, updateGameData } = useContext(GameDataContext);
@@ -56,9 +56,10 @@ function Keyboard({ handleKeyClick }) {
     cellsIndicesArray.forEach((cellIndex) => {
       const currCell = updatedCells[cellIndex];
 
-      if (!currCell.blank && !currCell.locked) {
+      if (!currCell.blank && !currCell.revealed) {
         let newLockedStatus = false;
         let newValue = currCell.value;
+        let newIncorrectStatus = false;
 
         if (revealWord) {
           newValue = currCell.answer;
@@ -66,6 +67,8 @@ function Keyboard({ handleKeyClick }) {
         } else {
           if (currCell.value === currCell.answer) {
             newLockedStatus = true;
+          } else {
+            newIncorrectStatus = true
           }
         }
 
@@ -74,7 +77,8 @@ function Keyboard({ handleKeyClick }) {
             ? {
                 ...cell,
                 checked: true,
-                locked: newLockedStatus,
+                revealed: newLockedStatus,
+                incorrectFlag: newIncorrectStatus,
                 value: newValue,
               }
             : cell

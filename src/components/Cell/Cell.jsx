@@ -26,12 +26,18 @@ function Cell({ cellData, isSelected, isHighlighted, handleClickCell }) {
           : isHighlighted
           ? "cell--highlighted"
           : ""
-      } ${getBorderClasses(cellData)} ${cellData.locked ? "cell--locked" : ""}
+      } ${getBorderClasses(cellData)} ${cellData.incorrectFlag ? "cell--incorrect" : ""}
    `}
       onClick={() => handleClickCell(cellData.index)}
     >
       <p className="cell__label">{cellData.label}</p>
-      <p className="cell__text">{cellData.value}</p>
+      <p
+        className={`cell__text ${
+          cellData.revealed ? "cell__text--revealed" : cellData.incorrectFlag ? "cell__text--incorrect" : ""
+        }`}
+      >
+        {cellData.value}
+      </p>
     </div>
   );
 }
