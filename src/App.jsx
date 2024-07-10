@@ -502,7 +502,7 @@ function App() {
               handleClickCell(gameData.selected.cellsIndex);
             }}
           >
-            {gameData.selected.clueNum !== undefined
+            {gameData.selected.clueNum !== null
               ? cluesData.clues[gameData.selected.clueNum].clueText
               : ""}
           </span>
