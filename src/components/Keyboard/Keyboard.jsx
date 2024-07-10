@@ -56,7 +56,7 @@ function Keyboard({ handleKeyClick }) {
     cellsIndicesArray.forEach((cellIndex) => {
       const currCell = updatedCells[cellIndex];
 
-      if (!currCell.blank && !currCell.revealed) {
+      if (!currCell.blank && currCell.value !== "" && !currCell.revealed) {
         let newLockedStatus = false;
         let newValue = currCell.value;
         let newIncorrectStatus = false;
