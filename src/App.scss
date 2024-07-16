@@ -67,7 +67,7 @@
     width: 100%;
     max-width: 1920px;
     gap: 1rem;
-    max-height: 1000px;
+    max-height: 780px;
 
     @include desktop {
       margin: 0 auto;
@@ -85,11 +85,15 @@
     border: 2px solid var(--outer-border-color);
     transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
     overflow: hidden;
-    transform-origin: top left;
+    // transform-origin: top left;
 
     &--zoom{
       @extend .app__grid-container;
       transform: scale(3);
+
+      @include tablet {
+        transform: scale(2);
+      }
       
     }
 

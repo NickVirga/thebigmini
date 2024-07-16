@@ -10,7 +10,8 @@
     flex-direction: column;
     gap: 1rem;
     max-height: 780px;
-    // overflow: hidden;
+    min-width: 250px;
+    // height: 100%;
   }
 
   @include desktop {
@@ -23,6 +24,10 @@
     flex-direction: column;
     max-height: calc(50% - 0.5rem);
 
+    @include desktop {
+      max-height: none;
+    }
+
   }
 
   &__list-container {
@@ -30,9 +35,16 @@
     overflow-y: auto;
   }
 
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
 
   &__item {
     cursor: pointer;
+    line-height: 1.2;
 
     &--highlighted {
       background-color: $highlighted-cell-fill-color;
