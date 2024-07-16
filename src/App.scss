@@ -2,31 +2,12 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/mixins" as *;
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .app {
   display: flex;
   flex-direction: column;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  height: 100vh;
-
-  @include tablet {
-    height: 100%;
-  }
 
   &__title {
     position: absolute;
@@ -73,6 +54,7 @@ ol {
     align-items: center;
     flex-grow: 1;
     margin: 1rem 0.5rem 0 0.5rem;
+    height: 100vh;
 
     @include desktop {
       margin-bottom: 5rem;
@@ -82,13 +64,13 @@ ol {
 
   &__cluelist-container {
     display: flex;
-    flex-direction: column;
     width: 100%;
-    overflow: hidden;
+    max-width: 1920px;
     gap: 1rem;
+    max-height: 1000px;
 
     @include desktop {
-      flex-direction: row;
+      margin: 0 auto;
     }
 
   }
@@ -96,7 +78,7 @@ ol {
   &__grid-container {
     display: grid;
     width: 100%;
-    max-width: 1024px;
+    max-width: 780px;
     aspect-ratio: 1;
     gap: 1px;
     background-color: var(--inner-border-color);
@@ -109,6 +91,10 @@ ol {
       @extend .app__grid-container;
       transform: scale(3);
       
+    }
+
+    @include tablet {
+      align-self: start;
     }
 
   }
@@ -146,7 +132,7 @@ ol {
   &__input-overlay{
     display: none;
 
-    @include tablet {
+    @include desktop {
       display: block;
     }
 
