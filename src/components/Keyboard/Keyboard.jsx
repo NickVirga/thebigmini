@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useRef } from "react";
 import "./Keyboard.scss";
 import { GameDataContext } from "../../context/GameDataContext";
 
@@ -8,13 +8,14 @@ import {
   FaMagnifyingGlassMinus,
 } from "react-icons/fa6";
 
-
 function Keyboard({ handleKeyClick }) {
   const { gameData, updateGameData } = useContext(GameDataContext);
 
   const [layoutNum, setLayoutNum] = useState(0);
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
-  const [revealMenuIsVisible, setReveakMenuIsVisible] = useState(false);
+  const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
+  const checkMenuRef = useRef(null);
+  const revealMenuRef = useRef(null);
 
   const layoutCycle = () => {
     if (layoutNum > 1) {
@@ -56,7 +57,9 @@ function Keyboard({ handleKeyClick }) {
     cellsIndicesArray.forEach((cellIndex) => {
       const currCell = updatedCells[cellIndex];
 
-      if (!currCell.blank && currCell.value !== "" && !currCell.revealed) {
+      //proceed if cell isn't a blank (possible with grid), cell hasn't be revealed (not locked), 
+      //cell value isn't blank while a check is being performed (nothing to check)
+      if (!currCell.blank && !(currCell.value === "" && !revealWord) && !currCell.revealed) {
         let newLockedStatus = false;
         let newValue = currCell.value;
         let newIncorrectStatus = false;
@@ -68,7 +71,7 @@ function Keyboard({ handleKeyClick }) {
           if (currCell.value === currCell.answer) {
             newLockedStatus = true;
           } else {
-            newIncorrectStatus = true
+            newIncorrectStatus = true;
           }
         }
 
@@ -92,12 +95,36 @@ function Keyboard({ handleKeyClick }) {
     });
   };
 
+  const handleClickOutside = (event) => {
+    if (checkMenuRef.current && !checkMenuRef.current.contains(event.target)) {
+      setCheckMenuIsVisible(false);
+    }
+    if (revealMenuRef.current && !revealMenuRef.current.contains(event.target)) {
+      setRevealMenuIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const closeDropMenus = () => {
+    setCheckMenuIsVisible(false);
+    setRevealMenuIsVisible(false);
+  }
+
   return (
     <div className="keyboard">
+      {(checkMenuIsVisible || revealMenuIsVisible) && <div className="keyboard__overlay" onClick={()=>{closeDropMenus()}}>
+        {" "}
+      </div>}
       <div className="keyboard__container">
         <div className="keyboard__key-row">
           <div
-            className="keyboard__key keyboard__key--controls"
+            className="keyboard__zoom-btn"
             onClick={
               gameData.magnified
                 ? () => {
@@ -116,16 +143,19 @@ function Keyboard({ handleKeyClick }) {
             )}
           </div>
           <div
-            className="keyboard__key keyboard__check-btn"
+            className={`keyboard__dropdown-btn ${
+              checkMenuIsVisible ? "keyboard__dropdown-btn--active" : ""
+            }`}
             onClick={() => {
               setCheckMenuIsVisible(!checkMenuIsVisible);
             }}
+            ref={checkMenuRef}
           >
             Check
             {checkMenuIsVisible && (
-              <ul className="keyboard__check-list">
+              <ul className="keyboard__dropdown-list">
                 <li
-                  className="keyboard__check-item"
+                  className="keyboard__dropdown-item"
                   onClick={() => {
                     checkRevealIndices([gameData.selected.cellsIndex], false);
                   }}
@@ -133,7 +163,7 @@ function Keyboard({ handleKeyClick }) {
                   Letter
                 </li>
                 <li
-                  className="keyboard__check-item"
+                  className="keyboard__dropdown-item"
                   onClick={() => {
                     checkRevealIndices(gameData.selected.cellsInClue, false);
                   }}
@@ -141,7 +171,7 @@ function Keyboard({ handleKeyClick }) {
                   Word
                 </li>
                 <li
-                  className="keyboard__check-item"
+                  className="keyboard__dropdown-item"
                   onClick={() => {
                     checkRevealIndices(
                       Array.from(
@@ -157,13 +187,57 @@ function Keyboard({ handleKeyClick }) {
               </ul>
             )}
           </div>
-          <div className="keyboard__key keyboard__key--controls">Reveal</div>
+          <div
+            className={`keyboard__dropdown-btn ${
+              revealMenuIsVisible ? "keyboard__dropdown-btn--active" : ""
+            }`}
+            onClick={() => {
+              setRevealMenuIsVisible(!revealMenuIsVisible);
+            }}
+            ref={revealMenuRef}
+          >
+            Reveal
+            {revealMenuIsVisible && (
+              <ul className="keyboard__dropdown-list">
+                <li
+                  className="keyboard__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices([gameData.selected.cellsIndex], true);
+                  }}
+                >
+                  Letter
+                </li>
+                <li
+                  className="keyboard__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(gameData.selected.cellsInClue, true);
+                  }}
+                >
+                  Word
+                </li>
+                <li
+                  className="keyboard__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(
+                      Array.from(
+                        { length: gameData.cells.length },
+                        (_, index) => index
+                      ),
+                      true
+                    );
+                  }}
+                >
+                  Grid
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
         {charLayouts[layoutNum].map((chars, index) => (
           <div key={index} className="keyboard__key-row">
             {index === 2 && (
               <div
-                className="keyboard__key keyboard__key--auxiliary"
+                className="keyboard__layout-toggle-btn"
                 onClick={() => {
                   layoutCycle();
                 }}
@@ -184,7 +258,7 @@ function Keyboard({ handleKeyClick }) {
             ))}
             {index === 2 && (
               <div
-                className="keyboard__key keyboard__key--auxiliary"
+                className="keyboard__backspace-btn"
                 onClick={() => {
                   handleKeyClick("Backspace");
                 }}

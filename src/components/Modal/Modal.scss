@@ -1,16 +1,25 @@
 @use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
 
 .modal {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   position: fixed;
-  width: calc(100% - 4rem);
   top: 4rem;
-  margin: 0 2rem;
   padding: 1rem; 
-  z-index: 1000;
+  // z-index: 1000;
   border-radius: 8px;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--background-color); 
+  width: 80%;
+
+  @include tablet {
+    max-width: 900px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
 
   &__overlay {
     position: fixed;

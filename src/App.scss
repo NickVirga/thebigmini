@@ -66,6 +66,7 @@
     display: flex;
     width: 100%;
     max-width: 1920px;
+    overflow: hidden;
     gap: 1rem;
     max-height: 780px;
 
@@ -140,6 +141,13 @@
       display: block;
     }
 
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
   }
 
 }

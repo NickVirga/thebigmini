@@ -4,10 +4,19 @@
   display: block;
   margin: 0.5rem 0;
   width: 100%;
-  // z-index: 1;
+  position: relative;
 
   @include desktop {
     display: none;
+  }
+
+  &__overlay {
+    position: absolute;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   &__container {
@@ -15,6 +24,7 @@
     flex-direction: column;
     gap: 0.6rem;
     width: 100%;
+    position: relative;
   }
 
   &__key-row {
@@ -41,44 +51,64 @@
 
     &:active {
       background-color: #e0e0e0;
-      transform: translateY(2px);
-    }
-
-    &--auxiliary {
-      background-color: #5e5e5e;
-      flex-grow: 1.5;
-    }
-
-    &--controls {
-      font-size: 1.2rem;
-      padding: 0.2rem 0;
     }
 
   }
 
-  &__check-btn {
+  &__layout-toggle-btn {
+    @extend .keyboard__key;
+    background-color: #5e5e5e;
+    flex-grow: 1.5;
+  } 
+
+  &__backspace-btn {
+    @extend .keyboard__layout-toggle-btn;
+    background-color: #5e5e5e;
+    flex-grow: 1.5;
+    font-size: 1.8rem;
+  }
+
+  &__zoom-btn {
+    @extend .keyboard__key;
+    font-size: 1.2rem;
+    padding: 0.2rem 0;
+  }
+
+  &__dropdown-btn {
+    @extend .keyboard__key;
     font-size: 1.2rem;
     padding: 0.2rem 0;
     position: relative;
-    
+
+    &--active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
   }
 
-  &__check-list {
+  &__dropdown-list {
     position: absolute;
     width: 100%;
-    flex-grow: 1;
-    top: 2.2rem;
+    top: 2.3rem;
+    z-index: 2;
+
   }
 
-  &__check-item {
+  &__dropdown-item {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.2rem 0;
     background-color: #888888;
     user-select: none;
-    border: 1px solid black;
-    border-radius: 5px;
+    border-bottom: 1px solid black;
+
+    &:hover {
+      background-color: #5e5e5e;
+    }
+
+
   }
 
 

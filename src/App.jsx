@@ -210,7 +210,7 @@ function App() {
             let updatedCells = gameData.cells;
             if (!gameData.cells[newCellsIndex].revealed) {
               updatedCells = gameData.cells.map((cell, i) =>
-                i === newCellsIndex ? { ...cell, value: "" } : cell
+                i === newCellsIndex ? { ...cell, value: "", incorrectFlag: false } : cell
               );
             }
             updateGameData({
@@ -231,7 +231,7 @@ function App() {
           let updatedCells = gameData.cells;
           if (!gameData.cells[selectedCellsIndex].revealed) {
           updatedCells = gameData.cells.map((cell, i) =>
-            i === selectedCellsIndex ? { ...cell, value: "" } : cell
+            i === selectedCellsIndex ? { ...cell, value: "", incorrectFlag: fals } : cell
           );
           } 
           updateGameData({
@@ -282,7 +282,7 @@ function App() {
               });
             }
           } else {
-            shiftClueSelection(-1);
+            handleClickCell(gameData.selected.cellsIndex - numCols)
           }
 
           break;
@@ -306,7 +306,7 @@ function App() {
               });
             }
           } else {
-            shiftClueSelection(1);
+            handleClickCell(gameData.selected.cellsIndex + numCols)
           }
 
           break;
@@ -327,7 +327,7 @@ function App() {
               });
             }
           } else {
-            shiftClueSelection(-1);
+            handleClickCell(gameData.selected.cellsIndex - 1)
           }
 
           break;
@@ -351,7 +351,7 @@ function App() {
               });
             }
           } else {
-            shiftClueSelection(1);
+            handleClickCell(gameData.selected.cellsIndex + 1)
           }
 
           break;
@@ -527,6 +527,7 @@ function App() {
           opacity: 0,
         }}
       />
+      <footer className="app__footer">created by Nick Virga - 2024</footer>
     </div>
   );
 }
