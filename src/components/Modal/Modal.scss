@@ -6,7 +6,6 @@
   position: fixed;
   top: 4rem;
   padding: 1rem; 
-  // z-index: 1000;
   border-radius: 8px;
   color: var(--text-color);
   background-color: var(--background-color); 
@@ -14,11 +13,16 @@
 
   @include tablet {
     max-width: 900px;
+    padding: 2rem;
   }
 
   &__wrapper {
     display: flex;
     justify-content: center;
+
+
+    
+
   }
 
   &__overlay {
