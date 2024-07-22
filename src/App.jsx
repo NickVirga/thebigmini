@@ -24,6 +24,11 @@ function App() {
 
   const isLoggedIn = false;
 
+  const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
+  const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
+  const checkMenuRef = useRef(null);
+  const revealMenuRef = useRef(null);
+
   const numRows = gameData.numRows;
   const numCols = gameData.numCols;
 
@@ -170,7 +175,7 @@ function App() {
   };
 
   const changeLetter = (newValue, index) => {
-    if (gameData.cells[index].revealed) return
+    if (gameData.cells[index].revealed) return;
     updateGameData({
       ...gameData,
       cells: gameData.cells.map((cell, i) =>
@@ -203,14 +208,19 @@ function App() {
     if (selectedCellsIndex !== null && !gameData.winState) {
       switch (key) {
         case "Backspace":
-          if (gameData.cells[selectedCellsIndex].value !== "" && !gameData.cells[selectedCellsIndex].revealed) {
+          if (
+            gameData.cells[selectedCellsIndex].value !== "" &&
+            !gameData.cells[selectedCellsIndex].revealed
+          ) {
             changeLetter("", selectedCellsIndex);
           } else {
             const newCellsIndex = clueShift(-1);
             let updatedCells = gameData.cells;
             if (!gameData.cells[newCellsIndex].revealed) {
               updatedCells = gameData.cells.map((cell, i) =>
-                i === newCellsIndex ? { ...cell, value: "", incorrectFlag: false } : cell
+                i === newCellsIndex
+                  ? { ...cell, value: "", incorrectFlag: false }
+                  : cell
               );
             }
             updateGameData({
@@ -230,10 +240,12 @@ function App() {
         case " ":
           let updatedCells = gameData.cells;
           if (!gameData.cells[selectedCellsIndex].revealed) {
-          updatedCells = gameData.cells.map((cell, i) =>
-            i === selectedCellsIndex ? { ...cell, value: "", incorrectFlag: fals } : cell
-          );
-          } 
+            updatedCells = gameData.cells.map((cell, i) =>
+              i === selectedCellsIndex
+                ? { ...cell, value: "", incorrectFlag: fals }
+                : cell
+            );
+          }
           updateGameData({
             ...gameData,
             cells: updatedCells,
@@ -282,7 +294,7 @@ function App() {
               });
             }
           } else {
-            handleClickCell(gameData.selected.cellsIndex - numCols)
+            handleClickCell(gameData.selected.cellsIndex - numCols);
           }
 
           break;
@@ -306,7 +318,7 @@ function App() {
               });
             }
           } else {
-            handleClickCell(gameData.selected.cellsIndex + numCols)
+            handleClickCell(gameData.selected.cellsIndex + numCols);
           }
 
           break;
@@ -327,7 +339,7 @@ function App() {
               });
             }
           } else {
-            handleClickCell(gameData.selected.cellsIndex - 1)
+            handleClickCell(gameData.selected.cellsIndex - 1);
           }
 
           break;
@@ -351,7 +363,7 @@ function App() {
               });
             }
           } else {
-            handleClickCell(gameData.selected.cellsIndex + 1)
+            handleClickCell(gameData.selected.cellsIndex + 1);
           }
 
           break;
@@ -409,6 +421,66 @@ function App() {
     }
   };
 
+  const checkRevealIndices = (cellsIndicesArray, revealWord) => {
+    let updatedCells = [...gameData.cells];
+
+    cellsIndicesArray.forEach((cellIndex) => {
+      const currCell = updatedCells[cellIndex];
+
+      //proceed if cell isn't a blank (possible with grid), cell hasn't be revealed (not locked),
+      //cell value isn't blank while a check is being performed (nothing to check)
+      if (
+        !currCell.blank &&
+        !(currCell.value === "" && !revealWord) &&
+        !currCell.revealed
+      ) {
+        let newLockedStatus = false;
+        let newValue = currCell.value;
+        let newIncorrectStatus = false;
+
+        if (revealWord) {
+          newValue = currCell.answer;
+          newLockedStatus = true;
+        } else {
+          if (currCell.value === currCell.answer) {
+            newLockedStatus = true;
+          } else {
+            newIncorrectStatus = true;
+          }
+        }
+
+        updatedCells = updatedCells.map((cell, i) =>
+          i === cellIndex
+            ? {
+                ...cell,
+                checked: true,
+                revealed: newLockedStatus,
+                incorrectFlag: newIncorrectStatus,
+                value: newValue,
+              }
+            : cell
+        );
+      }
+    });
+
+    updateGameData({
+      ...gameData,
+      cells: updatedCells,
+    });
+  };
+
+  const handleClickOutside = (event) => {
+    if (checkMenuRef.current && !checkMenuRef.current.contains(event.target)) {
+      setCheckMenuIsVisible(false);
+    }
+    if (
+      revealMenuRef.current &&
+      !revealMenuRef.current.contains(event.target)
+    ) {
+      setRevealMenuIsVisible(false);
+    }
+  };
+
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
@@ -422,6 +494,19 @@ function App() {
       window.removeEventListener("keydown", handleKeyDownWrapper);
     };
   }, [gameData]);
+
+  useEffect(() => {
+    if (checkMenuIsVisible || revealMenuIsVisible) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [checkMenuIsVisible, revealMenuIsVisible]);
 
   if (!gameData) {
     return <div>Loading...</div>;
@@ -442,7 +527,7 @@ function App() {
     >
       <Modal open={modalOpen} onClose={handleCloseModal}></Modal>
       <header className="app__header">
-        <h1 className="app__title">The Big Mini Crossword</h1>
+        <h1 className="app__title">The BIGmini Crossword</h1>
         <img src={logo} className="app__logo" alt="logo" />
         <div className="app__icons">
           <FaRegCircleQuestion
@@ -466,6 +551,106 @@ function App() {
         </div>
       </header>
       <div className="app__container">
+        <ul className="app__control-bar">
+          <li className="app__control-item" ref={checkMenuRef}>
+            <div
+              className={`app__control-btn ${
+                checkMenuIsVisible ? "app__control-btn--active" : ""
+              }`}
+              onClick={() => {
+                setCheckMenuIsVisible(!checkMenuIsVisible);
+              }}
+            >
+              Check
+            </div>
+            {checkMenuIsVisible && (
+              <ul className="app__dropdown">
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices([gameData.selected.cellsIndex], false);
+                    setCheckMenuIsVisible(false);
+                  }}
+                >
+                  Letter
+                </li>
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(gameData.selected.cellsInClue, false);
+                    setCheckMenuIsVisible(false);
+                  }}
+                >
+                  Word
+                </li>
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(
+                      Array.from(
+                        { length: gameData.cells.length },
+                        (_, index) => index
+                      ),
+                      false
+                    );
+                    setCheckMenuIsVisible(false);
+                  }}
+                >
+                  Grid
+                </li>
+              </ul>
+            )}
+          </li>
+          <li className="app__control-item" ref={revealMenuRef}>
+            <div
+              className={`app__control-btn ${
+                revealMenuIsVisible ? "app__control-btn--active" : ""
+              }`}
+              onClick={() => {
+                setRevealMenuIsVisible(!revealMenuIsVisible);
+              }}
+            >
+              Reveal
+            </div>
+            {revealMenuIsVisible && (
+              <ul className="app__dropdown">
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices([gameData.selected.cellsIndex], true);
+                    setRevealMenuIsVisible(false);
+                  }}
+                >
+                  Letter
+                </li>
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(gameData.selected.cellsInClue, true);
+                    setRevealMenuIsVisible(false);
+                  }}
+                >
+                  Word
+                </li>
+                <li
+                  className="app__dropdown-item"
+                  onClick={() => {
+                    checkRevealIndices(
+                      Array.from(
+                        { length: gameData.cells.length },
+                        (_, index) => index
+                      ),
+                      true
+                    );
+                    setRevealMenuIsVisible(false);
+                  }}
+                >
+                  Grid
+                </li>
+              </ul>
+            )}
+          </li>
+        </ul>
         <div className="app__cluelist-container">
           <div
             className={`app__grid-container${
@@ -513,7 +698,10 @@ function App() {
             }}
           ></FaAngleRight>
         </div>
-        <Keyboard handleKeyClick={handleKeyDown}></Keyboard>
+        <Keyboard
+          handleKeyClick={handleKeyDown}
+          handleCheckReveal={checkRevealIndices}
+        ></Keyboard>
       </div>
       <input
         className="app__input-overlay"

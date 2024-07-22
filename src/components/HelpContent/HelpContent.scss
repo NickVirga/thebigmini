@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+
 .help {
 
     &__title {
@@ -7,11 +9,34 @@
 
     &__list {
         list-style-type: circle;
-        margin: 1rem
+        margin: 1rem;
+        list-style-position: inside;
     }
 
     &__item {
         margin-bottom: 1rem;
+    }
+
+    &__grid {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 1rem;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
+    }
+
+    &__boundary-gap {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        margin-top: 1rem;
+
+        @include tablet {
+            margin-left: 2rem;
+        }
     }
 
 }

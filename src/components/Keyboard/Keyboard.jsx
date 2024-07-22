@@ -8,7 +8,7 @@ import {
   FaMagnifyingGlassMinus,
 } from "react-icons/fa6";
 
-function Keyboard({ handleKeyClick }) {
+function Keyboard({ handleKeyClick, handleCheckReveal }) {
   const { gameData, updateGameData } = useContext(GameDataContext);
 
   const [layoutNum, setLayoutNum] = useState(0);
@@ -49,50 +49,6 @@ function Keyboard({ handleKeyClick }) {
 
   const handleClickZoomOut = () => {
     updateGameData({ ...gameData, magnified: false });
-  };
-
-  const checkRevealIndices = (cellsIndicesArray, revealWord) => {
-    let updatedCells = [...gameData.cells];
-
-    cellsIndicesArray.forEach((cellIndex) => {
-      const currCell = updatedCells[cellIndex];
-
-      //proceed if cell isn't a blank (possible with grid), cell hasn't be revealed (not locked), 
-      //cell value isn't blank while a check is being performed (nothing to check)
-      if (!currCell.blank && !(currCell.value === "" && !revealWord) && !currCell.revealed) {
-        let newLockedStatus = false;
-        let newValue = currCell.value;
-        let newIncorrectStatus = false;
-
-        if (revealWord) {
-          newValue = currCell.answer;
-          newLockedStatus = true;
-        } else {
-          if (currCell.value === currCell.answer) {
-            newLockedStatus = true;
-          } else {
-            newIncorrectStatus = true;
-          }
-        }
-
-        updatedCells = updatedCells.map((cell, i) =>
-          i === cellIndex
-            ? {
-                ...cell,
-                checked: true,
-                revealed: newLockedStatus,
-                incorrectFlag: newIncorrectStatus,
-                value: newValue,
-              }
-            : cell
-        );
-      }
-    });
-
-    updateGameData({
-      ...gameData,
-      cells: updatedCells,
-    });
   };
 
   const handleClickOutside = (event) => {
@@ -157,7 +113,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices([gameData.selected.cellsIndex], false);
+                    handleCheckReveal([gameData.selected.cellsIndex], false);
                   }}
                 >
                   Letter
@@ -165,7 +121,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices(gameData.selected.cellsInClue, false);
+                    handleCheckReveal(gameData.selected.cellsInClue, false);
                   }}
                 >
                   Word
@@ -173,7 +129,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices(
+                    handleCheckReveal(
                       Array.from(
                         { length: gameData.cells.length },
                         (_, index) => index
@@ -202,7 +158,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices([gameData.selected.cellsIndex], true);
+                    handleCheckReveal([gameData.selected.cellsIndex], true);
                   }}
                 >
                   Letter
@@ -210,7 +166,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices(gameData.selected.cellsInClue, true);
+                    handleCheckReveal(gameData.selected.cellsInClue, true);
                   }}
                 >
                   Word
@@ -218,7 +174,7 @@ function Keyboard({ handleKeyClick }) {
                 <li
                   className="keyboard__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices(
+                    handleCheckReveal(
                       Array.from(
                         { length: gameData.cells.length },
                         (_, index) => index
