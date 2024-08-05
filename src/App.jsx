@@ -16,6 +16,7 @@ import {
   FaChartSimple,
   FaAngleLeft,
   FaAngleRight,
+  FaCircleUser,
 } from "react-icons/fa6";
 
 function App() {
@@ -542,6 +543,10 @@ function App() {
               isLoggedIn ? openModal(3) : openModal(4);
             }}
           ></FaChartSimple>
+          <FaCircleUser className="app__icon"
+            onClick={() => {
+              openModal(4);
+            }}/>
           <FaGear
             className="app__icon"
             onClick={() => {
