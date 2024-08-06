@@ -28,7 +28,7 @@ function LoginContent() {
       const { refreshToken } = JSON.parse(storedAuthTokenString)
       const reqBody = { refreshToken: refreshToken}
     try {
-      const response = await axios.post(
+      await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/logout`,
         reqBody
       );

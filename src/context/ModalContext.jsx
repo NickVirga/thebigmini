@@ -4,8 +4,8 @@ const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
 
-  const [modalMode, setModalMode] = useState(0);
-
+  const [modalMode, setModalMode] = useState(0); 
+  
   const updateModalMode = (newModalMode) => {
     setModalMode(newModalMode);
   };

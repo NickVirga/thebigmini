@@ -6,9 +6,11 @@ import ClueList from "./components/ClueList/ClueList";
 import Keyboard from "./components/Keyboard/Keyboard";
 import { GameDataContext } from "./context/GameDataContext";
 import { ModalContext } from "./context/ModalContext";
+import { AuthContext } from "./context/AuthContext";
 import "./styles/partials/_global.scss";
 import cluesData from "./assets/data/clue-data.json";
 import logo from "./assets/images/bigmini-logo.png";
+import axios from 'axios'
 
 import {
   FaGear,
@@ -22,8 +24,7 @@ import {
 function App() {
   const { gameData, updateGameData } = useContext(GameDataContext);
   const { updateModalMode } = useContext(ModalContext);
-
-  const isLoggedIn = false;
+  const { loggedIn } = useContext(AuthContext);
 
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
   const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
@@ -412,6 +413,7 @@ function App() {
 
     if (!emptyDetected) {
       if (!incorrectDetected) {
+        console.log(calculateScore())
         updateGameData({
           ...gameData,
           winState: true,
@@ -482,6 +484,34 @@ function App() {
     }
   };
 
+  const calculateScore = () => {
+
+    let scoreNumerator = numRows*numCols
+
+    gameData.cells.forEach(cell => {
+      scoreNumerator += cell.revealed ? -1 : cell.checked ? -0.5 : 0
+    })
+
+    return scoreNumerator / (numRows*numCols) * 100
+
+  }
+
+  const sendGameScore = async () => {
+    const reqBody = { gameId: gameData.gameId, gameScore: calculateScore() }
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/api/games`,
+        reqBody
+      );
+
+
+    } catch (err) {
+      console.error(err)
+    }
+
+
+  }
+ 
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
@@ -526,7 +556,7 @@ function App() {
         gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
       }`}
     >
-      <Modal open={modalOpen} onClose={handleCloseModal}></Modal>
+      <Modal open={modalOpen} onClose={handleCloseModal} />
       <header className="app__header">
         <h1 className="app__title">The BIGmini Crossword</h1>
         <img src={logo} className="app__logo" alt="logo" />
@@ -536,23 +566,25 @@ function App() {
             onClick={() => {
               openModal(0);
             }}
-          ></FaRegCircleQuestion>
+          />
           <FaChartSimple
             className="app__icon"
             onClick={() => {
-              isLoggedIn ? openModal(3) : openModal(4);
+              loggedIn ? openModal(3) : openModal(4);
             }}
-          ></FaChartSimple>
-          <FaCircleUser className="app__icon"
+          />
+          <FaCircleUser
+            className="app__icon"
             onClick={() => {
               openModal(4);
-            }}/>
+            }}
+          />
           <FaGear
             className="app__icon"
             onClick={() => {
               openModal(1);
             }}
-          ></FaGear>
+          />
         </div>
       </header>
       <div className="app__container">
@@ -671,13 +703,13 @@ function App() {
                 isSelected={isSelected(cell.index)}
                 isHighlighted={isHighlighted(cell.index)}
                 handleClickCell={handleClickCell}
-              ></Cell>
+              />
             ))}
           </div>
           <ClueList
             cluesData={cluesData}
             getCellsInClue={getCellsInClue}
-          ></ClueList>
+          />
         </div>
         <div className="app__clue-container">
           <FaAngleLeft
@@ -685,7 +717,7 @@ function App() {
             onClick={() => {
               shiftClueSelection(-1);
             }}
-          ></FaAngleLeft>
+          />
           <span
             className="app__clue-text"
             onClick={() => {
@@ -701,12 +733,12 @@ function App() {
             onClick={() => {
               shiftClueSelection(1);
             }}
-          ></FaAngleRight>
+          />
         </div>
         <Keyboard
           handleKeyClick={handleKeyDown}
           handleCheckReveal={checkRevealIndices}
-        ></Keyboard>
+        />
       </div>
       <input
         className="app__input-overlay"
