@@ -2,51 +2,43 @@ import "./LoginContent.scss";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { GoogleLogin } from "@react-oauth/google";
-import axios from 'axios';
+import { ModalContext } from "../../context/ModalContext";
 
-function LoginContent() {
-  const { loggedIn, updateLoggedIn } = useContext(AuthContext);
-
+function LoginContent({ onClose }) {
+  const { login, logout, accessToken } = useContext(AuthContext);
+  const { updateModalMode, redirectMode, updateRedirectMode } = useContext(ModalContext);
 
   const sendLogin = async (response) => {
-    const reqBody = { idToken: response.credential }
     try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/login/google`,
-        reqBody
-      );
-      const { accessToken, refreshToken } = response.data
-      localStorage.setItem("authTokens", JSON.stringify({ accessToken: accessToken, refreshToken: refreshToken }))
-      updateLoggedIn(true)
+      await login({ idToken: response.credential })
+
+      if (redirectMode === 3) {
+        updateRedirectMode(null)
+        updateModalMode(3)
+      } else {
+        onClose()
+      }
     } catch (err) {
-      console.error(err)
+      console.error('Failed to login:', err);
     }
   };
 
   const sendLogout = async () => {
-      const storedAuthTokenString = localStorage.getItem("authTokens")
-      const { refreshToken } = JSON.parse(storedAuthTokenString)
-      const reqBody = { refreshToken: refreshToken}
     try {
-      await axios.post(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/logout`,
-        reqBody
-      );
-      localStorage.removeItem("authTokens")
-      updateLoggedIn(false)
+      await logout()
     } catch(err) {
-      console.error(err)
+      console.error('Failed to logout:', err);
     }
   }
 
 
   return (
     <div className="login">
-      <h2 className="login__title">{`${loggedIn ? 'Log out of all devices:' : 'Save your stats by signing in!'}`}</h2>
-      {!loggedIn && <GoogleLogin
+      <h2 className="login__title">{`${accessToken ? 'Log out of all devices:' : 'Save your stats by signing in!'}`}</h2>
+      {!accessToken && <GoogleLogin
         onSuccess={sendLogin}
       />}
-      {loggedIn && <p className="login__create-btn button" onClick={sendLogout}>Logout</p>}
+      {accessToken && <p className="login__logout-btn button" onClick={sendLogout}>Logout</p>}
     </div>
   );
 }

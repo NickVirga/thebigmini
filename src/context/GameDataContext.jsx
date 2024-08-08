@@ -28,7 +28,7 @@ const GameDataProvider = ({ children }) => {
   };
 
   return (
-    <GameDataContext.Provider value={{ gameData, updateGameData, tempGameData, setTempGameData }}>
+    <GameDataContext.Provider value={{ gameData, updateGameData, tempGameData, updateTempGameData }}>
       {children}
     </GameDataContext.Provider>
   );

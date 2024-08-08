@@ -10,7 +10,7 @@ import { AuthContext } from "./context/AuthContext";
 import "./styles/partials/_global.scss";
 import cluesData from "./assets/data/clue-data.json";
 import logo from "./assets/images/bigmini-logo.png";
-import axios from 'axios'
+import axios from "axios";
 
 import {
   FaGear,
@@ -22,9 +22,10 @@ import {
 } from "react-icons/fa6";
 
 function App() {
-  const { gameData, updateGameData } = useContext(GameDataContext);
-  const { updateModalMode } = useContext(ModalContext);
-  const { loggedIn } = useContext(AuthContext);
+  const { gameData, updateGameData, updateTempGameData } =
+    useContext(GameDataContext);
+  const { updateModalMode, updateRedirectMode } = useContext(ModalContext);
+  const { accessToken } = useContext(AuthContext);
 
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
   const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
@@ -413,7 +414,13 @@ function App() {
 
     if (!emptyDetected) {
       if (!incorrectDetected) {
-        console.log(calculateScore())
+        const gameResults = calculateScore();
+        if (accessToken) sendGameScore(gameResults.score);
+        updateTempGameData({ gameScore: gameResults.score,
+          lettersChecked: gameResults.checkedCnt,
+          lettersRevealed: gameResults.revealedCnt
+        })
+
         updateGameData({
           ...gameData,
           winState: true,
@@ -485,33 +492,53 @@ function App() {
   };
 
   const calculateScore = () => {
+    let scoreNumerator = numRows * numCols;
+    let checkedCnt = 0;
+    let revealedCnt = 0;
 
-    let scoreNumerator = numRows*numCols
+    gameData.cells.forEach((cell) => {
+      if (cell.revealed) {
+        revealedCnt++;
+        scoreNumerator -= 1;
 
-    gameData.cells.forEach(cell => {
-      scoreNumerator += cell.revealed ? -1 : cell.checked ? -0.5 : 0
-    })
+        if (cell.checked) {
+          checkedCnt++;
+        }
+      } else {
+        if (cell.checked) {
+          checkedCnt++;
+          scoreNumerator -= 0.5;
+        }
+      }
 
-    return scoreNumerator / (numRows*numCols) * 100
+    });
 
-  }
+    const score = (scoreNumerator / (numRows * numCols)) * 100;
 
-  const sendGameScore = async () => {
-    const reqBody = { gameId: gameData.gameId, gameScore: calculateScore() }
+    return { score: score, checkedCnt: checkedCnt, revealedCnt: revealedCnt };
+  };
+
+  const sendGameScore = async (score) => {
+    const reqBody = { gameId: gameData.gameId, gameScore: score };
+
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/games`,
-        reqBody
+        reqBody,
+        {
+          headers: {
+            Authorization: `Bearer ${
+              accessToken
+            }`,
+          },
+        }
       );
-
-
+      console.log(response);
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
+  };
 
-
-  }
- 
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
@@ -570,7 +597,12 @@ function App() {
           <FaChartSimple
             className="app__icon"
             onClick={() => {
-              loggedIn ? openModal(3) : openModal(4);
+              if (accessToken) {
+                openModal(3)
+              } else {
+                updateRedirectMode(3)
+                openModal(4)
+              }
             }}
           />
           <FaCircleUser
@@ -706,10 +738,7 @@ function App() {
               />
             ))}
           </div>
-          <ClueList
-            cluesData={cluesData}
-            getCellsInClue={getCellsInClue}
-          />
+          <ClueList cluesData={cluesData} getCellsInClue={getCellsInClue} />
         </div>
         <div className="app__clue-container">
           <FaAngleLeft

@@ -11,7 +11,7 @@
     margin: 3.5rem 0 2rem 0;
   }
 
-  &__create-btn {
+  &__logout-btn {
     background-color: var(--background-color);
     padding: 0.75rem 2rem;
     border-radius: 1rem;
@@ -20,8 +20,4 @@
     cursor: pointer;
   }
 
-  &__link {
-    text-decoration: underline;
-    cursor: pointer;
-  }
 }
