@@ -6,9 +6,11 @@ import ClueList from "./components/ClueList/ClueList";
 import Keyboard from "./components/Keyboard/Keyboard";
 import { GameDataContext } from "./context/GameDataContext";
 import { ModalContext } from "./context/ModalContext";
+import { AuthContext } from "./context/AuthContext";
 import "./styles/partials/_global.scss";
 import cluesData from "./assets/data/clue-data.json";
 import logo from "./assets/images/bigmini-logo.png";
+import axios from "axios";
 
 import {
   FaGear,
@@ -16,13 +18,14 @@ import {
   FaChartSimple,
   FaAngleLeft,
   FaAngleRight,
+  FaCircleUser,
 } from "react-icons/fa6";
 
 function App() {
-  const { gameData, updateGameData } = useContext(GameDataContext);
-  const { updateModalMode } = useContext(ModalContext);
-
-  const isLoggedIn = false;
+  const { gameData, updateGameData, updateTempGameData } =
+    useContext(GameDataContext);
+  const { updateModalMode, updateRedirectMode } = useContext(ModalContext);
+  const { accessToken } = useContext(AuthContext);
 
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
   const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
@@ -411,6 +414,13 @@ function App() {
 
     if (!emptyDetected) {
       if (!incorrectDetected) {
+        const gameResults = calculateScore();
+        if (accessToken) sendGameScore(gameResults.score);
+        updateTempGameData({ gameScore: gameResults.score,
+          lettersChecked: gameResults.checkedCnt,
+          lettersRevealed: gameResults.revealedCnt
+        })
+
         updateGameData({
           ...gameData,
           winState: true,
@@ -481,6 +491,54 @@ function App() {
     }
   };
 
+  const calculateScore = () => {
+    let scoreNumerator = numRows * numCols;
+    let checkedCnt = 0;
+    let revealedCnt = 0;
+
+    gameData.cells.forEach((cell) => {
+      if (cell.revealed) {
+        revealedCnt++;
+        scoreNumerator -= 1;
+
+        if (cell.checked) {
+          checkedCnt++;
+        }
+      } else {
+        if (cell.checked) {
+          checkedCnt++;
+          scoreNumerator -= 0.5;
+        }
+      }
+
+    });
+
+    const score = (scoreNumerator / (numRows * numCols)) * 100;
+
+    return { score: score, checkedCnt: checkedCnt, revealedCnt: revealedCnt };
+  };
+
+  const sendGameScore = async (score) => {
+    const reqBody = { gameId: gameData.gameId, gameScore: score };
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/api/games`,
+        reqBody,
+        {
+          headers: {
+            Authorization: `Bearer ${
+              accessToken
+            }`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
@@ -525,7 +583,7 @@ function App() {
         gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
       }`}
     >
-      <Modal open={modalOpen} onClose={handleCloseModal}></Modal>
+      <Modal open={modalOpen} onClose={handleCloseModal} />
       <header className="app__header">
         <h1 className="app__title">The BIGmini Crossword</h1>
         <img src={logo} className="app__logo" alt="logo" />
@@ -535,19 +593,30 @@ function App() {
             onClick={() => {
               openModal(0);
             }}
-          ></FaRegCircleQuestion>
+          />
           <FaChartSimple
             className="app__icon"
             onClick={() => {
-              isLoggedIn ? openModal(3) : openModal(4);
+              if (accessToken) {
+                openModal(3)
+              } else {
+                updateRedirectMode(3)
+                openModal(4)
+              }
             }}
-          ></FaChartSimple>
+          />
+          <FaCircleUser
+            className="app__icon"
+            onClick={() => {
+              openModal(4);
+            }}
+          />
           <FaGear
             className="app__icon"
             onClick={() => {
               openModal(1);
             }}
-          ></FaGear>
+          />
         </div>
       </header>
       <div className="app__container">
@@ -666,13 +735,10 @@ function App() {
                 isSelected={isSelected(cell.index)}
                 isHighlighted={isHighlighted(cell.index)}
                 handleClickCell={handleClickCell}
-              ></Cell>
+              />
             ))}
           </div>
-          <ClueList
-            cluesData={cluesData}
-            getCellsInClue={getCellsInClue}
-          ></ClueList>
+          <ClueList cluesData={cluesData} getCellsInClue={getCellsInClue} />
         </div>
         <div className="app__clue-container">
           <FaAngleLeft
@@ -680,7 +746,7 @@ function App() {
             onClick={() => {
               shiftClueSelection(-1);
             }}
-          ></FaAngleLeft>
+          />
           <span
             className="app__clue-text"
             onClick={() => {
@@ -696,12 +762,12 @@ function App() {
             onClick={() => {
               shiftClueSelection(1);
             }}
-          ></FaAngleRight>
+          />
         </div>
         <Keyboard
           handleKeyClick={handleKeyDown}
           handleCheckReveal={checkRevealIndices}
-        ></Keyboard>
+        />
       </div>
       <input
         className="app__input-overlay"

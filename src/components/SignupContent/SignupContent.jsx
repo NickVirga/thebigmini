@@ -1,6 +1,6 @@
 import "./SignupContent.scss";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import { FaCircleExclamation, FaCircleCheck } from "react-icons/fa6";
 
@@ -18,7 +18,7 @@ function SignupContent() {
 
   const [submitMsgEnabled, setSubmitMsgEnabled] = useState(false);
   const [submitErrorEnabled, setSubmitErrorEnabled] = useState(false);
-  const [submitMsg, setSubmitMsg] = useState("")
+  const [submitMsg, setSubmitMsg] = useState("");
 
   const handleEmailChange = (e) => {
     const emailValue = e.target.value;
@@ -31,7 +31,7 @@ function SignupContent() {
   const handleEditEmail = () => {
     setEmailAccepted(false);
     setPasswordAccepted(false);
-    setPasswordInput("")
+    setPasswordInput("");
     setPasswordErrorEnabled(false);
     resetSubmitMsg();
   };
@@ -87,17 +87,16 @@ function SignupContent() {
   };
 
   const resetSubmitMsg = () => {
-    setSubmitMsgEnabled(false)
-    setSubmitErrorEnabled(false)
-    setSubmitMsg("")
-  }
+    setSubmitMsgEnabled(false);
+    setSubmitErrorEnabled(false);
+    setSubmitMsg("");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (submitMsgEnabled) {
       resetSubmitMsg();
-
     } else {
       if (!emailAccepted) {
         if (emailInvalid) {
@@ -107,8 +106,8 @@ function SignupContent() {
         }
       } else {
         if (passwordIsValid(passwordInput)) {
-          const reqBody = { email: emailInput, password: passwordInput}
-          sendSignup(reqBody)
+          const reqBody = { email: emailInput, password: passwordInput };
+          sendSignup(reqBody);
           setPasswordAccepted(true);
         } else {
           setPasswordErrorEnabled(true);
@@ -117,22 +116,23 @@ function SignupContent() {
     }
   };
 
-  const sendSignup = async (reqBody) =>  {
+  const sendSignup = async (reqBody) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/signup`, reqBody)
-      setSubmitMsg(response.data.message)
-      setSubmitMsgEnabled(true)
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/signup`,
+        reqBody
+      );
+      setSubmitMsg(response.data.message);
+      setSubmitMsgEnabled(true);
     } catch (err) {
-      setSubmitMsg(err.response?.data?.message || 'Signup failed')
-      setSubmitMsgEnabled(true)
-      setSubmitErrorEnabled(true)
-      setPasswordInput("")
+      setSubmitMsg(err.response?.data?.message || "Signup failed");
+      setSubmitMsgEnabled(true);
+      setSubmitErrorEnabled(true);
+      setPasswordInput("");
       setEmailAccepted(false);
       setPasswordAccepted(false);
     }
-    
-  }
-
+  };
 
   return (
     <div className="signup">
@@ -218,18 +218,36 @@ function SignupContent() {
           </div>
         )}
         {submitMsgEnabled && (
-            <div className={`signup__notification-wrapper ${submitErrorEnabled ? "signup__notification-wrapper--error" : "signup__notification-wrapper--success"}`}>
-              {submitErrorEnabled && <FaCircleExclamation className="signup__notification-icon signup__notification-icon--error"></FaCircleExclamation>}
-              {!submitErrorEnabled && <FaCircleCheck className="signup__notification-icon signup__notification-icon--success"></FaCircleCheck>}
-              <span className={`signup__notification-msg ${submitErrorEnabled ? "signup__notification-msg--error" : "signup__notification-msg--success"}`}>
-                {submitMsg}
-              </span>
-            </div>
-          )}
+          <div
+            className={`signup__notification-wrapper ${
+              submitErrorEnabled
+                ? "signup__notification-wrapper--error"
+                : "signup__notification-wrapper--success"
+            }`}
+          >
+            {submitErrorEnabled && (
+              <FaCircleExclamation className="signup__notification-icon signup__notification-icon--error"></FaCircleExclamation>
+            )}
+            {!submitErrorEnabled && (
+              <FaCircleCheck className="signup__notification-icon signup__notification-icon--success"></FaCircleCheck>
+            )}
+            <span
+              className={`signup__notification-msg ${
+                submitErrorEnabled
+                  ? "signup__notification-msg--error"
+                  : "signup__notification-msg--success"
+              }`}
+            >
+              {submitMsg}
+            </span>
+          </div>
+        )}
 
-        {!passwordAccepted && <button className="signup__submit-btn" type="submit">
-          Continue
-        </button>}
+        {!passwordAccepted && (
+          <button className="signup__submit-btn" type="submit">
+            Continue
+          </button>
+        )}
       </form>
     </div>
   );

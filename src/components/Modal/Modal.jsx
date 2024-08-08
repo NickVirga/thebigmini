@@ -40,7 +40,7 @@ function Modal({ open, onClose }) {
           {modalMode === 1 && <SettingsContent></SettingsContent>}
           {modalMode === 2 && <ResultsContent></ResultsContent>}
           {modalMode === 3 && <StatsContent></StatsContent>}
-          {modalMode === 4 && <LoginContent></LoginContent>}
+          {modalMode === 4 && <LoginContent onClose={onClose}></LoginContent>}
           {modalMode === 5 && <SignupContent></SignupContent>}
           <div className="modal__close-icon-wrapper">
             <FaX onClick={onClose} className="modal__close-icon"></FaX>
