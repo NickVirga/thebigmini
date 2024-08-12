@@ -10,11 +10,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId="841485237403-uqi9le4vdf33n3kaaot98lt4c7lsjak9.apps.googleusercontent.com">
       <AuthProvider>
-        <ModalProvider>
-          <GameDataProvider>
+        <GameDataProvider>
+          <ModalProvider>
             <App />
-          </GameDataProvider>
-        </ModalProvider>
+          </ModalProvider>
+        </GameDataProvider>
       </AuthProvider>
     </GoogleOAuthProvider>
   </React.StrictMode>
