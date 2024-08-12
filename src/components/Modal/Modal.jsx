@@ -12,8 +12,18 @@ import SignupContent from "../SignupContent/SignupContent";
 
 import { FaX } from "react-icons/fa6";
 
-function Modal({ open, onClose }) {
-  if (!open) return null;
+function Modal() {
+  const { gameData, updateGameData } = useContext(GameDataContext);
+
+  const { modalOpen, updateModalOpen, modalMode } = useContext(ModalContext);
+
+  const handleCloseModal = () => {
+    updateModalOpen(false);
+    updateGameData({ ...gameData, playedBefore: true });
+  };
+
+
+  if (!modalOpen) return null;
 
   const portalContainer = document.getElementById("portal");
 
@@ -21,13 +31,9 @@ function Modal({ open, onClose }) {
     return null;
   }
 
-  const { gameData } = useContext(GameDataContext);
-
-  const { modalMode } = useContext(ModalContext);
-
   return ReactDom.createPortal(
     <>
-      <div className="modal__overlay" onClick={onClose}>
+      <div className="modal__overlay" onClick={handleCloseModal}>
         {" "}
       </div>
       <div className="modal__wrapper">
@@ -40,10 +46,10 @@ function Modal({ open, onClose }) {
           {modalMode === 1 && <SettingsContent></SettingsContent>}
           {modalMode === 2 && <ResultsContent></ResultsContent>}
           {modalMode === 3 && <StatsContent></StatsContent>}
-          {modalMode === 4 && <LoginContent onClose={onClose}></LoginContent>}
+          {modalMode === 4 && <LoginContent onClose={handleCloseModal}></LoginContent>}
           {modalMode === 5 && <SignupContent></SignupContent>}
           <div className="modal__close-icon-wrapper">
-            <FaX onClick={onClose} className="modal__close-icon"></FaX>
+            <FaX onClick={handleCloseModal} className="modal__close-icon"></FaX>
           </div>
         </div>
       </div>
