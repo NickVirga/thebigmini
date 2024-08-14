@@ -21,7 +21,7 @@ function PrivacyPolicyPage() {
               </li>
               <li className="privacy__item">
                 Your game statistics, if you choose to have them tracked, are
-                stored in our database based on your authentication identity
+                stored in our database based on your authentication identity and email
                 relayed to us via third-party authentication.
               </li>
               <li className="privacy__item">
