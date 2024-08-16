@@ -1,7 +1,7 @@
 {
   "gameId": 0,
   "darkThemeEnabled": true,
-  "playedBefore": true,
+  "playedBefore": false,
   "numRows": 15,
   "numCols": 15,
   "winState": false,

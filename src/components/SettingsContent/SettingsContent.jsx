@@ -12,6 +12,21 @@ function SettingsContent() {
     });
   };
 
+  const handleResetClick = () => {
+    const updatedCells = gameData.cells.map((cell) => ({
+      ...cell,
+      value: "",
+      incorrectFlag: false,
+      revealed: false,
+    }));
+
+    updateGameData({
+      ...gameData,
+      winState: false,
+      cells: updatedCells,
+    });
+  };
+
   return (
     <>
       <h2 className="settings__title">Settings</h2>
@@ -24,6 +39,12 @@ function SettingsContent() {
             checked={gameData.darkThemeEnabled}
             onChange={toggleDarkTheme}
           ></input>
+        </li>
+        <li className="settings__item">
+          <h3 className="settings__option">Reset Game:</h3>
+          <div className="button" onClick={handleResetClick}>
+            Reset
+          </div>
         </li>
       </ul>
     </>

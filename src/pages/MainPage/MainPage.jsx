@@ -6,7 +6,6 @@ import Keyboard from "../../components/Keyboard/Keyboard";
 import { GameDataContext } from "../../context/GameDataContext";
 import { ModalContext } from "../../context/ModalContext";
 import { AuthContext } from "../../context/AuthContext";
-// import "./styles/partials/_global.scss";
 import cluesData from "../../assets/data/clue-data.json";
 import axios from "axios";
 
