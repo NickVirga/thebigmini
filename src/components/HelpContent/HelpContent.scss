@@ -8,7 +8,7 @@
     }
 
     &__list {
-        list-style-type: circle;
+        list-style-type: disc;
         margin: 1rem;
         list-style-position: inside;
     }
@@ -38,5 +38,35 @@
             margin-left: 2rem;
         }
     }
+    
+    &__tooltip{
+        font-size: 0.8rem;
+        margin-left: 1.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        cursor: pointer;
+    }
+
+    &__tooltip-text {
+        color: rgb(225, 225, 225);
+    }
+
+    &__tooltip-icon {
+        color: rgb(150, 150, 150);
+    }
+
+    &__login{
+        margin-top: 1rem;
+        margin-right: 2rem;
+        text-decoration: underline;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover {
+            color: rgb(170, 170, 170);
+        }
+    }
+
 
 }
