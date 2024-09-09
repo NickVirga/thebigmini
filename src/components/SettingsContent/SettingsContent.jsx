@@ -3,27 +3,12 @@ import { useContext } from "react";
 import { GameDataContext } from "../../context/GameDataContext";
 
 function SettingsContent() {
-  const { gameData, updateGameData } = useContext(GameDataContext);
+  const { gameData, updateGameData, resetGameData } = useContext(GameDataContext);
 
   const toggleDarkTheme = () => {
     updateGameData({
       ...gameData,
       darkThemeEnabled: !gameData.darkThemeEnabled,
-    });
-  };
-
-  const handleResetClick = () => {
-    const updatedCells = gameData.cells.map((cell) => ({
-      ...cell,
-      value: "",
-      incorrectFlag: false,
-      revealed: false,
-    }));
-
-    updateGameData({
-      ...gameData,
-      winState: false,
-      cells: updatedCells,
     });
   };
 
@@ -42,7 +27,7 @@ function SettingsContent() {
         </li>
         <li className="settings__item">
           <h3 className="settings__option">Reset Game:</h3>
-          <div className="button" onClick={handleResetClick}>
+          <div className="button" onClick={resetGameData}>
             Reset
           </div>
         </li>
