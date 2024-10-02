@@ -1,5 +1,5 @@
 {
-  "gameId": 0,
+  "gameId": 1,
   "darkThemeEnabled": true,
   "playedBefore": false,
   "numRows": 15,
@@ -7,7 +7,7 @@
   "winState": false,
   "magnified": false,
   "selected": {
-    "initCellsIndex": 1,
+    "initCellsIndex": 0,
     "cellsIndex": null,
     "cellsInClue": [],
     "cluesIndex": 0,

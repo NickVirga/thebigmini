@@ -98,7 +98,7 @@ function MainPage() {
   };
 
   const isHighlighted = (cellsIndex) => {
-    if (!gameData.selected.cellsIndex) return false;
+    if (gameData.selected.cellsIndex === null) return false;
     return gameData.selected.cellsInClue.includes(cellsIndex);
   };
 
