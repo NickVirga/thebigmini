@@ -22,8 +22,10 @@ const GameDataProvider = ({ children }) => {
     if (storedGameData.gameId === gameDataTemplate.gameId) {
       initialGameData = storedGameData; // Use the stored game data
     } else {
-      localStorage.removeItem("bigmini-game-data"); // Clear localStorage if IDs don't match
       initialGameData = gameDataTemplate; // Use the template data
+      initialGameData.darkThemeEnabled = storedGameData.darkThemeEnabled
+      initialGameData.playedBefore = storedGameData.playedBefore
+      localStorage.removeItem("bigmini-game-data"); // Clear localStorage if IDs don't match
     }
   } else {
     initialGameData = gameDataTemplate; // No data in localStorage, use the template
