@@ -8,6 +8,10 @@
   border-bottom: solid 1px;
   height: 5rem;
 
+  &--center {
+    justify-content: center;
+  }
+
   &__title {
     position: absolute;
     width: 1px;
@@ -21,7 +25,7 @@
 
   &__logo {
     height: 50px;
-    display: block;
+    display: block;    
   }
 
   &__icons {
