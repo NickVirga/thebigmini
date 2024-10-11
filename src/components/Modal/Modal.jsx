@@ -17,9 +17,9 @@ function Modal() {
 
   const { modalOpen, updateModalOpen, modalMode } = useContext(ModalContext);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = (isFromHelp) => {
     updateModalOpen(false);
-    updateGameData({ ...gameData, playedBefore: true });
+    if (isFromHelp) updateGameData({ ...gameData, playedBefore: true });
   };
 
 
@@ -33,7 +33,7 @@ function Modal() {
 
   return ReactDom.createPortal(
     <>
-      <div className="modal__overlay" onClick={handleCloseModal}>
+      <div className="modal__overlay" onClick={()=>{handleCloseModal(modalMode === 0)}}>
         {" "}
       </div>
       <div className="modal__wrapper">
@@ -49,7 +49,7 @@ function Modal() {
           {modalMode === 4 && <LoginContent onClose={handleCloseModal}></LoginContent>}
           {modalMode === 5 && <SignupContent></SignupContent>}
           <div className="modal__close-icon-wrapper">
-            <FaX onClick={handleCloseModal} className="modal__close-icon"></FaX>
+            <FaX onClick={()=>{handleCloseModal(modalMode === 0)}} className="modal__close-icon"></FaX>
           </div>
         </div>
       </div>

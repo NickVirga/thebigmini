@@ -15,7 +15,7 @@ function MainPage() {
   const { gameData, updateGameData, updateTempGameData } =
     useContext(GameDataContext);
   const { updateModalOpen, updateModalMode } = useContext(ModalContext);
-  const { accessToken } = useContext(AuthContext);
+  const { accessToken} = useContext(AuthContext);
 
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
   const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
