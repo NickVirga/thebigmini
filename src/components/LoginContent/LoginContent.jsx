@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { GoogleLogin } from "@react-oauth/google";
 import { ModalContext } from "../../context/ModalContext";
 
-import { FaXTwitter, FaFacebook } from "react-icons/fa6";
+import { FaXTwitter, FaFacebook, FaDiscord } from "react-icons/fa6";
 
 import { FcGoogle } from "react-icons/fc";
 
@@ -89,6 +89,15 @@ function LoginContent({ onClose }) {
               <FaFacebook className="auth__btn-icon auth__btn-icon--facebook" />
             </div>
             <span className="auth__login-text"> Sign in with Facebook</span>
+          </li>
+          <li
+            className="auth__login-btn auth__login-btn--discord"
+            onClick={() => handleLogin("/api/auth/discord")}
+          >
+            <div className="auth__btn-icon-wrapper">
+              <FaDiscord className="auth__btn-icon auth__btn-icon--discord" />
+            </div>
+            <span className="auth__login-text"> Sign in with Discord</span>
           </li>
         </ul>
       )}

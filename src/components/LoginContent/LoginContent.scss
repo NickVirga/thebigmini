@@ -46,6 +46,10 @@
       background-color: rgb(8, 102, 255);
     }
 
+    &--discord {
+      background-color: #5865F2;
+    }
+
     &:hover {
       box-shadow: 0 0 10px 0px rgba(103, 159, 250, 0.6);
     }
@@ -82,6 +86,12 @@
 
     &--facebook {
       color: rgb(8, 102, 255);
+    }
+
+    &--discord {
+      color: white;
+      background-color: #5865F2;
+      border-radius: 50%;
     }
   }
 }
