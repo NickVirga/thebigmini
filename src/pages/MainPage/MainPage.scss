@@ -116,6 +116,10 @@
           @include tablet {
             transform: scale(2);
           }
+
+          @include desktop {
+            transform: scale(1);
+          }
           
         }
     

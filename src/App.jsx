@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
+import Confirm from "./components/Confirm/Confirm"
 import MainPage from "./pages/MainPage/MainPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage/PrivacyPolicyPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
@@ -23,6 +24,7 @@ function App() {
         }`}
       >
         <Modal />
+        <Confirm />
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />

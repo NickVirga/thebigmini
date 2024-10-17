@@ -25,12 +25,13 @@ body,
 
 .button {
   background-color: var(--button-background-color);
-  color: var(--button-text-color);
+  color: rgb(27, 27, 27);
   border-radius: 0.25rem;
-  display: inline-block;
   padding: 0.5rem 1rem;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: lightgrey;
