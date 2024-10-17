@@ -11,6 +11,8 @@ const ModalProvider = ({ children }) => {
   const [modalMode, setModalMode] = useState(0);
   const [redirectMode, setRedirectMode] = useState(null);
 
+  // const [confirmOpen, setConfirmOpen ] = useState
+
   const updateModalOpen = (newModalOpen) => {
     setModalOpen(newModalOpen);
   };

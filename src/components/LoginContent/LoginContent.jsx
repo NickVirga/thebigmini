@@ -1,7 +1,6 @@
 import "./LoginContent.scss";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { GoogleLogin } from "@react-oauth/google";
 import { ModalContext } from "../../context/ModalContext";
 
 import { FaXTwitter, FaFacebook, FaDiscord } from "react-icons/fa6";
@@ -60,7 +59,6 @@ function LoginContent({ onClose }) {
           ? "Log out of all devices:"
           : "Save your stats by signing in!"
       }`}</h2>
-      {/* {!accessToken && <GoogleLogin onSuccess={sendLogin} />} */}
       {!accessToken && (
         <ul className="auth__login-list">
           <li
@@ -72,7 +70,7 @@ function LoginContent({ onClose }) {
             </div>
             <span className="auth__login-text"> Sign in with Google</span>
           </li>
-          <li
+          {/* <li
             className="auth__login-btn auth__login-btn--x"
             onClick={() => handleLogin("/api/auth/twitter")}
           >
@@ -80,7 +78,7 @@ function LoginContent({ onClose }) {
               <FaXTwitter className="auth__btn-icon" />
             </div>
             <span className="auth__login-text">Sign in with X</span>
-          </li>
+          </li> */}
           <li
             className="auth__login-btn auth__login-btn--facebook"
             onClick={() => handleLogin("/api/auth/facebook")}

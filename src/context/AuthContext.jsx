@@ -12,10 +12,6 @@ const AuthProvider = ({ children }) => {
     localStorage.setItem("authTokens", JSON.stringify(tokens));
     setAccessToken(tokens.accessToken);
     setRefreshToken(tokens.refreshToken);
-
-    // axios.defaults.headers.common[
-    //   "Authorization"
-    // ] = `Bearer ${tokens.accessToken}`; //maybe unneeded
   };
 
   const logout = async () => {
@@ -23,7 +19,6 @@ const AuthProvider = ({ children }) => {
       localStorage.removeItem("authTokens");
       setAccessToken(null);
       setRefreshToken(null);
-      // delete axios.defaults.headers.common["Authorization"]; //maybe unneeded
       await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/logout`,
         { refreshToken }

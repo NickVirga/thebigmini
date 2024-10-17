@@ -23,8 +23,8 @@ const GameDataProvider = ({ children }) => {
       initialGameData = storedGameData; // Use the stored game data
     } else {
       initialGameData = gameDataTemplate; // Use the template data
-      initialGameData.darkThemeEnabled = storedGameData.darkThemeEnabled
-      initialGameData.playedBefore = storedGameData.playedBefore
+      initialGameData.darkThemeEnabled = storedGameData.darkThemeEnabled;
+      initialGameData.playedBefore = storedGameData.playedBefore;
       localStorage.removeItem("bigmini-game-data"); // Clear localStorage if IDs don't match
     }
   } else {
@@ -54,7 +54,7 @@ const GameDataProvider = ({ children }) => {
   };
 
   const resetGameData = () => {
-    setGameData({ ...gameData, cells: puzzleCellsData });
+    setGameData({ ...gameData, winState: false, cells: puzzleCellsData });
   };
 
   return (

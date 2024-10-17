@@ -3,6 +3,7 @@ import "./MainPage.scss";
 import Cell from "../../components/Cell/Cell";
 import ClueList from "../../components/ClueList/ClueList";
 import Keyboard from "../../components/Keyboard/Keyboard";
+import Confirm from "../../components/Confirm/Confirm";
 import { GameDataContext } from "../../context/GameDataContext";
 import { ModalContext } from "../../context/ModalContext";
 import { AuthContext } from "../../context/AuthContext";
@@ -15,8 +16,9 @@ function MainPage() {
   const { gameData, updateGameData, updateTempGameData } =
     useContext(GameDataContext);
   const { updateModalOpen, updateModalMode } = useContext(ModalContext);
-  const { accessToken} = useContext(AuthContext);
+  const { accessToken } = useContext(AuthContext);
 
+  const [confirmIsOpen, setConfirmIsOpen] = useState(false);
   const [checkMenuIsVisible, setCheckMenuIsVisible] = useState(false);
   const [revealMenuIsVisible, setRevealMenuIsVisible] = useState(false);
   const checkMenuRef = useRef(null);
@@ -456,6 +458,17 @@ function MainPage() {
     });
   };
 
+  const handleConfirmResponse = (confirmed) => {
+    if (confirmed) {
+      checkRevealIndices(
+        Array.from({ length: gameData.cells.length }, (_, index) => index),
+        true
+      );
+    }
+
+    setConfirmIsOpen(false);
+  };
+
   const handleClickOutside = (event) => {
     if (checkMenuRef.current && !checkMenuRef.current.contains(event.target)) {
       setCheckMenuIsVisible(false);
@@ -553,6 +566,11 @@ function MainPage() {
 
   return (
     <>
+      <Confirm
+        isOpen={confirmIsOpen}
+        onConfirm={handleConfirmResponse}
+        message={"Are you sure you want to reveal the entire puzzle?"}
+      />
       <div className="main__container">
         <ul className="main__control-bar">
           <li className="main__control-item" ref={checkMenuRef}>
@@ -638,13 +656,7 @@ function MainPage() {
                 <li
                   className="main__dropdown-item"
                   onClick={() => {
-                    checkRevealIndices(
-                      Array.from(
-                        { length: gameData.cells.length },
-                        (_, index) => index
-                      ),
-                      true
-                    );
+                    setConfirmIsOpen(true);
                     setRevealMenuIsVisible(false);
                   }}
                 >
