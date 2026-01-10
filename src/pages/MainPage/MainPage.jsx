@@ -116,7 +116,7 @@ function MainPage() {
 
   const shiftClueSelection = (stepSize) => {
     const currClueNum = gameData.selected.clueNum;
-    const cluesList = cluesData.clues;
+    const cluesList = cluesData;
 
     if (stepSize >= cluesList.length) return;
 
@@ -132,7 +132,7 @@ function MainPage() {
       nextClueNum = cluesList.length - 1; //go to last
     }
 
-    const nextCluesIndex = cluesData.clues[nextClueNum].cluesIndex;
+    const nextCluesIndex = cluesData[nextClueNum].cluesIndex;
 
     let nextCellsinClue = [];
     for (let i = 0; i < gameData.cells.length; i++) {
@@ -700,7 +700,7 @@ function MainPage() {
             }}
           >
             {gameData.selected.clueNum !== null
-              ? cluesData.clues[gameData.selected.clueNum].clueText
+              ? cluesData[gameData.selected.clueNum].clueText
               : ""}
           </span>
           <FaAngleRight
