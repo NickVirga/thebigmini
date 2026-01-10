@@ -627,7 +627,7 @@
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
-    "hasDivider": false,
+    "hasDivider": true,
     "dividers": 2
   },
   {
@@ -973,7 +973,7 @@
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
-    "hasDivider": false,
+    "hasDivider": true,
     "dividers": 4
   },
   {
@@ -2323,7 +2323,7 @@
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
-    "hasDivider": false,
+    "hasDivider": true,
     "dividers": 4
   },
   {
