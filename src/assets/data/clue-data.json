@@ -2,295 +2,295 @@
   {
     "index": 0,
     "clueNum": 0,
-    "word": "GPA",
+    "word": "HEADSTONE",
     "cluesIndex": 0,
     "label": 1,
-    "clueText": ""
+    "clueText": "Upright marker of a burial plot"
   },
   {
     "index": 1,
     "clueNum": 1,
-    "word": "SHEM",
+    "word": "ARMIE",
     "cluesIndex": 0,
-    "label": 4,
-    "clueText": ""
+    "label": 6,
+    "clueText": "Actor _____ Hammer of Call Me by Your Name"
   },
   {
     "index": 2,
     "clueNum": 2,
-    "word": "TONIC",
+    "word": "IDINA",
     "cluesIndex": 0,
-    "label": 5,
-    "clueText": ""
+    "label": 7,
+    "clueText": "Actress Menzel regarded as the 'Queen of Broadway'"
   },
   {
     "index": 3,
     "clueNum": 3,
-    "word": "OUTTA",
+    "word": "LONGS",
     "cluesIndex": 0,
-    "label": 7,
-    "clueText": ""
+    "label": 8,
+    "clueText": "Yearns for"
   },
   {
     "index": 4,
     "clueNum": 4,
-    "word": "PLAYBYPLAY",
+    "word": "SCOOP",
     "cluesIndex": 0,
-    "label": 8,
-    "clueText": ""
+    "label": 9,
+    "clueText": "Item of news published ahead of others"
   },
   {
     "index": 5,
     "clueNum": 5,
-    "word": "STOPPEDBY",
+    "word": "HAILS",
     "cluesIndex": 1,
-    "label": 4,
-    "clueText": ""
+    "label": 1,
+    "clueText": "Flags down a cab"
   },
   {
     "index": 6,
     "clueNum": 6,
-    "word": "GHOUL",
+    "word": "ERDOC",
     "cluesIndex": 1,
-    "label": 1,
-    "clueText": ""
+    "label": 2,
+    "clueText": "Emergency room physician, for short"
   },
   {
     "index": 7,
     "clueNum": 7,
-    "word": "PENTA",
+    "word": "AMINO",
     "cluesIndex": 1,
-    "label": 2,
-    "clueText": ""
+    "label": 3,
+    "clueText": "An acid that is the building block of protein"
   },
   {
     "index": 8,
     "clueNum": 8,
-    "word": "AMITY",
+    "word": "DINGO",
     "cluesIndex": 1,
-    "label": 3,
-    "clueText": ""
+    "label": 4,
+    "clueText": "Baby-snatching Australian animal"
   },
   {
     "index": 9,
     "clueNum": 9,
-    "word": "CAB",
+    "word": "SEASPONGE",
     "cluesIndex": 1,
-    "label": 6,
-    "clueText": ""
+    "label": 5,
+    "clueText": "Porous, tube-shaped marine invertebrate"
   },
   {
     "index": 10,
     "clueNum": 10,
-    "word": "MITERSAW",
+    "word": "IRIS",
     "cluesIndex": 0,
-    "label": 9,
-    "clueText": ""
+    "label": 14,
+    "clueText": "Colored part of the human eye"
   },
   {
     "index": 11,
     "clueNum": 11,
-    "word": "SHEBA",
+    "word": "PIPIT",
     "cluesIndex": 0,
-    "label": 12,
-    "clueText": ""
+    "label": 15,
+    "clueText": "Small perching birds with medium to long tails"
   },
   {
     "index": 12,
     "clueNum": 12,
-    "word": "LEDIN",
+    "word": "BIGISLAND",
     "cluesIndex": 0,
-    "label": 14,
-    "clueText": ""
+    "label": 17,
+    "clueText": "The largest island of Hawaii"
   },
   {
     "index": 13,
     "clueNum": 13,
-    "word": "AMAZE",
+    "word": "INNS",
     "cluesIndex": 0,
-    "label": 15,
-    "clueText": ""
+    "label": 18,
+    "clueText": "Establishments where weary travelers may rest"
   },
   {
     "index": 14,
     "clueNum": 14,
-    "word": "SLAY",
+    "word": "TIP",
     "cluesIndex": 1,
-    "label": 12,
-    "clueText": ""
+    "label": 10,
+    "clueText": "Visible part of an iceberg"
   },
   {
     "index": 15,
     "clueNum": 15,
-    "word": "HEMP",
+    "word": "ORIBI",
     "cluesIndex": 1,
-    "label": 13,
-    "clueText": ""
+    "label": 11,
+    "clueText": "Small antelop found in found in eastern, southern and western Africa"
   },
   {
     "index": 16,
     "clueNum": 16,
-    "word": "MEDAL",
+    "word": "NIPIN",
     "cluesIndex": 1,
-    "label": 9,
-    "clueText": ""
+    "label": 12,
+    "clueText": "Cree word meaning 'summer'"
   },
   {
     "index": 17,
     "clueNum": 17,
-    "word": "IBIZA",
+    "word": "ESIGN",
     "cluesIndex": 1,
-    "label": 10,
-    "clueText": ""
+    "label": 13,
+    "clueText": "Sign for electronically, briefly"
   },
   {
     "index": 18,
     "clueNum": 18,
-    "word": "TANEY",
+    "word": "TIS",
     "cluesIndex": 1,
-    "label": 11,
-    "clueText": ""
+    "label": 16,
+    "clueText": "Contraction of 'it is'"
   },
   {
     "index": 19,
     "clueNum": 19,
-    "word": "AETNA",
+    "word": "EBOLA",
     "cluesIndex": 0,
-    "label": 21,
-    "clueText": ""
+    "label": 19,
+    "clueText": "A viral hemorrhagic fever in humans spreads through direct contact with body fluids"
   },
   {
     "index": 20,
     "clueNum": 20,
-    "word": "TBOND",
+    "word": "XENON",
     "cluesIndex": 0,
-    "label": 22,
-    "clueText": ""
+    "label": 24,
+    "clueText": "Chemical element, noble gas with symbol Xe"
   },
   {
     "index": 21,
     "clueNum": 21,
-    "word": "ERA",
+    "word": "IATRO",
     "cluesIndex": 0,
-    "label": 23,
-    "clueText": ""
+    "label": 25,
+    "clueText": "Prefix relateing to a physician or medical treatment"
   },
   {
     "index": 22,
     "clueNum": 22,
-    "word": "LES",
+    "word": "TEPEE",
     "cluesIndex": 0,
-    "label": 24,
-    "clueText": ""
+    "label": 26,
+    "clueText": "Conical lodge tent used by some Indigenous peoples of the Plains and Great Lakes regions of North America"
   },
   {
     "index": 23,
     "clueNum": 23,
-    "word": "EAT",
+    "word": "EXIST",
     "cluesIndex": 1,
-    "label": 16,
-    "clueText": ""
+    "label": 19,
+    "clueText": "have objective reality or being"
   },
   {
     "index": 24,
     "clueNum": 24,
-    "word": "REBEL",
+    "word": "BEALE",
     "cluesIndex": 1,
-    "label": 17,
-    "clueText": ""
+    "label": 20,
+    "clueText": "Famous U.S. avenue in Memphis"
   },
   {
     "index": 25,
     "clueNum": 25,
-    "word": "STORE",
+    "word": "ONTAP",
     "cluesIndex": 1,
-    "label": 18,
-    "clueText": ""
+    "label": 21,
+    "clueText": "Draught beer available at a bar"
   },
   {
     "index": 26,
     "clueNum": 26,
-    "word": "ANNAS",
+    "word": "LORNE",
     "cluesIndex": 1,
-    "label": 19,
+    "label": 22,
     "clueText": ""
   },
   {
     "index": 27,
     "clueNum": 27,
-    "word": "WAD",
+    "word": "ANODE",
     "cluesIndex": 1,
-    "label": 20,
+    "label": 23,
     "clueText": ""
   },
   {
     "index": 28,
     "clueNum": 28,
-    "word": "PALM",
+    "word": "PATRONIZE",
     "cluesIndex": 0,
-    "label": 25,
+    "label": 27,
     "clueText": ""
   },
   {
     "index": 29,
     "clueNum": 29,
-    "word": "EMAIL",
-    "cluesIndex": 0,
-    "label": 29,
-    "clueText": ""
-  },
-  {
-    "index": 30,
-    "clueNum": 30,
-    "word": "DOBLE",
+    "word": "ROWAN",
     "cluesIndex": 0,
     "label": 31,
     "clueText": ""
   },
   {
-    "index": 31,
-    "clueNum": 31,
-    "word": "BRIEF",
+    "index": 30,
+    "clueNum": 30,
+    "word": "EKING",
     "cluesIndex": 0,
     "label": 32,
     "clueText": ""
   },
   {
-    "index": 32,
-    "clueNum": 32,
-    "word": "YEAST",
+    "index": 31,
+    "clueNum": 31,
+    "word": "TANTE",
     "cluesIndex": 0,
     "label": 33,
     "clueText": ""
   },
   {
-    "index": 33,
-    "clueNum": 33,
-    "word": "AMORE",
-    "cluesIndex": 1,
-    "label": 26,
+    "index": 32,
+    "clueNum": 32,
+    "word": "EYES",
+    "cluesIndex": 0,
+    "label": 34,
     "clueText": ""
   },
   {
-    "index": 34,
-    "clueNum": 34,
-    "word": "LABIA",
+    "index": 33,
+    "clueNum": 33,
+    "word": "PRETENSE",
     "cluesIndex": 1,
     "label": 27,
     "clueText": ""
   },
   {
-    "index": 35,
-    "clueNum": 35,
-    "word": "MILES",
+    "index": 34,
+    "clueNum": 34,
+    "word": "AOKAY",
     "cluesIndex": 1,
     "label": 28,
     "clueText": ""
   },
   {
+    "index": 35,
+    "clueNum": 35,
+    "word": "TWINE",
+    "cluesIndex": 1,
+    "label": 29,
+    "clueText": ""
+  },
+  {
     "index": 36,
     "clueNum": 36,
-    "word": "LEFTORIUM",
+    "word": "RANTS",
     "cluesIndex": 1,
     "label": 30,
     "clueText": ""
@@ -298,263 +298,263 @@
   {
     "index": 37,
     "clueNum": 37,
-    "word": "ALI",
-    "cluesIndex": 0,
-    "label": 34,
-    "clueText": ""
-  },
-  {
-    "index": 38,
-    "clueNum": 38,
-    "word": "SOLON",
-    "cluesIndex": 0,
-    "label": 37,
-    "clueText": ""
-  },
-  {
-    "index": 39,
-    "clueNum": 39,
-    "word": "OLEIC",
+    "word": "ATOLL",
     "cluesIndex": 0,
     "label": 39,
     "clueText": ""
   },
   {
-    "index": 40,
-    "clueNum": 40,
-    "word": "RECREATOR",
-    "cluesIndex": 0,
-    "label": 40,
-    "clueText": ""
-  },
-  {
-    "index": 41,
-    "clueNum": 41,
-    "word": "TOKEN",
+    "index": 38,
+    "clueNum": 38,
+    "word": "BAHAI",
     "cluesIndex": 0,
     "label": 41,
     "clueText": ""
   },
   {
-    "index": 42,
-    "clueNum": 42,
-    "word": "SORT",
-    "cluesIndex": 1,
-    "label": 37,
+    "index": 39,
+    "clueNum": 39,
+    "word": "SLATE",
+    "cluesIndex": 0,
+    "label": 42,
     "clueText": ""
   },
   {
-    "index": 43,
-    "clueNum": 43,
-    "word": "OLEO",
-    "cluesIndex": 1,
-    "label": 38,
+    "index": 40,
+    "clueNum": 40,
+    "word": "ONEFIFTH",
+    "cluesIndex": 0,
+    "label": 43,
     "clueText": ""
   },
   {
-    "index": 44,
-    "clueNum": 44,
-    "word": "ALECK",
-    "cluesIndex": 1,
-    "label": 34,
-    "clueText": ""
-  },
-  {
-    "index": 45,
-    "clueNum": 45,
-    "word": "LOIRE",
+    "index": 41,
+    "clueNum": 41,
+    "word": "NABS",
     "cluesIndex": 1,
     "label": 35,
     "clueText": ""
   },
   {
-    "index": 46,
-    "clueNum": 46,
-    "word": "INCENTIVES",
+    "index": 42,
+    "clueNum": 42,
+    "word": "ITALO",
     "cluesIndex": 1,
     "label": 36,
     "clueText": ""
   },
   {
+    "index": 43,
+    "clueNum": 43,
+    "word": "ZOHAN",
+    "cluesIndex": 1,
+    "label": 37,
+    "clueText": ""
+  },
+  {
+    "index": 44,
+    "clueNum": 44,
+    "word": "ELATE",
+    "cluesIndex": 1,
+    "label": 38,
+    "clueText": ""
+  },
+  {
+    "index": 45,
+    "clueNum": 45,
+    "word": "LIEF",
+    "cluesIndex": 1,
+    "label": 40,
+    "clueText": ""
+  },
+  {
+    "index": 46,
+    "clueNum": 46,
+    "word": "CASTE",
+    "cluesIndex": 0,
+    "label": 44,
+    "clueText": ""
+  },
+  {
     "index": 47,
     "clueNum": 47,
-    "word": "MEDIC",
-    "cluesIndex": 0,
-    "label": 42,
-    "clueText": ""
-  },
-  {
-    "index": 48,
-    "clueNum": 48,
-    "word": "ALAMO",
-    "cluesIndex": 0,
-    "label": 47,
-    "clueText": ""
-  },
-  {
-    "index": 49,
-    "clueNum": 49,
-    "word": "DAMPS",
-    "cluesIndex": 0,
-    "label": 48,
-    "clueText": ""
-  },
-  {
-    "index": 50,
-    "clueNum": 50,
-    "word": "MENE",
+    "word": "ALTER",
     "cluesIndex": 0,
     "label": 49,
     "clueText": ""
   },
   {
-    "index": 51,
-    "clueNum": 51,
-    "word": "MADAM",
-    "cluesIndex": 1,
-    "label": 42,
+    "index": 48,
+    "clueNum": 48,
+    "word": "CLANG",
+    "cluesIndex": 0,
+    "label": 50,
     "clueText": ""
   },
   {
-    "index": 52,
-    "clueNum": 52,
-    "word": "ELATE",
-    "cluesIndex": 1,
-    "label": 43,
+    "index": 49,
+    "clueNum": 49,
+    "word": "TORTS",
+    "cluesIndex": 0,
+    "label": 51,
     "clueText": ""
   },
   {
-    "index": 53,
-    "clueNum": 53,
-    "word": "DAMON",
+    "index": 50,
+    "clueNum": 50,
+    "word": "CACTI",
     "cluesIndex": 1,
     "label": 44,
     "clueText": ""
   },
   {
-    "index": 54,
-    "clueNum": 54,
-    "word": "IMPRESSING",
+    "index": 51,
+    "clueNum": 51,
+    "word": "ALLOF",
     "cluesIndex": 1,
     "label": 45,
     "clueText": ""
   },
   {
-    "index": 55,
-    "clueNum": 55,
-    "word": "COS",
+    "index": 52,
+    "clueNum": 52,
+    "word": "START",
     "cluesIndex": 1,
     "label": 46,
     "clueText": ""
   },
   {
+    "index": 53,
+    "clueNum": 53,
+    "word": "TENTH",
+    "cluesIndex": 1,
+    "label": 47,
+    "clueText": ""
+  },
+  {
+    "index": 54,
+    "clueNum": 54,
+    "word": "ERGS",
+    "cluesIndex": 1,
+    "label": 48,
+    "clueText": ""
+  },
+  {
+    "index": 55,
+    "clueNum": 55,
+    "word": "NILLA",
+    "cluesIndex": 0,
+    "label": 52,
+    "clueText": ""
+  },
+  {
     "index": 56,
     "clueNum": 56,
-    "word": "RACKO",
-    "cluesIndex": 0,
-    "label": 50,
-    "clueText": ""
-  },
-  {
-    "index": 57,
-    "clueNum": 57,
-    "word": "OGLER",
-    "cluesIndex": 0,
-    "label": 54,
-    "clueText": ""
-  },
-  {
-    "index": 58,
-    "clueNum": 58,
-    "word": "CHILI",
-    "cluesIndex": 0,
-    "label": 55,
-    "clueText": ""
-  },
-  {
-    "index": 59,
-    "clueNum": 59,
-    "word": "ASSURANCE",
-    "cluesIndex": 0,
-    "label": 56,
-    "clueText": ""
-  },
-  {
-    "index": 60,
-    "clueNum": 60,
-    "word": "TOM",
+    "word": "SOLAR",
     "cluesIndex": 0,
     "label": 57,
     "clueText": ""
   },
   {
-    "index": 61,
-    "clueNum": 61,
-    "word": "ROC",
-    "cluesIndex": 1,
-    "label": 50,
-    "clueText": ""
-  },
-  {
-    "index": 62,
-    "clueNum": 62,
-    "word": "AGHA",
-    "cluesIndex": 1,
-    "label": 51,
-    "clueText": ""
-  },
-  {
-    "index": 63,
-    "clueNum": 63,
-    "word": "CLIST",
-    "cluesIndex": 1,
-    "label": 52,
-    "clueText": ""
-  },
-  {
-    "index": 64,
-    "clueNum": 64,
-    "word": "KELSO",
-    "cluesIndex": 1,
-    "label": 53,
-    "clueText": ""
-  },
-  {
-    "index": 65,
-    "clueNum": 65,
-    "word": "MATT",
+    "index": 57,
+    "clueNum": 57,
+    "word": "ENATE",
     "cluesIndex": 0,
     "label": 58,
     "clueText": ""
   },
   {
-    "index": 66,
-    "clueNum": 66,
-    "word": "FIERI",
+    "index": 58,
+    "clueNum": 58,
+    "word": "IMIN",
+    "cluesIndex": 0,
+    "label": 59,
+    "clueText": ""
+  },
+  {
+    "index": 59,
+    "clueNum": 59,
+    "word": "CANAVERAL",
+    "cluesIndex": 0,
+    "label": 60,
+    "clueText": ""
+  },
+  {
+    "index": 60,
+    "clueNum": 60,
+    "word": "IONIC",
+    "cluesIndex": 1,
+    "label": 53,
+    "clueText": ""
+  },
+  {
+    "index": 61,
+    "clueNum": 61,
+    "word": "LLAMA",
+    "cluesIndex": 1,
+    "label": 54,
+    "clueText": ""
+  },
+  {
+    "index": 62,
+    "clueNum": 62,
+    "word": "LATIN",
+    "cluesIndex": 1,
+    "label": 55,
+    "clueText": ""
+  },
+  {
+    "index": 63,
+    "clueNum": 63,
+    "word": "ARENA",
+    "cluesIndex": 1,
+    "label": 56,
+    "clueText": ""
+  },
+  {
+    "index": 64,
+    "clueNum": 64,
+    "word": "IFS",
     "cluesIndex": 0,
     "label": 61,
     "clueText": ""
   },
   {
+    "index": 65,
+    "clueNum": 65,
+    "word": "FLESHOUT",
+    "cluesIndex": 0,
+    "label": 64,
+    "clueText": ""
+  },
+  {
+    "index": 66,
+    "clueNum": 66,
+    "word": "STORE",
+    "cluesIndex": 0,
+    "label": 66,
+    "clueText": ""
+  },
+  {
     "index": 67,
     "clueNum": 67,
-    "word": "ACTIV",
+    "word": "UHURA",
     "cluesIndex": 0,
-    "label": 62,
+    "label": 67,
     "clueText": ""
   },
   {
     "index": 68,
     "clueNum": 68,
-    "word": "SAKS",
-    "cluesIndex": 0,
-    "label": 63,
+    "word": "SUV",
+    "cluesIndex": 1,
+    "label": 66,
     "clueText": ""
   },
   {
     "index": 69,
     "clueNum": 69,
-    "word": "FAR",
+    "word": "IFTHE",
     "cluesIndex": 1,
     "label": 61,
     "clueText": ""
@@ -562,97 +562,97 @@
   {
     "index": 70,
     "clueNum": 70,
-    "word": "MICAS",
+    "word": "FLOUR",
     "cluesIndex": 1,
-    "label": 58,
+    "label": 62,
     "clueText": ""
   },
   {
     "index": 71,
     "clueNum": 71,
-    "word": "AETNA",
+    "word": "SERRA",
     "cluesIndex": 1,
-    "label": 59,
+    "label": 63,
     "clueText": ""
   },
   {
     "index": 72,
     "clueNum": 72,
-    "word": "TRICK",
-    "cluesIndex": 1,
-    "label": 60,
-    "clueText": ""
-  },
-  {
-    "index": 73,
-    "clueNum": 73,
-    "word": "GADS",
-    "cluesIndex": 0,
-    "label": 64,
-    "clueText": ""
-  },
-  {
-    "index": 74,
-    "clueNum": 74,
-    "word": "LUISA",
-    "cluesIndex": 0,
-    "label": 67,
-    "clueText": ""
-  },
-  {
-    "index": 75,
-    "clueNum": 75,
-    "word": "ADAIR",
-    "cluesIndex": 0,
-    "label": 69,
-    "clueText": ""
-  },
-  {
-    "index": 76,
-    "clueNum": 76,
-    "word": "MILNE",
-    "cluesIndex": 0,
-    "label": 70,
-    "clueText": ""
-  },
-  {
-    "index": 77,
-    "clueNum": 77,
-    "word": "5GS",
-    "cluesIndex": 0,
-    "label": 71,
-    "clueText": ""
-  },
-  {
-    "index": 78,
-    "clueNum": 78,
-    "word": "GLAM",
-    "cluesIndex": 1,
-    "label": 64,
-    "clueText": ""
-  },
-  {
-    "index": 79,
-    "clueNum": 79,
-    "word": "AUDI",
+    "word": "SEAL",
     "cluesIndex": 1,
     "label": 65,
     "clueText": ""
   },
   {
+    "index": 73,
+    "clueNum": 73,
+    "word": "ALGA",
+    "cluesIndex": 0,
+    "label": 68,
+    "clueText": ""
+  },
+  {
+    "index": 74,
+    "clueNum": 74,
+    "word": "EVIAN",
+    "cluesIndex": 0,
+    "label": 72,
+    "clueText": ""
+  },
+  {
+    "index": 75,
+    "clueNum": 75,
+    "word": "MILLI",
+    "cluesIndex": 0,
+    "label": 74,
+    "clueText": ""
+  },
+  {
+    "index": 76,
+    "clueNum": 76,
+    "word": "SNELL",
+    "cluesIndex": 0,
+    "label": 75,
+    "clueText": ""
+  },
+  {
+    "index": 77,
+    "clueNum": 77,
+    "word": "AHEMS",
+    "cluesIndex": 1,
+    "label": 68,
+    "clueText": ""
+  },
+  {
+    "index": 78,
+    "clueNum": 78,
+    "word": "LOVIN",
+    "cluesIndex": 1,
+    "label": 69,
+    "clueText": ""
+  },
+  {
+    "index": 79,
+    "clueNum": 79,
+    "word": "GUILE",
+    "cluesIndex": 1,
+    "label": 70,
+    "clueText": ""
+  },
+  {
     "index": 80,
     "clueNum": 80,
-    "word": "DIAL5",
+    "word": "ATALL",
     "cluesIndex": 1,
-    "label": 66,
+    "label": 71,
     "clueText": ""
   },
   {
     "index": 81,
     "clueNum": 81,
-    "word": "ARES",
+    "word": "NIL",
     "cluesIndex": 1,
-    "label": 68,
+    "label": 73,
     "clueText": ""
   }
 ]
