@@ -2,657 +2,225 @@
   {
     "index": 0,
     "clueNum": 0,
-    "word": "MOONLIGHT",
+    "word": "PISA",
     "cluesIndex": 0,
     "label": 1,
-    "clueText": "Nocturnal glow from Earth's satellite"
+    "clueText": "Home of a famous leaning tower"
   },
   {
     "index": 1,
     "clueNum": 1,
-    "word": "MARDI",
+    "word": "OMNI",
     "cluesIndex": 0,
     "label": 5,
-    "clueText": "Weekday with special Tuesday celebration, in New Orleans"
+    "clueText": "A treadmill of this sort would allow one to walk in any direction"
   },
   {
     "index": 2,
     "clueNum": 2,
-    "word": "ALAIN",
+    "word": "SHORINGS",
     "cluesIndex": 0,
     "label": 6,
-    "clueText": "French philosopher Émile-Auguste Chartier commonly known as"
+    "clueText": "Temporary supports used to prop up walls or structures"
   },
   {
     "index": 3,
     "clueNum": 3,
-    "word": "NILE",
+    "word": "TOG",
     "cluesIndex": 0,
     "label": 7,
-    "clueText": "Longest river in Egypt"
+    "clueText": "Unit measuring a duvet's warmth"
   },
   {
     "index": 4,
     "clueNum": 4,
-    "word": "GAB",
-    "cluesIndex": 0,
-    "label": 8,
-    "clueText": "Talk at length; chatter"
+    "word": "POSTAGE",
+    "cluesIndex": 1,
+    "label": 1,
+    "clueText": "Cost of sending a letter"
   },
   {
     "index": 5,
     "clueNum": 5,
-    "word": "MANGROVES",
+    "word": "IMHO",
     "cluesIndex": 1,
-    "label": 5,
-    "clueText": "Salt-tolerant coastal trees"
+    "label": 2,
+    "clueText": "Texting abbr. before sharing a personal view"
   },
   {
     "index": 6,
     "clueNum": 6,
-    "word": "MALIA",
+    "word": "SNOG",
     "cluesIndex": 1,
-    "label": 1,
-    "clueText": "a Greek coastal town in northeastern Crete"
+    "label": 3,
+    "clueText": "British slang for a passionate kiss"
   },
   {
     "index": 7,
     "clueNum": 7,
-    "word": "ORALB",
+    "word": "AIR",
     "cluesIndex": 1,
-    "label": 2,
-    "clueText": "Aptly named toothbrush maker"
+    "label": 4,
+    "clueText": "What a guitarist shreds when there's no guitar around"
   },
   {
     "index": 8,
     "clueNum": 8,
-    "word": "ODIE",
-    "cluesIndex": 1,
-    "label": 3,
-    "clueText": "Cartoon dog companion of Garfield"
+    "word": "AAA",
+    "cluesIndex": 0,
+    "label": 8,
+    "clueText": "The smallest common battery size"
   },
   {
     "index": 9,
     "clueNum": 9,
-    "word": "NIN",
-    "cluesIndex": 1,
-    "label": 4,
-    "clueText": "'The Downward Spiral' band, for short"
+    "word": "BOLA",
+    "cluesIndex": 0,
+    "label": 11,
+    "clueText": "Weighted throwing weapon used to entangle prey"
   },
   {
     "index": 10,
     "clueNum": 10,
-    "word": "ONAIR",
+    "word": "TEAS",
     "cluesIndex": 0,
-    "label": 14,
-    "clueText": "Broadcasting live"
+    "label": 13,
+    "clueText": "Earl Grey and chamomile, for two"
   },
   {
     "index": 11,
     "clueNum": 11,
-    "word": "AORTA",
-    "cluesIndex": 0,
-    "label": 15,
-    "clueText": "Body's main artery"
+    "word": "ABIT",
+    "cluesIndex": 1,
+    "label": 8,
+    "clueText": "\"___ much\": slightly over the top"
   },
   {
     "index": 12,
     "clueNum": 12,
-    "word": "FIREPLACE",
-    "cluesIndex": 0,
-    "label": 16,
-    "clueText": "Hearth feature that holds a fire"
+    "word": "AONE",
+    "cluesIndex": 1,
+    "label": 9,
+    "clueText": "Top-rated, as in \"___ condition\""
   },
   {
     "index": 13,
     "clueNum": 13,
-    "word": "SLY",
-    "cluesIndex": 0,
-    "label": 17,
-    "clueText": "Cunning or crafty"
+    "word": "ALGA",
+    "cluesIndex": 1,
+    "label": 10,
+    "clueText": "Single photosynthetic organism found in ponds"
   },
   {
     "index": 14,
     "clueNum": 14,
-    "word": "LOAFS",
+    "word": "ASSISTS",
     "cluesIndex": 1,
-    "label": 9,
-    "clueText": "Idles about"
+    "label": 12,
+    "clueText": "Helps out, or hockey/basketball stat for pass leaders"
   },
   {
     "index": 15,
     "clueNum": 15,
-    "word": "INOIL",
-    "cluesIndex": 1,
-    "label": 10,
-    "clueText": "How one might describe food cooked with fat"
+    "word": "AKA",
+    "cluesIndex": 0,
+    "label": 14,
+    "clueText": "Alias, in brief"
   },
   {
     "index": 16,
     "clueNum": 16,
-    "word": "GARRY",
-    "cluesIndex": 1,
-    "label": 11,
-    "clueText": "Masculine name meaning 'spear' in Old German"
+    "word": "GILA",
+    "cluesIndex": 0,
+    "label": 17,
+    "clueText": "___ monster: venomous lizard of the American Southwest"
   },
   {
     "index": 17,
     "clueNum": 17,
-    "word": "HITE",
-    "cluesIndex": 1,
-    "label": 12,
-    "clueText": "Brew brand from South Korea"
+    "word": "EAST",
+    "cluesIndex": 0,
+    "label": 19,
+    "clueText": "Direction of the rising sun"
   },
   {
     "index": 18,
     "clueNum": 18,
-    "word": "TRAP",
-    "cluesIndex": 1,
-    "label": 13,
-    "clueText": "Device for catching animals"
+    "word": "SOFTENS",
+    "cluesIndex": 0,
+    "label": 20,
+    "clueText": "Makes less harsh or rigid"
   },
   {
     "index": 19,
     "clueNum": 19,
-    "word": "TAT",
-    "cluesIndex": 0,
-    "label": 18,
-    "clueText": "Skin ink, in slang"
+    "word": "KIAS",
+    "cluesIndex": 1,
+    "label": 15,
+    "clueText": "Korean automaker's vehicles, informally"
   },
   {
     "index": 20,
     "clueNum": 20,
-    "word": "AAHED",
-    "cluesIndex": 0,
-    "label": 21,
-    "clueText": "Expressed delight, onomatopoeically"
+    "word": "ALSO",
+    "cluesIndex": 1,
+    "label": 16,
+    "clueText": "In addition; furthermore"
   },
   {
     "index": 21,
     "clueNum": 21,
-    "word": "ICERS",
-    "cluesIndex": 0,
-    "label": 23,
-    "clueText": "People who frost cakes"
+    "word": "ATF",
+    "cluesIndex": 1,
+    "label": 18,
+    "clueText": "American federal bureau overseeing firearms and explosives, for short"
   },
   {
     "index": 22,
     "clueNum": 22,
-    "word": "IWO",
+    "word": "KOI",
     "cluesIndex": 0,
-    "label": 24,
-    "clueText": "Japanese island noted for a WWII battle"
+    "label": 21,
+    "clueText": "Colorful fish prized in ornamental ponds"
   },
   {
     "index": 23,
     "clueNum": 23,
-    "word": "AIL",
-    "cluesIndex": 1,
-    "label": 21,
-    "clueText": "Have a minor malady"
+    "word": "LADS",
+    "cluesIndex": 0,
+    "label": 23,
+    "clueText": "Young fellows, in British slang"
   },
   {
     "index": 24,
     "clueNum": 24,
-    "word": "ACAI",
-    "cluesIndex": 1,
-    "label": 22,
-    "clueText": "Amazonian berry often used in bowls"
+    "word": "ONIT",
+    "cluesIndex": 0,
+    "label": 24,
+    "clueText": "\"I'm ___ \": reply meaning you're handling it"
   },
   {
     "index": 25,
     "clueNum": 25,
-    "word": "THECW",
+    "word": "LOT",
     "cluesIndex": 1,
-    "label": 18,
-    "clueText": "U.S. television network from CBS and Warner Bros."
+    "label": 23,
+    "clueText": "Parking area, or a great deal of something"
   },
   {
     "index": 26,
     "clueNum": 26,
-    "word": "AEREO",
+    "word": "KANE",
     "cluesIndex": 1,
-    "label": 19,
-    "clueText": "Relating to air; airline brand fragment"
+    "label": 21,
+    "clueText": "Citizen ___, Orson Welles' classic film subject"
   },
   {
     "index": 27,
     "clueNum": 27,
-    "word": "TDS",
+    "word": "ODIN",
     "cluesIndex": 1,
-    "label": 20,
-    "clueText": "Aquarium water-purity test measure, for short"
-  },
-  {
-    "index": 28,
-    "clueNum": 28,
-    "word": "RAH",
-    "cluesIndex": 0,
-    "label": 25,
-    "clueText": "Cheer or shout of encouragement"
-  },
-  {
-    "index": 29,
-    "clueNum": 29,
-    "word": "OREO",
-    "cluesIndex": 0,
-    "label": 28,
-    "clueText": "Chocolate sandwich cookie with cream filling"
-  },
-  {
-    "index": 30,
-    "clueNum": 30,
-    "word": "VELVA",
-    "cluesIndex": 0,
-    "label": 30,
-    "clueText": "Brand name, often for shaving products"
-  },
-  {
-    "index": 31,
-    "clueNum": 31,
-    "word": "ENGEL",
-    "cluesIndex": 0,
-    "label": 32,
-    "clueText": "German word meaning for a spiritual being with wings"
-  },
-  {
-    "index": 32,
-    "clueNum": 32,
-    "word": "STARLIGHT",
-    "cluesIndex": 0,
-    "label": 33,
-    "clueText": "Light that comes from distant stars"
-  },
-  {
-    "index": 33,
-    "clueNum": 33,
-    "word": "ARENT",
-    "cluesIndex": 1,
-    "label": 26,
-    "clueText": "Are not, briefly"
-  },
-  {
-    "index": 34,
-    "clueNum": 34,
-    "word": "HELGA",
-    "cluesIndex": 1,
-    "label": 27,
-    "clueText": "Nordic feminine name meaning 'holy, blessed'"
-  },
-  {
-    "index": 35,
-    "clueNum": 35,
-    "word": "OVERTAKEN",
-    "cluesIndex": 1,
-    "label": 29,
-    "clueText": "Caught up to and passed by"
-  },
-  {
-    "index": 36,
-    "clueNum": 36,
-    "word": "ALL",
-    "cluesIndex": 1,
-    "label": 31,
-    "clueText": "Everything; the whole"
-  },
-  {
-    "index": 37,
-    "clueNum": 37,
-    "word": "DIFFERENCE",
-    "cluesIndex": 0,
-    "label": 34,
-    "clueText": "What distinguishes two things"
-  },
-  {
-    "index": 38,
-    "clueNum": 38,
-    "word": "AMIES",
-    "cluesIndex": 0,
-    "label": 39,
-    "clueText": "French word for female friends"
-  },
-  {
-    "index": 39,
-    "clueNum": 39,
-    "word": "LIRAS",
-    "cluesIndex": 0,
-    "label": 40,
-    "clueText": "Currency units used in Turkey"
-  },
-  {
-    "index": 40,
-    "clueNum": 40,
-    "word": "ANTS",
-    "cluesIndex": 0,
-    "label": 41,
-    "clueText": "Tiny insects that live in colonies"
-  },
-  {
-    "index": 41,
-    "clueNum": 41,
-    "word": "DALAI",
-    "cluesIndex": 1,
-    "label": 34,
-    "clueText": "Tibetan spiritual leader's title"
-  },
-  {
-    "index": 42,
-    "clueNum": 42,
-    "word": "IMING",
-    "cluesIndex": 1,
-    "label": 35,
-    "clueText": "Instant-messaging, informally"
-  },
-  {
-    "index": 43,
-    "clueNum": 43,
-    "word": "FIRTH",
-    "cluesIndex": 1,
-    "label": 36,
-    "clueText": "A Scottish coastal inlet"
-  },
-  {
-    "index": 44,
-    "clueNum": 44,
-    "word": "FEAST",
-    "cluesIndex": 1,
-    "label": 37,
-    "clueText": "Large celebratory meal"
-  },
-  {
-    "index": 45,
-    "clueNum": 45,
-    "word": "ESS",
-    "cluesIndex": 1,
-    "label": 38,
-    "clueText": "The 19th letter of the alphabet spelled aloud"
-  },
-  {
-    "index": 46,
-    "clueNum": 46,
-    "word": "BACON",
-    "cluesIndex": 0,
-    "label": 47,
-    "clueText": "Cured pork often served with eggs"
-  },
-  {
-    "index": 47,
-    "clueNum": 47,
-    "word": "ICAME",
-    "cluesIndex": 0,
-    "label": 48,
-    "clueText": "First part of a Julius Caesar quote meaning a swift, conclusive victory"
-  },
-  {
-    "index": 48,
-    "clueNum": 48,
-    "word": "HAMM",
-    "cluesIndex": 0,
-    "label": 49,
-    "clueText": "Actor Jon of Mad Men"
-  },
-  {
-    "index": 49,
-    "clueNum": 49,
-    "word": "SAY",
-    "cluesIndex": 0,
-    "label": 50,
-    "clueText": "To utter or express in words"
-  },
-  {
-    "index": 50,
-    "clueNum": 50,
-    "word": "RBI",
-    "cluesIndex": 1,
-    "label": 42,
-    "clueText": "Baseball stat, for short, for driving in a run"
-  },
-  {
-    "index": 51,
-    "clueNum": 51,
-    "word": "EACH",
-    "cluesIndex": 1,
-    "label": 43,
-    "clueText": "Per one; apiece"
-  },
-  {
-    "index": 52,
-    "clueNum": 52,
-    "word": "NCAAS",
-    "cluesIndex": 1,
-    "label": 44,
-    "clueText": "Belonging to National Collegiate Athletic Association, briefly"
-  },
-  {
-    "index": 53,
-    "clueNum": 53,
-    "word": "COMMA",
-    "cluesIndex": 1,
-    "label": 45,
-    "clueText": "Punctuation mark indicating a pause"
-  },
-  {
-    "index": 54,
-    "clueNum": 54,
-    "word": "ENEMY",
-    "cluesIndex": 1,
-    "label": 46,
-    "clueText": "Foe or rival"
-  },
-  {
-    "index": 55,
-    "clueNum": 55,
-    "word": "SIT",
-    "cluesIndex": 0,
-    "label": 51,
-    "clueText": "Take a seat"
-  },
-  {
-    "index": 56,
-    "clueNum": 56,
-    "word": "CMAS",
-    "cluesIndex": 0,
-    "label": 53,
-    "clueText": "Presented to country music artists and broadcasters to recognize outstanding achievement"
-  },
-  {
-    "index": 57,
-    "clueNum": 57,
-    "word": "BABKA",
-    "cluesIndex": 0,
-    "label": 55,
-    "clueText": "Sweet braided bread"
-  },
-  {
-    "index": 58,
-    "clueNum": 58,
-    "word": "BLUEPRINT",
-    "cluesIndex": 0,
-    "label": 56,
-    "clueText": "Architect’s plan"
-  },
-  {
-    "index": 59,
-    "clueNum": 59,
-    "word": "SEEN",
-    "cluesIndex": 0,
-    "label": 57,
-    "clueText": "Observed"
-  },
-  {
-    "index": 60,
-    "clueNum": 60,
-    "word": "BBS",
-    "cluesIndex": 1,
-    "label": 55,
-    "clueText": "Air-gun ammo"
-  },
-  {
-    "index": 61,
-    "clueNum": 61,
-    "word": "SCALE",
-    "cluesIndex": 1,
-    "label": 51,
-    "clueText": "Device for weighing or measuring"
-  },
-  {
-    "index": 62,
-    "clueNum": 62,
-    "word": "IMBUE",
-    "cluesIndex": 1,
-    "label": 52,
-    "clueText": "Inspire deeply"
-  },
-  {
-    "index": 63,
-    "clueNum": 63,
-    "word": "SAP",
-    "cluesIndex": 1,
-    "label": 54,
-    "clueText": "Tree fluid"
-  },
-  {
-    "index": 64,
-    "clueNum": 64,
-    "word": "COD",
-    "cluesIndex": 0,
-    "label": 58,
-    "clueText": "First-person shooter military video game series published by Activision, abbreviated"
-  },
-  {
-    "index": 65,
-    "clueNum": 65,
-    "word": "HANDWOVEN",
-    "cluesIndex": 0,
-    "label": 61,
-    "clueText": "Made on a loom by hand"
-  },
-  {
-    "index": 66,
-    "clueNum": 66,
-    "word": "FARIS",
-    "cluesIndex": 0,
-    "label": 62,
-    "clueText": "Actress Anna known for 'The House Bunny', 'Scary Movie', 'Brokeback Mountain'"
-  },
-  {
-    "index": 67,
-    "clueNum": 67,
-    "word": "AGE",
-    "cluesIndex": 0,
-    "label": 63,
-    "clueText": "Total laps around the Sun"
-  },
-  {
-    "index": 68,
-    "clueNum": 68,
-    "word": "FRA",
-    "cluesIndex": 1,
-    "label": 62,
-    "clueText": "Alpha-3 country code for France"
-  },
-  {
-    "index": 69,
-    "clueNum": 69,
-    "word": "HAIG",
-    "cluesIndex": 1,
-    "label": 61,
-    "clueText": "brand of Scotch whisky, produced by Diageo in Scotland"
-  },
-  {
-    "index": 70,
-    "clueNum": 70,
-    "word": "CARNE",
-    "cluesIndex": 1,
-    "label": 58,
-    "clueText": "Meat in Spanish or Italian"
-  },
-  {
-    "index": 71,
-    "clueNum": 71,
-    "word": "ONIT",
-    "cluesIndex": 1,
-    "label": 59,
-    "clueText": "Actively dealing with a problem, task"
-  },
-  {
-    "index": 72,
-    "clueNum": 72,
-    "word": "DDS",
-    "cluesIndex": 1,
-    "label": 60,
-    "clueText": "Doctorate degree for dental surgeons, for short"
-  },
-  {
-    "index": 73,
-    "clueNum": 73,
-    "word": "CARA",
-    "cluesIndex": 0,
-    "label": 64,
-    "clueText": "Canadian singer known for 'Scars to Your Beautiful', 'Stay'"
-  },
-  {
-    "index": 74,
-    "clueNum": 74,
-    "word": "ACELA",
-    "cluesIndex": 0,
-    "label": 69,
-    "clueText": "Amtrak train running Northeast Corridor"
-  },
-  {
-    "index": 75,
-    "clueNum": 75,
-    "word": "DADA",
-    "cluesIndex": 0,
-    "label": 70,
-    "clueText": "Many babies' first word for father"
-  },
-  {
-    "index": 76,
-    "clueNum": 76,
-    "word": "SAX",
-    "cluesIndex": 0,
-    "label": 71,
-    "clueText": "Single-reed, brass woodwind instrument with a conical body often heard in jazz and classical music (colloquial)"
-  },
-  {
-    "index": 77,
-    "clueNum": 77,
-    "word": "WAD",
-    "cluesIndex": 1,
-    "label": 68,
-    "clueText": "Bundle of something, often cash"
-  },
-  {
-    "index": 78,
-    "clueNum": 78,
-    "word": "COCAS",
-    "cluesIndex": 1,
-    "label": 64,
-    "clueText": "Tropical American shrubs that are widely grown for their leaves"
-  },
-  {
-    "index": 79,
-    "clueNum": 79,
-    "word": "AVEDA",
-    "cluesIndex": 1,
-    "label": 65,
-    "clueText": "American cosmetics company founded by Horst Rechelbacher in 1978"
-  },
-  {
-    "index": 80,
-    "clueNum": 80,
-    "word": "RELAX",
-    "cluesIndex": 1,
-    "label": 66,
-    "clueText": "To become less tense or anxious"
-  },
-  {
-    "index": 81,
-    "clueNum": 81,
-    "word": "ANA",
-    "cluesIndex": 1,
-    "label": 67,
-    "clueText": "One of the two flag carriers of Japan headquartered in Minato, Tokyo"
+    "label": 22,
+    "clueText": "God of war in Norse mythology."
   }
 ]

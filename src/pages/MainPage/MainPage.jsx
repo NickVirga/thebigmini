@@ -160,7 +160,7 @@ function MainPage() {
     updateGameData({
       ...gameData,
       cells: gameData.cells.map((cell, i) =>
-        i === index ? { ...cell, value: newValue, incorrectFlag: false } : cell
+        i === index ? { ...cell, value: newValue, incorrectFlag: false } : cell,
       ),
     });
   };
@@ -201,7 +201,7 @@ function MainPage() {
               updatedCells = gameData.cells.map((cell, i) =>
                 i === newCellsIndex
                   ? { ...cell, value: "", incorrectFlag: false }
-                  : cell
+                  : cell,
               );
             }
             updateGameData({
@@ -224,7 +224,7 @@ function MainPage() {
             updatedCells = gameData.cells.map((cell, i) =>
               i === selectedCellsIndex
                 ? { ...cell, value: "", incorrectFlag: fals }
-                : cell
+                : cell,
             );
           }
           updateGameData({
@@ -261,7 +261,7 @@ function MainPage() {
           if (gameData.selected.cluesIndex === 1) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
-                gameData.selected.cellsIndex
+                gameData.selected.cellsIndex,
               );
 
             if (selectionIndexInClueList > 0) {
@@ -283,7 +283,7 @@ function MainPage() {
           if (gameData.selected.cluesIndex === 1) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
-                gameData.selected.cellsIndex
+                gameData.selected.cellsIndex,
               );
             if (
               selectionIndexInClueList <
@@ -307,7 +307,7 @@ function MainPage() {
           if (gameData.selected.cluesIndex === 0) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
-                gameData.selected.cellsIndex
+                gameData.selected.cellsIndex,
               );
             if (selectionIndexInClueList > 0) {
               updateGameData({
@@ -328,7 +328,7 @@ function MainPage() {
           if (gameData.selected.cluesIndex === 0) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
-                gameData.selected.cellsIndex
+                gameData.selected.cellsIndex,
               );
             if (
               selectionIndexInClueList <
@@ -359,7 +359,7 @@ function MainPage() {
         const updatedCells = gameData.cells.map((cell, i) =>
           i === selectedCellsIndex
             ? { ...cell, value: key.toUpperCase(), incorrectFlag: false }
-            : cell
+            : cell,
         );
         updateGameData({
           ...gameData,
@@ -447,7 +447,7 @@ function MainPage() {
                 incorrectFlag: newIncorrectStatus,
                 value: newValue,
               }
-            : cell
+            : cell,
         );
       }
     });
@@ -462,7 +462,7 @@ function MainPage() {
     if (confirmed) {
       checkRevealIndices(
         Array.from({ length: gameData.cells.length }, (_, index) => index),
-        true
+        true,
       );
     }
 
@@ -482,7 +482,8 @@ function MainPage() {
   };
 
   const calculateScore = () => {
-    let scoreNumerator = numRows * numCols;
+    const totalCells = gameData.cells.filter((cell) => !cell.blank).length;
+    let scoreNumerator = totalCells;
     let checkedCnt = 0;
     let revealedCnt = 0;
 
@@ -502,7 +503,7 @@ function MainPage() {
       }
     });
 
-    const score = (scoreNumerator / (numRows * numCols)) * 100;
+    const score = (scoreNumerator / totalCells) * 100;
 
     return { score: score, checkedCnt: checkedCnt, revealedCnt: revealedCnt };
   };
@@ -518,7 +519,7 @@ function MainPage() {
           headers: {
             Authorization: `Bearer ${accessToken}`,
           },
-        }
+        },
       );
       console.log(response);
     } catch (err) {
@@ -610,9 +611,9 @@ function MainPage() {
                     checkRevealIndices(
                       Array.from(
                         { length: gameData.cells.length },
-                        (_, index) => index
+                        (_, index) => index,
                       ),
-                      false
+                      false,
                     );
                     setCheckMenuIsVisible(false);
                   }}
@@ -667,22 +668,24 @@ function MainPage() {
           </li>
         </ul>
         <div className="main__cluelist-container">
-          <div
-            className={`main__grid-container${
-              gameData.magnified ? "--zoom" : ""
-            }`}
-            style={gridContainerStyle}
-            onKeyDown={handleKeyDown}
-          >
-            {gameData.cells.map((cell) => (
-              <Cell
-                key={cell.index}
-                cellData={cell}
-                isSelected={isSelected(cell.index)}
-                isHighlighted={isHighlighted(cell.index)}
-                handleClickCell={handleClickCell}
-              />
-            ))}
+          <div className="main__zoom-wrapper">
+            <div
+              className={`main__grid-container${
+                gameData.magnified ? "--zoom" : ""
+              }`}
+              style={gridContainerStyle}
+              onKeyDown={handleKeyDown}
+            >
+              {gameData.cells.map((cell) => (
+                <Cell
+                  key={cell.index}
+                  cellData={cell}
+                  isSelected={isSelected(cell.index)}
+                  isHighlighted={isHighlighted(cell.index)}
+                  handleClickCell={handleClickCell}
+                />
+              ))}
+            </div>
           </div>
           <ClueList cluesData={cluesData} getCellsInClue={getCellsInClue} />
         </div>

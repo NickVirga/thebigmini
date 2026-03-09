@@ -2,8 +2,8 @@
   "gameId": 2,
   "darkThemeEnabled": true,
   "playedBefore": false,
-  "numRows": 15,
-  "numCols": 15,
+  "numRows": 8,
+  "numCols": 8,
   "winState": false,
   "magnified": false,
   "selected": {
