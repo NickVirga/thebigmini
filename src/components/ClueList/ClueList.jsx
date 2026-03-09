@@ -37,7 +37,7 @@ function ClueList({ cluesData, getCellsInClue }) {
         <h3>Across</h3>
         <div className="clue-list__list-container">
           <ul className="clue-list__list">
-            {cluesData.clues
+            {cluesData
               .filter((clue) => clue.cluesIndex === 0)
               .map((clue) => {
                 return (
@@ -65,7 +65,7 @@ function ClueList({ cluesData, getCellsInClue }) {
         <h3>Down</h3>
         <div className="clue-list__list-container">
           <ul className="clue-list__list">
-            {cluesData.clues
+            {cluesData
               .filter((clue) => clue.cluesIndex === 1)
               .map((clue) => {
                 return (
