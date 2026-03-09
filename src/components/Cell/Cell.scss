@@ -76,21 +76,25 @@
   }
 
   &__label {
-    font-size: 2vw;
+    font-size: 3cqi;
     position: absolute;
-    left: 2px;
+    left: 8%;
     top: 0px;
 
     @include tablet {
-      font-size: clamp(0.7rem, 1.4vw, 1rem);
-      left: 3px;
+      font-size: clamp(1rem, 2cqi, 3rem);
+      left: 5px;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
     }
   }
 
   &__text {
-    font-size: 3.5vw;
+    font-size: 6cqi;
     position: absolute;
-    top: 5px;
+    top: 15%;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -104,9 +108,12 @@
     }
 
     @include tablet {
-      font-size: 2.5vw;
-      font-size: clamp(1.25rem, 2.6vw, 2rem);
-      top: 8px;
+      font-size: clamp(2rem, 4.75cqi, 4rem);
+      top: 10%;
+    }
+
+    @include desktop {
+      font-size: 3.5rem;
     }
   }
 }
