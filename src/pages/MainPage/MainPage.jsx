@@ -186,7 +186,7 @@ function MainPage() {
   const handleKeyDown = (key) => {
     let selectedCellsIndex = gameData.selected.cellsIndex;
 
-    if (selectedCellsIndex !== null && !gameData.winState) {
+    if (selectedCellsIndex !== null && !gameData.gameComplete) {
       switch (key) {
         case "Backspace":
           if (
@@ -393,16 +393,19 @@ function MainPage() {
     if (!emptyDetected) {
       if (!incorrectDetected) {
         const gameResults = calculateScore();
-        if (accessToken) sendGameScore(gameResults.score);
+        if (accessToken && !gameData.stats.dailySaved) {
+          sendGameScore(gameResults.score);
+        } else {
+          updateGameData({
+            ...gameData,
+            gameComplete: true,
+          });
+        }
+
         updateTempGameData({
           gameScore: gameResults.score,
           lettersChecked: gameResults.checkedCnt,
           lettersRevealed: gameResults.revealedCnt,
-        });
-
-        updateGameData({
-          ...gameData,
-          winState: true,
         });
       }
       updateModalMode(2);
@@ -509,6 +512,7 @@ function MainPage() {
   };
 
   const sendGameScore = async (score) => {
+  
     const reqBody = { gameId: gameData.gameId, gameScore: score };
 
     try {
@@ -521,9 +525,29 @@ function MainPage() {
           },
         },
       );
-      console.log(response);
+      const { wins, scoreAccum } = response.data;
+
+      updateGameData({
+        ...gameData,
+        gameComplete: true,
+        stats: {
+          ...gameData.stats,
+          dailySaved: true,
+          wins: wins,
+          avgScore: wins > 0 ? scoreAccum / wins : 0,
+        },
+      });
     } catch (err) {
       console.error(err);
+      const dailySaved = err.response?.status === 409;
+      updateGameData({
+          ...gameData,
+          gameComplete: true,
+          stats: {
+            ...gameData.stats,
+            dailySaved: dailySaved,
+          },
+        });
     }
   };
 

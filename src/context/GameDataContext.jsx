@@ -54,7 +54,7 @@ const GameDataProvider = ({ children }) => {
   };
 
   const resetGameData = () => {
-    setGameData({ ...gameData, winState: false, cells: puzzleCellsData });
+    setGameData({ ...gameData, gameComplete: false, cells: puzzleCellsData });
   };
 
   return (

@@ -79,7 +79,7 @@ function LoginContent({ onClose }) {
             </div>
             <span className="auth__login-text">Sign in with X</span>
           </li> */}
-          <li
+          {/* <li
             className="auth__login-btn auth__login-btn--facebook"
             onClick={() => handleLogin("/api/auth/facebook")}
           >
@@ -87,7 +87,7 @@ function LoginContent({ onClose }) {
               <FaFacebook className="auth__btn-icon auth__btn-icon--facebook" />
             </div>
             <span className="auth__login-text"> Sign in with Facebook</span>
-          </li>
+          </li> */}
           <li
             className="auth__login-btn auth__login-btn--discord"
             onClick={() => handleLogin("/api/auth/discord")}
