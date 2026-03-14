@@ -114,45 +114,46 @@ function MainPage() {
     return cellsList.sort((a, b) => a - b);
   };
 
-  const shiftClueSelection = (stepSize) => {
+  const clueShift = (direction = 1) => {
     const currClueNum = gameData.selected.clueNum;
     const cluesList = cluesData;
+    let newClueNum =
+      (currClueNum + direction + cluesList.length) % cluesList.length;
 
-    if (stepSize >= cluesList.length) return;
-
-    let nextClueNum = currClueNum + stepSize;
-
-    if (nextClueNum > cluesList.length - 1) {
-      //clueNum exceeds largest
-      nextClueNum = 0; //go to first
+    if (!gameData.options.skipFilled) {
+      // jump to next clue, position on first cell
+      const newCells = cluesList[newClueNum].cellsInClue;
+      return {
+        ...gameData.selected,
+        cellsIndex: newCells[0],
+        cellsInClue: newCells,
+        cluesIndex: cluesList[newClueNum].cluesIndex,
+        clueNum: newClueNum,
+      };
     }
 
-    if (nextClueNum < 0) {
-      //clueNum below smallest
-      nextClueNum = cluesList.length - 1; //go to last
-    }
-
-    const nextCluesIndex = cluesData[nextClueNum].cluesIndex;
-
-    let nextCellsinClue = [];
-    for (let i = 0; i < gameData.cells.length; i++) {
-      if (gameData.cells[i].clues[nextCluesIndex] === nextClueNum) {
-        nextCellsinClue.push(i);
-      }
-    }
-    nextCellsinClue.sort((a, b) => a - b);
-
-    if (nextCellsinClue.length > 0)
-      updateGameData({
-        ...gameData,
-        selected: {
+    // skipFilled: find next clue with an empty cell
+    let attempts = 0;
+    while (attempts < cluesList.length) {
+      const newCells = cluesList[newClueNum].cellsInClue;
+      const firstEmpty = newCells.find(
+        (cellsIndex) => gameData.cells[cellsIndex].value === "",
+      );
+      if (firstEmpty !== undefined) {
+        return {
           ...gameData.selected,
-          cellsIndex: nextCellsinClue[0],
-          cellsInClue: nextCellsinClue,
-          cluesIndex: nextCluesIndex,
-          clueNum: nextClueNum,
-        },
-      });
+          cellsIndex: firstEmpty,
+          cellsInClue: newCells,
+          cluesIndex: cluesList[newClueNum].cluesIndex,
+          clueNum: newClueNum,
+        };
+      }
+      newClueNum =
+        (newClueNum + direction + cluesList.length) % cluesList.length;
+      attempts++;
+    }
+
+    return gameData.selected; // all cells filled, stay put
   };
 
   const changeLetter = (newValue, index) => {
@@ -165,25 +166,99 @@ function MainPage() {
     });
   };
 
-  const clueShift = (posShiftAmount) => {
+  const cellShift = (posShiftAmount, skipFilled) => {
     const clues = gameData.selected.cellsInClue;
-    const index = gameData.selected.cellsIndex;
+    const currIndex = gameData.selected.cellsIndex;
 
-    const pos = clues.indexOf(index);
-    if (posShiftAmount > 0) {
-      if (pos === clues.length - 1) {
-        return index;
+    const currPos = clues.indexOf(currIndex);
+
+    let newPos = currPos;
+
+    while (
+      newPos + posShiftAmount >= 0 &&
+      newPos + posShiftAmount < clues.length
+    ) {
+      newPos += posShiftAmount;
+
+      const newIndex = clues[newPos];
+
+      if (!skipFilled) return newIndex;
+
+      const newCell = gameData.cells[newIndex];
+
+      if (newCell.value === "") return newIndex;
+    }
+
+    return currIndex;
+  };
+
+  const cellAutoShift = (updatedCells) => {
+    const currCells = gameData.selected.cellsInClue;
+    const currSelectedIndex = gameData.selected.cellsIndex;
+    const currVal = gameData.cells[currSelectedIndex].value;
+    const currClueNum = gameData.selected.clueNum;
+    const cluesList = cluesData;
+    let newCells = currCells;
+    let newPos = currCells.indexOf(currSelectedIndex);
+    let newClueNum = currClueNum;
+    const isLastCellInClue = newPos === newCells.length - 1;
+
+    const findNextCell = (pos, cells) => {
+      let i = pos + 1;
+      while (i < cells.length) {
+        const cellsIndex = cells[i];
+
+        if (
+          !gameData.options.skipFilled ||
+          updatedCells[cellsIndex].value === ""
+        ) {
+          return { cellsIndex, pos: i };
+        }
+        i++;
       }
-    } else {
-      if (pos === 0) {
-        return index;
+      return null;
+    };
+
+    // if prefilled and not last cell, shift by exactly 1
+    if (currVal !== "" && !isLastCellInClue) {
+      const cellsIndex = newCells[newPos + 1];
+      return {
+        ...gameData.selected,
+        cellsIndex,
+      };
+    }
+
+    // all other cases: find next empty cell, wrapping through clue first
+    let result = findNextCell(newPos, newCells);
+
+    // wrap to beginning of same clue before jumping to next
+    if (!result && !isLastCellInClue) {
+      result = findNextCell(-1, newCells);
+    }
+
+    // no empty cells in clue, jump to next clue
+    if (!result && gameData.options.moveToNextClue) {
+      let attempts = 0;
+      while (!result && attempts < cluesList.length) {
+        newClueNum = (newClueNum + 1) % cluesList.length;
+        newCells = cluesList[newClueNum].cellsInClue;
+        result = findNextCell(-1, newCells);
+        attempts++;
       }
     }
 
-    return clues[pos + posShiftAmount];
+    if (!result) return gameData.selected;
+
+    return {
+      ...gameData.selected,
+      cellsIndex: result.cellsIndex,
+      cellsInClue: newCells,
+      cluesIndex: cluesList[newClueNum].cluesIndex,
+      clueNum: newClueNum,
+    };
   };
 
-  const handleKeyDown = (key) => {
+  const handleKeyDown = (key, e) => {
     let selectedCellsIndex = gameData.selected.cellsIndex;
 
     if (selectedCellsIndex !== null && !gameData.gameComplete) {
@@ -195,7 +270,7 @@ function MainPage() {
           ) {
             changeLetter("", selectedCellsIndex);
           } else {
-            const newCellsIndex = clueShift(-1);
+            const newCellsIndex = cellShift(-1, false);
             let updatedCells = gameData.cells;
             if (!gameData.cells[newCellsIndex].revealed) {
               updatedCells = gameData.cells.map((cell, i) =>
@@ -214,16 +289,16 @@ function MainPage() {
             });
           }
           break;
-
-        case "Delete":
+        case "Delete": //clear cell
           changeLetter("", selectedCellsIndex);
           break;
-        case " ":
+        case " ": //space bar: clear cell, move to next cell
+          e?.preventDefault(); // stops page scroll
           let updatedCells = gameData.cells;
           if (!gameData.cells[selectedCellsIndex].revealed) {
             updatedCells = gameData.cells.map((cell, i) =>
               i === selectedCellsIndex
-                ? { ...cell, value: "", incorrectFlag: fals }
+                ? { ...cell, value: "", incorrectFlag: false }
                 : cell,
             );
           }
@@ -232,11 +307,12 @@ function MainPage() {
             cells: updatedCells,
             selected: {
               ...gameData.selected,
-              cellsIndex: clueShift(1),
+              cellsIndex: cellShift(1, false),
             },
           });
           break;
-        case "Home":
+        case "Home": // nav to first cell in clue
+          e?.preventDefault();
           updateGameData({
             ...gameData,
             selected: {
@@ -245,7 +321,8 @@ function MainPage() {
             },
           });
           break;
-        case "End":
+        case "End": // nav to last cell in clue
+          e?.preventDefault();
           updateGameData({
             ...gameData,
             selected: {
@@ -257,7 +334,8 @@ function MainPage() {
             },
           });
           break;
-        case "ArrowUp":
+        case "ArrowUp": // move up in grid
+          e?.preventDefault();
           if (gameData.selected.cluesIndex === 1) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
@@ -279,7 +357,8 @@ function MainPage() {
           }
 
           break;
-        case "ArrowDown":
+        case "ArrowDown": // move down in grid
+          e?.preventDefault();
           if (gameData.selected.cluesIndex === 1) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
@@ -303,7 +382,8 @@ function MainPage() {
           }
 
           break;
-        case "ArrowLeft":
+        case "ArrowLeft": // move left in grid
+          e?.preventDefault();
           if (gameData.selected.cluesIndex === 0) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
@@ -324,7 +404,8 @@ function MainPage() {
           }
 
           break;
-        case "ArrowRight":
+        case "ArrowRight": // move right in grid
+          e?.preventDefault();
           if (gameData.selected.cluesIndex === 0) {
             const selectionIndexInClueList =
               gameData.selected.cellsInClue.indexOf(
@@ -348,26 +429,29 @@ function MainPage() {
           }
 
           break;
-
-        case "Tab":
-          event.preventDefault(); // Prevent the default tab behavior
-          shiftClueSelection(1);
+        case "Tab": // jump to next clue
+          e?.preventDefault(); // prevent the default tab behavior
+          updateGameData({
+            ...gameData,
+            selected: clueShift(e?.shiftKey ? -1 : 1),
+          });
           break;
       }
 
+      // input char in cell
       if (key.length === 1 && key.match(/[a-zA-Z]/)) {
         const updatedCells = gameData.cells.map((cell, i) =>
           i === selectedCellsIndex
             ? { ...cell, value: key.toUpperCase(), incorrectFlag: false }
             : cell,
         );
+
+        const newSelected = cellAutoShift(updatedCells);
+
         updateGameData({
           ...gameData,
           cells: updatedCells,
-          selected: {
-            ...gameData.selected,
-            cellsIndex: clueShift(1),
-          },
+          selected: newSelected,
         });
       }
     }
@@ -512,7 +596,6 @@ function MainPage() {
   };
 
   const sendGameScore = async (score) => {
-  
     const reqBody = { gameId: gameData.gameId, gameScore: score };
 
     try {
@@ -541,13 +624,13 @@ function MainPage() {
       console.error(err);
       const dailySaved = err.response?.status === 409;
       updateGameData({
-          ...gameData,
-          gameComplete: true,
-          stats: {
-            ...gameData.stats,
-            dailySaved: dailySaved,
-          },
-        });
+        ...gameData,
+        gameComplete: true,
+        stats: {
+          ...gameData.stats,
+          dailySaved: dailySaved,
+        },
+      });
     }
   };
 
@@ -556,7 +639,7 @@ function MainPage() {
   }, [gameData.cells]);
 
   useEffect(() => {
-    const handleKeyDownWrapper = (event) => handleKeyDown(event.key);
+    const handleKeyDownWrapper = (event) => handleKeyDown(event.key, event);
 
     window.addEventListener("keydown", handleKeyDownWrapper);
 
@@ -698,7 +781,7 @@ function MainPage() {
                 gameData.magnified ? "--zoom" : ""
               }`}
               style={gridContainerStyle}
-              onKeyDown={handleKeyDown}
+              onKeyDown={(e) => handleKeyDown(e.key, e)}
             >
               {gameData.cells.map((cell) => (
                 <Cell
@@ -717,7 +800,10 @@ function MainPage() {
           <FaAngleLeft
             className="main__icon main__clue-icon"
             onClick={() => {
-              shiftClueSelection(-1);
+              updateGameData({
+                ...gameData,
+                selected: clueShift(-1),
+              });
             }}
           />
           <span
@@ -733,12 +819,15 @@ function MainPage() {
           <FaAngleRight
             className="main__icon main__clue-icon"
             onClick={() => {
-              shiftClueSelection(1);
+              updateGameData({
+                ...gameData,
+                selected: clueShift(1),
+              });
             }}
           />
         </div>
         <Keyboard
-          handleKeyClick={handleKeyDown}
+          handleKeyClick={(key) => handleKeyDown(key, null)}
           handleCheckReveal={checkRevealIndices}
         />
       </div>

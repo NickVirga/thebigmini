@@ -6,6 +6,10 @@
   "numCols": 8,
   "magnified": false,
   "gameComplete": false,
+  "options": {
+    "moveToNextClue": true,
+    "skipFilled": true
+  },
   "stats" : {
     "dailySaved": false,
     "wins": null,

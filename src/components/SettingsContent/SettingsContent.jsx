@@ -16,6 +16,13 @@ function SettingsContent() {
     });
   };
 
+  const toggleOption = (gameDataOption) => {
+    updateGameData({
+      ...gameData,
+      options: {...gameData.options, [gameDataOption]: !gameData.options[gameDataOption]}
+    });
+  };
+
   const handleResetClick = () => {
     setConfirmIsOpen(true);
   };
@@ -43,6 +50,24 @@ function SettingsContent() {
             type="checkbox"
             checked={gameData.darkThemeEnabled}
             onChange={toggleDarkTheme}
+          ></input>
+        </li>
+        <li className="settings__item">
+          <h3 className="settings__option">Move to next clue:</h3>
+          <input
+            className="settings__checkbox"
+            type="checkbox"
+            checked={gameData.options.moveToNextClue}
+            onChange={() => toggleOption("moveToNextClue")}
+          ></input>
+        </li>
+        <li className="settings__item">
+          <h3 className="settings__option">Skip filled cells:</h3>
+          <input
+            className="settings__checkbox"
+            type="checkbox"
+            checked={gameData.options.skipFilled}
+            onChange={() => toggleOption("skipFilled")}
           ></input>
         </li>
         <li className="settings__item">
