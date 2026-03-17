@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
       setRefreshToken(null);
       await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/logout`,
-        { refreshToken }
+        { refreshToken },
       );
     } catch (err) {
       console.error("Logout failed:", err);
@@ -32,10 +32,15 @@ const AuthProvider = ({ children }) => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/auth/refresh-token`,
-        { refreshToken }
+        { refreshToken },
       );
-      const { accessToken, refreshToken: newRefreshToken } = response.data;
-      saveTokens({ accessToken, refreshToken: newRefreshToken });
+      const { accessToken: newAccessToken, refreshToken: newRefreshToken } =
+        response.data;
+      saveTokens({
+        accessToken: newAccessToken,
+        refreshToken: newRefreshToken,
+      });
+      return newAccessToken;
     } catch (err) {
       console.error("Failed to refresh access token:", err);
       localStorage.removeItem("authTokens");
@@ -51,14 +56,12 @@ const AuthProvider = ({ children }) => {
         const originalRequest = error.config;
         if (error.response.status === 401 && !originalRequest._retry) {
           originalRequest._retry = true;
-          await refreshAccessToken();
-          originalRequest.headers["Authorization"] = `Bearer ${
-            localStorage.getItem("authTokens")?.accessToken
-          }`;
+          const newAccessToken = await refreshAccessToken();
+          originalRequest.headers["Authorization"] = `Bearer ${newAccessToken}`;
           return axios(originalRequest);
         }
         return Promise.reject(error);
-      }
+      },
     );
 
     return () => {

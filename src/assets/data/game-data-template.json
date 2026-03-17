@@ -4,8 +4,17 @@
   "playedBefore": false,
   "numRows": 8,
   "numCols": 8,
-  "winState": false,
   "magnified": false,
+  "gameComplete": false,
+  "options": {
+    "moveToNextClue": true,
+    "skipFilled": true
+  },
+  "stats" : {
+    "dailySaved": false,
+    "wins": null,
+    "avgScore": null
+  },
   "selected": {
     "initCellsIndex": 0,
     "cellsIndex": null,

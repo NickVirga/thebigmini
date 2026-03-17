@@ -2,6 +2,7 @@ import "./LoginContent.scss";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ModalContext } from "../../context/ModalContext";
+import { GameDataContext } from "../../context/GameDataContext";
 
 import { FaXTwitter, FaFacebook, FaDiscord } from "react-icons/fa6";
 
@@ -11,6 +12,7 @@ function LoginContent({ onClose }) {
   const { saveTokens, logout, accessToken } = useContext(AuthContext);
   const { updateModalMode, redirectMode, updateRedirectMode } =
     useContext(ModalContext);
+  const { gameData, updateGameData } = useContext(GameDataContext);
 
   const handleLogin = (endpoint) => {
     const url = `${import.meta.env.VITE_SERVER_BASE_URL}${endpoint}`;
@@ -30,26 +32,29 @@ function LoginContent({ onClose }) {
 
     // Listen for a message from the child window (success with tokens)
     window.addEventListener("message", (event) => {
-
       if (event.origin === import.meta.env.VITE_CLIENT_BASE_URL) {
         const { accessToken, refreshToken } = event.data;
 
         if (accessToken && refreshToken) {
-          
-          saveTokens({accessToken: accessToken, refreshToken: refreshToken});
+          saveTokens({ accessToken: accessToken, refreshToken: refreshToken });
 
           authWindow.close();
 
-           if (redirectMode === 3) {
+          if (redirectMode === 3) {
             updateRedirectMode(null);
             updateModalMode(3);
           } else {
-            onClose(false)
+            onClose(false);
           }
-
         }
       }
     });
+  };
+
+  const handleLogout = () => {
+    //clear user data
+    updateGameData({ ...gameData, stats: {...gameData.stats, dailySaved: false, wins: null, avgScore: null} });
+    logout();
   };
 
   return (
@@ -79,7 +84,7 @@ function LoginContent({ onClose }) {
             </div>
             <span className="auth__login-text">Sign in with X</span>
           </li> */}
-          <li
+          {/* <li
             className="auth__login-btn auth__login-btn--facebook"
             onClick={() => handleLogin("/api/auth/facebook")}
           >
@@ -87,7 +92,7 @@ function LoginContent({ onClose }) {
               <FaFacebook className="auth__btn-icon auth__btn-icon--facebook" />
             </div>
             <span className="auth__login-text"> Sign in with Facebook</span>
-          </li>
+          </li> */}
           <li
             className="auth__login-btn auth__login-btn--discord"
             onClick={() => handleLogin("/api/auth/discord")}
@@ -100,7 +105,7 @@ function LoginContent({ onClose }) {
         </ul>
       )}
       {accessToken && (
-        <p className="auth__logout-btn button" onClick={()=>{logout()}}>
+        <p className="auth__logout-btn button" onClick={handleLogout}>
           Logout
         </p>
       )}

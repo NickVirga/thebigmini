@@ -35,7 +35,18 @@ function Confirm({ isOpen, onConfirm, message }) {
             gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
           }`}
         >
-          <p>{message}</p>
+          <div className="confirm__info-ctrl-wrapper">
+            
+            <div className="confirm__close-icon-wrapper">
+              <FaX
+                onClick={() => {
+                  handleClose(false);
+                }}
+                className="confirm__close-icon"
+              ></FaX>
+            </div>
+            <p>{message}</p>
+          </div>
           <div className="confirm__option-wrapper">
             <div
               className="confirm__option-btn button"
@@ -54,18 +65,10 @@ function Confirm({ isOpen, onConfirm, message }) {
               Close
             </div>
           </div>
-          <div className="confirm__close-icon-wrapper">
-            <FaX
-              onClick={() => {
-                handleClose(false);
-              }}
-              className="confirm__close-icon"
-            ></FaX>
-          </div>
         </div>
       </div>
     </>,
-    portalContainer
+    portalContainer,
   );
 }
 
