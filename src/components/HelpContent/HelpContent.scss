@@ -1,72 +1,23 @@
-@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
 
 .help {
+  &__header {
+    padding-bottom: 1.25rem;
+    margin-bottom: 0.25rem;
+    border-bottom: 2px solid var(--text-color);
+  }
 
-    &__title {
-        font-size: 1.3rem;
-        margin: 3.5rem 0 2rem 0;
-    }
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
+  }
 
-    &__list {
-        list-style-type: disc;
-        margin: 1rem;
-        list-style-position: inside;
-    }
-
-    &__item {
-        margin-bottom: 1rem;
-    }
-
-    &__grid {
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        margin-top: 1rem;
-
-        @include tablet {
-            margin-left: 2rem;
-        }
-    }
-
-    &__boundary-gap {
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        margin-top: 1rem;
-
-        @include tablet {
-            margin-left: 2rem;
-        }
-    }
-    
-    &__tooltip{
-        font-size: 0.8rem;
-        margin-left: 1.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        cursor: pointer;
-    }
-
-    &__tooltip-text {
-        color: rgb(225, 225, 225);
-    }
-
-    &__tooltip-icon {
-        color: rgb(150, 150, 150);
-    }
-
-    &__login{
-        margin-top: 1rem;
-        margin-right: 2rem;
-        text-decoration: underline;
-        cursor: pointer;
-        text-align: center;
-
-        &:hover {
-            color: rgb(170, 170, 170);
-        }
-    }
-
-
+  &__video {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }

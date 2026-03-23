@@ -10,19 +10,16 @@
   color: var(--text-color);
   background-color: var(--background-color); 
   width: 80%;
+  user-select: none;
 
   @include tablet {
-    max-width: 900px;
+    max-width: 600px;
     padding: 2rem;
   }
 
   &__wrapper {
     display: flex;
     justify-content: center;
-
-
-    
-
   }
 
   &__overlay {

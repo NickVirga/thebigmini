@@ -23,8 +23,10 @@ const GameDataProvider = ({ children }) => {
       initialGameData = storedGameData; // Use the stored game data
     } else {
       initialGameData = gameDataTemplate; // Use the template data
-      initialGameData.darkThemeEnabled = storedGameData.darkThemeEnabled;
       initialGameData.playedBefore = storedGameData.playedBefore;
+      initialGameData.options = { ...storedGameData.options }; // copy user preferences
+      initialGameData.stats.wins = storedGameData.stats.wins;
+      initialGameData.stats.avgScore = storedGameData.stats.avgScore;
       localStorage.removeItem("bigmini-game-data"); // Clear localStorage if IDs don't match
     }
   } else {

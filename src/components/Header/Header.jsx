@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ModalContext } from "../../context/ModalContext";
 import { AuthContext } from "../../context/AuthContext";
+import { GameDataContext } from "../../context/GameDataContext";
 import logo from "../../assets/images/bigmini-logo.png";
 
 import {
@@ -16,6 +17,7 @@ function Header() {
   const { updateModalOpen, updateModalMode, updateRedirectMode } =
     useContext(ModalContext);
   const { accessToken } = useContext(AuthContext);
+  const { gameData } = useContext(GameDataContext);
   const location = useLocation();
   const isCallback = location.pathname === "/auth/login-callback"
 
@@ -45,7 +47,7 @@ function Header() {
           <FaChartSimple
             className="header__icon"
             onClick={() => {
-              if (accessToken) {
+              if (accessToken || gameData.gameComplete) {
                 openModal(3);
               } else {
                 updateRedirectMode(3);

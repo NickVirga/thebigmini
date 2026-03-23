@@ -1,4 +1,3 @@
-
 // media breakpoints
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
@@ -12,7 +11,7 @@ $highlighted-cell-fill-color: #5db6ff;
 $blank-cell-fill-color: #000000;
 
 // Default Theme Variables
-$default-background-color: #ffffff;
+$default-background-color: #e2e2e2;
 $default-text-color: #000000;
 $default-button-background-color: #007bff;
 $default-button-text-color: #ffffff;
@@ -20,9 +19,13 @@ $default-error-background-color: #ffffff00;
 $default-error-text-color: #a61717;
 $default-success-background-color: #ffffff00;
 $default-success-text-color: #0e680e;
+$default-grid-background-color: #ffffff;
 $default-outer-border-color: #000000;
 $default-inner-border-color: #575757;
 $default-text-highlight-color: #b4b4b4;
+$default-background-highlight-color: #aaaaaa;
+$default-keyboard-key-color: #ffffff;
+$default-keyboard-char-color: #000000;
 
 // Dark Theme Variables
 $dark-background-color: #333333;
@@ -33,9 +36,13 @@ $dark-error-background-color: #a61717;
 $dark-error-text-color: #ffffff;
 $dark-success-background-color: #0e680e;
 $dark-success-text-color: #ffffff;
+$dark-grid-background-color: #333333;
 $dark-outer-border-color: #000000;
 $dark-inner-border-color: #575757;
 $dark-text-highlight-color: #b4b4b4;
+$dark-background-highlight-color: #5e5e5e;
+$dark-keyboard-key-color: #888888;
+$dark-keyboard-char-color: #ffffff;
 
 .default-theme {
     --background-color: #{$default-background-color};
@@ -46,9 +53,13 @@ $dark-text-highlight-color: #b4b4b4;
     --error-background-color: #{$default-error-background-color};
     --success-text-color: #{$default-success-text-color};
     --success-background-color: #{$default-success-background-color};
+    --grid-background-color: #{$default-grid-background-color};
     --outer-border-color: #{$default-outer-border-color};
     --inner-border-color: #{$default-inner-border-color};
     --text-hightlight-color: #{$default-text-highlight-color};
+    --background-highlight-color: #{$default-background-highlight-color};
+    --keyboard-key-color: #{$default-keyboard-key-color};
+    --keyboard-char-color: #{$default-keyboard-char-color};
 }
 
 .dark-theme {
@@ -60,8 +71,12 @@ $dark-text-highlight-color: #b4b4b4;
     --error-background-color: #{$dark-error-background-color};
     --success-text-color: #{$dark-success-text-color};
     --success-background-color: #{$dark-success-background-color};
+    --grid-background-color: #{$dark-grid-background-color};
     --outer-border-color: #{$dark-outer-border-color};
     --inner-border-color: #{$dark-inner-border-color};
     --text-hightlight-color: #{$dark-text-highlight-color};
+    --background-highlight-color: #{$dark-background-highlight-color};
+    --keyboard-key-color: #{$dark-keyboard-key-color};
+    --keyboard-char-color: #{$dark-keyboard-char-color};
 }
 

@@ -32,7 +32,7 @@ function Confirm({ isOpen, onConfirm, message }) {
       <div className="confirm__wrapper">
         <div
           className={`confirm ${
-            gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
+            gameData.options.darkThemeEnabled ? "dark-theme" : "default-theme"
           }`}
         >
           <div className="confirm__info-ctrl-wrapper">
@@ -62,7 +62,7 @@ function Confirm({ isOpen, onConfirm, message }) {
                 handleClose(false);
               }}
             >
-              Close
+              Cancel
             </div>
           </div>
         </div>

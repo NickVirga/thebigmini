@@ -9,11 +9,12 @@ import { ModalContext } from "../../context/ModalContext";
 import { AuthContext } from "../../context/AuthContext";
 import cluesData from "../../assets/data/clue-data.json";
 import axios from "axios";
+import { usePendingScore } from "../../hooks/usePendingScore";
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 function MainPage() {
-  const { gameData, updateGameData, updateTempGameData } =
+  const { gameData, updateGameData } =
     useContext(GameDataContext);
   const { updateModalOpen, updateModalMode } = useContext(ModalContext);
   const { accessToken } = useContext(AuthContext);
@@ -478,19 +479,19 @@ function MainPage() {
       if (!incorrectDetected) {
         const gameResults = calculateScore();
         if (accessToken && !gameData.stats.dailySaved) {
-          sendGameScore(gameResults.score);
+          sendGameScore(gameResults);
         } else {
           updateGameData({
             ...gameData,
             gameComplete: true,
+            stats: {
+              ...gameData.stats,
+              score: gameResults.score,
+              checkedCnt: gameResults.checkedCnt,
+              revealedCnt: gameResults.revealedCnt,
+            },
           });
         }
-
-        updateTempGameData({
-          gameScore: gameResults.score,
-          lettersChecked: gameResults.checkedCnt,
-          lettersRevealed: gameResults.revealedCnt,
-        });
       }
       updateModalMode(2);
       updateModalOpen(true);
@@ -595,7 +596,9 @@ function MainPage() {
     return { score: score, checkedCnt: checkedCnt, revealedCnt: revealedCnt };
   };
 
-  const sendGameScore = async (score) => {
+  const sendGameScore = async (gameResults) => {
+    console.log("sendGameScore")
+    const { score, checkedCnt, revealedCnt } = gameResults;
     const reqBody = { gameId: gameData.gameId, gameScore: score };
 
     try {
@@ -615,6 +618,9 @@ function MainPage() {
         gameComplete: true,
         stats: {
           ...gameData.stats,
+          score: score,
+          checkedCnt: checkedCnt,
+          revealedCnt: revealedCnt,
           dailySaved: true,
           wins: wins,
           avgScore: wins > 0 ? scoreAccum / wins : 0,
@@ -628,11 +634,16 @@ function MainPage() {
         gameComplete: true,
         stats: {
           ...gameData.stats,
+          score: score,
+          checkedCnt: checkedCnt,
+          revealedCnt: revealedCnt,
           dailySaved: dailySaved,
         },
       });
     }
   };
+
+  usePendingScore(accessToken, gameData, updateGameData);
 
   useEffect(() => {
     checkIfGameComplete();

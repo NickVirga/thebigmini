@@ -11,7 +11,6 @@ import Footer from "./components/Footer/Footer";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 
 import { GameDataContext } from "./context/GameDataContext";
-// import "./styles/partials/_global.scss";
 
 function App() {
   const { gameData } = useContext(GameDataContext);
@@ -20,7 +19,7 @@ function App() {
     <BrowserRouter>
       <div
         className={`app ${
-          gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
+          gameData.options.darkThemeEnabled ? "dark-theme" : "default-theme"
         }`}
       >
         <Modal />

@@ -3,7 +3,7 @@
     "index": 0,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "L",
     "label": 1,
     "clues": [
       0,
@@ -16,15 +16,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 0,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 1,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "I",
     "label": 2,
     "clues": [
       0,
@@ -37,15 +35,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 0,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 2,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "B",
     "label": 3,
     "clues": [
       0,
@@ -58,15 +54,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 0,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 3,
     "blank": false,
     "value": "",
-    "answer": "K",
+    "answer": "R",
     "label": 4,
     "clues": [
       0,
@@ -79,15 +73,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 0,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 4,
     "blank": false,
     "value": "",
-    "answer": "P",
+    "answer": "A",
     "label": 8,
     "clues": [
       0,
@@ -100,15 +92,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 0,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 5,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "R",
     "label": 9,
     "clues": [
       0,
@@ -121,15 +111,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 0,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 6,
     "blank": false,
     "value": "",
-    "answer": "T",
+    "answer": "Y",
     "label": 10,
     "clues": [
       0,
@@ -142,9 +130,7 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 0,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 7,
@@ -160,9 +146,7 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 0,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 8,
@@ -181,15 +165,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 1,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 9,
     "blank": false,
     "value": "",
-    "answer": "L",
+    "answer": "S",
     "label": "",
     "clues": [
       1,
@@ -202,15 +184,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 1,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 10,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "I",
     "label": "",
     "clues": [
       1,
@@ -223,15 +203,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 1,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 11,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "A",
     "label": "",
     "clues": [
       1,
@@ -244,15 +222,13 @@
     "dividers": 2,
     "section": 0,
     "rowNum": 1,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 12,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "W",
     "label": 11,
     "clues": [
       8,
@@ -265,15 +241,13 @@
     "dividers": 8,
     "section": 1,
     "rowNum": 1,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 13,
     "blank": false,
     "value": "",
-    "answer": "G",
+    "answer": "H",
     "label": "",
     "clues": [
       8,
@@ -286,15 +260,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 1,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 14,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "E",
     "label": "",
     "clues": [
       8,
@@ -307,15 +279,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 1,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 15,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "E",
     "label": 12,
     "clues": [
       8,
@@ -328,15 +298,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 1,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 16,
     "blank": false,
     "value": "",
-    "answer": "L",
+    "answer": "B",
     "label": 6,
     "clues": [
       2,
@@ -349,15 +317,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 2,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 17,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "E",
     "label": "",
     "clues": [
       2,
@@ -370,15 +336,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 2,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 18,
     "blank": false,
     "value": "",
-    "answer": "T",
+    "answer": "A",
     "label": "",
     "clues": [
       2,
@@ -391,15 +355,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 2,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 19,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "M",
     "label": "",
     "clues": [
       2,
@@ -412,15 +374,13 @@
     "dividers": 2,
     "section": 0,
     "rowNum": 2,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 20,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "L",
     "label": 13,
     "clues": [
       9,
@@ -433,15 +393,13 @@
     "dividers": 8,
     "section": 1,
     "rowNum": 2,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 21,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "E",
     "label": "",
     "clues": [
       9,
@@ -454,15 +412,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 2,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 22,
     "blank": false,
     "value": "",
-    "answer": "D",
+    "answer": "A",
     "label": "",
     "clues": [
       9,
@@ -475,15 +431,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 2,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 23,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "F",
     "label": "",
     "clues": [
       9,
@@ -496,20 +450,15 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 2,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 24,
-    "blank": false,
+    "blank": true,
     "value": "",
-    "answer": "L",
-    "label": 7,
-    "clues": [
-      3,
-      4
-    ],
+    "answer": "",
+    "label": "",
+    "clues": [],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -517,16 +466,14 @@
     "dividers": 4,
     "section": 0,
     "rowNum": 3,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 25,
     "blank": false,
     "value": "",
-    "answer": "O",
-    "label": "",
+    "answer": "E",
+    "label": 7,
     "clues": [
       3,
       5
@@ -538,15 +485,13 @@
     "dividers": 4,
     "section": 0,
     "rowNum": 3,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 26,
     "blank": false,
     "value": "",
-    "answer": "S",
+    "answer": "T",
     "label": "",
     "clues": [
       3,
@@ -559,15 +504,13 @@
     "dividers": 0,
     "section": 0,
     "rowNum": 3,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 27,
     "blank": false,
     "value": "",
-    "answer": "S",
+    "answer": "A",
     "label": "",
     "clues": [
       3,
@@ -580,9 +523,7 @@
     "dividers": 6,
     "section": 0,
     "rowNum": 3,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 28,
@@ -598,15 +539,13 @@
     "dividers": 12,
     "section": 1,
     "rowNum": 3,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 29,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "A",
     "label": 14,
     "clues": [
       10,
@@ -619,15 +558,13 @@
     "dividers": 4,
     "section": 1,
     "rowNum": 3,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 30,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "R",
     "label": "",
     "clues": [
       10,
@@ -640,15 +577,13 @@
     "dividers": 4,
     "section": 1,
     "rowNum": 3,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 31,
     "blank": false,
     "value": "",
-    "answer": "M",
+    "answer": "F",
     "label": "",
     "clues": [
       10,
@@ -661,15 +596,13 @@
     "dividers": 0,
     "section": 1,
     "rowNum": 3,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 32,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "J",
     "label": 15,
     "clues": [
       15,
@@ -682,15 +615,13 @@
     "dividers": 1,
     "section": 2,
     "rowNum": 4,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 33,
     "blank": false,
     "value": "",
-    "answer": "L",
+    "answer": "O",
     "label": 16,
     "clues": [
       15,
@@ -703,15 +634,13 @@
     "dividers": 1,
     "section": 2,
     "rowNum": 4,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 34,
     "blank": false,
     "value": "",
-    "answer": "P",
+    "answer": "H",
     "label": "",
     "clues": [
       15,
@@ -724,15 +653,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 4,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 35,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "N",
     "label": 17,
     "clues": [
       15,
@@ -745,15 +672,13 @@
     "dividers": 3,
     "section": 2,
     "rowNum": 4,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 36,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "B",
     "label": 21,
     "clues": [
       22,
@@ -766,15 +691,13 @@
     "dividers": 9,
     "section": 3,
     "rowNum": 4,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 37,
     "blank": false,
     "value": "",
-    "answer": "D",
+    "answer": "A",
     "label": 22,
     "clues": [
       22,
@@ -787,15 +710,13 @@
     "dividers": 1,
     "section": 3,
     "rowNum": 4,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 38,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "B",
     "label": 23,
     "clues": [
       22,
@@ -808,15 +729,13 @@
     "dividers": 1,
     "section": 3,
     "rowNum": 4,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 39,
     "blank": false,
     "value": "",
-    "answer": "N",
+    "answer": "E",
     "label": "",
     "clues": [
       22,
@@ -829,15 +748,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 4,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 40,
     "blank": false,
     "value": "",
-    "answer": "H",
+    "answer": "A",
     "label": 18,
     "clues": [
       16,
@@ -850,15 +767,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 5,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 41,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "B",
     "label": "",
     "clues": [
       16,
@@ -871,15 +786,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 5,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 42,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "L",
     "label": "",
     "clues": [
       16,
@@ -892,15 +805,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 5,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 43,
     "blank": false,
     "value": "",
-    "answer": "P",
+    "answer": "E",
     "label": "",
     "clues": [
       16,
@@ -913,15 +824,13 @@
     "dividers": 2,
     "section": 2,
     "rowNum": 5,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 44,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "A",
     "label": 24,
     "clues": [
       23,
@@ -934,15 +843,13 @@
     "dividers": 8,
     "section": 3,
     "rowNum": 5,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 45,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "C",
     "label": "",
     "clues": [
       23,
@@ -955,15 +862,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 5,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 46,
     "blank": false,
     "value": "",
-    "answer": "P",
+    "answer": "D",
     "label": "",
     "clues": [
       23,
@@ -976,15 +881,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 5,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 47,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "C",
     "label": "",
     "clues": [
       23,
@@ -997,15 +900,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 5,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 48,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "W",
     "label": 19,
     "clues": [
       17,
@@ -1018,15 +919,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 6,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 49,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "O",
     "label": "",
     "clues": [
       17,
@@ -1039,15 +938,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 6,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 50,
     "blank": false,
     "value": "",
-    "answer": "W",
+    "answer": "O",
     "label": "",
     "clues": [
       17,
@@ -1060,15 +957,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 6,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 51,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "S",
     "label": "",
     "clues": [
       17,
@@ -1081,15 +976,13 @@
     "dividers": 2,
     "section": 2,
     "rowNum": 6,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 52,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "C",
     "label": 25,
     "clues": [
       24,
@@ -1102,15 +995,13 @@
     "dividers": 8,
     "section": 3,
     "rowNum": 6,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 53,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "H",
     "label": "",
     "clues": [
       24,
@@ -1123,15 +1014,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 6,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 54,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "A",
     "label": "",
     "clues": [
       24,
@@ -1144,15 +1033,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 6,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 55,
     "blank": false,
     "value": "",
-    "answer": "N",
+    "answer": "T",
     "label": "",
     "clues": [
       24,
@@ -1165,15 +1052,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 6,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   },
   {
     "index": 56,
     "blank": false,
     "value": "",
-    "answer": "B",
+    "answer": "S",
     "label": 20,
     "clues": [
       18,
@@ -1186,15 +1071,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 7,
-    "colNum": 0,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 0
   },
   {
     "index": 57,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "E",
     "label": "",
     "clues": [
       18,
@@ -1207,15 +1090,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 7,
-    "colNum": 1,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 1
   },
   {
     "index": 58,
     "blank": false,
     "value": "",
-    "answer": "S",
+    "answer": "N",
     "label": "",
     "clues": [
       18,
@@ -1228,15 +1109,13 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 7,
-    "colNum": 2,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 2
   },
   {
     "index": 59,
     "blank": false,
     "value": "",
-    "answer": "H",
+    "answer": "T",
     "label": "",
     "clues": [
       18,
@@ -1249,17 +1128,18 @@
     "dividers": 2,
     "section": 2,
     "rowNum": 7,
-    "colNum": 3,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 3
   },
   {
     "index": 60,
-    "blank": true,
+    "blank": false,
     "value": "",
-    "answer": "",
-    "label": "",
-    "clues": [],
+    "answer": "K",
+    "label": 26,
+    "clues": [
+      25,
+      26
+    ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -1267,16 +1147,14 @@
     "dividers": 8,
     "section": 3,
     "rowNum": 7,
-    "colNum": 4,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 4
   },
   {
     "index": 61,
     "blank": false,
     "value": "",
-    "answer": "A",
-    "label": 26,
+    "answer": "E",
+    "label": "",
     "clues": [
       25,
       27
@@ -1288,15 +1166,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 7,
-    "colNum": 5,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 5
   },
   {
     "index": 62,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "Y",
     "label": "",
     "clues": [
       25,
@@ -1309,15 +1185,13 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 7,
-    "colNum": 6,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 6
   },
   {
     "index": 63,
     "blank": false,
     "value": "",
-    "answer": "T",
+    "answer": "S",
     "label": "",
     "clues": [
       25,
@@ -1330,8 +1204,6 @@
     "dividers": 0,
     "section": 3,
     "rowNum": 7,
-    "colNum": 7,
-    "matchQuantityScoreRow": 3,
-    "matchQuantitzyScoreCol": 3
+    "colNum": 7
   }
 ]

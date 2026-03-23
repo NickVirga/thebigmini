@@ -25,6 +25,7 @@ body,
 .button {
   background-color: var(--button-background-color);
   color: rgb(27, 27, 27);
+  color: var(--button-text-color);
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-weight: bold;

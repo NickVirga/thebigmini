@@ -1,19 +1,22 @@
 {
   "gameId": 3,
-  "darkThemeEnabled": true,
   "playedBefore": false,
   "numRows": 8,
   "numCols": 8,
   "magnified": false,
   "gameComplete": false,
   "options": {
+    "darkThemeEnabled": false,
     "moveToNextClue": true,
     "skipFilled": true
   },
   "stats" : {
     "dailySaved": false,
     "wins": null,
-    "avgScore": null
+    "avgScore": null,
+    "score": 0,
+    "checkedCnt": 0,
+    "revealedCnt": 0
   },
   "selected": {
     "initCellsIndex": 0,

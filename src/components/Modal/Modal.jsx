@@ -39,7 +39,7 @@ function Modal() {
       <div className="modal__wrapper">
         <div
           className={`modal ${
-            gameData.darkThemeEnabled ? "dark-theme" : "default-theme"
+            gameData.options.darkThemeEnabled ? "dark-theme" : "default-theme"
           }`}
         >
           {modalMode === 0 && <HelpContent></HelpContent>}

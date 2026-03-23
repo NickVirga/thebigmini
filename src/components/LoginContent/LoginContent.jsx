@@ -4,7 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { ModalContext } from "../../context/ModalContext";
 import { GameDataContext } from "../../context/GameDataContext";
 
-import { FaXTwitter, FaFacebook, FaDiscord } from "react-icons/fa6";
+import { FaDiscord } from "react-icons/fa6";
 
 import { FcGoogle } from "react-icons/fc";
 
@@ -31,29 +31,41 @@ function LoginContent({ onClose }) {
     }, 500);
 
     // Listen for a message from the child window (success with tokens)
-    window.addEventListener("message", (event) => {
-      if (event.origin === import.meta.env.VITE_CLIENT_BASE_URL) {
-        const { accessToken, refreshToken } = event.data;
+    const handleMessage = (event) => {
+    if (event.origin === import.meta.env.VITE_CLIENT_BASE_URL) {
+      const { accessToken, refreshToken } = event.data;
 
-        if (accessToken && refreshToken) {
-          saveTokens({ accessToken: accessToken, refreshToken: refreshToken });
+      if (accessToken && refreshToken) {
+        window.removeEventListener("message", handleMessage); // cleanup
 
-          authWindow.close();
+        saveTokens({ accessToken, refreshToken });
 
-          if (redirectMode === 3) {
-            updateRedirectMode(null);
-            updateModalMode(3);
-          } else {
-            onClose(false);
-          }
+        authWindow.close();
+
+        if (redirectMode === 3) {
+          updateRedirectMode(null);
+          updateModalMode(3);
+        } else {
+          onClose(false);
         }
       }
-    });
+    }
+  };
+
+  window.addEventListener("message", handleMessage);
   };
 
   const handleLogout = () => {
     //clear user data
-    updateGameData({ ...gameData, stats: {...gameData.stats, dailySaved: false, wins: null, avgScore: null} });
+    updateGameData({
+      ...gameData,
+      stats: {
+        ...gameData.stats,
+        dailySaved: false,
+        wins: null,
+        avgScore: null,
+      },
+    });
     logout();
   };
 
@@ -75,24 +87,6 @@ function LoginContent({ onClose }) {
             </div>
             <span className="auth__login-text"> Sign in with Google</span>
           </li>
-          {/* <li
-            className="auth__login-btn auth__login-btn--x"
-            onClick={() => handleLogin("/api/auth/twitter")}
-          >
-            <div className="auth__btn-icon-wrapper auth__btn-icon--x">
-              <FaXTwitter className="auth__btn-icon" />
-            </div>
-            <span className="auth__login-text">Sign in with X</span>
-          </li> */}
-          {/* <li
-            className="auth__login-btn auth__login-btn--facebook"
-            onClick={() => handleLogin("/api/auth/facebook")}
-          >
-            <div className="auth__btn-icon-wrapper">
-              <FaFacebook className="auth__btn-icon auth__btn-icon--facebook" />
-            </div>
-            <span className="auth__login-text"> Sign in with Facebook</span>
-          </li> */}
           <li
             className="auth__login-btn auth__login-btn--discord"
             onClick={() => handleLogin("/api/auth/discord")}

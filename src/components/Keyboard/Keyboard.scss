@@ -1,4 +1,5 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .keyboard {
   display: block;
@@ -40,7 +41,8 @@
     align-items: center;
     padding: 0.4rem 0;
     font-size: 1.4rem;
-    background-color: #888888;
+    background-color: var(--keyboard-key-color);
+    color: var(--keyboard-char-color);
     border-radius: 5px;
     user-select: none;
     flex-grow: 1;
@@ -57,13 +59,13 @@
 
   &__layout-toggle-btn {
     @extend .keyboard__key;
-    background-color: #5e5e5e;
+    background-color: var(--keyboard-key-color);
     flex-grow: 1.5;
   } 
 
   &__backspace-btn {
     @extend .keyboard__layout-toggle-btn;
-    background-color: #5e5e5e;
+    background-color: var(--keyboard-key-color);
     flex-grow: 1.5;
     font-size: 1.8rem;
   }
@@ -100,12 +102,12 @@
     justify-content: center;
     align-items: center;
     padding: 0.2rem 0;
-    background-color: #888888;
+    background-color:  var(--keyboard-key-color);
     user-select: none;
     border-bottom: 1px solid black;
 
     &:hover {
-      background-color: #5e5e5e;
+      background-color:  var(--background-highlight-color);
     }
 
 

@@ -2,7 +2,7 @@
 @use "../../styles/partials/_variables" as *;
 
 .cell {
-  background-color: var(--background-color);
+  background-color: var(--grid-background-color);
   display: flex;
   justify-content: center;
   align-items: center;
