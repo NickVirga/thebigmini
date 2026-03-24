@@ -3,7 +3,7 @@
     "index": 0,
     "blank": false,
     "value": "",
-    "answer": "L",
+    "answer": "P",
     "label": 1,
     "clues": [
       0,
@@ -41,7 +41,7 @@
     "index": 2,
     "blank": false,
     "value": "",
-    "answer": "B",
+    "answer": "S",
     "label": 3,
     "clues": [
       0,
@@ -60,7 +60,7 @@
     "index": 3,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "A",
     "label": 4,
     "clues": [
       0,
@@ -70,7 +70,7 @@
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 0,
+    "dividers": 2,
     "section": 0,
     "rowNum": 0,
     "colNum": 3
@@ -82,14 +82,14 @@
     "answer": "A",
     "label": 8,
     "clues": [
-      0,
+      8,
       11
     ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 0,
+    "dividers": 8,
     "section": 1,
     "rowNum": 0,
     "colNum": 4
@@ -98,10 +98,10 @@
     "index": 5,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "A",
     "label": 9,
     "clues": [
-      0,
+      8,
       12
     ],
     "checked": false,
@@ -117,10 +117,10 @@
     "index": 6,
     "blank": false,
     "value": "",
-    "answer": "Y",
+    "answer": "A",
     "label": 10,
     "clues": [
-      0,
+      8,
       13
     ],
     "checked": false,
@@ -152,7 +152,7 @@
     "index": 8,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "O",
     "label": 5,
     "clues": [
       1,
@@ -171,7 +171,7 @@
     "index": 9,
     "blank": false,
     "value": "",
-    "answer": "S",
+    "answer": "M",
     "label": "",
     "clues": [
       1,
@@ -190,7 +190,7 @@
     "index": 10,
     "blank": false,
     "value": "",
-    "answer": "I",
+    "answer": "N",
     "label": "",
     "clues": [
       1,
@@ -209,7 +209,7 @@
     "index": 11,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "I",
     "label": "",
     "clues": [
       1,
@@ -228,10 +228,10 @@
     "index": 12,
     "blank": false,
     "value": "",
-    "answer": "W",
+    "answer": "B",
     "label": 11,
     "clues": [
-      8,
+      9,
       11
     ],
     "checked": false,
@@ -247,10 +247,10 @@
     "index": 13,
     "blank": false,
     "value": "",
-    "answer": "H",
+    "answer": "O",
     "label": "",
     "clues": [
-      8,
+      9,
       12
     ],
     "checked": false,
@@ -266,10 +266,10 @@
     "index": 14,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "L",
     "label": "",
     "clues": [
-      8,
+      9,
       13
     ],
     "checked": false,
@@ -285,10 +285,10 @@
     "index": 15,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "A",
     "label": 12,
     "clues": [
-      8,
+      9,
       14
     ],
     "checked": false,
@@ -304,7 +304,7 @@
     "index": 16,
     "blank": false,
     "value": "",
-    "answer": "B",
+    "answer": "S",
     "label": 6,
     "clues": [
       2,
@@ -323,7 +323,7 @@
     "index": 17,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "H",
     "label": "",
     "clues": [
       2,
@@ -342,7 +342,7 @@
     "index": 18,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "O",
     "label": "",
     "clues": [
       2,
@@ -361,7 +361,7 @@
     "index": 19,
     "blank": false,
     "value": "",
-    "answer": "M",
+    "answer": "R",
     "label": "",
     "clues": [
       2,
@@ -371,7 +371,7 @@
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 2,
+    "dividers": 0,
     "section": 0,
     "rowNum": 2,
     "colNum": 3
@@ -380,17 +380,17 @@
     "index": 20,
     "blank": false,
     "value": "",
-    "answer": "L",
-    "label": 13,
+    "answer": "I",
+    "label": "",
     "clues": [
-      9,
+      2,
       11
     ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 8,
+    "dividers": 0,
     "section": 1,
     "rowNum": 2,
     "colNum": 4
@@ -399,10 +399,10 @@
     "index": 21,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "N",
     "label": "",
     "clues": [
-      9,
+      2,
       12
     ],
     "checked": false,
@@ -418,10 +418,10 @@
     "index": 22,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "G",
     "label": "",
     "clues": [
-      9,
+      2,
       13
     ],
     "checked": false,
@@ -437,10 +437,10 @@
     "index": 23,
     "blank": false,
     "value": "",
-    "answer": "F",
+    "answer": "S",
     "label": "",
     "clues": [
-      9,
+      2,
       14
     ],
     "checked": false,
@@ -454,16 +454,19 @@
   },
   {
     "index": 24,
-    "blank": true,
+    "blank": false,
     "value": "",
-    "answer": "",
-    "label": "",
-    "clues": [],
+    "answer": "T",
+    "label": 7,
+    "clues": [
+      3,
+      4
+    ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 4,
+    "dividers": 0,
     "section": 0,
     "rowNum": 3,
     "colNum": 0
@@ -472,8 +475,8 @@
     "index": 25,
     "blank": false,
     "value": "",
-    "answer": "E",
-    "label": 7,
+    "answer": "O",
+    "label": "",
     "clues": [
       3,
       5
@@ -491,7 +494,7 @@
     "index": 26,
     "blank": false,
     "value": "",
-    "answer": "T",
+    "answer": "G",
     "label": "",
     "clues": [
       3,
@@ -501,21 +504,18 @@
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 0,
+    "dividers": 4,
     "section": 0,
     "rowNum": 3,
     "colNum": 2
   },
   {
     "index": 27,
-    "blank": false,
+    "blank": true,
     "value": "",
-    "answer": "A",
+    "answer": "",
     "label": "",
-    "clues": [
-      3,
-      7
-    ],
+    "clues": [],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -527,11 +527,14 @@
   },
   {
     "index": 28,
-    "blank": true,
+    "blank": false,
     "value": "",
-    "answer": "",
-    "label": "",
-    "clues": [],
+    "answer": "T",
+    "label": 13,
+    "clues": [
+      10,
+      11
+    ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -545,8 +548,8 @@
     "index": 29,
     "blank": false,
     "value": "",
-    "answer": "A",
-    "label": 14,
+    "answer": "E",
+    "label": "",
     "clues": [
       10,
       12
@@ -564,7 +567,7 @@
     "index": 30,
     "blank": false,
     "value": "",
-    "answer": "R",
+    "answer": "A",
     "label": "",
     "clues": [
       10,
@@ -583,7 +586,7 @@
     "index": 31,
     "blank": false,
     "value": "",
-    "answer": "F",
+    "answer": "S",
     "label": "",
     "clues": [
       10,
@@ -602,17 +605,17 @@
     "index": 32,
     "blank": false,
     "value": "",
-    "answer": "J",
-    "label": 15,
+    "answer": "A",
+    "label": 14,
     "clues": [
       15,
-      19
+      4
     ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 1,
+    "dividers": 0,
     "section": 2,
     "rowNum": 4,
     "colNum": 0
@@ -621,11 +624,11 @@
     "index": 33,
     "blank": false,
     "value": "",
-    "answer": "O",
-    "label": 16,
+    "answer": "K",
+    "label": 15,
     "clues": [
       15,
-      20
+      19
     ],
     "checked": false,
     "revealed": false,
@@ -640,31 +643,28 @@
     "index": 34,
     "blank": false,
     "value": "",
-    "answer": "H",
-    "label": "",
+    "answer": "A",
+    "label": 16,
     "clues": [
       15,
-      6
+      20
     ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 0,
+    "dividers": 1,
     "section": 2,
     "rowNum": 4,
     "colNum": 2
   },
   {
     "index": 35,
-    "blank": false,
+    "blank": true,
     "value": "",
-    "answer": "N",
-    "label": 17,
-    "clues": [
-      15,
-      21
-    ],
+    "answer": "",
+    "label": "",
+    "clues": [],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -676,14 +676,11 @@
   },
   {
     "index": 36,
-    "blank": false,
+    "blank": true,
     "value": "",
-    "answer": "B",
-    "label": 21,
-    "clues": [
-      22,
-      26
-    ],
+    "answer": "",
+    "label": "",
+    "clues": [],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
@@ -697,11 +694,11 @@
     "index": 37,
     "blank": false,
     "value": "",
-    "answer": "A",
-    "label": 22,
+    "answer": "K",
+    "label": 21,
     "clues": [
       22,
-      27
+      26
     ],
     "checked": false,
     "revealed": false,
@@ -716,11 +713,11 @@
     "index": 38,
     "blank": false,
     "value": "",
-    "answer": "B",
-    "label": 23,
+    "answer": "O",
+    "label": 22,
     "clues": [
       22,
-      28
+      27
     ],
     "checked": false,
     "revealed": false,
@@ -735,7 +732,7 @@
     "index": 39,
     "blank": false,
     "value": "",
-    "answer": "E",
+    "answer": "I",
     "label": "",
     "clues": [
       22,
@@ -754,11 +751,11 @@
     "index": 40,
     "blank": false,
     "value": "",
-    "answer": "A",
-    "label": 18,
+    "answer": "G",
+    "label": 17,
     "clues": [
       16,
-      19
+      4
     ],
     "checked": false,
     "revealed": false,
@@ -773,11 +770,11 @@
     "index": 41,
     "blank": false,
     "value": "",
-    "answer": "B",
+    "answer": "I",
     "label": "",
     "clues": [
       16,
-      20
+      19
     ],
     "checked": false,
     "revealed": false,
@@ -796,7 +793,7 @@
     "label": "",
     "clues": [
       16,
-      6
+      20
     ],
     "checked": false,
     "revealed": false,
@@ -811,8 +808,8 @@
     "index": 43,
     "blank": false,
     "value": "",
-    "answer": "E",
-    "label": "",
+    "answer": "A",
+    "label": 18,
     "clues": [
       16,
       21
@@ -830,11 +827,11 @@
     "index": 44,
     "blank": false,
     "value": "",
-    "answer": "A",
-    "label": 24,
+    "answer": "L",
+    "label": 23,
     "clues": [
       23,
-      26
+      25
     ],
     "checked": false,
     "revealed": false,
@@ -849,11 +846,11 @@
     "index": 45,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "A",
     "label": "",
     "clues": [
       23,
-      27
+      26
     ],
     "checked": false,
     "revealed": false,
@@ -872,7 +869,7 @@
     "label": "",
     "clues": [
       23,
-      28
+      27
     ],
     "checked": false,
     "revealed": false,
@@ -887,7 +884,7 @@
     "index": 47,
     "blank": false,
     "value": "",
-    "answer": "C",
+    "answer": "S",
     "label": "",
     "clues": [
       23,
@@ -906,11 +903,11 @@
     "index": 48,
     "blank": false,
     "value": "",
-    "answer": "W",
+    "answer": "E",
     "label": 19,
     "clues": [
       17,
-      19
+      4
     ],
     "checked": false,
     "revealed": false,
@@ -925,11 +922,11 @@
     "index": 49,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "A",
     "label": "",
     "clues": [
       17,
-      20
+      19
     ],
     "checked": false,
     "revealed": false,
@@ -944,11 +941,11 @@
     "index": 50,
     "blank": false,
     "value": "",
-    "answer": "O",
+    "answer": "S",
     "label": "",
     "clues": [
       17,
-      6
+      20
     ],
     "checked": false,
     "revealed": false,
@@ -963,7 +960,7 @@
     "index": 51,
     "blank": false,
     "value": "",
-    "answer": "S",
+    "answer": "T",
     "label": "",
     "clues": [
       17,
@@ -982,11 +979,11 @@
     "index": 52,
     "blank": false,
     "value": "",
-    "answer": "C",
-    "label": 25,
+    "answer": "O",
+    "label": 24,
     "clues": [
       24,
-      26
+      25
     ],
     "checked": false,
     "revealed": false,
@@ -1001,11 +998,11 @@
     "index": 53,
     "blank": false,
     "value": "",
-    "answer": "H",
+    "answer": "N",
     "label": "",
     "clues": [
       24,
-      27
+      26
     ],
     "checked": false,
     "revealed": false,
@@ -1020,11 +1017,11 @@
     "index": 54,
     "blank": false,
     "value": "",
-    "answer": "A",
+    "answer": "I",
     "label": "",
     "clues": [
       24,
-      28
+      27
     ],
     "checked": false,
     "revealed": false,
@@ -1056,6 +1053,22 @@
   },
   {
     "index": 56,
+    "blank": true,
+    "value": "",
+    "answer": "",
+    "label": "",
+    "clues": [],
+    "checked": false,
+    "revealed": false,
+    "incorrectFlag": false,
+    "hasDivider": false,
+    "dividers": 0,
+    "section": 2,
+    "rowNum": 7,
+    "colNum": 0
+  },
+  {
+    "index": 57,
     "blank": false,
     "value": "",
     "answer": "S",
@@ -1071,36 +1084,17 @@
     "dividers": 0,
     "section": 2,
     "rowNum": 7,
-    "colNum": 0
-  },
-  {
-    "index": 57,
-    "blank": false,
-    "value": "",
-    "answer": "E",
-    "label": "",
-    "clues": [
-      18,
-      20
-    ],
-    "checked": false,
-    "revealed": false,
-    "incorrectFlag": false,
-    "hasDivider": false,
-    "dividers": 0,
-    "section": 2,
-    "rowNum": 7,
     "colNum": 1
   },
   {
     "index": 58,
     "blank": false,
     "value": "",
-    "answer": "N",
+    "answer": "O",
     "label": "",
     "clues": [
       18,
-      6
+      20
     ],
     "checked": false,
     "revealed": false,
@@ -1115,7 +1109,7 @@
     "index": 59,
     "blank": false,
     "value": "",
-    "answer": "T",
+    "answer": "F",
     "label": "",
     "clues": [
       18,
@@ -1125,7 +1119,7 @@
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 2,
+    "dividers": 0,
     "section": 2,
     "rowNum": 7,
     "colNum": 3
@@ -1134,17 +1128,17 @@
     "index": 60,
     "blank": false,
     "value": "",
-    "answer": "K",
-    "label": 26,
+    "answer": "T",
+    "label": "",
     "clues": [
-      25,
-      26
+      18,
+      25
     ],
     "checked": false,
     "revealed": false,
     "incorrectFlag": false,
     "hasDivider": true,
-    "dividers": 8,
+    "dividers": 0,
     "section": 3,
     "rowNum": 7,
     "colNum": 4
@@ -1156,8 +1150,8 @@
     "answer": "E",
     "label": "",
     "clues": [
-      25,
-      27
+      18,
+      26
     ],
     "checked": false,
     "revealed": false,
@@ -1172,11 +1166,11 @@
     "index": 62,
     "blank": false,
     "value": "",
-    "answer": "Y",
+    "answer": "N",
     "label": "",
     "clues": [
-      25,
-      28
+      18,
+      27
     ],
     "checked": false,
     "revealed": false,
@@ -1194,7 +1188,7 @@
     "answer": "S",
     "label": "",
     "clues": [
-      25,
+      18,
       14
     ],
     "checked": false,
