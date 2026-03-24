@@ -597,7 +597,6 @@ function MainPage() {
   };
 
   const sendGameScore = async (gameResults) => {
-    console.log("sendGameScore")
     const { score, checkedCnt, revealedCnt } = gameResults;
     const reqBody = { gameId: gameData.gameId, gameScore: score };
 
