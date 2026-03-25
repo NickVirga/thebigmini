@@ -14,8 +14,7 @@ import { usePendingScore } from "../../hooks/usePendingScore";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 function MainPage() {
-  const { gameData, updateGameData } =
-    useContext(GameDataContext);
+  const { gameData, updateGameData } = useContext(GameDataContext);
   const { updateModalOpen, updateModalMode } = useContext(ModalContext);
   const { accessToken } = useContext(AuthContext);
 
@@ -158,7 +157,7 @@ function MainPage() {
   };
 
   const changeLetter = (newValue, index) => {
-    if (gameData.cells[index].revealed) return;
+    if (gameData.cells[index].locked) return;
     updateGameData({
       ...gameData,
       cells: gameData.cells.map((cell, i) =>
@@ -459,85 +458,80 @@ function MainPage() {
   };
 
   const checkIfGameComplete = () => {
-    let incorrectDetected = false;
-    let emptyDetected = false;
-    let cells = gameData.cells;
-    for (let i = 0; i < cells.length - 1; i++) {
-      if (!cells[i].blank) {
-        if (cells[i].value === "") {
-          emptyDetected = true;
-        }
-        if (cells[i].value !== cells[i].answer) {
-          incorrectDetected = true;
-        }
-      }
+  let incorrectDetected = false;
+  let emptyDetected = false;
+  let cells = gameData.cells;
 
-      if (emptyDetected) break;
+  for (let i = 0; i < cells.length - 1; i++) {
+    if (!cells[i].blank) {
+      if (cells[i].value === "") {
+        emptyDetected = true;
+      }
+      if (cells[i].value !== cells[i].answer) {
+        incorrectDetected = true;
+      }
     }
+    if (emptyDetected) break;
+  }
 
-    if (!emptyDetected) {
-      if (!incorrectDetected) {
-        const gameResults = calculateScore();
-        if (accessToken && !gameData.stats.dailySaved) {
-          sendGameScore(gameResults);
-        } else {
-          updateGameData({
-            ...gameData,
-            gameComplete: true,
-            stats: {
-              ...gameData.stats,
-              score: gameResults.score,
-              checkedCnt: gameResults.checkedCnt,
-              revealedCnt: gameResults.revealedCnt,
-            },
-          });
-        }
+  if (!emptyDetected) {
+    if (!incorrectDetected) {
+      const gameResults = calculateScore();
+
+      // Set gameComplete and open modal immediately with local score
+      updateGameData({
+        ...gameData,
+        gameComplete: true,
+        stats: {
+          ...gameData.stats,
+          score: gameResults.score,
+          checkedCnt: gameResults.checkedCnt,
+          revealedCnt: gameResults.revealedCnt,
+        },
+      });
+      updateModalMode(2);
+      updateModalOpen(true);
+
+      // Fire and forget — update stats in background if needed
+      if (accessToken && !gameData.stats.dailySaved) {
+        sendGameScore(gameResults);
       }
+    } else {
       updateModalMode(2);
       updateModalOpen(true);
     }
-  };
+  }
+};
 
   const checkRevealIndices = (cellsIndicesArray, revealWord) => {
     let updatedCells = [...gameData.cells];
 
-    cellsIndicesArray.forEach((cellIndex) => {
-      const currCell = updatedCells[cellIndex];
+    cellsIndicesArray.forEach((index) => {
+      const cell = { ...updatedCells[index] };
 
-      //proceed if cell isn't a blank (possible with grid), cell hasn't be revealed (not locked),
-      //cell value isn't blank while a check is being performed (nothing to check)
-      if (
-        !currCell.blank &&
-        !(currCell.value === "" && !revealWord) &&
-        !currCell.revealed
-      ) {
-        let newLockedStatus = false;
-        let newValue = currCell.value;
-        let newIncorrectStatus = false;
+      if (cell.blank || cell.revealed) return; //skip blank or revealed cells
 
-        if (revealWord) {
-          newValue = currCell.answer;
-          newLockedStatus = true;
+      if (revealWord) {
+        //reveal word
+        cell.value = cell.answer;
+        cell.revealed = true;
+        cell.locked = true;
+        cell.incorrectFlag = false;
+      } else {
+        //check word
+        if (cell.value === "") {
+          //skip
+        } else if (cell.value === cell.answer) {
+          cell.checked = true;
+          cell.locked = true;
         } else {
-          if (currCell.value === currCell.answer) {
-            newLockedStatus = true;
-          } else {
-            newIncorrectStatus = true;
-          }
+          //mismatch
+          cell.checked = true;
+          cell.incorrectFlag = false;
         }
-
-        updatedCells = updatedCells.map((cell, i) =>
-          i === cellIndex
-            ? {
-                ...cell,
-                checked: true,
-                revealed: newLockedStatus,
-                incorrectFlag: newIncorrectStatus,
-                value: newValue,
-              }
-            : cell,
-        );
       }
+
+      updatedCells[index] = cell;
     });
 
     updateGameData({
@@ -575,6 +569,15 @@ function MainPage() {
     let checkedCnt = 0;
     let revealedCnt = 0;
 
+    console.log(
+      "checked",
+      gameData.cells.filter((cell) => cell.checked).map((cell) => cell.index),
+    );
+    console.log(
+      "revealed",
+      gameData.cells.filter((cell) => cell.revealed).map((cell) => cell.index),
+    );
+
     gameData.cells.forEach((cell) => {
       if (cell.revealed) {
         revealedCnt++;
@@ -597,7 +600,7 @@ function MainPage() {
   };
 
   const sendGameScore = async (gameResults) => {
-    const { score, checkedCnt, revealedCnt } = gameResults;
+    const { score } = gameResults;
     const reqBody = { gameId: gameData.gameId, gameScore: score };
 
     try {
@@ -612,33 +615,22 @@ function MainPage() {
       );
       const { wins, scoreAccum } = response.data;
 
-      updateGameData({
-        ...gameData,
-        gameComplete: true,
-        stats: {
-          ...gameData.stats,
-          score: score,
-          checkedCnt: checkedCnt,
-          revealedCnt: revealedCnt,
-          dailySaved: true,
-          wins: wins,
-          avgScore: wins > 0 ? scoreAccum / wins : 0,
-        },
-      });
+      updateGameData((prev) => ({
+      ...prev,
+      stats: {
+        ...prev.stats,
+        dailySaved: true,
+        wins: wins,
+        avgScore: wins > 0 ? scoreAccum / wins : 0,
+      },
+    }));
     } catch (err) {
       console.error(err);
       const dailySaved = err.response?.status === 409;
-      updateGameData({
-        ...gameData,
-        gameComplete: true,
-        stats: {
-          ...gameData.stats,
-          score: score,
-          checkedCnt: checkedCnt,
-          revealedCnt: revealedCnt,
-          dailySaved: dailySaved,
-        },
-      });
+      updateGameData((prev) => ({
+        ...prev,
+        stats: { ...prev.stats, dailySaved: dailySaved },
+      }));
     }
   };
 
@@ -647,6 +639,13 @@ function MainPage() {
   useEffect(() => {
     checkIfGameComplete();
   }, [gameData.cells]);
+
+  useEffect(() => {
+    if (gameData.gameComplete) {
+      updateModalMode(2);
+      updateModalOpen(true);
+    }
+  }, [gameData.gameComplete]);
 
   useEffect(() => {
     const handleKeyDownWrapper = (event) => handleKeyDown(event.key, event);

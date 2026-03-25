@@ -2,7 +2,7 @@ import "./Cell.scss";
 
 function Cell({ cellData, isSelected, isHighlighted, handleClickCell }) {
   const getBorderClasses = () => {
-    if (!cellData.hasDivider) return "";
+    if (cellData.divider === 0) return "";
     const borders = [
       { flag: 1, className: "cell--border-top" },
       { flag: 2, className: "cell--border-right" },
@@ -33,7 +33,7 @@ function Cell({ cellData, isSelected, isHighlighted, handleClickCell }) {
       <p className="cell__label">{cellData.label}</p>
       <p
         className={`cell__text ${
-          cellData.revealed ? "cell__text--revealed" : cellData.incorrectFlag ? "cell__text--incorrect" : ""
+          cellData.locked ? "cell__text--locked" : cellData.incorrectFlag ? "cell__text--incorrect" : ""
         }`}
       >
         {cellData.value}

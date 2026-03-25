@@ -46,14 +46,17 @@ const GameDataProvider = ({ children }) => {
   };
 
   const updateGameData = (newGameData) => {
+  setGameData((prev) => {
+    //resolver handles functional updater pattern
+    const resolved = typeof newGameData === "function" ? newGameData(prev) : newGameData;
     const updatedGameData = {
-      ...newGameData,
+      ...resolved,
       timestamp: new Date().toISOString(),
     };
-
-    setGameData(updatedGameData);
     localStorage.setItem("bigmini-game-data", JSON.stringify(updatedGameData));
-  };
+    return updatedGameData;
+  });
+};
 
   const resetGameData = () => {
     setGameData({ ...gameData, gameComplete: false, cells: puzzleCellsData });
