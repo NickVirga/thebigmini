@@ -527,7 +527,7 @@ function MainPage() {
         } else {
           //mismatch
           cell.checked = true;
-          cell.incorrectFlag = false;
+          cell.incorrectFlag = true;
         }
       }
 
