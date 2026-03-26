@@ -462,7 +462,7 @@ function MainPage() {
   let emptyDetected = false;
   let cells = gameData.cells;
 
-  for (let i = 0; i < cells.length - 1; i++) {
+  for (let i = 0; i < cells.length; i++) {
     if (!cells[i].blank) {
       if (cells[i].value === "") {
         emptyDetected = true;
@@ -568,15 +568,6 @@ function MainPage() {
     let scoreNumerator = totalCells;
     let checkedCnt = 0;
     let revealedCnt = 0;
-
-    console.log(
-      "checked",
-      gameData.cells.filter((cell) => cell.checked).map((cell) => cell.index),
-    );
-    console.log(
-      "revealed",
-      gameData.cells.filter((cell) => cell.revealed).map((cell) => cell.index),
-    );
 
     gameData.cells.forEach((cell) => {
       if (cell.revealed) {
