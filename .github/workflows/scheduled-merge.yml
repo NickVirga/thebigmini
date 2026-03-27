@@ -3,7 +3,7 @@ name: Scheduled Merge Develop into Main
 
 on:
   schedule:
-    - cron: '25 0 * * *'  # 8:25 PM EDT (UTC-4)
+    - cron: '23 0 * * *'  # 8:25 PM EDT (UTC-4)
 
 jobs:
   merge:
