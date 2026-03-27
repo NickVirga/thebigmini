@@ -2,8 +2,9 @@
 name: Scheduled Merge Develop into Main
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '31 0 * * *'  # 8:30 PM EDT (UTC-4)
+    - cron: '30 0 * * *'  # 8:30 PM EDT (UTC-4)
 
 jobs:
   merge:
