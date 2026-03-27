@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import gameDataTempl from "../assets/data/game-data-template.json";
 import puzzleCellsData from "../assets/data/puzzle-cells-data.json";
 
@@ -22,12 +22,17 @@ const GameDataProvider = ({ children }) => {
     if (storedGameData.gameId === gameDataTemplate.gameId) {
       initialGameData = storedGameData; // Use the stored game data
     } else {
-      initialGameData = gameDataTemplate; // Use the template data
-      initialGameData.playedBefore = storedGameData.playedBefore;
-      initialGameData.options = { ...storedGameData.options }; // copy user preferences
-      initialGameData.stats.wins = storedGameData.stats.wins;
-      initialGameData.stats.avgScore = storedGameData.stats.avgScore;
-      localStorage.removeItem("bigmini-game-data"); // Clear localStorage if IDs don't match
+      initialGameData = {
+        ...gameDataTemplate,
+        playedBefore: storedGameData.playedBefore,
+        options: { ...storedGameData.options },
+        stats: {
+          ...gameDataTemplate.stats, // fresh game stats (score, checkedCnt, etc.)
+          wins: storedGameData.stats.wins,
+          avgScore: storedGameData.stats.avgScore,
+        },
+      };
+      localStorage.setItem("bigmini-game-data", JSON.stringify(initialGameData));
     }
   } else {
     initialGameData = gameDataTemplate; // No data in localStorage, use the template
@@ -46,20 +51,28 @@ const GameDataProvider = ({ children }) => {
   };
 
   const updateGameData = (newGameData) => {
-  setGameData((prev) => {
-    //resolver handles functional updater pattern
-    const resolved = typeof newGameData === "function" ? newGameData(prev) : newGameData;
-    const updatedGameData = {
-      ...resolved,
-      timestamp: new Date().toISOString(),
-    };
-    localStorage.setItem("bigmini-game-data", JSON.stringify(updatedGameData));
-    return updatedGameData;
-  });
-};
+    setGameData((prev) => {
+      //resolver handles functional updater pattern
+      const resolved =
+        typeof newGameData === "function" ? newGameData(prev) : newGameData;
+      const updatedGameData = {
+        ...resolved,
+        timestamp: new Date().toISOString(),
+      };
+      localStorage.setItem(
+        "bigmini-game-data",
+        JSON.stringify(updatedGameData),
+      );
+      return updatedGameData;
+    });
+  };
 
   const resetGameData = () => {
-    setGameData({ ...gameData, gameComplete: false, cells: puzzleCellsData });
+    updateGameData({
+      ...gameData,
+      gameComplete: false,
+      cells: puzzleCellsData,
+    });
   };
 
   return (
