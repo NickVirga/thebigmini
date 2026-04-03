@@ -14,26 +14,18 @@ ol {
   margin: 0;
 }
 
+// .button {
+//   background-color: var(--button-background-color);
+//   color: rgb(27, 27, 27);
+//   color: var(--button-text-color);
+//   border-radius: 0.25rem;
+//   padding: 0.5rem 1rem;
+//   font-weight: bold;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
 
-html,
-body,
-.app {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.button {
-  background-color: var(--button-background-color);
-  color: rgb(27, 27, 27);
-  color: var(--button-text-color);
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-
-  &:hover {
-    background-color: lightgrey;
-  }
-}
+//   &:hover {
+//     background-color: lightgrey;
+//   }
+// }

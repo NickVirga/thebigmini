@@ -1,12 +1,10 @@
 {
   "gameId": 5,
   "playedBefore": false,
-  "numRows": 8,
-  "numCols": 8,
-  "magnified": false,
-  "gameComplete": false,
+  "isMagnified": false,
+  "gameIsComplete": false,
   "options": {
-    "darkThemeEnabled": false,
+    "theme": "default",
     "moveToNextClue": true,
     "skipFilled": true
   },
@@ -14,16 +12,15 @@
     "dailySaved": false,
     "wins": null,
     "avgScore": null,
-    "score": 0,
-    "checkedCnt": 0,
-    "revealedCnt": 0
+    "score": null,
+    "checkedCnt": null,
+    "revealedCnt": null
   },
   "selected": {
-    "initCellsIndex": 0,
     "cellsIndex": null,
-    "cellsInClue": [],
-    "cluesIndex": 0,
-    "clueNum": null
+    "cluesIndex": 0
   },
-  "cells": []
+  "dimensions": {},
+  "cells": [],
+  "clues": []
 }
