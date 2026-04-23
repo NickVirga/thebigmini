@@ -1,140 +1,80 @@
-import { useState } from "react";
-
-import { Coordinates, SelectionDirection } from "@/types";
-
+import { CellData, Coordinates } from "@/types";
 import Cell from "./Cell";
-
 import "./Grid.scss";
-
 import { useGameData } from "@/context/GameDataContext";
+import { useGridInput } from "@/hooks/useGridInput";
 
 const Grid = () => {
   const { gameData, updateGameData } = useGameData();
-  const { dimensions, cells } = gameData;
+  const { dimensions, cells, selected, isMagnified } = gameData;
+  const { numGridCols, numGridRows } = dimensions;
 
-  const [selectedCell, setSelectedCell] = useState<Coordinates | null>(null);
+  const getMagnifyStyle = (): React.CSSProperties => {
+    if (!isMagnified) return {};
+    const row = selected?.coordinates.row ?? Math.floor(numGridRows / 2);
+    const col = selected?.coordinates.col ?? Math.floor(numGridCols / 2);
+    const originX = ((col + 0.5) / numGridCols) * 100;
+    const originY = ((row + 0.5) / numGridRows) * 100;
+    return {
+      transform: "scale(1.75)",
+      transformOrigin: `${originX}% ${originY}%`,
+    };
+  };
 
-  const [selectionDirection, setSelectionDirection] =
-    useState<SelectionDirection>("across");
+  const { handleInput } = useGridInput();
 
   const handleClickCell = (coordinates: Coordinates) => {
-    if (
-      selectedCell?.row === coordinates.row &&
-      selectedCell?.col === coordinates.col
-    ) {
-      setSelectionDirection((prev) => (prev === "across" ? "down" : "across"));
-    } else {
-      setSelectedCell(coordinates);
-    }
+    updateGameData((prev) => {
+      const isSameCell =
+        prev.selected?.coordinates.row === coordinates.row &&
+        prev.selected?.coordinates.col === coordinates.col;
+
+      return {
+        ...prev,
+        selected: {
+          coordinates,
+          cluesIndex: isSameCell
+            ? prev.selected!.cluesIndex === 0
+              ? 1
+              : 0
+            : (prev.selected?.cluesIndex ?? 0),
+        },
+      };
+    });
   };
 
-const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-  if (!selectedCell) return;
-  const { row, col } = selectedCell;
-  const { numGridRows, numGridCols } = dimensions;
-
-  const moveForward = () => {
-    if (selectionDirection === "down") {
-      if (row < numGridRows - 1) setSelectedCell({ row: row + 1, col });
-    } else {
-      if (col < numGridCols - 1) setSelectedCell({ row, col: col + 1 });
-    }
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    handleInput(event.key, { shift: event.shiftKey });
   };
 
-  const moveBackward = () => {
-    if (selectionDirection === "down") {
-      if (row > 0) setSelectedCell({ row: row - 1, col });
-    } else {
-      if (col > 0) setSelectedCell({ row, col: col - 1 });
-    }
+  const getBorderClasses = (cell: CellData): string => {
+    const { row, col } = cell.coordinates;
+    const isBlank = cell.isBlank;
+    const rightEdge = col === numGridCols - 1;
+    const bottomEdge = row === numGridRows - 1;
+    const topBlank = row === 0 || cells[row - 1][col].isBlank;
+    const leftBlank = col === 0 || cells[row][col - 1].isBlank;
+    
+    return [
+      (isBlank && !leftBlank) && "cell--border-left",
+      (rightEdge && !isBlank) && "cell--border-right",
+      (isBlank && !topBlank) && "cell--border-top",
+      (bottomEdge && !isBlank) && "cell--border-bottom",
+    ]
+      .filter(Boolean)
+      .join(" ");
   };
-
-  switch (event.key) {
-    default:
-      if (event.key.length === 1 && /^[a-zA-Z]$/.test(event.key)) {
-        // const newValue = event.key.toUpperCase();
-        // updateGameData((prev) => {
-        //   const updatedCells = prev.cells.map((r) =>
-        //     r.map((cell) =>
-        //       cell.coordinates.row === row && cell.coordinates.col === col
-        //         ? { ...cell, value: newValue }
-        //         : cell,
-        //     ),
-        //   );
-        //   return {
-        //     ...prev,
-        //     cells: updatedCells,
-        //   };
-        // });
-        moveForward();
-      }
-      break;
-
-    case "Backspace":
-      // updateGameData((prev) => {
-      //   const updatedCells = prev.cells.map((r) =>
-      //     r.map((cell) =>
-      //       cell.coordinates.row === row && cell.coordinates.col === col
-      //         ? { ...cell, value: "" }
-      //         : cell,
-      //     ),
-      //   );
-      //   return {
-      //     ...prev,
-      //     cells: updatedCells,
-      //   };
-      // });
-      moveBackward();
-      break;
-
-    case "Delete":
-      // updateGameData((prev) => {
-      //   const updatedCells = prev.cells.map((r) =>
-      //     r.map((cell) =>
-      //       cell.coordinates.row === row && cell.coordinates.col === col
-      //         ? { ...cell, value: "" }
-      //         : cell,
-      //     ),
-      //   );
-      //   return {
-      //     ...prev,
-      //     cells: updatedCells,
-      //   };
-      // });
-      break;
-
-    case " ":
-      event.preventDefault();
-
-      break;
-
-    case "ArrowUp":
-      event.preventDefault();
-      if (row > 0) setSelectedCell({ row: row - 1, col });
-      break;
-    case "ArrowDown":
-      event.preventDefault();
-      if (row < numGridRows - 1) setSelectedCell({ row: row + 1, col });
-      break;
-    case "ArrowLeft":
-      event.preventDefault();
-      if (col > 0) setSelectedCell({ row, col: col - 1 });
-      break;
-    case "ArrowRight":
-      event.preventDefault();
-      if (col < numGridCols - 1) setSelectedCell({ row, col: col + 1 });
-      break;
-  }
-};
 
   const isHighlighted = (coordinates: Coordinates): boolean => {
-    if (!selectedCell) return false;
+    if (!selected) return false;
+    const selectedCoords = selected.coordinates;
 
-    const clueIndex = selectionDirection === "across" ? 0 : 1;
+    const cluesIndex = selected.cluesIndex;
 
     const selectedClue =
-      cells[selectedCell.row][selectedCell.col].clues[clueIndex];
-    const cellClue = cells[coordinates.row][coordinates.col].clues[clueIndex];
+      cells[selectedCoords.row][selectedCoords.col].clues[cluesIndex];
+    const cellClue = cells[coordinates.row][coordinates.col].clues[cluesIndex];
 
     if (selectedClue === null || cellClue === null) return false;
 
@@ -142,9 +82,10 @@ const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
   };
 
   return (
+    <div className="grid-wrapper">
     <div
       className="grid"
-      style={{ gridTemplateColumns: `repeat(${dimensions.numGridCols}, auto)` }}
+      style={{ gridTemplateColumns: `repeat(${dimensions.numGridCols}, 1fr)`, ...getMagnifyStyle() }}
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
@@ -154,14 +95,17 @@ const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
             key={cell.index}
             cell={cell}
             isSelected={
-              selectedCell?.row === cell.coordinates.row &&
-              selectedCell?.col === cell.coordinates.col
+              selected !== null &&
+              selected.coordinates.row === cell.coordinates.row &&
+              selected.coordinates.col === cell.coordinates.col
             }
             isHighlighted={isHighlighted(cell.coordinates)}
+            borderClasses={getBorderClasses(cell)}
             handleClickCell={handleClickCell}
           />
         )),
       )}
+    </div>
     </div>
   );
 };

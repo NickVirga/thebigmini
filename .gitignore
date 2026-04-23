@@ -23,7 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-
 .env
 
 merge-scheduler.bat
+
+.agent.md

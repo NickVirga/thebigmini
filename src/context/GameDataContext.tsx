@@ -6,16 +6,34 @@ import { GameData, Dimensions, CellData, Clue } from "@/types";
 
 type GameDataContextType = {
   gameData: GameData;
-  updateGameData: (newGameData: GameData) => void;
+  updateGameData: (
+    newGameData: GameData | ((prev: GameData) => GameData),
+  ) => void;
   resetGameData: () => void;
 };
 type Props = {
   children: React.ReactNode;
 };
 
-const GameDataContext = createContext<GameDataContextType | null>(null);
+export const GameDataContext = createContext<GameDataContextType | null>(null);
 
-const GameDataProvider = ({ children }: Props) => {
+// Helpers (run once on import, before any render)
+const resolveTheme = (theme: string): string =>
+  theme === "system"
+    ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light"
+    : theme;
+
+const safeGetStorage = (key: string): string | null => {
+  try { return localStorage.getItem(key); } catch { return null; }
+};
+
+const safeSetStorage = (key: string, value: string): void => {
+  try { localStorage.setItem(key, value); } catch { /* ignore */ }
+};
+
+export const GameDataProvider = ({ children }: Props) => {
   const getGameDataTemplate = () => {
     const gameDataTemplate: GameData = {
       ...(gameDataTempl as unknown as GameData),
@@ -27,7 +45,7 @@ const GameDataProvider = ({ children }: Props) => {
     return gameDataTemplate;
   };
 
-  const storedGameDataString = localStorage.getItem("bigmini-game-data");
+  const storedGameDataString = safeGetStorage("bigmini-game-data");
   const gameDataTemplate: GameData = getGameDataTemplate();
   let initialGameData: GameData;
 
@@ -48,19 +66,33 @@ const GameDataProvider = ({ children }: Props) => {
           avgScore: storedGameData.stats.avgScore,
         },
       };
-      localStorage.setItem(
+      safeSetStorage(
         "bigmini-game-data",
         JSON.stringify(initialGameData),
       );
     }
   } else {
-    initialGameData = gameDataTemplate; // No data in localStorage, use the template
+    initialGameData = gameDataTemplate;
+    safeSetStorage("bigmini-game-data", JSON.stringify(initialGameData));
   }
+
+  // Apply theme to <html> once on mount, before first render
+  document.documentElement.setAttribute(
+    "data-theme",
+    resolveTheme(initialGameData.options.theme),
+  );
+
   const [gameData, setGameData] = useState<GameData>(initialGameData);
 
-  const updateGameData = (newGameData: GameData) => {
-    setGameData(newGameData);
-    localStorage.setItem("bigmini-game-data", JSON.stringify(newGameData));
+  const updateGameData = (
+    newGameData: GameData | ((prev: GameData) => GameData),
+  ) => {
+    setGameData((prev) => {
+      const resolved =
+        typeof newGameData === "function" ? newGameData(prev) : newGameData;
+      safeSetStorage("bigmini-game-data", JSON.stringify(resolved));
+      return resolved;
+    });
   };
 
   const resetGameData = () => {
@@ -91,5 +123,3 @@ export const useGameData = () => {
   }
   return context;
 };
-
-export { GameDataContext, GameDataProvider };

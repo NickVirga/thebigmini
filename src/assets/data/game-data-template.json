@@ -4,7 +4,7 @@
   "isMagnified": false,
   "gameIsComplete": false,
   "options": {
-    "theme": "default",
+    "theme": "system",
     "moveToNextClue": true,
     "skipFilled": true
   },
@@ -16,10 +16,7 @@
     "checkedCnt": null,
     "revealedCnt": null
   },
-  "selected": {
-    "cellsIndex": null,
-    "cluesIndex": 0
-  },
+  "selected": null,
   "dimensions": {},
   "cells": [],
   "clues": []

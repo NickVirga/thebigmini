@@ -1,0 +1,19 @@
+// AuthCallback.scss
+.auth-callback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  padding: 2rem;
+
+  &__text {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+
+    &--error {
+      color: var(--color-error);
+    }
+  }
+}

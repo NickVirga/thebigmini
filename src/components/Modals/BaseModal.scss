@@ -1,0 +1,66 @@
+@use "../../styles/partials/mixins" as *;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fade-in 0.2s ease;
+}
+
+.modal-content {
+  position: relative;
+  top: 4rem;
+  background-color: var(--color-background, #fff);
+  color: var(--color-text, #1a1a1a);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 80%;
+  max-width: 480px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slide-up 0.25s ease;
+  user-select: none;
+
+  @include tablet {
+    padding: 2.5rem;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted, #666);
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: var(--color-text, #1a1a1a);
+    background-color: var(--color-hover, rgba(0, 0, 0, 0.06));
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

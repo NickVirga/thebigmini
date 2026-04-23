@@ -11,8 +11,8 @@
           "row": 0,
           "col": 0
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -31,8 +31,8 @@
           "row": 0,
           "col": 1
         },
+        "answer": "2",
         "value": "2",
-        "answer": "",
         "label": "1",
         "dividerMask": 0,
         "clues": [
@@ -51,8 +51,8 @@
           "row": 0,
           "col": 2
         },
+        "answer": "P",
         "value": "P",
-        "answer": "",
         "label": "2",
         "dividerMask": 0,
         "clues": [
@@ -71,8 +71,8 @@
           "row": 0,
           "col": 3
         },
+        "answer": "M",
         "value": "M",
-        "answer": "",
         "label": "3",
         "dividerMask": 2,
         "clues": [
@@ -91,8 +91,8 @@
           "row": 0,
           "col": 4
         },
+        "answer": "1",
         "value": "1",
-        "answer": "",
         "label": "4",
         "dividerMask": 8,
         "clues": [
@@ -111,8 +111,8 @@
           "row": 0,
           "col": 5
         },
+        "answer": "S",
         "value": "S",
-        "answer": "",
         "label": "5",
         "dividerMask": 0,
         "clues": [
@@ -131,8 +131,8 @@
           "row": 0,
           "col": 6
         },
+        "answer": "T",
         "value": "T",
-        "answer": "",
         "label": "6",
         "dividerMask": 0,
         "clues": [
@@ -151,8 +151,8 @@
           "row": 0,
           "col": 7
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -173,8 +173,8 @@
           "row": 1,
           "col": 0
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": "7",
         "dividerMask": 0,
         "clues": [
@@ -193,8 +193,8 @@
           "row": 1,
           "col": 1
         },
+        "answer": "P",
         "value": "P",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -213,8 +213,8 @@
           "row": 1,
           "col": 2
         },
+        "answer": "I",
         "value": "I",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -233,8 +233,8 @@
           "row": 1,
           "col": 3
         },
-        "value": "A",
-        "answer": "",
+        "answer": "A",
+        "value": "",
         "label": null,
         "dividerMask": 2,
         "clues": [
@@ -253,8 +253,8 @@
           "row": 1,
           "col": 4
         },
+        "answer": "U",
         "value": "U",
-        "answer": "",
         "label": "8",
         "dividerMask": 8,
         "clues": [
@@ -273,8 +273,8 @@
           "row": 1,
           "col": 5
         },
+        "answer": "E",
         "value": "E",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -293,8 +293,8 @@
           "row": 1,
           "col": 6
         },
+        "answer": "Y",
         "value": "Y",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -313,8 +313,8 @@
           "row": 1,
           "col": 7
         },
+        "answer": "S",
         "value": "S",
-        "answer": "",
         "label": "9",
         "dividerMask": 0,
         "clues": [
@@ -335,8 +335,8 @@
           "row": 2,
           "col": 0
         },
+        "answer": "Y",
         "value": "Y",
-        "answer": "",
         "label": "10",
         "dividerMask": 0,
         "clues": [
@@ -355,8 +355,8 @@
           "row": 2,
           "col": 1
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -375,8 +375,8 @@
           "row": 2,
           "col": 2
         },
+        "answer": "N",
         "value": "N",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -395,8 +395,8 @@
           "row": 2,
           "col": 3
         },
+        "answer": "G",
         "value": "G",
-        "answer": "",
         "label": null,
         "dividerMask": 2,
         "clues": [
@@ -415,8 +415,8 @@
           "row": 2,
           "col": 4
         },
+        "answer": "P",
         "value": "P",
-        "answer": "",
         "label": "11",
         "dividerMask": 8,
         "clues": [
@@ -435,8 +435,8 @@
           "row": 2,
           "col": 5
         },
+        "answer": "E",
         "value": "E",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -455,8 +455,8 @@
           "row": 2,
           "col": 6
         },
+        "answer": "C",
         "value": "C",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -475,8 +475,8 @@
           "row": 2,
           "col": 7
         },
+        "answer": "K",
         "value": "K",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -497,8 +497,8 @@
           "row": 3,
           "col": 0
         },
+        "answer": "E",
         "value": "E",
-        "answer": "",
         "label": "12",
         "dividerMask": 4,
         "clues": [
@@ -517,8 +517,8 @@
           "row": 3,
           "col": 1
         },
+        "answer": "C",
         "value": "C",
-        "answer": "",
         "label": null,
         "dividerMask": 4,
         "clues": [
@@ -537,8 +537,8 @@
           "row": 3,
           "col": 2
         },
+        "answer": "G",
         "value": "G",
-        "answer": "",
         "label": null,
         "dividerMask": 4,
         "clues": [
@@ -557,8 +557,8 @@
           "row": 3,
           "col": 3
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -577,8 +577,8 @@
           "row": 3,
           "col": 4
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -597,8 +597,8 @@
           "row": 3,
           "col": 5
         },
+        "answer": "N",
         "value": "N",
-        "answer": "",
         "label": "13",
         "dividerMask": 4,
         "clues": [
@@ -617,8 +617,8 @@
           "row": 3,
           "col": 6
         },
+        "answer": "O",
         "value": "O",
-        "answer": "",
         "label": null,
         "dividerMask": 4,
         "clues": [
@@ -637,8 +637,8 @@
           "row": 3,
           "col": 7
         },
+        "answer": "Y",
         "value": "Y",
-        "answer": "",
         "label": null,
         "dividerMask": 4,
         "clues": [
@@ -659,8 +659,8 @@
           "row": 4,
           "col": 0
         },
+        "answer": "B",
         "value": "B",
-        "answer": "",
         "label": "14",
         "dividerMask": 1,
         "clues": [
@@ -679,8 +679,8 @@
           "row": 4,
           "col": 1
         },
+        "answer": "U",
         "value": "U",
-        "answer": "",
         "label": "15",
         "dividerMask": 1,
         "clues": [
@@ -699,8 +699,8 @@
           "row": 4,
           "col": 2
         },
+        "answer": "G",
         "value": "G",
-        "answer": "",
         "label": "16",
         "dividerMask": 1,
         "clues": [
@@ -719,8 +719,8 @@
           "row": 4,
           "col": 3
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -739,8 +739,8 @@
           "row": 4,
           "col": 4
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -759,8 +759,8 @@
           "row": 4,
           "col": 5
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": "17",
         "dividerMask": 1,
         "clues": [
@@ -779,8 +779,8 @@
           "row": 4,
           "col": 6
         },
+        "answer": "N",
         "value": "N",
-        "answer": "",
         "label": "18",
         "dividerMask": 1,
         "clues": [
@@ -799,8 +799,8 @@
           "row": 4,
           "col": 7
         },
+        "answer": "Y",
         "value": "Y",
-        "answer": "",
         "label": "19",
         "dividerMask": 1,
         "clues": [
@@ -821,8 +821,8 @@
           "row": 5,
           "col": 0
         },
+        "answer": "I",
         "value": "I",
-        "answer": "",
         "label": "20",
         "dividerMask": 0,
         "clues": [
@@ -841,8 +841,8 @@
           "row": 5,
           "col": 1
         },
+        "answer": "B",
         "value": "B",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -861,8 +861,8 @@
           "row": 5,
           "col": 2
         },
+        "answer": "I",
         "value": "I",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -881,8 +881,8 @@
           "row": 5,
           "col": 3
         },
+        "answer": "S",
         "value": "S",
-        "answer": "",
         "label": "21",
         "dividerMask": 2,
         "clues": [
@@ -901,8 +901,8 @@
           "row": 5,
           "col": 4
         },
+        "answer": "N",
         "value": "N",
-        "answer": "",
         "label": "22",
         "dividerMask": 8,
         "clues": [
@@ -921,8 +921,8 @@
           "row": 5,
           "col": 5
         },
+        "answer": "C",
         "value": "C",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -941,8 +941,8 @@
           "row": 5,
           "col": 6
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -961,8 +961,8 @@
           "row": 5,
           "col": 7
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -983,8 +983,8 @@
           "row": 6,
           "col": 0
         },
+        "answer": "Z",
         "value": "Z",
-        "answer": "",
         "label": "23",
         "dividerMask": 0,
         "clues": [
@@ -1003,8 +1003,8 @@
           "row": 6,
           "col": 1
         },
+        "answer": "E",
         "value": "E",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1023,8 +1023,8 @@
           "row": 6,
           "col": 2
         },
+        "answer": "R",
         "value": "R",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1043,8 +1043,8 @@
           "row": 6,
           "col": 3
         },
+        "answer": "O",
         "value": "O",
-        "answer": "",
         "label": null,
         "dividerMask": 2,
         "clues": [
@@ -1063,8 +1063,8 @@
           "row": 6,
           "col": 4
         },
+        "answer": "B",
         "value": "B",
-        "answer": "",
         "label": "24",
         "dividerMask": 8,
         "clues": [
@@ -1083,8 +1083,8 @@
           "row": 6,
           "col": 5
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1103,8 +1103,8 @@
           "row": 6,
           "col": 6
         },
+        "answer": "S",
         "value": "S",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1123,8 +1123,8 @@
           "row": 6,
           "col": 7
         },
+        "answer": "H",
         "value": "H",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1145,8 +1145,8 @@
           "row": 7,
           "col": 0
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1165,8 +1165,8 @@
           "row": 7,
           "col": 1
         },
+        "answer": "R",
         "value": "R",
-        "answer": "",
         "label": "25",
         "dividerMask": 0,
         "clues": [
@@ -1185,8 +1185,8 @@
           "row": 7,
           "col": 2
         },
+        "answer": "L",
         "value": "L",
-        "answer": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1205,8 +1205,8 @@
           "row": 7,
           "col": 3
         },
+        "answer": "O",
         "value": "O",
-        "answer": "",
         "label": null,
         "dividerMask": 2,
         "clues": [
@@ -1225,8 +1225,8 @@
           "row": 7,
           "col": 4
         },
+        "answer": "A",
         "value": "A",
-        "answer": "",
         "label": "26",
         "dividerMask": 8,
         "clues": [
@@ -1245,8 +1245,8 @@
           "row": 7,
           "col": 5
         },
-        "value": "I",
-        "answer": "",
+        "answer": "I",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1265,8 +1265,8 @@
           "row": 7,
           "col": 6
         },
-        "value": "T",
-        "answer": "",
+        "answer": "T",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [
@@ -1285,8 +1285,8 @@
           "row": 7,
           "col": 7
         },
-        "value": "",
         "answer": "",
+        "value": "",
         "label": null,
         "dividerMask": 0,
         "clues": [

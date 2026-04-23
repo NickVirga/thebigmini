@@ -1,0 +1,148 @@
+@use "../../styles/partials/mixins" as *;
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+
+  // ─── Header ─────────────────────────────────────────────────────────────
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  // ─── Section ────────────────────────────────────────────────────────────
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  // ─── Grid + cards ───────────────────────────────────────────────────────
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-md);
+    background-color: var(--color-background-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__value {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+  }
+
+  &__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-medium);
+  }
+
+  // ─── Skeleton loading ────────────────────────────────────────────────────
+  &__skeleton-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  &__skeleton {
+    height: 88px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(
+      90deg,
+      var(--color-background-soft) 25%,
+      var(--color-background-muted) 50%,
+      var(--color-background-soft) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  // ─── Sign in prompt ──────────────────────────────────────────────────────
+  &__prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    background-color: var(--color-background-soft);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--radius-md);
+  }
+
+  &__prompt-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  &__prompt-btn {
+    flex-shrink: 0;
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    border: none;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-primary-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  // ─── Error ───────────────────────────────────────────────────────────────
+  &__error {
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+    margin: 0;
+    padding: var(--space-md);
+    background-color: var(--color-background-soft);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-md);
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

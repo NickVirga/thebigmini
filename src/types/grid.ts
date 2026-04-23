@@ -8,8 +8,6 @@ export type Coordinates = {
   col: number;
 };
 
-export type SelectionDirection = "across" | "down";
-
 export type CellData = {
   index: number;
   value: string;

@@ -1,10 +1,5 @@
-@use "./styles/partials/_global" as *;
-@use "./styles/partials/_variables" as *;
-
 .app {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: #e2e2e2;
+  min-height: 100dvh;
 }

@@ -1,4 +1,5 @@
-import { CellData, Dimensions, Clue } from "./grid";
+import { CellData, Dimensions, Clue, Coordinates } from "./grid";
+import { Theme } from "./ui";
 
 export type GameData = {
   gameId: number;
@@ -8,18 +9,18 @@ export type GameData = {
   options: Options;
   stats: Stats;
   dimensions: Dimensions;
-  selected: Selection;
+  selected: CellSelection | null;
   cells: CellData[][];
   clues: Clue[];
 };
 
-export type Selection = {
-  cellsIndex: number | null;
+export type CellSelection = {
+  coordinates: Coordinates;
   cluesIndex: 0 | 1;
 };
 
 export type Options = {
-  theme: string;
+  theme: Theme;
   moveToNextClue: boolean;
   skipFilled: boolean;
 };
