@@ -38,12 +38,17 @@ const LAYOUT_TOGGLE_LABELS: Record<Layout, string> = {
 
 const Keyboard = () => {
   const { gameData, updateGameData } = useGameData();
+  const { cells, selected } = gameData;
+  const { coordinates, cluesIndex } = selected ?? {};
   const [layoutNum, setLayoutNum] = useState<Layout>(0);
   const [openMenu, setOpenMenu] = useState<ActionMenu>(null);
   const actionRowRef = useRef<HTMLDivElement>(null);
   const { handleInput } = useGridInput();
   const { checkLetter, checkWord, checkGrid, revealLetter, revealWord, revealGrid } =
     useCheckReveal();
+
+  const cell = cells[coordinates?.row ?? 0][coordinates?.col ?? 0];
+  const zoom2Origin = cell?.zoom2Origins[cluesIndex ?? 0];
 
   useEffect(() => {
     if (!openMenu) return;
@@ -64,7 +69,10 @@ const Keyboard = () => {
   };
 
   const handleClickZoom = () => {
-    updateGameData((prev) => ({ ...prev, isMagnified: !prev.isMagnified }));
+    const currentLevel = gameData.zoomLevel;
+    // If at level 2 but zoom2Origin is absent, snap back to 0 rather than cycling through 2.
+    const nextLevel = currentLevel === 2 && !zoom2Origin ? 0 : (currentLevel + 1) % (zoom2Origin ? 3 : 2);
+    updateGameData((prev) => ({ ...prev, zoomLevel: nextLevel as 0 | 1 | 2 }));
   };
 
   const CHECK_OPTIONS = [
@@ -103,9 +111,9 @@ const Keyboard = () => {
         <button
           className="keyboard__action-btn"
           onClick={handleClickZoom}
-          aria-label={gameData.isMagnified ? "Zoom out" : "Zoom in"}
+          aria-label={gameData.zoomLevel >= (zoom2Origin ? 2 : 1) ? "Zoom out" : "Zoom in"}
         >
-          {gameData.isMagnified ? <FaMagnifyingGlassMinus /> : <FaMagnifyingGlassPlus />}
+          {gameData.zoomLevel >= (zoom2Origin ? 2 : 1) ? <FaMagnifyingGlassMinus /> : <FaMagnifyingGlassPlus />}
         </button>
         <div className="keyboard__action-wrapper">
           <button

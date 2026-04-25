@@ -7,23 +7,15 @@ type Props = {
   isSelected: boolean;
   isHighlighted: boolean;
   handleClickCell: (coordinates: Coordinates) => void;
-  borderClasses: string;
 };
 
-const Cell = ({ cell, isSelected, isHighlighted, handleClickCell, borderClasses }: Props) => {
+const Cell = ({ cell, isSelected, isHighlighted, handleClickCell }: Props) => {
 
-  const getDividerClasses = () => {
-    if (cell.dividerMask === 0) return "";
-    const dividers = [
-      { flag: 1, className: "cell--divider-top" },
-      { flag: 2, className: "cell--divider-right" },
-      { flag: 4, className: "cell--divider-bottom" },
-      { flag: 8, className: "cell--divider-left" },
-    ];
-
-    return dividers
-      .filter((divider) => cell.dividerMask & divider.flag)
-      .map((divider) => divider.className)
+  const getMaskClasses = (mask: number, prefix: string): string => {
+    if (mask === 0) return "";
+    return ["top", "right", "bottom", "left"]
+      .filter((_, i) => mask & (1 << i))
+      .map((side) => `${prefix}-${side}`)
       .join(" ");
   };
 
@@ -44,8 +36,8 @@ const Cell = ({ cell, isSelected, isHighlighted, handleClickCell, borderClasses 
 
   return (
     <div
-      className={`cell ${stateClass} ${modifierClasses} ${getDividerClasses()} ${borderClasses}`}
-      onClick={() => handleClickCell(cell.coordinates)}
+      className={`cell ${stateClass} ${modifierClasses} ${getMaskClasses(cell.style.dividerMask, "cell--divider")} ${getMaskClasses(cell.style.borderMask, "cell--border")}`}
+      onClick={() => !cell.isBlank && handleClickCell(cell.coordinates)}
     >
       <span className="cell__label">{cell.label}</span>
       <span className="cell__char">{cell.value}</span>

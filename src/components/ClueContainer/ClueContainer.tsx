@@ -6,19 +6,31 @@ import { useClueShift } from "@/hooks/useClueShift";
 
 const ClueContainer: React.FC = () => {
   const { shiftClue } = useClueShift();
-  const { gameData } = useGameData();
+  const { gameData, updateGameData } = useGameData();
   const { clues, cells, selected } = gameData;
 
-  if (!selected) return null;
+  const selectedCell = selected
+    ? cells[selected.coordinates.row][selected.coordinates.col]
+    : null;
+  const selectedClueNum =
+    selectedCell?.clues[selected?.cluesIndex ?? 0] ?? null;
+  const currentClue: Clue | null =
+    selectedClueNum !== null ? clues[selectedClueNum] : null;
+  const clueDirection = selected?.cluesIndex === 0 ? "Across" : "Down";
 
-  const selectedCell =
-    cells[selected.coordinates.row][selected.coordinates.col];
-  const selectedClueNum = selectedCell.clues[selected.cluesIndex];
-  if (selectedClueNum === null) return null;
+  const handleClickClueContainer = () => {
+    updateGameData((prev) => {
+      if (!prev.selected) return prev;
 
-  const currentClue: Clue = clues[selectedClueNum];
-
-  const clueDirection = selected.cluesIndex === 0 ? "Across" : "Down";
+      return {
+        ...prev,
+        selected: {
+          coordinates: prev.selected.coordinates,
+          cluesIndex: prev.selected.cluesIndex === 0 ? 1 : 0,
+        },
+      };
+    });
+  };
 
   return (
     <div className="clue-container">
@@ -29,11 +41,13 @@ const ClueContainer: React.FC = () => {
       >
         <FaChevronLeft />
       </button>
-      <div className="clue-container__clue">
+      <div className="clue-container__clue" onClick={handleClickClueContainer}>
         <span className="clue-container__label">
-          {currentClue.label} {clueDirection}
+          {currentClue ? `${currentClue.label} ${clueDirection}` : ""}
         </span>
-        <span className="clue-container__text">{currentClue.clueText}</span>
+        <span className="clue-container__text">
+          {currentClue?.clueText ?? ""}
+        </span>
       </div>
       <button
         className="clue-container__btn"

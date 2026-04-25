@@ -10,6 +10,11 @@
 
   @include tablet {
     align-items: stretch;
+    margin: var(--space-sm);
+  }
+
+  @include tablet {
+    margin: var(--space-md);
   }
 
   &__content {

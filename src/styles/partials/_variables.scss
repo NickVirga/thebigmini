@@ -38,6 +38,11 @@
 
 }
 
+// media breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+
 // ─── Light Theme (default) ────────────────────────────────────────────────────
 [data-theme="light"] {
   --color-background:       #e2e2e2;
@@ -49,8 +54,9 @@
   --color-text-faint:       #999999;
 
   --color-border:           #858484;
-  --color-border-strong:    #c0c0c0;
-
+  --color-border-strong:    #000000;
+  --color-border-soft:      #c0c0c0;
+  
   --color-primary:          #4f46e5;
   --color-primary-hover:    #4338ca;
   --color-primary-text:     #ffffff;
@@ -70,16 +76,18 @@
 
 // ─── Dark Theme ───────────────────────────────────────────────────────────────
 [data-theme="dark"] {
-  --color-background:       #1a1a1a;
-  --color-background-soft:  #242424;
+  --color-background:       #333333;
+  --color-background-soft:  #777777;
   --color-background-muted: #2e2e2e;
 
   --color-text:             #f0f0f0;
   --color-text-muted:       #a0a0a0;
   --color-text-faint:       #666666;
 
-  --color-border:           #333333;
-  --color-border-strong:    #555555;
+  --color-border:           #000000;
+  --color-border-strong:    #000000;
+  --color-border-soft:      #4d4d4d;
+
 
   --color-primary:          #6366f1;
   --color-primary-hover:    #818cf8;
@@ -92,15 +100,12 @@
   --color-warning:          #fbbf24;
   --color-error:            #f87171;
 
-  --color-cell: #ffffff;
+  --color-cell: #4b4b4b;
   --color-selected-cell: #f8b256;
   --color-highlighted-cell: #5db6ff;
-  --color-blank-cell: #1a1a1a;
+  --color-blank-cell: #333333;
 }
 
-// media breakpoints
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
 
 
 

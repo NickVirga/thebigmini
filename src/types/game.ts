@@ -4,7 +4,7 @@ import { Theme } from "./ui";
 export type GameData = {
   gameId: number;
   playedBefore: boolean;
-  isMagnified: boolean;
+  zoomLevel: 0 | 1 | 2;
   gameIsComplete: boolean;
   options: Options;
   stats: Stats;

@@ -1,7 +1,7 @@
 {
   "gameId": 5,
   "playedBefore": false,
-  "isMagnified": false,
+  "zoomLevel": 0,
   "gameIsComplete": false,
   "options": {
     "theme": "system",

@@ -14,14 +14,21 @@ export type CellData = {
   answer: string;
   coordinates: Coordinates;
   label: string | null;
-  dividerMask: number;
+  style: StyleConfig;
   clues: [number | null, number | null];
+  zoom2Origins: [ZoomOrigin | null, ZoomOrigin | null];
   isBlank: boolean;
   isChecked: boolean;
   isRevealed: boolean;
   isIncorrect: boolean;
   isLocked: boolean;
 };
+
+export type StyleConfig = {
+  borderMask: number;
+  dividerMask: number;
+};
+
 
 export type Clue = {
   index: number;
@@ -30,4 +37,18 @@ export type Clue = {
   clueText: string;
   word: string;
   cells: Coordinates[];
+  zoom1: ZoomTransform;
+  zoom2Scale: number;
 };
+
+export type ZoomOrigin = {
+  originX: number;
+  originY: number;
+};
+
+export type ZoomTransform = {
+  scale: number;
+  originX: number;
+  originY: number;
+};
+

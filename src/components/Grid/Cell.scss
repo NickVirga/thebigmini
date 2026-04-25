@@ -8,16 +8,19 @@
   border-top: 1px solid var(--color-border);
   aspect-ratio: 1;
   width: 100%;
+  color: var(--color-text);
   cursor: pointer;
   user-select: none;
   position: relative;
   background-color: var(--color-cell);
   container-type: inline-size;
-  // max-width: 5rem;
 
   &--blank {
     background-color: var(--color-blank-cell);
     border: none;
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
   }
 
   &--selected {
@@ -49,7 +52,8 @@
   }
 
   &__label {
-    font-size: clamp(0.45rem, 18cqi, 1rem);
+    color: inherit;
+    font-size: clamp(0.8rem, 18cqi, 1.5rem);
     line-height: 1;
     position: absolute;
     left: 6%;
@@ -57,12 +61,24 @@
   }
 
   &__char {
+    color: inherit;
     font-size: clamp(1.1rem, 52cqi, 3rem);
+    font-weight: var(--font-weight-bold);
     position: absolute;
-    inset: 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @container (min-width: 45px) {
+      top: 55%;
+    }
+
+    @container (min-width: 80px) {
+      top: 50%;
+    }
   }
 
   &--border-top {
@@ -93,25 +109,25 @@
 
   &--divider-top {
     &::after {
-      border-top: 2px solid black;
+      border-top: 3px solid var(--color-border-strong);
     }
   }
 
   &--divider-right {
     &::after {
-      border-right: 2px solid black;
+      border-right: 3px solid var(--color-border-strong);
     }
   }
 
   &--divider-bottom {
     &::after {
-      border-bottom: 2px solid black;
+      border-bottom: 3px solid var(--color-border-strong);
     }
   }
 
   &--divider-left {
     &::after {
-      border-left: 2px solid black;
+      border-left: 3px solid var(--color-border-strong);
     }
   }
 }
