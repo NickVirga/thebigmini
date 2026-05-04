@@ -1,40 +1,52 @@
 import { useModal } from "../../context/ModalContext";
 import InfoModal from "./InfoModal";
+import InstructionsModal from "./InstructionsModal";
 import StatsModal from "./StatsModal";
 import AuthModal from "./AuthModal";
 import SettingsModal from "./SettingsModal";
 import ConfirmModal from "./ConfirmModal";
 import ResultsModal, { ResultsModalProps } from "./ResultsModal";
 
-const BASE_Z = 100;
-const Z_STEP = 50;
+const MODAL_Z = 100;
+const CONFIRM_Z = 150;
 
 const ModalManager = () => {
-  const { stack, closeModal } = useModal();
+  const { modal, confirmConfig, closeModal, closeConfirm } = useModal();
+
+  const renderModal = () => {
+    if (!modal) return null;
+    const props = { ...modal.props, onClose: closeModal, zIndex: MODAL_Z };
+
+    switch (modal.type) {
+      case "info":
+        return <InfoModal key="info" {...props} />;
+      case "instructions":
+        return <InstructionsModal key="instructions" {...props} />;
+      case "stats":
+        return <StatsModal key="stats" {...props} />;
+      case "auth":
+        return <AuthModal key="auth" {...props} />;
+      case "settings":
+        return <SettingsModal key="settings" {...props} />;
+      case "results":
+        return <ResultsModal key="results" {...(props as ResultsModalProps)} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <>
-      {stack.map((modal, index) => {
-        const zIndex = BASE_Z + index * Z_STEP;
-        const props = { ...modal.props, onClose: closeModal, zIndex };
-
-        switch (modal.type) {
-          case "info":
-            return <InfoModal key={index} {...props} />;
-          case "stats":
-            return <StatsModal key={index} {...props} />;
-          case "auth":
-            return <AuthModal key={index} {...props} />;
-          case "settings":
-            return <SettingsModal key={index} {...props} />;
-          case "confirm":
-            return <ConfirmModal key={index} {...props} />;
-          case "results":
-            return <ResultsModal key={index} {...(props as ResultsModalProps)} />;
-          default:
-            return null;
-        }
-      })}
+      {renderModal()}
+      {confirmConfig && (
+        <ConfirmModal
+          message={confirmConfig.message}
+          description={confirmConfig.description}
+          onConfirm={confirmConfig.onConfirm}
+          onClose={closeConfirm}
+          zIndex={CONFIRM_Z}
+        />
+      )}
     </>
   );
 };

@@ -52,9 +52,9 @@ export const GameDataProvider = ({ children }: Props) => {
   if (storedGameDataString) {
     const storedGameData: GameData = JSON.parse(storedGameDataString);
 
-    // Check if the gameId in localStorage matches the template's gameId
-    if (storedGameData.gameId === gameDataTemplate.gameId) {
-      initialGameData = storedGameData; // Use the stored game data
+    // Check if the gameDate in localStorage matches the template's gameDate
+    if (storedGameData.gameDate === gameDataTemplate.gameDate) {
+      initialGameData = { ...storedGameData, selected: null }; // reset cursor; UserSelection fields not stored
     } else {
       initialGameData = {
         ...gameDataTemplate,

@@ -23,16 +23,13 @@ type SettingsOption = {
 const SettingsModal = ({ onClose, zIndex }: SettingsModalProps) => {
   const { gameData, updateGameData, resetGameData } = useGameData();
   const { theme, setTheme } = useTheme();
-  const { openModal } = useModal();
+  const { openConfirm } = useModal();
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
   const handleResetGame = () =>
-    openModal({
-      type: "confirm",
-      props: {
-        message: "Reset all progress for this puzzle?",
-        onConfirm: resetGameData,
-      },
+    openConfirm({
+      message: "Reset all progress for this puzzle?",
+      onConfirm: resetGameData,
     });
 
   const toggleOption = (gameDataOption: keyof typeof gameData.options) => {
@@ -67,6 +64,13 @@ const SettingsModal = ({ onClose, zIndex }: SettingsModalProps) => {
       description: "Skip over already-filled cells and clues",
       checked: gameData.options.skipFilled,
       onChange: () => toggleOption("skipFilled"),
+    },
+    {
+      id: "autoErrorCheck",
+      label: "Auto Error Check",
+      description: "Automatically check for errors as you fill in cells",
+      checked: gameData.options.autoErrorCheck,
+      onChange: () => toggleOption("autoErrorCheck"),
     },
   ];
 

@@ -3,6 +3,7 @@ import Grid from "@/components/Grid";
 import ClueContainer from "@/components/ClueContainer";
 import Keyboard from "@/components/Keyboard";
 import ClueList from "@/components/ClueList";
+import CheckRevealToolbar from "@/components/CheckRevealToolbar";
 import { usePendingScore } from "@/hooks/usePendingScore";
 import "./MainPage.scss";
 
@@ -26,7 +27,10 @@ const MainPage = () => {
   return (
     <main className="main">
       <div className="main__content" ref={contentRef}>
-        <Grid />
+        <div className="main__grid-col">
+          <Grid />
+          <CheckRevealToolbar />
+        </div>
         <ClueList />
       </div>
       <ClueContainer />

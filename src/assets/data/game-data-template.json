@@ -1,12 +1,13 @@
 {
-  "gameId": 5,
+  "gameDate": "2026-04-30",
   "playedBefore": false,
   "zoomLevel": 0,
   "gameIsComplete": false,
   "options": {
     "theme": "system",
     "moveToNextClue": true,
-    "skipFilled": true
+    "skipFilled": true,
+    "autoErrorCheck": false
   },
   "stats" : {
     "dailySaved": false,

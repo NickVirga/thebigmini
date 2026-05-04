@@ -1,31 +1,49 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from "react";
 
-import { ModalConfig } from "@/types";
+import { ModalConfig, ConfirmConfig } from "@/types";
 
 type ModalContextValue = {
-  stack: ModalConfig[];
+  modal: ModalConfig | null;
+  confirmConfig: ConfirmConfig | null;
+  isModalOpen: boolean;
   openModal: (config: ModalConfig) => void;
-  closeModal: () => void;
+  closeModal: (redirectTo?: ModalConfig) => void;
+  openConfirm: (config: ConfirmConfig) => void;
+  closeConfirm: () => void;
   closeAll: () => void;
 };
 
 export const ModalContext = createContext<ModalContextValue | null>(null);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
-  const [stack, setStack] = useState<ModalConfig[]>([]);
+  const [modal, setModal] = useState<ModalConfig | null>(null);
+  const [confirmConfig, setConfirmConfig] = useState<ConfirmConfig | null>(null);
 
   const openModal = useCallback((config: ModalConfig) => {
-    setStack((prev) => [...prev, config]);
+    setModal(config);
   }, []);
 
-  const closeModal = useCallback(() => {
-    setStack((prev) => prev.slice(0, -1));
+  const closeModal = useCallback((redirectTo?: ModalConfig) => {
+    setModal(redirectTo ?? null);
   }, []);
 
-  const closeAll = useCallback(() => setStack([]), []);
+  const openConfirm = useCallback((config: ConfirmConfig) => {
+    setConfirmConfig(config);
+  }, []);
+
+  const closeConfirm = useCallback(() => {
+    setConfirmConfig(null);
+  }, []);
+
+  const closeAll = useCallback(() => {
+    setModal(null);
+    setConfirmConfig(null);
+  }, []);
+
+  const isModalOpen = modal !== null || confirmConfig !== null;
 
   return (
-    <ModalContext.Provider value={{ stack, openModal, closeModal, closeAll }}>
+    <ModalContext.Provider value={{ modal, confirmConfig, isModalOpen, openModal, closeModal, openConfirm, closeConfirm, closeAll }}>
       {children}
     </ModalContext.Provider>
   );

@@ -4,6 +4,7 @@ import { useAuth } from "@/context/AuthContext";
 import { FaDiscord } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { useModal } from "@/context/ModalContext";
+import { useGameData } from "@/context/GameDataContext";
 
 type AuthModalProps = {
   onClose: () => void;
@@ -12,18 +13,25 @@ type AuthModalProps = {
 
 const AuthModal = ({ onClose, zIndex }: AuthModalProps) => {
   const { authTokens, login, logout } = useAuth();
-  const { openModal } = useModal();
+  const { openConfirm } = useModal();
+  const { updateGameData } = useGameData();
   const isAuthenticated = !!authTokens?.accessToken;
 
   const handleLogout = () => {
-    openModal({
-      type: "confirm",
-      props: {
-        message: "Log out of all devices?",
-        onConfirm: () => {
-          logout();
-          onClose();
-        },
+    openConfirm({
+      message: "Log out of all devices?",
+      onConfirm: () => {
+        logout();
+        updateGameData((prev) => ({
+          ...prev,
+          stats: {
+            ...prev.stats,
+            dailySaved: false,
+            wins: null,
+            avgScore: null,
+          },
+        }));
+        onClose();
       },
     });
   };

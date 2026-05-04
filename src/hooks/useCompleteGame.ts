@@ -13,7 +13,7 @@ export const useCompleteGame = () => {
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_SERVER_BASE_URL}/api/games`,
-        { gameId: gameData.gameId, gameScore: score },
+        { gameDate: gameData.gameDate, gameScore: score },
         { headers: { Authorization: `Bearer ${authTokens!.accessToken}` } },
       );
       const { wins, scoreAccum } = response.data;

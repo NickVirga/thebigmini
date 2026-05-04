@@ -1,8 +1,8 @@
 import BaseModal from "./BaseModal";
-import game_intro from "../../assets/videos/game_intro.mp4";
 import "./InfoModal.scss";
-import { useState } from "react";
 import { useModal } from "@/context/ModalContext";
+import { useAuth } from "@/context";
+import { useGameData } from "@/context/GameDataContext";
 
 type InfoModalProps = {
   onClose: () => void;
@@ -10,46 +10,58 @@ type InfoModalProps = {
 };
 
 const InfoModal = ({ onClose, zIndex }: InfoModalProps) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const { openModal } = useModal();
+  const { closeModal } = useModal();
+  const { authTokens } = useAuth();
+  const { gameData } = useGameData();
 
-  const handleSignUpClick = () => {
-    openModal({ type: "auth" });
-  };
+  const [year, month, day] = gameData.gameDate.split("-").map(Number);
+  const gameDate = new Date(year, month - 1, day);
+  const dateWeekday = gameDate.toLocaleDateString("en-US", { weekday: "long" });
+  const dateMDY = gameDate.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+  const isAuthenticated = authTokens !== null;
+
+  const handleSignIn = () => closeModal({ type: "auth" });
+
+  const handleClickHowToPlay = () => closeModal({ type: "instructions" });
 
   return (
     <BaseModal onClose={onClose} zIndex={zIndex}>
       <div className="info">
-        <div className="info__header">
-          <h2 className="info__title">How To Play</h2>
+        <div className="info__intro">
+          <div className="info__date">
+            <span className="info__date-weekday">{dateWeekday}</span>
+            <span className="info__date-mdy">{dateMDY}</span>
+          </div>
         </div>
-        <div className="info__video-wrapper">
-          {!isLoaded && (
-            <div className="info__placeholder" aria-label="Video loading">
-              <span className="info__spinner" />
-            </div>
-          )}
-          <video
-            className={`info__video ${isLoaded ? "info__video--visible" : ""}`}
-            src={game_intro}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onCanPlay={() => setIsLoaded(true)}
-          />
-        </div>
-        <div className="info__actions">
-          <button className="info__btn info__btn--secondary" onClick={onClose}>
+
+        <div className="info__btn-wrapper">
+          <button className="info__btn info__btn--primary" onClick={onClose}>
             Play
           </button>
           <button
-            className="info__btn info__btn--primary"
-            onClick={handleSignUpClick}
+            className="info__btn info__btn--secondary"
+            onClick={handleClickHowToPlay}
           >
-            Sign Up
+            How to Play
           </button>
         </div>
+
+        {!isAuthenticated && (
+          <p className="info__auth-prompt">
+            Have an account?{" "}
+            <button className="info__auth-link" onClick={handleSignIn}>
+              Sign in
+            </button>
+            {" · "}
+            <button className="info__auth-link" onClick={handleSignIn}>
+              Create account
+            </button>
+          </p>
+        )}
       </div>
     </BaseModal>
   );

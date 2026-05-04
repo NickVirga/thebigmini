@@ -9,11 +9,7 @@ const ClueContainer: React.FC = () => {
   const { gameData, updateGameData } = useGameData();
   const { clues, cells, selected } = gameData;
 
-  const selectedCell = selected
-    ? cells[selected.coordinates.row][selected.coordinates.col]
-    : null;
-  const selectedClueNum =
-    selectedCell?.clues[selected?.cluesIndex ?? 0] ?? null;
+  const selectedClueNum = selected?.clueNum ?? null;
   const currentClue: Clue | null =
     selectedClueNum !== null ? clues[selectedClueNum] : null;
   const clueDirection = selected?.cluesIndex === 0 ? "Across" : "Down";
@@ -22,11 +18,18 @@ const ClueContainer: React.FC = () => {
     updateGameData((prev) => {
       if (!prev.selected) return prev;
 
+      const newCluesIndex: 0 | 1 = prev.selected.cluesIndex === 0 ? 1 : 0;
+      const { row, col } = prev.selected.coordinates;
+      const clueNum = cells[row][col].clues[newCluesIndex];
+      const clueCells = clueNum !== null ? clues[clueNum].cells : [];
+
       return {
         ...prev,
         selected: {
           coordinates: prev.selected.coordinates,
-          cluesIndex: prev.selected.cluesIndex === 0 ? 1 : 0,
+          cluesIndex: newCluesIndex,
+          clueNum,
+          clueCells,
         },
       };
     });

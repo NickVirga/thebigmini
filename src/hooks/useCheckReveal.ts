@@ -6,7 +6,7 @@ import { CellData } from "@/types";
 export const useCheckReveal = () => {
   const { gameData, updateGameData } = useGameData();
   const { cells, selected, clues } = gameData;
-  const { openModal } = useModal();
+  const { openConfirm } = useModal();
   const { checkGameComplete } = useCompleteGame();
 
   const getSelectedCell = (): CellData | null => {
@@ -73,13 +73,10 @@ export const useCheckReveal = () => {
 
   const checkWord = () => checkCells(getWordCells());
   const checkGrid = () =>
-    openModal({
-      type: "confirm",
-      props: {
-        message: "Check all cells in the grid?",
-        description: "This will reduce your max possible score by half.",
-        onConfirm: () => checkCells(getAllCells()),
-      },
+    openConfirm({
+      message: "Check all cells in the grid?",
+      description: "This will reduce your max possible score by half.",
+      onConfirm: () => checkCells(getAllCells()),
     });
 
   const revealLetter = () => {
@@ -89,13 +86,10 @@ export const useCheckReveal = () => {
 
   const revealWord = () => revealCells(getWordCells());
   const revealGrid = () =>
-    openModal({
-      type: "confirm",
-      props: {
-        message: "Reveal all cells in the grid?",
-        description: "This will reduce your score to zero.",
-        onConfirm: () => revealCells(getAllCells()),
-      },
+    openConfirm({
+      message: "Reveal all cells in the grid?",
+      description: "This will reduce your score to zero.",
+      onConfirm: () => revealCells(getAllCells()),
     });
 
   return { checkLetter, checkWord, checkGrid, revealLetter, revealWord, revealGrid };

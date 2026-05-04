@@ -8,11 +8,7 @@ const ClueList: React.FC = () => {
   const { clues, cells, selected, options } = gameData;
   const clueRefs = useRef<Record<number, HTMLLIElement | null>>({});
 
-  const selectedClueNum = selected
-    ? cells[selected.coordinates.row][selected.coordinates.col].clues[
-        selected.cluesIndex
-      ]
-    : null;
+  const selectedClueNum = selected?.clueNum ?? null;
 
   useEffect(() => {
     if (selectedClueNum != null && clueRefs.current[selectedClueNum]) {
@@ -36,6 +32,8 @@ const ClueList: React.FC = () => {
       selected: {
         coordinates: targetCoords,
         cluesIndex: clue.cluesIndex,
+        clueNum: clue.index,
+        clueCells: clue.cells,
       },
     }));
   };

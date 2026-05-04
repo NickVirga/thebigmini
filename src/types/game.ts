@@ -2,27 +2,30 @@ import { CellData, Dimensions, Clue, Coordinates } from "./grid";
 import { Theme } from "./ui";
 
 export type GameData = {
-  gameId: number;
+  gameDate: string;
   playedBefore: boolean;
   zoomLevel: 0 | 1 | 2;
   gameIsComplete: boolean;
   options: Options;
   stats: Stats;
   dimensions: Dimensions;
-  selected: CellSelection | null;
+  selected: UserSelection | null;
   cells: CellData[][];
   clues: Clue[];
 };
 
-export type CellSelection = {
+export type UserSelection = {
   coordinates: Coordinates;
   cluesIndex: 0 | 1;
+  clueNum: number | null;
+  clueCells: Coordinates[];
 };
 
 export type Options = {
   theme: Theme;
   moveToNextClue: boolean;
   skipFilled: boolean;
+  autoErrorCheck: boolean;
 };
 
 export type Stats = {

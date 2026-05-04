@@ -33,21 +33,18 @@
     color: black;
   }
 
-  &--incorrect &__char {
-    color: var(--color-error);
-  }
+  &__icon {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    width: 18cqi;
+    height: 18cqi;
+    color: var(--color-primary);
+    z-index: 2;
+    pointer-events: none;
 
-  &--locked {
-    &::before {
-      content: "";
-      position: absolute;
-      top: 4%;
-      right: 4%;
-      width: 8%;
-      height: 8%;
-      border-radius: 50%;
-      background-color: var(--color-primary);
-      z-index: 2;
+    &--incorrect {
+      color: var(--color-error);
     }
   }
 
@@ -71,6 +68,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--incorrect {
+      color: var(--color-error);
+    }
 
     @container (min-width: 45px) {
       top: 55%;

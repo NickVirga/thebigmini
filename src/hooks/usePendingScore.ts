@@ -19,7 +19,7 @@ export const usePendingScore = () => {
       try {
         const response = await axios.post(
           `${import.meta.env.VITE_SERVER_BASE_URL}/api/games`,
-          { gameId: gameData.gameId, gameScore: score },
+          { gameDate: gameData.gameDate, gameScore: score },
           { headers: { Authorization: `Bearer ${accessToken}` } },
         );
         const { wins, scoreAccum } = response.data;

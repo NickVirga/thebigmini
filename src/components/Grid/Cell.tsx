@@ -1,5 +1,5 @@
 import { CellData, Coordinates } from "@/types";
-
+import { FaXmark, FaCheck, FaEye } from "react-icons/fa6";
 import "./Cell.scss";
 
 type Props = {
@@ -27,20 +27,22 @@ const Cell = ({ cell, isSelected, isHighlighted, handleClickCell }: Props) => {
     ? "cell--highlighted"
     : "";
 
-  const modifierClasses = [
-    cell.isIncorrect && "cell--incorrect",
-    cell.isLocked    && "cell--locked",
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const cellIcon = cell.isRevealed && cell.isLocked
+    ? <FaEye className="cell__icon" />
+    : cell.isChecked && !cell.isRevealed && cell.isLocked
+    ? <FaCheck className="cell__icon" />
+    : cell.isIncorrect
+    ? <FaXmark className="cell__icon cell__icon--incorrect" />
+    : null;
 
   return (
     <div
-      className={`cell ${stateClass} ${modifierClasses} ${getMaskClasses(cell.style.dividerMask, "cell--divider")} ${getMaskClasses(cell.style.borderMask, "cell--border")}`}
+      className={`cell ${stateClass} ${getMaskClasses(cell.style.dividerMask, "cell--divider")} ${getMaskClasses(cell.style.borderMask, "cell--border")}`}
       onClick={() => !cell.isBlank && handleClickCell(cell.coordinates)}
     >
       <span className="cell__label">{cell.label}</span>
-      <span className="cell__char">{cell.value}</span>
+      <span className={`cell__char ${cell.isIncorrect ? "cell__char--incorrect" : ""}`}>{cell.value}</span>
+      {cellIcon}
     </div>
   );
 };

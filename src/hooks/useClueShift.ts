@@ -1,15 +1,14 @@
 import { useGameData } from "@/context/GameDataContext";
-import { CellSelection } from "@/types";
+import { UserSelection } from "@/types";
 
 export const useClueShift = () => {
   const { gameData, updateGameData } = useGameData();
   const { clues, cells, selected } = gameData;
 
-  const clueShift = (direction: 1 | -1): CellSelection | null => {
+  const clueShift = (direction: 1 | -1): UserSelection | null => {
     if (!selected) return null;
 
-    const selectedCell = cells[selected.coordinates.row][selected.coordinates.col];
-    const selectedClueNum = selectedCell.clues[selected.cluesIndex];
+    const selectedClueNum = selected.clueNum;
     if (selectedClueNum === null) return selected;
 
     const cluesListLen = clues.length;
@@ -21,6 +20,8 @@ export const useClueShift = () => {
       return {
         coordinates: newClue.cells[0],
         cluesIndex: newClue.cluesIndex,
+        clueNum: newClue.index,
+        clueCells: newClue.cells,
       };
     }
 
@@ -35,6 +36,8 @@ export const useClueShift = () => {
         return {
           coordinates: firstEmpty.coordinates,
           cluesIndex: newClue.cluesIndex,
+          clueNum: newClue.index,
+          clueCells: newClue.cells,
         };
       }
 

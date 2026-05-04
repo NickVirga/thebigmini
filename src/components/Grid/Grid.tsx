@@ -1,13 +1,24 @@
+import { useRef, useEffect } from "react";
 import { Coordinates } from "@/types";
 import Cell from "./Cell";
 import "./Grid.scss";
 import { useGameData } from "@/context/GameDataContext";
 import { useGridInput } from "@/hooks/useGridInput";
+import { useModal } from "@/context/ModalContext";
 
 const Grid = () => {
   const { gameData, updateGameData } = useGameData();
   const { dimensions, cells, selected, zoomLevel, clues } = gameData;
   const { numGridCols, numGridRows } = dimensions;
+  const { isModalOpen } = useModal();
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  // Keep keyboard focus on the grid whenever a cell is selected and no modal is open
+  useEffect(() => {
+    if (selected && !isModalOpen) {
+      gridRef.current?.focus({ preventScroll: true });
+    }
+  }, [selected, isModalOpen]);
 
   const getMagnifyStyle = (): React.CSSProperties => {
     const row = selected?.coordinates.row ?? Math.floor(numGridRows / 2);
@@ -49,16 +60,15 @@ const Grid = () => {
         prev.selected?.coordinates.row === coordinates.row &&
         prev.selected?.coordinates.col === coordinates.col;
 
+      const newCluesIndex: 0 | 1 = isSameCell
+        ? prev.selected!.cluesIndex === 0 ? 1 : 0
+        : (prev.selected?.cluesIndex ?? 0);
+      const clueNum = cells[coordinates.row][coordinates.col].clues[newCluesIndex];
+      const clueCells = clueNum !== null ? clues[clueNum].cells : [];
+
       return {
         ...prev,
-        selected: {
-          coordinates,
-          cluesIndex: isSameCell
-            ? prev.selected!.cluesIndex === 0
-              ? 1
-              : 0
-            : (prev.selected?.cluesIndex ?? 0),
-        },
+        selected: { coordinates, cluesIndex: newCluesIndex, clueNum, clueCells },
       };
     });
   };
@@ -70,13 +80,8 @@ const Grid = () => {
 
   const isHighlighted = (coordinates: Coordinates): boolean => {
     if (!selected) return false;
-    const selectedCoords = selected.coordinates;
-
-    const cluesIndex = selected.cluesIndex;
-
-    const selectedClue =
-      cells[selectedCoords.row][selectedCoords.col].clues[cluesIndex];
-    const cellClue = cells[coordinates.row][coordinates.col].clues[cluesIndex];
+    const selectedClue = selected.clueNum;
+    const cellClue = cells[coordinates.row][coordinates.col].clues[selected.cluesIndex];
 
     if (selectedClue === null || cellClue === null) return false;
 
@@ -86,12 +91,18 @@ const Grid = () => {
   return (
     <div className="grid-wrapper">
       <div
+        ref={gridRef}
         className="grid"
         style={{
           gridTemplateColumns: `repeat(${dimensions.numGridCols}, 1fr)`,
           ...getMagnifyStyle(),
         }}
         onKeyDown={handleKeyDown}
+        onBlur={() => {
+          if (selected && !isModalOpen) {
+            gridRef.current?.focus({ preventScroll: true });
+          }
+        }}
         tabIndex={0}
       >
         {cells.map((row) =>
