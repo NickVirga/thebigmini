@@ -12,7 +12,7 @@ type InfoModalProps = {
 const InfoModal = ({ onClose, zIndex }: InfoModalProps) => {
   const { closeModal } = useModal();
   const { authTokens } = useAuth();
-  const { gameData } = useGameData();
+  const { gameData, updateGameData } = useGameData();
 
   const [year, month, day] = gameData.gameDate.split("-").map(Number);
   const gameDate = new Date(year, month - 1, day);
@@ -23,6 +23,11 @@ const InfoModal = ({ onClose, zIndex }: InfoModalProps) => {
     year: "numeric",
   });
   const isAuthenticated = authTokens !== null;
+
+  const handlePlay = () => {
+    updateGameData((prev) => ({ ...prev, playedBefore: true }));
+    onClose();
+  };
 
   const handleSignIn = () => closeModal({ type: "auth" });
 
@@ -39,7 +44,7 @@ const InfoModal = ({ onClose, zIndex }: InfoModalProps) => {
         </div>
 
         <div className="info__btn-wrapper">
-          <button className="info__btn info__btn--primary" onClick={onClose}>
+          <button className="info__btn info__btn--primary" onClick={handlePlay}>
             Play
           </button>
           <button

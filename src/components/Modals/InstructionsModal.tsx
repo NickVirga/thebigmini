@@ -177,7 +177,7 @@ const InstructionsModal = ({ onClose, zIndex }: InstructionsModalProps) => {
                   />
                 </svg>
                 <p className="instructions__cell-card-desc">
-                  Thick dividers between cells separates clues.
+                  Thick dividers between cells separate clues.
                 </p>
               </div>
 

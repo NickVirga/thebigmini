@@ -1,15 +1,25 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import Grid from "@/components/Grid";
 import ClueContainer from "@/components/ClueContainer";
 import Keyboard from "@/components/Keyboard";
 import ClueList from "@/components/ClueList";
 import CheckRevealToolbar from "@/components/CheckRevealToolbar";
 import { usePendingScore } from "@/hooks/usePendingScore";
+import { useModal } from "@/context/ModalContext";
+import { useGameData } from "@/context/GameDataContext";
 import "./MainPage.scss";
 
 const MainPage = () => {
   usePendingScore();
   const contentRef = useRef<HTMLDivElement>(null);
+  const { openModal } = useModal();
+  const { gameData } = useGameData();
+
+  useEffect(() => {
+    if (!gameData.playedBefore) {
+      openModal({ type: "info" });
+    }
+  }, []);
 
   useLayoutEffect(() => {
     const content = contentRef.current;

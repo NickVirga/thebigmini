@@ -58,7 +58,6 @@ export const GameDataProvider = ({ children }: Props) => {
     } else {
       initialGameData = {
         ...gameDataTemplate,
-        playedBefore: storedGameData.playedBefore,
         options: { ...storedGameData.options },
         stats: {
           ...gameDataTemplate.stats, // fresh game stats (score, checkedCnt, etc.)
