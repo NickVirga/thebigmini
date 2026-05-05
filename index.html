@@ -5,6 +5,22 @@
     <link rel="icon" type="image/png" href="/bigmini-favicon-16x16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The BIGmini Crossword</title>
+    <script>
+      (function () {
+        var theme = "light";
+        try {
+          var stored = localStorage.getItem("bigmini-game-data");
+          if (stored) {
+            var data = JSON.parse(stored);
+            theme = (data.options && data.options.theme) || "light";
+          }
+        } catch (e) {}
+        if (theme === "system") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
