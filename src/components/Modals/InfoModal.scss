@@ -1,0 +1,97 @@
+// InfoModal.scss
+@use "../../styles/partials/mixins" as *;
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    text-align: center;
+    height: 35vh;
+  }
+
+  &__date-weekday {
+    font-size: clamp(2.5rem, 12vw, 3rem);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.1;
+    color: var(--color-text);
+  }
+
+  &__date-mdy {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-muted);
+  }
+
+  &__auth-prompt {
+    margin: 0;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+
+  &__auth-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--font-primary);
+    font-size: inherit;
+    color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  &__btn {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    &--primary {
+      background-color: var(--color-primary);
+      color: var(--color-primary-text);
+      border: none;
+
+      &:hover {
+        background-color: var(--color-primary-hover);
+      }
+    }
+
+    &--secondary {
+      background-color: transparent;
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+
+      &:hover {
+        background-color: var(--color-hover);
+      }
+    }
+  }
+}

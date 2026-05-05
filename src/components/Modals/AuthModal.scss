@@ -1,0 +1,125 @@
+@use "../../styles/partials/mixins" as *;
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+
+  // ─── Header ─────────────────────────────────────────────────────────────
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: var(--line-height-normal);
+  }
+
+  // ─── Login list ──────────────────────────────────────────────────────────
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  // ─── OAuth buttons ───────────────────────────────────────────────────────
+  &__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: opacity var(--transition-fast), box-shadow var(--transition-fast);
+
+    &:hover {
+      opacity: 0.9;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    &--google {
+      background-color: #ffffff;
+      color: #3c3c3c;
+    }
+
+    &--discord {
+      background-color: #5865f2;
+      color: #ffffff;
+      border-color: #5865f2;
+    }
+  }
+
+  &__btn-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--color-border);
+
+    .auth__btn--discord & {
+      border-right-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__btn-icon {
+    font-size: 1.25rem;
+  }
+
+  &__btn-text {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--space-md);
+  }
+
+  // ─── Logout button ───────────────────────────────────────────────────────
+  &__logout-btn {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background-color: transparent;
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
+    border-radius: var(--radius-md);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-error);
+      color: #ffffff;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-error);
+      outline-offset: 2px;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@use "../../styles/partials/mixins" as *;
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  aspect-ratio: 1;
+  width: 100%;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  background-color: var(--color-cell);
+  container-type: inline-size;
+
+  &--blank {
+    background-color: var(--color-blank-cell);
+    border: none;
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+  }
+
+  &--selected {
+    background-color: var(--color-selected-cell);
+    color: black;
+  }
+
+  &--highlighted {
+    background-color: var(--color-highlighted-cell);
+    color: black;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    width: 18cqi;
+    height: 18cqi;
+    color: var(--color-primary);
+    z-index: 2;
+    pointer-events: none;
+
+    &--incorrect {
+      color: var(--color-error);
+    }
+  }
+
+  &__label {
+    color: inherit;
+    font-size: clamp(0.8rem, 18cqi, 1.5rem);
+    line-height: 1;
+    position: absolute;
+    left: 6%;
+    top: 4%;
+  }
+
+  &__char {
+    color: inherit;
+    font-size: clamp(1.1rem, 52cqi, 3rem);
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--incorrect {
+      color: var(--color-error);
+    }
+
+    @container (min-width: 45px) {
+      top: 55%;
+    }
+
+    @container (min-width: 80px) {
+      top: 50%;
+    }
+  }
+
+  &--border-top {
+    border-top: 1px solid var(--color-border);
+  }
+
+  &--border-right {
+    border-right: 1px solid var(--color-border);
+  }
+
+  &--border-bottom {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &--border-left {
+    border-left: 1px solid var(--color-border);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: 1;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+  }
+
+  &--divider-top {
+    &::after {
+      border-top: 3px solid var(--color-border-strong);
+    }
+  }
+
+  &--divider-right {
+    &::after {
+      border-right: 3px solid var(--color-border-strong);
+    }
+  }
+
+  &--divider-bottom {
+    &::after {
+      border-bottom: 3px solid var(--color-border-strong);
+    }
+  }
+
+  &--divider-left {
+    &::after {
+      border-left: 3px solid var(--color-border-strong);
+    }
+  }
+}
+

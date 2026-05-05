@@ -1,6 +1,23 @@
 .footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-bottom: 1rem;
+    padding: var(--space-sm) var(--space-md);
+    margin-top: var(--space-xl);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+
+    &__links {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }

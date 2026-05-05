@@ -1,29 +1,24 @@
 {
-  "gameId": 5,
+  "gameDate": "2026-05-05 ",
   "playedBefore": false,
-  "numRows": 8,
-  "numCols": 8,
-  "magnified": false,
-  "gameComplete": false,
+  "zoomLevel": 0,
+  "gameIsComplete": false,
   "options": {
-    "darkThemeEnabled": false,
+    "theme": "system",
     "moveToNextClue": true,
-    "skipFilled": true
+    "skipFilled": true,
+    "autoErrorCheck": false
   },
   "stats" : {
     "dailySaved": false,
     "wins": null,
     "avgScore": null,
-    "score": 0,
-    "checkedCnt": 0,
-    "revealedCnt": 0
+    "score": null,
+    "checkedCnt": null,
+    "revealedCnt": null
   },
-  "selected": {
-    "initCellsIndex": 0,
-    "cellsIndex": null,
-    "cellsInClue": [],
-    "cluesIndex": 0,
-    "clueNum": null
-  },
-  "cells": []
+  "selected": null,
+  "dimensions": {},
+  "cells": [],
+  "clues": []
 }
