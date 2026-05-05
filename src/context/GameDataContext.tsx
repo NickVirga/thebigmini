@@ -18,12 +18,14 @@ type Props = {
 export const GameDataContext = createContext<GameDataContextType | null>(null);
 
 // Helpers (run once on import, before any render)
-const resolveTheme = (theme: string): string =>
-  theme === "system"
+const resolveTheme = (theme: string): string => {
+  if (!theme || (theme !== "light" && theme !== "dark" && theme !== "system")) return "light";
+  return theme === "system"
     ? window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light"
     : theme;
+};
 
 const safeGetStorage = (key: string): string | null => {
   try { return localStorage.getItem(key); } catch { return null; }
