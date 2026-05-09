@@ -15,14 +15,16 @@ export const useClueShift = () => {
     let newClueNum = (selectedClueNum + direction + cluesListLen) % cluesListLen;
     let newClue = clues[newClueNum];
 
-    // dont skip filled, so select first cell in next clue
-    if (!gameData.options.skipFilled) {
-      return {
+    const newClueSelected = {
         coordinates: newClue.cells[0],
         cluesIndex: newClue.cluesIndex,
         clueNum: newClue.index,
-        clueCells: newClue.cells,
-      };
+        clueCells: newClue.cells
+    }
+
+    // dont skip filled, so select first cell in next clue
+    if (!gameData.options.skipFilled) {
+      return newClueSelected;
     }
 
     // skipFilled: find next clue with an empty cell
@@ -46,7 +48,7 @@ export const useClueShift = () => {
       attempts++;
     }
 
-    return selected; // all cells filled, stay put
+    return newClueSelected; // all cells filled, stay put
   };
 
   const shiftClue = (direction: 1 | -1) => {
