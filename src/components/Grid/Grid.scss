@@ -1,18 +1,11 @@
 @use "../../styles/partials/mixins" as *;
 
 .grid-wrapper {
-  width: calc(100vw - 2 * var(--space-xs));
-  flex-shrink: 0;
+  width: 100%;
+  max-width: calc(var(--num-cols) * 4rem);
+  flex-shrink: 1;
   margin: auto;
   overflow: hidden;
-
-  @include tablet {
-    width: calc(75vw - 2 * var(--space-xs));
-  }
-
-  @include desktop {
-    max-width: 36rem;
-  }
 }
 
 .grid {

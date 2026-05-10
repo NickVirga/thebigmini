@@ -89,7 +89,7 @@ const Grid = () => {
   };
 
   return (
-    <div className="grid-wrapper">
+    <div className="grid-wrapper" style={{ "--num-cols": numGridCols } as React.CSSProperties}>
       <div
         ref={gridRef}
         className="grid"

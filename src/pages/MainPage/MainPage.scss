@@ -10,16 +10,13 @@
 
   @include tablet {
     align-items: stretch;
-    margin: var(--space-sm);
-  }
-
-  @include tablet {
     margin: var(--space-md);
   }
 
   &__content {
     display: flex;
     align-items: flex-start;
+    align-self: stretch;
     gap: var(--space-md);
 
     @include tablet {
@@ -28,7 +25,10 @@
 
     @include desktop {
       gap: var(--space-lg);
-      margin: var(--space-lg) auto;
+      margin-top: var(--space-lg);
+      margin-inline: auto;
+      max-width: calc(var(--num-cols, 13) * 4rem + var(--space-lg) + 420px);
+      width: 100%;
     }
   }
 
@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+    flex: 1;
 
     .cr-toolbar {
       display: none;
