@@ -65,22 +65,24 @@ const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <h1 className="header__title">The BIGmini Crossword</h1>
-      <Link to="/">
-        <Logo />
-      </Link>
-      <nav className="header__icons" aria-label="Header actions">
-        {iconActions.map(({ icon, label, onClick }) => (
-          <button
-            key={label}
-            className="header__icon-btn"
-            onClick={onClick}
-            aria-label={label}
-          >
-            {icon}
-          </button>
-        ))}
-      </nav>
+      <div className="header__inner">
+        <h1 className="header__title">The BIGmini Crossword</h1>
+        <Link to="/">
+          <Logo />
+        </Link>
+        <nav className="header__icons" aria-label="Header actions">
+          {iconActions.map(({ icon, label, onClick }) => (
+            <button
+              key={label}
+              className="header__icon-btn"
+              onClick={onClick}
+              aria-label={label}
+            >
+              {icon}
+            </button>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 };
