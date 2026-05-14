@@ -6,6 +6,7 @@ import {
   FaRegCircleQuestion,
   FaChartSimple,
   FaCircleUser,
+  FaPause,
 } from "react-icons/fa6";
 import React from "react";
 import { useModal } from "@/context/ModalContext";
@@ -30,6 +31,17 @@ const Header: React.FC = () => {
 
   const isCallback = location.pathname === "/auth/login-callback";
   const isAuthenticated = !!authTokens?.accessToken;
+  const isMainPage = location.pathname === "/";
+
+  const formatTime = (seconds: number): string => {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    const s = seconds % 60;
+    if (h > 0) {
+      return `${h}:${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+    }
+    return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  };
 
   if (isCallback) {
     return (
@@ -70,18 +82,35 @@ const Header: React.FC = () => {
         <Link to="/">
           <Logo />
         </Link>
-        <nav className="header__icons" aria-label="Header actions">
-          {iconActions.map(({ icon, label, onClick }) => (
-            <button
-              key={label}
-              className="header__icon-btn"
-              onClick={onClick}
-              aria-label={label}
-            >
-              {icon}
-            </button>
-          ))}
-        </nav>
+        <div className="header__right">
+          <nav className="header__icons" aria-label="Header actions">
+            {iconActions.map(({ icon, label, onClick }) => (
+              <button
+                key={label}
+                className="header__icon-btn"
+                onClick={onClick}
+                aria-label={label}
+              >
+                {icon}
+              </button>
+            ))}
+          </nav>
+          {isMainPage && (
+            <div className="header__timer-group">
+              <button
+                className="header__timer-pause"
+                onClick={() => openModal({ type: "info" })}
+                aria-label="Pause"
+                disabled={!gameData.timerStarted || gameData.gameIsComplete}
+              >
+                <FaPause />
+              </button>
+              <span className="header__timer" aria-label="Elapsed time" aria-live="off">
+                {formatTime(gameData.elapsedTime)}
+              </span>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
