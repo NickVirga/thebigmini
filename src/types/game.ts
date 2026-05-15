@@ -35,6 +35,7 @@ export type Stats = {
   wins: number | null;
   avgScore: number | null;
   score: number | null;
+  secondsPerCell: number | null;
   checkedCnt: number | null;
   revealedCnt: number | null;
 };

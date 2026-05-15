@@ -40,8 +40,12 @@
   }
 
   &__logo {
-    height: 50px;
+    height: 45px;
     display: block;
+
+    @include tablet {
+      height: 50px;
+    }
   }
 
   &__icons {

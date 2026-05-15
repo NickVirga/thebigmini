@@ -34,7 +34,7 @@ const BaseModal = ({
     <div
       className="modal-backdrop"
       style={{ zIndex }}
-      onClick={closeOnBackdrop ? onClose : undefined}
+      onClick={closeOnBackdrop ? () => onClose() : undefined}
     >
       <div
         className="modal-content"
@@ -42,7 +42,7 @@ const BaseModal = ({
         role="dialog"
         aria-modal="true"
       >
-        <button className="modal-close" onClick={onClose} aria-label="Close modal">✕</button>
+        <button className="modal-close" onClick={() => onClose()} aria-label="Close modal">✕</button>
         {children}
       </div>
     </div>
