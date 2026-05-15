@@ -6,6 +6,8 @@ export type GameData = {
   playedBefore: boolean;
   zoomLevel: 0 | 1 | 2;
   gameIsComplete: boolean;
+  elapsedTime: number;
+  timerStarted: boolean;
   options: Options;
   stats: Stats;
   dimensions: Dimensions;
@@ -33,6 +35,7 @@ export type Stats = {
   wins: number | null;
   avgScore: number | null;
   score: number | null;
+  secondsPerCell: number | null;
   checkedCnt: number | null;
   revealedCnt: number | null;
 };

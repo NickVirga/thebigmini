@@ -5,12 +5,14 @@ import Keyboard from "@/components/Keyboard";
 import ClueList from "@/components/ClueList";
 import CheckRevealToolbar from "@/components/CheckRevealToolbar";
 import { usePendingScore } from "@/hooks/usePendingScore";
+import { useTimer } from "@/hooks/useTimer";
 import { useModal } from "@/context/ModalContext";
 import { useGameData } from "@/context/GameDataContext";
 import "./MainPage.scss";
 
 const MainPage = () => {
   usePendingScore();
+  useTimer();
   const contentRef = useRef<HTMLDivElement>(null);
   const { openModal } = useModal();
   const { gameData } = useGameData();

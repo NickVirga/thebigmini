@@ -60,6 +60,7 @@ export const useCompleteGame = () => {
     const revealedCnt = playCells.filter((c) => c.isRevealed).length;
     const checkedCnt = playCells.filter((c) => c.isChecked && !c.isRevealed).length;
     const score = ((total - revealedCnt - checkedCnt * 0.5) / total) * 100;
+    const secondsPerCell = gameData.elapsedTime / total;
 
     updateGameData((prev) => ({
       ...prev,
@@ -69,10 +70,11 @@ export const useCompleteGame = () => {
         score,
         checkedCnt,
         revealedCnt,
+        secondsPerCell,
       },
     }));
 
-    openModal({ type: "results", props: { hasIncorrect: false, score, checkedCnt, revealedCnt } });
+    openModal({ type: "results", props: { hasIncorrect: false, score, checkedCnt, revealedCnt, secondsPerCell } });
 
     if (authTokens?.accessToken && !gameData.stats.dailySaved) {
       sendScore(score);

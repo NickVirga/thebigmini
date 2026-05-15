@@ -6,6 +6,7 @@ export type ResultsModalProps = {
   zIndex?: number;
   hasIncorrect: boolean;
   score?: number;
+  secondsPerCell?: number;
   checkedCnt?: number;
   revealedCnt?: number;
 };
@@ -15,6 +16,7 @@ const ResultsModal = ({
   zIndex,
   hasIncorrect,
   score,
+  secondsPerCell,
   checkedCnt,
   revealedCnt,
 }: ResultsModalProps) => {
@@ -32,9 +34,13 @@ const ResultsModal = ({
           <div className="results__icon" aria-hidden>✓</div>
           <h2 className="results__title">Puzzle complete!</h2>
           <div className="results__grid">
-            <div className="results__card results__card--full">
+            <div className="results__card">
               <span className="results__value">{score?.toFixed(1)}%</span>
               <span className="results__label">Score</span>
+            </div>
+            <div className="results__card">
+              <span className="results__value">{secondsPerCell?.toFixed(1)}s</span>
+              <span className="results__label">Time per Cell</span>
             </div>
             <div className="results__card">
               <span className="results__value">{checkedCnt ?? 0}</span>

@@ -180,7 +180,7 @@ export const useGridInput = () => {
             ),
           );
 
-          updateGameData((prev) => ({ ...prev, cells: newCells }));
+          updateGameData((prev) => ({ ...prev, cells: newCells, timerStarted: true }));
           checkGameComplete(newCells);
           moveForward(newCells);
         }
@@ -190,6 +190,7 @@ export const useGridInput = () => {
         if (currentCell.isLocked) break;
         updateGameData((prev) => ({
           ...prev,
+          timerStarted: true,
           cells: prev.cells.map((r) =>
             r.map((cell) =>
               cell.coordinates.row === row && cell.coordinates.col === col

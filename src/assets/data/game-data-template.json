@@ -3,6 +3,8 @@
   "playedBefore": false,
   "zoomLevel": 0,
   "gameIsComplete": false,
+  "elapsedTime": 0,
+  "timerStarted": false,
   "options": {
     "theme": "system",
     "moveToNextClue": true,

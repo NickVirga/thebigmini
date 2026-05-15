@@ -68,11 +68,17 @@ const StatsModal = ({ onClose, zIndex }: StatsModalProps) => {
           <div className="stats__section">
             <h3 className="stats__subtitle">Today's Results</h3>
             <div className="stats__grid">
-              <div className="stats__card stats__card--full">
+              <div className="stats__card">
                 <span className="stats__value">
                   {gameData.stats.score?.toFixed(1)}%
                 </span>
                 <span className="stats__label">Score</span>
+              </div>
+              <div className="stats__card">
+                <span className="stats__value">
+                  {gameData.stats.secondsPerCell?.toFixed(1)}s
+                </span>
+                <span className="stats__label">Time per Cell</span>
               </div>
               <div className="stats__card">
                 <span className="stats__value">{gameData.stats.checkedCnt ?? "—"}</span>

@@ -13,6 +13,22 @@ const Grid = () => {
   const { isModalOpen } = useModal();
   const gridRef = useRef<HTMLDivElement>(null);
 
+  // Auto-select the first clue on initial load when no cell is selected
+  useEffect(() => {
+    if (selected || !clues.length) return;
+    const firstClue = clues[0];
+    updateGameData((prev) => ({
+      ...prev,
+      selected: {
+        coordinates: firstClue.cells[0],
+        cluesIndex: firstClue.cluesIndex,
+        clueNum: 0,
+        clueCells: firstClue.cells,
+      },
+    }));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Keep keyboard focus on the grid whenever a cell is selected and no modal is open
   useEffect(() => {
     if (selected && !isModalOpen) {

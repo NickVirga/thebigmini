@@ -45,7 +45,7 @@ const InfoModal = ({ onClose, zIndex }: InfoModalProps) => {
 
         <div className="info__btn-wrapper">
           <button className="info__btn info__btn--primary" onClick={handlePlay}>
-            Play
+            {gameData.elapsedTime > 0 ? "Continue" : "Play"}
           </button>
           <button
             className="info__btn info__btn--secondary"

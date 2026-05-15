@@ -19,7 +19,8 @@ export const GameDataContext = createContext<GameDataContextType | null>(null);
 
 // Helpers (run once on import, before any render)
 const resolveTheme = (theme: string): string => {
-  if (!theme || (theme !== "light" && theme !== "dark" && theme !== "system")) return "light";
+  if (!theme || (theme !== "light" && theme !== "dark" && theme !== "system"))
+    return "light";
   return theme === "system"
     ? window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
@@ -28,11 +29,19 @@ const resolveTheme = (theme: string): string => {
 };
 
 const safeGetStorage = (key: string): string | null => {
-  try { return localStorage.getItem(key); } catch { return null; }
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
 };
 
 const safeSetStorage = (key: string, value: string): void => {
-  try { localStorage.setItem(key, value); } catch { /* ignore */ }
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    /* ignore */
+  }
 };
 
 export const GameDataProvider = ({ children }: Props) => {
@@ -56,7 +65,9 @@ export const GameDataProvider = ({ children }: Props) => {
 
     // Check if the gameDate in localStorage matches the template's gameDate
     if (storedGameData.gameDate === gameDataTemplate.gameDate) {
-      initialGameData = { ...storedGameData, selected: null }; // reset cursor; UserSelection fields not stored
+      initialGameData = {
+        ...storedGameData
+      };
     } else {
       initialGameData = {
         ...gameDataTemplate,
@@ -67,10 +78,7 @@ export const GameDataProvider = ({ children }: Props) => {
           avgScore: storedGameData.stats.avgScore,
         },
       };
-      safeSetStorage(
-        "bigmini-game-data",
-        JSON.stringify(initialGameData),
-      );
+      safeSetStorage("bigmini-game-data", JSON.stringify(initialGameData));
     }
   } else {
     initialGameData = gameDataTemplate;
@@ -100,6 +108,8 @@ export const GameDataProvider = ({ children }: Props) => {
     updateGameData({
       ...gameData,
       gameIsComplete: false,
+      elapsedTime: 0,
+      timerStarted: false,
       cells: puzzleGameData.cells as unknown as CellData[][],
     });
   };
