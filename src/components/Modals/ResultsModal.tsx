@@ -27,7 +27,7 @@ const ResultsModal = ({
           <div className="results__icon" aria-hidden>✗</div>
           <h2 className="results__title">Not quite!</h2>
           <p className="results__message">One or more cells is incorrect.</p>
-          <button className="results__btn" onClick={onClose}>Keep trying</button>
+          <button className="results__btn" onClick={() => onClose()}>Keep trying</button>
         </div>
       ) : (
         <div className="results results--complete">
@@ -51,7 +51,7 @@ const ResultsModal = ({
               <span className="results__label">Revealed</span>
             </div>
           </div>
-          <button className="results__btn" onClick={onClose}>Done</button>
+          <button className="results__btn" onClick={() => onClose()}>Done</button>
         </div>
       )}
     </BaseModal>

@@ -29,7 +29,7 @@ const ConfirmModal = ({
           {description && <p className="confirm__description">{description}</p>}
         </div>
         <div className="confirm__actions">
-          <button className="confirm__btn confirm__btn--cancel" onClick={onClose}>
+          <button className="confirm__btn confirm__btn--cancel" onClick={() => onClose()}>
             Cancel
           </button>
           <button className="confirm__btn confirm__btn--confirm" onClick={handleConfirm}>
