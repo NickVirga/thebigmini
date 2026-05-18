@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import gameDataTempl from "../assets/data/game-data-template.json";
 import puzzleGameData from "../assets/data/puzzle-game-data.json";
 
@@ -92,6 +92,25 @@ export const GameDataProvider = ({ children }: Props) => {
   );
 
   const [gameData, setGameData] = useState<GameData>(initialGameData);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) return;
+      const stored = safeGetStorage("bigmini-game-data");
+      if (stored) {
+        try {
+          const { gameDate } = JSON.parse(stored);
+          if (gameDate && gameDate !== gameDataTempl.gameDate) {
+            window.location.reload();
+          }
+        } catch {
+          // ignore parse errors
+        }
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, []);
 
   const updateGameData = (
     newGameData: GameData | ((prev: GameData) => GameData),
