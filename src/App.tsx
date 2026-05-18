@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import MainPage from "@/pages/MainPage";
@@ -9,27 +8,6 @@ import NotFoundPage from "./pages/NotFoundPage";
 import AuthCallbackPage from "@/pages/AuthCallbackPage";
 
 const App = () => {
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) return;
-      const today = new Date().toISOString().slice(0, 10);
-      try {
-        const stored = localStorage.getItem("bigmini-game-data");
-        if (stored) {
-          const { gameDate } = JSON.parse(stored);
-          if (gameDate && gameDate !== today) {
-            window.location.reload();
-          }
-        }
-      } catch {
-        // ignore parse errors
-      }
-    };
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
-  }, []);
-
   return (
     <BrowserRouter>
       <div className="app">
