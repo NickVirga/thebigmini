@@ -9,7 +9,7 @@ export const useGridInput = () => {
   const { checkGameComplete } = useCompleteGame();
 
   const handleInput = (key: string, modifier?: { shift?: boolean }) => {
-    const { cells, selected, dimensions, clues } = gameData;
+    const { cells, selected, dimensions, clues, gameIsComplete } = gameData;
 
     if (!selected) return;
     const { row, col } = selected.coordinates;
@@ -154,6 +154,7 @@ export const useGridInput = () => {
     switch (key) {
       default:
         if (key.length === 1 && /^[a-zA-Z0-9]$/.test(key)) {
+          if (gameIsComplete) break;
           if (currentCell.isLocked) {
             moveForward(cells);
             break;
@@ -187,7 +188,7 @@ export const useGridInput = () => {
         break;
 
       case "Backspace":
-        if (currentCell.isLocked) break;
+        if (currentCell.isLocked || gameIsComplete) break;
         updateGameData((prev) => ({
           ...prev,
           timerStarted: true,
@@ -203,7 +204,7 @@ export const useGridInput = () => {
         break;
 
       case "Delete":
-        if (currentCell.isLocked) break;
+        if (currentCell.isLocked || gameIsComplete) break;
         updateGameData((prev) => ({
           ...prev,
           cells: prev.cells.map((r) =>
