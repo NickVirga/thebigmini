@@ -1,0 +1,44 @@
+==============================
+==============================
+Run at: Thu Jun 11 21:00:05 PDT 2026
+Run at: Thu Jun 11 21:00:05 PDT 2026
+Your branch is up to date with 'origin/main'.
+Switched to branch 'main'
+lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+From https://github.com/NickVirga/thebigmini
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+ed the current branch head.
+fast-forwarding your working tree from
+commit fd129a6b2883a7ac6be7f8fbc707d671c733abb1.
+error: Your local changes to the following files would be overwritten by merge:
+	src/assets/data/game-data-template.json
+	src/assets/data/puzzle-game-data.json
+	src/components/ClueContainer/ClueContainer.scss
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: Cannot fast-forward your working tree.
+After making sure that you saved anything precious from
+$ git diff fd129a6b2883a7ac6be7f8fbc707d671c733abb1
+output, run
+$ git reset --hard
+to recover.
+Updating 680f152..fd129a6
+Fast-forward
+ src/assets/data/game-data-template.json         |    2 +-
+ src/assets/data/puzzle-game-data.json           | 3414 +++++++++++++++++------
+ src/components/ClueContainer/ClueContainer.scss |    7 +-
+ 3 files changed, 2536 insertions(+), 887 deletions(-)
+ave crashed in this repository earlier:
+remove the file manually to continue.
+Updating 680f152..fd129a6
+ERROR: Merge failed. Resolve conflicts manually.
+To https://github.com/NickVirga/thebigmini.git
+   680f152..fd129a6  main -> main
+SUCCESS: develop merged into main and pushed.
