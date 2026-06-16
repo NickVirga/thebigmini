@@ -12,7 +12,7 @@
           "col": 0
         },
         "value": "",
-        "answer": "P",
+        "answer": "F",
         "label": "1",
         "style": {
           "borderMask": 0,
@@ -45,7 +45,7 @@
           "col": 1
         },
         "value": "",
-        "answer": "I",
+        "answer": "A",
         "label": "2",
         "style": {
           "borderMask": 0,
@@ -78,7 +78,7 @@
           "col": 2
         },
         "value": "",
-        "answer": "T",
+        "answer": "I",
         "label": "3",
         "style": {
           "borderMask": 0,
@@ -111,7 +111,7 @@
           "col": 3
         },
         "value": "",
-        "answer": "Y",
+        "answer": "R",
         "label": "4",
         "style": {
           "borderMask": 2,
@@ -146,7 +146,7 @@
           "col": 0
         },
         "value": "",
-        "answer": "E",
+        "answer": "L",
         "label": "5",
         "style": {
           "borderMask": 0,
@@ -179,7 +179,7 @@
           "col": 1
         },
         "value": "",
-        "answer": "C",
+        "answer": "O",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -212,7 +212,7 @@
           "col": 2
         },
         "value": "",
-        "answer": "H",
+        "answer": "N",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -245,7 +245,7 @@
           "col": 3
         },
         "value": "",
-        "answer": "O",
+        "answer": "E",
         "label": null,
         "style": {
           "borderMask": 2,
@@ -280,7 +280,7 @@
           "col": 0
         },
         "value": "",
-        "answer": "R",
+        "answer": "A",
         "label": "6",
         "style": {
           "borderMask": 0,
@@ -313,7 +313,7 @@
           "col": 1
         },
         "value": "",
-        "answer": "E",
+        "answer": "N",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -346,7 +346,7 @@
           "col": 2
         },
         "value": "",
-        "answer": "E",
+        "answer": "T",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -379,7 +379,7 @@
           "col": 3
         },
         "value": "",
-        "answer": "K",
+        "answer": "I",
         "label": null,
         "style": {
           "borderMask": 2,
@@ -414,7 +414,7 @@
           "col": 0
         },
         "value": "",
-        "answer": "M",
+        "answer": "N",
         "label": "7",
         "style": {
           "borderMask": 4,
@@ -480,7 +480,7 @@
           "col": 2
         },
         "value": "",
-        "answer": "M",
+        "answer": "O",
         "label": null,
         "style": {
           "borderMask": 4,
@@ -513,7 +513,7 @@
           "col": 3
         },
         "value": "",
-        "answer": "E",
+        "answer": "N",
         "label": null,
         "style": {
           "borderMask": 6,
@@ -546,8 +546,8 @@
       "index": 0,
       "cluesIndex": 0,
       "label": "1",
-      "clueText": "\"___ the fool!\" (Mr. T's catchphrase)",
-      "word": "PITY",
+      "clueText": "___ and square (by the rules)",
+      "word": "FAIR",
       "cells": [
         {
           "row": 0,
@@ -577,8 +577,8 @@
       "index": 1,
       "cluesIndex": 0,
       "label": "5",
-      "clueText": "NATO phonetic alphabet's E",
-      "word": "ECHO",
+      "clueText": "___ wolf (solitary type)",
+      "word": "LONE",
       "cells": [
         {
           "row": 1,
@@ -608,8 +608,8 @@
       "index": 2,
       "cluesIndex": 0,
       "label": "6",
-      "clueText": "Stink badly, like a locker room",
-      "word": "REEK",
+      "clueText": "Against, as a prefix",
+      "word": "ANTI",
       "cells": [
         {
           "row": 2,
@@ -639,8 +639,8 @@
       "index": 3,
       "cluesIndex": 0,
       "label": "7",
-      "clueText": "Viral internet joke format",
-      "word": "MEME",
+      "clueText": "Bright Vegas sign gas",
+      "word": "NEON",
       "cells": [
         {
           "row": 3,
@@ -670,8 +670,8 @@
       "index": 4,
       "cluesIndex": 1,
       "label": "1",
-      "clueText": "Curly hair salon treatment",
-      "word": "PERM",
+      "clueText": "Caramel custard dessert",
+      "word": "FLAN",
       "cells": [
         {
           "row": 0,
@@ -701,8 +701,8 @@
       "index": 5,
       "cluesIndex": 1,
       "label": "2",
-      "clueText": "Slushy frozen drink at the movies",
-      "word": "ICEE",
+      "clueText": "Battleship grid's top-left coordinate",
+      "word": "AONE",
       "cells": [
         {
           "row": 0,
@@ -732,8 +732,8 @@
       "index": 6,
       "cluesIndex": 1,
       "label": "3",
-      "clueText": "Jordan Peele horror series on Amazon",
-      "word": "THEM",
+      "clueText": "Enthusiastic about, or moving inside",
+      "word": "INTO",
       "cells": [
         {
           "row": 0,
@@ -763,8 +763,8 @@
       "index": 7,
       "cluesIndex": 1,
       "label": "4",
-      "clueText": "Pilot's steering control",
-      "word": "YOKE",
+      "clueText": "\"___ Me In\" (Sam Fender with Olivia Dean)",
+      "word": "REIN",
       "cells": [
         {
           "row": 0,
