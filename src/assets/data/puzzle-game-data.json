@@ -108,7 +108,7 @@
         "answer": "K",
         "label": "3",
         "style": {
-          "borderMask": 2,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
@@ -249,7 +249,7 @@
         "isLocked": false
       },
       {
-        "index": 4,
+        "index": 8,
         "coordinates": {
           "row": 0,
           "col": 8
@@ -281,7 +281,7 @@
     ],
     [
       {
-        "index": 5,
+        "index": 9,
         "coordinates": {
           "row": 1,
           "col": 0
@@ -341,7 +341,7 @@
         "isLocked": false
       },
       {
-        "index": 6,
+        "index": 11,
         "coordinates": {
           "row": 1,
           "col": 2
@@ -1133,7 +1133,7 @@
         "answer": "P",
         "label": "13",
         "style": {
-          "borderMask": 4,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
@@ -1280,12 +1280,12 @@
         "answer": "I",
         "label": null,
         "style": {
-          "borderMask": 4,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          3,
-          5
+          7,
+          17
         ],
         "zoom2Origins": [
           {
@@ -2020,7 +2020,7 @@
       "zoom2Scale": 2
     },
     {
-      "index": 5,
+      "index": 11,
       "cluesIndex": 1,
       "label": "2",
       "clueText": "WWII's Britain, US and France, e.g.",
