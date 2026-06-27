@@ -1,7 +1,7 @@
 {
   "dimensions": {
-    "numGridRows": 7,
-    "numGridCols": 8
+    "numGridRows": 10,
+    "numGridCols": 12
   },
   "cells": [
     [
@@ -20,7 +20,7 @@
         },
         "clues": [
           0,
-          11
+          25
         ],
         "zoom2Origins": [
           null,
@@ -39,7 +39,7 @@
           "col": 1
         },
         "value": "",
-        "answer": "H",
+        "answer": "U",
         "label": "2",
         "style": {
           "borderMask": 0,
@@ -47,11 +47,14 @@
         },
         "clues": [
           0,
-          12
+          26
         ],
         "zoom2Origins": [
           null,
-          null
+          {
+            "originX": 0.125,
+            "originY": 0
+          }
         ],
         "isBlank": false,
         "isChecked": false,
@@ -66,7 +69,7 @@
           "col": 2
         },
         "value": "",
-        "answer": "O",
+        "answer": "I",
         "label": "3",
         "style": {
           "borderMask": 0,
@@ -74,7 +77,7 @@
         },
         "clues": [
           0,
-          13
+          27
         ],
         "zoom2Origins": [
           null,
@@ -93,7 +96,7 @@
           "col": 3
         },
         "value": "",
-        "answer": "R",
+        "answer": "T",
         "label": "4",
         "style": {
           "borderMask": 0,
@@ -101,7 +104,7 @@
         },
         "clues": [
           0,
-          14
+          28
         ],
         "zoom2Origins": [
           null,
@@ -120,21 +123,18 @@
           "col": 4
         },
         "value": "",
-        "answer": "T",
+        "answer": "O",
         "label": "5",
         "style": {
           "borderMask": 0,
-          "dividerMask": 2
+          "dividerMask": 0
         },
         "clues": [
           0,
-          15
+          29
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0
-          },
+          null,
           null
         ],
         "isBlank": false,
@@ -154,11 +154,11 @@
         "label": "6",
         "style": {
           "borderMask": 0,
-          "dividerMask": 8
+          "dividerMask": 2
         },
         "clues": [
-          1,
-          16
+          0,
+          30
         ],
         "zoom2Origins": [
           null,
@@ -181,11 +181,11 @@
         "label": "7",
         "style": {
           "borderMask": 0,
-          "dividerMask": 0
+          "dividerMask": 8
         },
         "clues": [
           1,
-          17
+          31
         ],
         "zoom2Origins": [
           null,
@@ -204,15 +204,126 @@
           "col": 7
         },
         "value": "",
-        "answer": "T",
+        "answer": "Z",
         "label": "8",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          1,
+          32
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 8,
+        "coordinates": {
+          "row": 0,
+          "col": 8
+        },
+        "value": "",
+        "answer": "A",
+        "label": "9",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          1,
+          33
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 9,
+        "coordinates": {
+          "row": 0,
+          "col": 9
+        },
+        "value": "",
+        "answer": "L",
+        "label": "10",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          1,
+          34
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 10,
+        "coordinates": {
+          "row": 0,
+          "col": 10
+        },
+        "value": "",
+        "answer": "E",
+        "label": "11",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          1,
+          35
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 0.875,
+            "originY": 0
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 11,
+        "coordinates": {
+          "row": 0,
+          "col": 11
+        },
+        "value": "",
+        "answer": "A",
+        "label": "12",
         "style": {
           "borderMask": 2,
           "dividerMask": 0
         },
         "clues": [
           1,
-          18
+          36
         ],
         "zoom2Origins": [
           null,
@@ -227,146 +338,26 @@
     ],
     [
       {
-        "index": 8,
+        "index": 12,
         "coordinates": {
           "row": 1,
           "col": 0
         },
         "value": "",
-        "answer": "L",
-        "label": "9",
+        "answer": "O",
+        "label": "13",
         "style": {
           "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
           2,
-          11
+          25
         ],
         "zoom2Origins": [
           {
             "originX": 0,
-            "originY": 0.21428571428571427
-          },
-          null
-        ],
-        "isBlank": false,
-        "isChecked": false,
-        "isRevealed": false,
-        "isIncorrect": false,
-        "isLocked": false
-      },
-      {
-        "index": 9,
-        "coordinates": {
-          "row": 1,
-          "col": 1
-        },
-        "value": "",
-        "answer": "I",
-        "label": null,
-        "style": {
-          "borderMask": 0,
-          "dividerMask": 0
-        },
-        "clues": [
-          2,
-          12
-        ],
-        "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.21428571428571427
-          },
-          null
-        ],
-        "isBlank": false,
-        "isChecked": false,
-        "isRevealed": false,
-        "isIncorrect": false,
-        "isLocked": false
-      },
-      {
-        "index": 10,
-        "coordinates": {
-          "row": 1,
-          "col": 2
-        },
-        "value": "",
-        "answer": "M",
-        "label": null,
-        "style": {
-          "borderMask": 0,
-          "dividerMask": 0
-        },
-        "clues": [
-          2,
-          13
-        ],
-        "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.21428571428571427
-          },
-          null
-        ],
-        "isBlank": false,
-        "isChecked": false,
-        "isRevealed": false,
-        "isIncorrect": false,
-        "isLocked": false
-      },
-      {
-        "index": 11,
-        "coordinates": {
-          "row": 1,
-          "col": 3
-        },
-        "value": "",
-        "answer": "E",
-        "label": null,
-        "style": {
-          "borderMask": 0,
-          "dividerMask": 0
-        },
-        "clues": [
-          2,
-          14
-        ],
-        "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.21428571428571427
-          },
-          null
-        ],
-        "isBlank": false,
-        "isChecked": false,
-        "isRevealed": false,
-        "isIncorrect": false,
-        "isLocked": false
-      },
-      {
-        "index": 12,
-        "coordinates": {
-          "row": 1,
-          "col": 4
-        },
-        "value": "",
-        "answer": "S",
-        "label": null,
-        "style": {
-          "borderMask": 0,
-          "dividerMask": 0
-        },
-        "clues": [
-          2,
-          15
-        ],
-        "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.21428571428571427
+            "originY": 0.15
           },
           null
         ],
@@ -380,10 +371,10 @@
         "index": 13,
         "coordinates": {
           "row": 1,
-          "col": 5
+          "col": 1
         },
         "value": "",
-        "answer": "O",
+        "answer": "N",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -391,14 +382,17 @@
         },
         "clues": [
           2,
-          16
+          26
         ],
         "zoom2Origins": [
           {
-            "originX": 1,
-            "originY": 0.21428571428571427
+            "originX": 0,
+            "originY": 0.15
           },
-          null
+          {
+            "originX": 0.125,
+            "originY": 0
+          }
         ],
         "isBlank": false,
         "isChecked": false,
@@ -410,10 +404,10 @@
         "index": 14,
         "coordinates": {
           "row": 1,
-          "col": 6
+          "col": 2
         },
         "value": "",
-        "answer": "D",
+        "answer": "L",
         "label": null,
         "style": {
           "borderMask": 0,
@@ -421,12 +415,12 @@
         },
         "clues": [
           2,
-          17
+          27
         ],
         "zoom2Origins": [
           {
-            "originX": 1,
-            "originY": 0.21428571428571427
+            "originX": 0,
+            "originY": 0.15
           },
           null
         ],
@@ -440,23 +434,23 @@
         "index": 15,
         "coordinates": {
           "row": 1,
-          "col": 7
+          "col": 3
         },
         "value": "",
-        "answer": "A",
+        "answer": "I",
         "label": null,
         "style": {
-          "borderMask": 2,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
           2,
-          18
+          28
         ],
         "zoom2Origins": [
           {
-            "originX": 1,
-            "originY": 0.21428571428571427
+            "originX": 0,
+            "originY": 0.15
           },
           null
         ],
@@ -465,28 +459,29 @@
         "isRevealed": false,
         "isIncorrect": false,
         "isLocked": false
-      }
-    ],
-    [
+      },
       {
         "index": 16,
         "coordinates": {
-          "row": 2,
-          "col": 0
+          "row": 1,
+          "col": 4
         },
         "value": "",
-        "answer": "A",
-        "label": "10",
+        "answer": "N",
+        "label": null,
         "style": {
           "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          3,
-          11
+          2,
+          29
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 0,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -498,22 +493,25 @@
       {
         "index": 17,
         "coordinates": {
-          "row": 2,
-          "col": 1
+          "row": 1,
+          "col": 5
         },
         "value": "",
-        "answer": "S",
+        "answer": "E",
         "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 4
+          "dividerMask": 0
         },
         "clues": [
-          3,
-          12
+          2,
+          30
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 0,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -525,22 +523,25 @@
       {
         "index": 18,
         "coordinates": {
-          "row": 2,
-          "col": 2
+          "row": 1,
+          "col": 6
         },
         "value": "",
-        "answer": "A",
+        "answer": "D",
         "label": null,
         "style": {
           "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          3,
-          13
+          2,
+          31
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 1,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -552,22 +553,25 @@
       {
         "index": 19,
         "coordinates": {
-          "row": 2,
-          "col": 3
+          "row": 1,
+          "col": 7
         },
         "value": "",
-        "answer": "D",
+        "answer": "A",
         "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 4
+          "dividerMask": 0
         },
         "clues": [
-          3,
-          14
+          2,
+          32
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 1,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -579,24 +583,24 @@
       {
         "index": 20,
         "coordinates": {
-          "row": 2,
-          "col": 4
+          "row": 1,
+          "col": 8
         },
         "value": "",
-        "answer": "A",
+        "answer": "T",
         "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 2
+          "dividerMask": 0
         },
         "clues": [
-          3,
-          15
+          2,
+          33
         ],
         "zoom2Origins": [
           {
             "originX": 1,
-            "originY": 0.35714285714285715
+            "originY": 0.15
           },
           null
         ],
@@ -609,22 +613,25 @@
       {
         "index": 21,
         "coordinates": {
-          "row": 2,
-          "col": 5
+          "row": 1,
+          "col": 9
         },
         "value": "",
-        "answer": "D",
-        "label": "11",
+        "answer": "I",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 12
+          "dividerMask": 0
         },
         "clues": [
-          4,
-          16
+          2,
+          34
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 1,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -636,23 +643,29 @@
       {
         "index": 22,
         "coordinates": {
-          "row": 2,
-          "col": 6
+          "row": 1,
+          "col": 10
         },
         "value": "",
-        "answer": "I",
+        "answer": "N",
         "label": null,
         "style": {
           "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          4,
-          17
+          2,
+          35
         ],
         "zoom2Origins": [
-          null,
-          null
+          {
+            "originX": 1,
+            "originY": 0.15
+          },
+          {
+            "originX": 0.875,
+            "originY": 0
+          }
         ],
         "isBlank": false,
         "isChecked": false,
@@ -663,22 +676,25 @@
       {
         "index": 23,
         "coordinates": {
-          "row": 2,
-          "col": 7
+          "row": 1,
+          "col": 11
         },
         "value": "",
-        "answer": "D",
+        "answer": "G",
         "label": null,
         "style": {
           "borderMask": 2,
-          "dividerMask": 4
+          "dividerMask": 0
         },
         "clues": [
-          4,
-          18
+          2,
+          36
         ],
         "zoom2Origins": [
-          null,
+          {
+            "originX": 1,
+            "originY": 0.15
+          },
           null
         ],
         "isBlank": false,
@@ -692,29 +708,23 @@
       {
         "index": 24,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 0
         },
         "value": "",
-        "answer": "T",
-        "label": "12",
+        "answer": "B",
+        "label": "14",
         "style": {
           "borderMask": 0,
           "dividerMask": 4
         },
         "clues": [
-          5,
-          11
+          3,
+          25
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.5
-          },
-          {
-            "originX": 0,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -725,28 +735,25 @@
       {
         "index": 25,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 1
         },
         "value": "",
-        "answer": "E",
-        "label": "13",
+        "answer": "I",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 1
+          "dividerMask": 4
         },
         "clues": [
-          5,
-          19
+          3,
+          26
         ],
         "zoom2Origins": [
+          null,
           {
-            "originX": 0,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.1875,
-            "originY": 0.7142857142857142
+            "originX": 0.125,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -758,29 +765,23 @@
       {
         "index": 26,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 2
         },
         "value": "",
-        "answer": "N",
+        "answer": "L",
         "label": null,
         "style": {
           "borderMask": 0,
           "dividerMask": 4
         },
         "clues": [
-          5,
-          13
+          3,
+          27
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.3125,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -791,29 +792,23 @@
       {
         "index": 27,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 3
         },
         "value": "",
-        "answer": "G",
-        "label": "14",
+        "answer": "L",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 1
+          "dividerMask": 0
         },
         "clues": [
-          5,
-          20
+          3,
+          28
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.4375,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -824,29 +819,23 @@
       {
         "index": 28,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 4
         },
         "value": "",
-        "answer": "R",
+        "answer": "E",
         "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 4
+          "dividerMask": 0
         },
         "clues": [
-          5,
-          15
+          3,
+          29
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.5625,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -857,29 +846,23 @@
       {
         "index": 29,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 5
         },
         "value": "",
-        "answer": "A",
-        "label": "15",
+        "answer": "D",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 1
+          "dividerMask": 2
         },
         "clues": [
-          5,
-          21
+          3,
+          30
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.6875,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -890,29 +873,23 @@
       {
         "index": 30,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 6
         },
         "value": "",
-        "answer": "N",
-        "label": null,
+        "answer": "S",
+        "label": "15",
         "style": {
           "borderMask": 0,
-          "dividerMask": 4
+          "dividerMask": 8
         },
         "clues": [
-          5,
-          17
+          4,
+          31
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.5
-          },
-          {
-            "originX": 0.8125,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -923,61 +900,50 @@
       {
         "index": 31,
         "coordinates": {
-          "row": 3,
+          "row": 2,
           "col": 7
         },
         "value": "",
-        "answer": "D",
-        "label": "16",
+        "answer": "P",
+        "label": null,
         "style": {
-          "borderMask": 2,
-          "dividerMask": 1
+          "borderMask": 0,
+          "dividerMask": 0
         },
         "clues": [
-          5,
-          22
+          4,
+          32
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.5
-          },
-          {
-            "originX": 1,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
         "isBlank": false,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
         "isLocked": false
-      }
-    ],
-    [
+      },
       {
         "index": 32,
         "coordinates": {
-          "row": 4,
-          "col": 0
+          "row": 2,
+          "col": 8
         },
         "value": "",
-        "answer": "P",
-        "label": "17",
+        "answer": "E",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 1
+          "dividerMask": 0
         },
         "clues": [
-          6,
-          23
+          4,
+          33
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 0,
-            "originY": 0.7142857142857142
-          }
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -988,26 +954,23 @@
       {
         "index": 33,
         "coordinates": {
-          "row": 4,
-          "col": 1
+          "row": 2,
+          "col": 9
         },
         "value": "",
-        "answer": "L",
+        "answer": "E",
         "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 0
+          "dividerMask": 4
         },
         "clues": [
-          6,
-          19
+          4,
+          34
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 0.1875,
-            "originY": 0.7142857142857142
-          }
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -1018,25 +981,25 @@
       {
         "index": 34,
         "coordinates": {
-          "row": 4,
-          "col": 2
+          "row": 2,
+          "col": 10
         },
         "value": "",
-        "answer": "A",
-        "label": "18",
+        "answer": "D",
+        "label": null,
         "style": {
           "borderMask": 0,
-          "dividerMask": 1
+          "dividerMask": 4
         },
         "clues": [
-          6,
-          24
+          4,
+          35
         ],
         "zoom2Origins": [
           null,
           {
-            "originX": 0.3125,
-            "originY": 0.7142857142857142
+            "originX": 0.875,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1048,58 +1011,54 @@
       {
         "index": 35,
         "coordinates": {
-          "row": 4,
-          "col": 3
+          "row": 2,
+          "col": 11
         },
         "value": "",
-        "answer": "I",
+        "answer": "O",
         "label": null,
         "style": {
-          "borderMask": 0,
-          "dividerMask": 0
+          "borderMask": 2,
+          "dividerMask": 4
         },
         "clues": [
-          6,
-          20
+          4,
+          36
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 0.4375,
-            "originY": 0.7142857142857142
-          }
+          null
         ],
         "isBlank": false,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
         "isLocked": false
-      },
+      }
+    ],
+    [
       {
         "index": 36,
         "coordinates": {
-          "row": 4,
-          "col": 4
+          "row": 3,
+          "col": 0
         },
         "value": "",
-        "answer": "D",
-        "label": "19",
+        "answer": "E",
+        "label": "16",
         "style": {
           "borderMask": 0,
-          "dividerMask": 3
+          "dividerMask": 1
         },
         "clues": [
-          6,
-          25
+          5,
+          37
         ],
         "zoom2Origins": [
+          null,
           {
-            "originX": 1,
-            "originY": 0.6428571428571429
-          },
-          {
-            "originX": 0.5625,
-            "originY": 0.7142857142857142
+            "originX": 0,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1111,25 +1070,25 @@
       {
         "index": 37,
         "coordinates": {
-          "row": 4,
-          "col": 5
+          "row": 3,
+          "col": 1
         },
         "value": "",
-        "answer": "B",
-        "label": "20",
+        "answer": "T",
+        "label": "17",
         "style": {
           "borderMask": 0,
-          "dividerMask": 8
+          "dividerMask": 1
         },
         "clues": [
-          7,
-          21
+          5,
+          38
         ],
         "zoom2Origins": [
           null,
           {
-            "originX": 0.6875,
-            "originY": 0.7142857142857142
+            "originX": 0.125,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1141,25 +1100,25 @@
       {
         "index": 38,
         "coordinates": {
-          "row": 4,
-          "col": 6
+          "row": 3,
+          "col": 2
         },
         "value": "",
-        "answer": "Y",
-        "label": "21",
+        "answer": "C",
+        "label": "18",
         "style": {
           "borderMask": 0,
           "dividerMask": 1
         },
         "clues": [
-          7,
-          26
+          5,
+          39
         ],
         "zoom2Origins": [
           null,
           {
-            "originX": 0.8125,
-            "originY": 0.7142857142857142
+            "originX": 0.20833333333333334,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1171,63 +1130,52 @@
       {
         "index": 39,
         "coordinates": {
-          "row": 4,
-          "col": 7
+          "row": 3,
+          "col": 3
         },
         "value": "",
-        "answer": "E",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 2,
+          "borderMask": 9,
           "dividerMask": 0
         },
         "clues": [
-          7,
-          22
+          null,
+          null
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 1,
-            "originY": 0.7142857142857142
-          }
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
         "isLocked": false
-      }
-    ],
-    [
+      },
       {
         "index": 40,
         "coordinates": {
-          "row": 5,
-          "col": 0
+          "row": 3,
+          "col": 4
         },
         "value": "",
-        "answer": "E",
-        "label": "22",
+        "answer": "",
+        "label": null,
         "style": {
-          "borderMask": 0,
+          "borderMask": 1,
           "dividerMask": 0
         },
         "clues": [
-          8,
-          23
+          null,
+          null
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1236,31 +1184,25 @@
       {
         "index": 41,
         "coordinates": {
-          "row": 5,
-          "col": 1
+          "row": 3,
+          "col": 5
         },
         "value": "",
-        "answer": "A",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 0,
+          "borderMask": 1,
           "dividerMask": 0
         },
         "clues": [
-          8,
-          19
+          null,
+          null
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.1875,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1269,31 +1211,25 @@
       {
         "index": 42,
         "coordinates": {
-          "row": 5,
-          "col": 2
+          "row": 3,
+          "col": 6
         },
         "value": "",
-        "answer": "R",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 0,
+          "borderMask": 1,
           "dividerMask": 0
         },
         "clues": [
-          8,
-          24
+          null,
+          null
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.3125,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1302,31 +1238,25 @@
       {
         "index": 43,
         "coordinates": {
-          "row": 5,
-          "col": 3
+          "row": 3,
+          "col": 7
         },
         "value": "",
-        "answer": "L",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 0,
+          "borderMask": 1,
           "dividerMask": 0
         },
         "clues": [
-          8,
-          20
+          null,
+          null
         ],
         "zoom2Origins": [
-          {
-            "originX": 0,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.4375,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1335,31 +1265,25 @@
       {
         "index": 44,
         "coordinates": {
-          "row": 5,
-          "col": 4
+          "row": 3,
+          "col": 8
         },
         "value": "",
-        "answer": "O",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 0,
+          "borderMask": 1,
           "dividerMask": 0
         },
         "clues": [
-          8,
-          25
+          null,
+          null
         ],
         "zoom2Origins": [
-          {
-            "originX": 1,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.5625,
-            "originY": 0.7142857142857142
-          }
+          null,
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1368,28 +1292,25 @@
       {
         "index": 45,
         "coordinates": {
-          "row": 5,
-          "col": 5
+          "row": 3,
+          "col": 9
         },
         "value": "",
         "answer": "B",
-        "label": null,
+        "label": "19",
         "style": {
           "borderMask": 0,
-          "dividerMask": 0
+          "dividerMask": 1
         },
         "clues": [
-          8,
-          21
+          6,
+          40
         ],
         "zoom2Origins": [
+          null,
           {
-            "originX": 1,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.6875,
-            "originY": 0.7142857142857142
+            "originX": 0.7916666666666666,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1401,28 +1322,25 @@
       {
         "index": 46,
         "coordinates": {
-          "row": 5,
-          "col": 6
+          "row": 3,
+          "col": 10
         },
         "value": "",
-        "answer": "E",
-        "label": null,
+        "answer": "I",
+        "label": "20",
         "style": {
           "borderMask": 0,
-          "dividerMask": 0
+          "dividerMask": 1
         },
         "clues": [
-          8,
-          26
+          6,
+          41
         ],
         "zoom2Origins": [
+          null,
           {
-            "originX": 1,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 0.8125,
-            "originY": 0.7142857142857142
+            "originX": 0.875,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1434,28 +1352,25 @@
       {
         "index": 47,
         "coordinates": {
-          "row": 5,
-          "col": 7
+          "row": 3,
+          "col": 11
         },
         "value": "",
-        "answer": "S",
-        "label": null,
+        "answer": "C",
+        "label": "21",
         "style": {
           "borderMask": 2,
-          "dividerMask": 0
+          "dividerMask": 1
         },
         "clues": [
-          8,
-          22
+          6,
+          42
         ],
         "zoom2Origins": [
+          null,
           {
             "originX": 1,
-            "originY": 0.7857142857142857
-          },
-          {
-            "originX": 1,
-            "originY": 0.7142857142857142
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1469,25 +1384,25 @@
       {
         "index": 48,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 0
         },
         "value": "",
-        "answer": "A",
-        "label": "23",
+        "answer": "G",
+        "label": "22",
         "style": {
-          "borderMask": 4,
-          "dividerMask": 0
+          "borderMask": 0,
+          "dividerMask": 4
         },
         "clues": [
-          9,
-          23
+          7,
+          37
         ],
         "zoom2Origins": [
           null,
           {
             "originX": 0,
-            "originY": 1.5714285714285716
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1499,25 +1414,25 @@
       {
         "index": 49,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 1
         },
         "value": "",
-        "answer": "N",
+        "answer": "E",
         "label": null,
         "style": {
-          "borderMask": 4,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          9,
-          19
+          7,
+          38
         ],
         "zoom2Origins": [
           null,
           {
-            "originX": 0.1875,
-            "originY": 1.5714285714285716
+            "originX": 0.125,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1529,25 +1444,25 @@
       {
         "index": 50,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 2
         },
         "value": "",
-        "answer": "K",
+        "answer": "E",
         "label": null,
         "style": {
-          "borderMask": 4,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          9,
-          24
+          7,
+          39
         ],
         "zoom2Origins": [
           null,
           {
-            "originX": 0.3125,
-            "originY": 1.5714285714285716
+            "originX": 0.20833333333333334,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1559,28 +1474,25 @@
       {
         "index": 51,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 3
         },
         "value": "",
-        "answer": "L",
+        "answer": "",
         "label": null,
         "style": {
-          "borderMask": 4,
+          "borderMask": 8,
           "dividerMask": 0
         },
         "clues": [
-          9,
-          20
+          null,
+          null
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 0.4375,
-            "originY": 1.5714285714285716
-          }
+          null
         ],
-        "isBlank": false,
+        "isBlank": true,
         "isChecked": false,
         "isRevealed": false,
         "isIncorrect": false,
@@ -1589,28 +1501,28 @@
       {
         "index": 52,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 4
         },
         "value": "",
-        "answer": "E",
-        "label": null,
+        "answer": "C",
+        "label": "23",
         "style": {
-          "borderMask": 4,
-          "dividerMask": 2
+          "borderMask": 0,
+          "dividerMask": 0
         },
         "clues": [
-          9,
-          25
+          8,
+          43
         ],
         "zoom2Origins": [
           {
-            "originX": 1,
-            "originY": 1
+            "originX": 0,
+            "originY": 0.45
           },
           {
-            "originX": 0.5625,
-            "originY": 1.5714285714285716
+            "originX": 0.375,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1622,25 +1534,28 @@
       {
         "index": 53,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 5
         },
         "value": "",
-        "answer": "A",
+        "answer": "O",
         "label": "24",
         "style": {
-          "borderMask": 4,
-          "dividerMask": 8
+          "borderMask": 0,
+          "dividerMask": 0
         },
         "clues": [
-          10,
-          21
+          8,
+          44
         ],
         "zoom2Origins": [
-          null,
           {
-            "originX": 0.6875,
-            "originY": 1.5714285714285716
+            "originX": 0,
+            "originY": 0.45
+          },
+          {
+            "originX": 0.4583333333333333,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1652,25 +1567,28 @@
       {
         "index": 54,
         "coordinates": {
-          "row": 6,
+          "row": 4,
           "col": 6
         },
         "value": "",
-        "answer": "S",
-        "label": null,
+        "answer": "A",
+        "label": "25",
         "style": {
-          "borderMask": 4,
+          "borderMask": 0,
           "dividerMask": 0
         },
         "clues": [
-          10,
-          26
+          8,
+          45
         ],
         "zoom2Origins": [
-          null,
           {
-            "originX": 0.8125,
-            "originY": 1.5714285714285716
+            "originX": 1,
+            "originY": 0.45
+          },
+          {
+            "originX": 0.5416666666666666,
+            "originY": 0
           }
         ],
         "isBlank": false,
@@ -1682,26 +1600,1872 @@
       {
         "index": 55,
         "coordinates": {
+          "row": 4,
+          "col": 7
+        },
+        "value": "",
+        "answer": "T",
+        "label": "26",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          8,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.45
+          },
+          {
+            "originX": 0.625,
+            "originY": 0
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 56,
+        "coordinates": {
+          "row": 4,
+          "col": 8
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 57,
+        "coordinates": {
+          "row": 4,
+          "col": 9
+        },
+        "value": "",
+        "answer": "O",
+        "label": "27",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          9,
+          40
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 0.7916666666666666,
+            "originY": 0
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 58,
+        "coordinates": {
+          "row": 4,
+          "col": 10
+        },
+        "value": "",
+        "answer": "H",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          9,
+          41
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 0.875,
+            "originY": 0
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 59,
+        "coordinates": {
+          "row": 4,
+          "col": 11
+        },
+        "value": "",
+        "answer": "M",
+        "label": null,
+        "style": {
+          "borderMask": 2,
+          "dividerMask": 4
+        },
+        "clues": [
+          9,
+          42
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 1,
+            "originY": 0
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      }
+    ],
+    [
+      {
+        "index": 60,
+        "coordinates": {
+          "row": 5,
+          "col": 0
+        },
+        "value": "",
+        "answer": "E",
+        "label": "28",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 1
+        },
+        "clues": [
+          10,
+          47
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 61,
+        "coordinates": {
+          "row": 5,
+          "col": 1
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          10,
+          38
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 62,
+        "coordinates": {
+          "row": 5,
+          "col": 2
+        },
+        "value": "",
+        "answer": "L",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 4
+        },
+        "clues": [
+          10,
+          39
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 0.20833333333333334,
+            "originY": 1
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 63,
+        "coordinates": {
+          "row": 5,
+          "col": 3
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 64,
+        "coordinates": {
+          "row": 5,
+          "col": 4
+        },
+        "value": "",
+        "answer": "O",
+        "label": "29",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          11,
+          43
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.55
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 65,
+        "coordinates": {
+          "row": 5,
+          "col": 5
+        },
+        "value": "",
+        "answer": "R",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          11,
+          44
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.55
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 66,
+        "coordinates": {
+          "row": 5,
+          "col": 6
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          11,
+          45
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.55
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 67,
+        "coordinates": {
+          "row": 5,
+          "col": 7
+        },
+        "value": "",
+        "answer": "O",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          11,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.55
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 68,
+        "coordinates": {
+          "row": 5,
+          "col": 8
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 69,
+        "coordinates": {
+          "row": 5,
+          "col": 9
+        },
+        "value": "",
+        "answer": "T",
+        "label": "30",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 4
+        },
+        "clues": [
+          12,
+          40
+        ],
+        "zoom2Origins": [
+          null,
+          {
+            "originX": 0.7916666666666666,
+            "originY": 1
+          }
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 70,
+        "coordinates": {
+          "row": 5,
+          "col": 10
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          12,
+          41
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 71,
+        "coordinates": {
+          "row": 5,
+          "col": 11
+        },
+        "value": "",
+        "answer": "E",
+        "label": "31",
+        "style": {
+          "borderMask": 2,
+          "dividerMask": 1
+        },
+        "clues": [
+          12,
+          48
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      }
+    ],
+    [
+      {
+        "index": 72,
+        "coordinates": {
+          "row": 6,
+          "col": 0
+        },
+        "value": "",
+        "answer": "A",
+        "label": "32",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          13,
+          47
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 73,
+        "coordinates": {
+          "row": 6,
+          "col": 1
+        },
+        "value": "",
+        "answer": "B",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          13,
+          38
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 74,
+        "coordinates": {
+          "row": 6,
+          "col": 2
+        },
+        "value": "",
+        "answer": "S",
+        "label": "33",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 1
+        },
+        "clues": [
+          13,
+          49
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 75,
+        "coordinates": {
+          "row": 6,
+          "col": 3
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 76,
+        "coordinates": {
+          "row": 6,
+          "col": 4
+        },
+        "value": "",
+        "answer": "M",
+        "label": "34",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          14,
+          43
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.65
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 77,
+        "coordinates": {
+          "row": 6,
+          "col": 5
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          14,
+          44
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.65
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 78,
+        "coordinates": {
+          "row": 6,
+          "col": 6
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          14,
+          45
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.65
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 79,
+        "coordinates": {
           "row": 6,
           "col": 7
         },
         "value": "",
-        "answer": "K",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          14,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.65
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 80,
+        "coordinates": {
+          "row": 6,
+          "col": 8
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 81,
+        "coordinates": {
+          "row": 6,
+          "col": 9
+        },
+        "value": "",
+        "answer": "B",
+        "label": "35",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 1
+        },
+        "clues": [
+          15,
+          50
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 82,
+        "coordinates": {
+          "row": 6,
+          "col": 10
+        },
+        "value": "",
+        "answer": "A",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          15,
+          41
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 83,
+        "coordinates": {
+          "row": 6,
+          "col": 11
+        },
+        "value": "",
+        "answer": "G",
+        "label": null,
+        "style": {
+          "borderMask": 2,
+          "dividerMask": 0
+        },
+        "clues": [
+          15,
+          48
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      }
+    ],
+    [
+      {
+        "index": 84,
+        "coordinates": {
+          "row": 7,
+          "col": 0
+        },
+        "value": "",
+        "answer": "S",
+        "label": "36",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          16,
+          47
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 85,
+        "coordinates": {
+          "row": 7,
+          "col": 1
+        },
+        "value": "",
+        "answer": "A",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          16,
+          38
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 86,
+        "coordinates": {
+          "row": 7,
+          "col": 2
+        },
+        "value": "",
+        "answer": "Y",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          16,
+          49
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 87,
+        "coordinates": {
+          "row": 7,
+          "col": 3
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 88,
+        "coordinates": {
+          "row": 7,
+          "col": 4
+        },
+        "value": "",
+        "answer": "P",
+        "label": "37",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          17,
+          43
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.75
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 89,
+        "coordinates": {
+          "row": 7,
+          "col": 5
+        },
+        "value": "",
+        "answer": "I",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          17,
+          44
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.75
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 90,
+        "coordinates": {
+          "row": 7,
+          "col": 6
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          17,
+          45
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.75
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 91,
+        "coordinates": {
+          "row": 7,
+          "col": 7
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          17,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.75
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 92,
+        "coordinates": {
+          "row": 7,
+          "col": 8
+        },
+        "value": "",
+        "answer": "",
+        "label": null,
+        "style": {
+          "borderMask": 8,
+          "dividerMask": 0
+        },
+        "clues": [
+          null,
+          null
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": true,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 93,
+        "coordinates": {
+          "row": 7,
+          "col": 9
+        },
+        "value": "",
+        "answer": "E",
+        "label": "38",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          18,
+          50
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 94,
+        "coordinates": {
+          "row": 7,
+          "col": 10
+        },
+        "value": "",
+        "answer": "R",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          18,
+          41
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 95,
+        "coordinates": {
+          "row": 7,
+          "col": 11
+        },
+        "value": "",
+        "answer": "R",
+        "label": null,
+        "style": {
+          "borderMask": 2,
+          "dividerMask": 0
+        },
+        "clues": [
+          18,
+          48
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      }
+    ],
+    [
+      {
+        "index": 96,
+        "coordinates": {
+          "row": 8,
+          "col": 0
+        },
+        "value": "",
+        "answer": "E",
+        "label": "39",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          19,
+          47
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 97,
+        "coordinates": {
+          "row": 8,
+          "col": 1
+        },
+        "value": "",
+        "answer": "L",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          19,
+          38
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 98,
+        "coordinates": {
+          "row": 8,
+          "col": 2
+        },
+        "value": "",
+        "answer": "F",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 2
+        },
+        "clues": [
+          19,
+          49
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 99,
+        "coordinates": {
+          "row": 8,
+          "col": 3
+        },
+        "value": "",
+        "answer": "R",
+        "label": "40",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 8
+        },
+        "clues": [
+          20,
+          51
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 100,
+        "coordinates": {
+          "row": 8,
+          "col": 4
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          20,
+          43
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 101,
+        "coordinates": {
+          "row": 8,
+          "col": 5
+        },
+        "value": "",
+        "answer": "D",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          20,
+          44
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 102,
+        "coordinates": {
+          "row": 8,
+          "col": 6
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          20,
+          45
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 103,
+        "coordinates": {
+          "row": 8,
+          "col": 7
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          20,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 104,
+        "coordinates": {
+          "row": 8,
+          "col": 8
+        },
+        "value": "",
+        "answer": "A",
+        "label": "41",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 2
+        },
+        "clues": [
+          20,
+          52
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 105,
+        "coordinates": {
+          "row": 8,
+          "col": 9
+        },
+        "value": "",
+        "answer": "L",
+        "label": "42",
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 8
+        },
+        "clues": [
+          21,
+          50
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 106,
+        "coordinates": {
+          "row": 8,
+          "col": 10
+        },
+        "value": "",
+        "answer": "Y",
+        "label": null,
+        "style": {
+          "borderMask": 0,
+          "dividerMask": 0
+        },
+        "clues": [
+          21,
+          41
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 107,
+        "coordinates": {
+          "row": 8,
+          "col": 11
+        },
+        "value": "",
+        "answer": "E",
+        "label": null,
+        "style": {
+          "borderMask": 2,
+          "dividerMask": 0
+        },
+        "clues": [
+          21,
+          48
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 0.85
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      }
+    ],
+    [
+      {
+        "index": 108,
+        "coordinates": {
+          "row": 9,
+          "col": 0
+        },
+        "value": "",
+        "answer": "S",
+        "label": "43",
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          22,
+          47
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 109,
+        "coordinates": {
+          "row": 9,
+          "col": 1
+        },
+        "value": "",
+        "answer": "L",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          22,
+          38
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 110,
+        "coordinates": {
+          "row": 9,
+          "col": 2
+        },
+        "value": "",
+        "answer": "Y",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 2
+        },
+        "clues": [
+          22,
+          49
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 111,
+        "coordinates": {
+          "row": 9,
+          "col": 3
+        },
+        "value": "",
+        "answer": "C",
+        "label": "44",
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 8
+        },
+        "clues": [
+          23,
+          51
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 112,
+        "coordinates": {
+          "row": 9,
+          "col": 4
+        },
+        "value": "",
+        "answer": "L",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          23,
+          43
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 113,
+        "coordinates": {
+          "row": 9,
+          "col": 5
+        },
+        "value": "",
+        "answer": "A",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          23,
+          44
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 0,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 114,
+        "coordinates": {
+          "row": 9,
+          "col": 6
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          23,
+          45
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 115,
+        "coordinates": {
+          "row": 9,
+          "col": 7
+        },
+        "value": "",
+        "answer": "S",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          23,
+          46
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 116,
+        "coordinates": {
+          "row": 9,
+          "col": 8
+        },
+        "value": "",
+        "answer": "Y",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 2
+        },
+        "clues": [
+          23,
+          52
+        ],
+        "zoom2Origins": [
+          {
+            "originX": 1,
+            "originY": 1
+          },
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 117,
+        "coordinates": {
+          "row": 9,
+          "col": 9
+        },
+        "value": "",
+        "answer": "L",
+        "label": "45",
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 8
+        },
+        "clues": [
+          24,
+          50
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 118,
+        "coordinates": {
+          "row": 9,
+          "col": 10
+        },
+        "value": "",
+        "answer": "A",
+        "label": null,
+        "style": {
+          "borderMask": 4,
+          "dividerMask": 0
+        },
+        "clues": [
+          24,
+          41
+        ],
+        "zoom2Origins": [
+          null,
+          null
+        ],
+        "isBlank": false,
+        "isChecked": false,
+        "isRevealed": false,
+        "isIncorrect": false,
+        "isLocked": false
+      },
+      {
+        "index": 119,
+        "coordinates": {
+          "row": 9,
+          "col": 11
+        },
+        "value": "",
+        "answer": "T",
         "label": null,
         "style": {
           "borderMask": 6,
           "dividerMask": 0
         },
         "clues": [
-          10,
-          22
+          24,
+          48
         ],
         "zoom2Origins": [
           null,
-          {
-            "originX": 1,
-            "originY": 1.5714285714285716
-          }
+          null
         ],
         "isBlank": false,
         "isChecked": false,
@@ -1716,8 +3480,8 @@
       "index": 0,
       "cluesIndex": 0,
       "label": "1",
-      "clueText": "Lacking height, or running low on cash",
-      "word": "SHORT",
+      "clueText": "Romantic pursuer seeking a partner's hand",
+      "word": "SUITOR",
       "cells": [
         {
           "row": 0,
@@ -1738,10 +3502,14 @@
         {
           "row": 0,
           "col": 4
+        },
+        {
+          "row": 0,
+          "col": 5
         }
       ],
       "zoom1": {
-        "scale": 1.6,
+        "scale": 2,
         "originX": 0,
         "originY": 0
       },
@@ -1750,14 +3518,10 @@
     {
       "index": 1,
       "cluesIndex": 0,
-      "label": "6",
-      "clueText": "Sewer rodent, or to snitch on someone",
-      "word": "RAT",
+      "label": "7",
+      "clueText": "Iggy ___, \"Fancy\" rapper, or a flowering shrub",
+      "word": "AZALEA",
       "cells": [
-        {
-          "row": 0,
-          "col": 5
-        },
         {
           "row": 0,
           "col": 6
@@ -1765,10 +3529,26 @@
         {
           "row": 0,
           "col": 7
+        },
+        {
+          "row": 0,
+          "col": 8
+        },
+        {
+          "row": 0,
+          "col": 9
+        },
+        {
+          "row": 0,
+          "col": 10
+        },
+        {
+          "row": 0,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 2.6666666666666665,
+        "scale": 2,
         "originX": 1,
         "originY": 0
       },
@@ -1777,9 +3557,9 @@
     {
       "index": 2,
       "cluesIndex": 0,
-      "label": "9",
-      "clueText": "Sparkling citrus mixer, two words",
-      "word": "LIMESODA",
+      "label": "13",
+      "clueText": "How most couples meet, nowadays (2 wds.)",
+      "word": "ONLINEDATING",
       "cells": [
         {
           "row": 1,
@@ -1812,21 +3592,37 @@
         {
           "row": 1,
           "col": 7
+        },
+        {
+          "row": 1,
+          "col": 8
+        },
+        {
+          "row": 1,
+          "col": 9
+        },
+        {
+          "row": 1,
+          "col": 10
+        },
+        {
+          "row": 1,
+          "col": 11
         }
       ],
       "zoom1": {
         "scale": 1,
         "originX": 0.5,
-        "originY": 0.21428571428571427
+        "originY": 0.15
       },
       "zoom2Scale": 2
     },
     {
       "index": 3,
       "cluesIndex": 0,
-      "label": "10",
-      "clueText": "Carne ___ (grilled marinated beef)",
-      "word": "ASADA",
+      "label": "14",
+      "clueText": "Charged for a service",
+      "word": "BILLED",
       "cells": [
         {
           "row": 2,
@@ -1847,26 +3643,26 @@
         {
           "row": 2,
           "col": 4
+        },
+        {
+          "row": 2,
+          "col": 5
         }
       ],
       "zoom1": {
-        "scale": 1.6,
+        "scale": 2,
         "originX": 0,
-        "originY": 0.35714285714285715
+        "originY": 0.25
       },
       "zoom2Scale": 2
     },
     {
       "index": 4,
       "cluesIndex": 0,
-      "label": "11",
-      "clueText": "Multiple personality condition, in clinical shorthand",
-      "word": "DID",
+      "label": "15",
+      "clueText": "Tight swim brief brand",
+      "word": "SPEEDO",
       "cells": [
-        {
-          "row": 2,
-          "col": 5
-        },
         {
           "row": 2,
           "col": 6
@@ -1874,21 +3670,37 @@
         {
           "row": 2,
           "col": 7
+        },
+        {
+          "row": 2,
+          "col": 8
+        },
+        {
+          "row": 2,
+          "col": 9
+        },
+        {
+          "row": 2,
+          "col": 10
+        },
+        {
+          "row": 2,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 2.6666666666666665,
+        "scale": 2,
         "originX": 1,
-        "originY": 0.35714285714285715
+        "originY": 0.25
       },
       "zoom2Scale": 2
     },
     {
       "index": 5,
       "cluesIndex": 0,
-      "label": "12",
-      "clueText": "$10,000, informally (2 wds.)",
-      "word": "TENGRAND",
+      "label": "16",
+      "clueText": "\"And so on\": Abbr.",
+      "word": "ETC",
       "cells": [
         {
           "row": 3,
@@ -1901,612 +3713,564 @@
         {
           "row": 3,
           "col": 2
-        },
-        {
-          "row": 3,
-          "col": 3
-        },
-        {
-          "row": 3,
-          "col": 4
-        },
-        {
-          "row": 3,
-          "col": 5
-        },
-        {
-          "row": 3,
-          "col": 6
-        },
-        {
-          "row": 3,
-          "col": 7
         }
       ],
       "zoom1": {
-        "scale": 1,
-        "originX": 0.5,
-        "originY": 0.5
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.35
       },
       "zoom2Scale": 2
     },
     {
       "index": 6,
       "cluesIndex": 0,
-      "label": "17",
-      "clueText": "Tartan pattern on flannel shirts",
-      "word": "PLAID",
+      "label": "19",
+      "clueText": "___ lighter, or a ballpoint pen brand",
+      "word": "BIC",
       "cells": [
         {
-          "row": 4,
-          "col": 0
+          "row": 3,
+          "col": 9
         },
         {
-          "row": 4,
-          "col": 1
+          "row": 3,
+          "col": 10
         },
         {
-          "row": 4,
-          "col": 2
-        },
-        {
-          "row": 4,
-          "col": 3
-        },
-        {
-          "row": 4,
-          "col": 4
+          "row": 3,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 1.6,
-        "originX": 0,
-        "originY": 0.6428571428571429
+        "scale": 4,
+        "originX": 1,
+        "originY": 0.35
       },
       "zoom2Scale": 2
     },
     {
       "index": 7,
       "cluesIndex": 0,
-      "label": "20",
-      "clueText": "'___ ___ ___' (NSYNC hit, tripled farewell)",
-      "word": "BYE",
+      "label": "22",
+      "clueText": "\"___ whiz!\" (astonished exclamation)",
+      "word": "GEE",
       "cells": [
         {
           "row": 4,
-          "col": 5
+          "col": 0
         },
         {
           "row": 4,
-          "col": 6
+          "col": 1
         },
         {
           "row": 4,
-          "col": 7
+          "col": 2
         }
       ],
       "zoom1": {
-        "scale": 2.6666666666666665,
-        "originX": 1,
-        "originY": 0.6428571428571429
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.45
       },
       "zoom2Scale": 2
     },
     {
       "index": 8,
       "cluesIndex": 0,
-      "label": "22",
-      "clueText": "Where earrings hang",
-      "word": "EARLOBES",
+      "label": "23",
+      "clueText": "___ of arms (heraldic family crest)",
+      "word": "COAT",
       "cells": [
         {
-          "row": 5,
-          "col": 0
-        },
-        {
-          "row": 5,
-          "col": 1
-        },
-        {
-          "row": 5,
-          "col": 2
-        },
-        {
-          "row": 5,
-          "col": 3
-        },
-        {
-          "row": 5,
+          "row": 4,
           "col": 4
         },
         {
-          "row": 5,
+          "row": 4,
           "col": 5
         },
         {
-          "row": 5,
+          "row": 4,
           "col": 6
         },
         {
-          "row": 5,
+          "row": 4,
           "col": 7
         }
       ],
       "zoom1": {
-        "scale": 1,
+        "scale": 3,
         "originX": 0.5,
-        "originY": 0.7857142857142857
+        "originY": 0.45
       },
       "zoom2Scale": 2
     },
     {
       "index": 9,
       "cluesIndex": 0,
-      "label": "23",
-      "clueText": "Joint between foot and shin",
-      "word": "ANKLE",
+      "label": "27",
+      "clueText": "Resistance unit, symbolized by the Greek letter omega",
+      "word": "OHM",
       "cells": [
         {
-          "row": 6,
-          "col": 0
+          "row": 4,
+          "col": 9
         },
         {
-          "row": 6,
-          "col": 1
+          "row": 4,
+          "col": 10
         },
         {
-          "row": 6,
-          "col": 2
-        },
-        {
-          "row": 6,
-          "col": 3
-        },
-        {
-          "row": 6,
-          "col": 4
+          "row": 4,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 1.6,
-        "originX": 0,
-        "originY": 1
+        "scale": 4,
+        "originX": 1,
+        "originY": 0.45
       },
       "zoom2Scale": 2
     },
     {
       "index": 10,
       "cluesIndex": 0,
-      "label": "24",
-      "clueText": "Pose a question",
-      "word": "ASK",
+      "label": "28",
+      "clueText": "Unagi, on a sushi menu",
+      "word": "EEL",
       "cells": [
         {
-          "row": 6,
-          "col": 5
+          "row": 5,
+          "col": 0
         },
         {
-          "row": 6,
-          "col": 6
+          "row": 5,
+          "col": 1
         },
         {
-          "row": 6,
-          "col": 7
+          "row": 5,
+          "col": 2
         }
       ],
       "zoom1": {
-        "scale": 2.6666666666666665,
-        "originX": 1,
-        "originY": 1
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.55
       },
       "zoom2Scale": 2
     },
     {
       "index": 11,
-      "cluesIndex": 1,
-      "label": "1",
-      "clueText": "Thin wooden strip in a fence or blind",
-      "word": "SLAT",
+      "cluesIndex": 0,
+      "label": "29",
+      "clueText": "\"___ they say\" (2 wds.)",
+      "word": "ORSO",
       "cells": [
         {
-          "row": 0,
-          "col": 0
+          "row": 5,
+          "col": 4
         },
         {
-          "row": 1,
-          "col": 0
+          "row": 5,
+          "col": 5
         },
         {
-          "row": 2,
-          "col": 0
+          "row": 5,
+          "col": 6
         },
         {
-          "row": 3,
-          "col": 0
+          "row": 5,
+          "col": 7
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0,
-        "originY": 0
+        "scale": 3,
+        "originX": 0.5,
+        "originY": 0.55
       },
       "zoom2Scale": 2
     },
     {
       "index": 12,
-      "cluesIndex": 1,
-      "label": "2",
-      "clueText": "Masculine possessive pronoun",
-      "word": "HIS",
+      "cluesIndex": 0,
+      "label": "30",
+      "clueText": "20th letter of the English alphabet",
+      "word": "TEE",
       "cells": [
         {
-          "row": 0,
-          "col": 1
+          "row": 5,
+          "col": 9
         },
         {
-          "row": 1,
-          "col": 1
+          "row": 5,
+          "col": 10
         },
         {
-          "row": 2,
-          "col": 1
+          "row": 5,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.1875,
-        "originY": 0
+        "scale": 4,
+        "originX": 1,
+        "originY": 0.55
       },
       "zoom2Scale": 2
     },
     {
       "index": 13,
-      "cluesIndex": 1,
-      "label": "3",
-      "clueText": "Arabian Peninsula nation bordering Yemen",
-      "word": "OMAN",
+      "cluesIndex": 0,
+      "label": "32",
+      "clueText": "Brake tech that pulses instead of locking, briefly",
+      "word": "ABS",
       "cells": [
         {
-          "row": 0,
-          "col": 2
+          "row": 6,
+          "col": 0
         },
         {
-          "row": 1,
-          "col": 2
+          "row": 6,
+          "col": 1
         },
         {
-          "row": 2,
-          "col": 2
-        },
-        {
-          "row": 3,
+          "row": 6,
           "col": 2
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.3125,
-        "originY": 0
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.65
       },
       "zoom2Scale": 2
     },
     {
       "index": 14,
-      "cluesIndex": 1,
-      "label": "4",
-      "clueText": "Dominant color on China's flag",
-      "word": "RED",
+      "cluesIndex": 0,
+      "label": "34",
+      "clueText": "Hot ___ (charmingly disheveled, in slang)",
+      "word": "MESS",
       "cells": [
         {
-          "row": 0,
-          "col": 3
+          "row": 6,
+          "col": 4
         },
         {
-          "row": 1,
-          "col": 3
+          "row": 6,
+          "col": 5
         },
         {
-          "row": 2,
-          "col": 3
+          "row": 6,
+          "col": 6
+        },
+        {
+          "row": 6,
+          "col": 7
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.4375,
-        "originY": 0
+        "scale": 3,
+        "originX": 0.5,
+        "originY": 0.65
       },
       "zoom2Scale": 2
     },
     {
       "index": 15,
-      "cluesIndex": 1,
-      "label": "5",
-      "clueText": "Russian ruler not seen for over a century",
-      "word": "TSAR",
+      "cluesIndex": 0,
+      "label": "35",
+      "clueText": "Sleeping ___ (camping essential)",
+      "word": "BAG",
       "cells": [
         {
-          "row": 0,
-          "col": 4
+          "row": 6,
+          "col": 9
         },
         {
-          "row": 1,
-          "col": 4
+          "row": 6,
+          "col": 10
         },
         {
-          "row": 2,
-          "col": 4
-        },
-        {
-          "row": 3,
-          "col": 4
+          "row": 6,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.5625,
-        "originY": 0
+        "scale": 4,
+        "originX": 1,
+        "originY": 0.65
       },
       "zoom2Scale": 2
     },
     {
       "index": 16,
-      "cluesIndex": 1,
-      "label": "6",
-      "clueText": "Lightning ___ (storm protection device)",
-      "word": "ROD",
+      "cluesIndex": 0,
+      "label": "36",
+      "clueText": "\"What did you ___?\"",
+      "word": "SAY",
       "cells": [
         {
-          "row": 0,
-          "col": 5
+          "row": 7,
+          "col": 0
         },
         {
-          "row": 1,
-          "col": 5
+          "row": 7,
+          "col": 1
         },
         {
-          "row": 2,
-          "col": 5
+          "row": 7,
+          "col": 2
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.6875,
-        "originY": 0
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.75
       },
       "zoom2Scale": 2
     },
     {
       "index": 17,
-      "cluesIndex": 1,
-      "label": "7",
-      "clueText": "Tennis score after deuce (2 wds.)",
-      "word": "ADIN",
+      "cluesIndex": 0,
+      "label": "37",
+      "clueText": "NY-style pizzerias' product, in slang",
+      "word": "PIES",
       "cells": [
         {
-          "row": 0,
+          "row": 7,
+          "col": 4
+        },
+        {
+          "row": 7,
+          "col": 5
+        },
+        {
+          "row": 7,
           "col": 6
         },
         {
-          "row": 1,
-          "col": 6
-        },
-        {
-          "row": 2,
-          "col": 6
-        },
-        {
-          "row": 3,
-          "col": 6
+          "row": 7,
+          "col": 7
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.8125,
-        "originY": 0
+        "scale": 3,
+        "originX": 0.5,
+        "originY": 0.75
       },
       "zoom2Scale": 2
     },
     {
       "index": 18,
-      "cluesIndex": 1,
-      "label": "8",
-      "clueText": "A small amount",
-      "word": "TAD",
+      "cluesIndex": 0,
+      "label": "38",
+      "clueText": "Slip up",
+      "word": "ERR",
       "cells": [
         {
-          "row": 0,
-          "col": 7
+          "row": 7,
+          "col": 9
         },
         {
-          "row": 1,
-          "col": 7
+          "row": 7,
+          "col": 10
         },
         {
-          "row": 2,
-          "col": 7
+          "row": 7,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
+        "scale": 4,
         "originX": 1,
-        "originY": 0
+        "originY": 0.75
       },
       "zoom2Scale": 2
     },
     {
       "index": 19,
-      "cluesIndex": 1,
-      "label": "13",
-      "clueText": "Enthusiastic flair",
-      "word": "ELAN",
+      "cluesIndex": 0,
+      "label": "39",
+      "clueText": "Santa's little helper",
+      "word": "ELF",
       "cells": [
         {
-          "row": 3,
+          "row": 8,
+          "col": 0
+        },
+        {
+          "row": 8,
           "col": 1
         },
         {
-          "row": 4,
-          "col": 1
-        },
-        {
-          "row": 5,
-          "col": 1
-        },
-        {
-          "row": 6,
-          "col": 1
+          "row": 8,
+          "col": 2
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.1875,
-        "originY": 1
+        "scale": 4,
+        "originX": 0,
+        "originY": 0.8666666666666667
       },
       "zoom2Scale": 2
     },
     {
       "index": 20,
-      "cluesIndex": 1,
-      "label": "14",
-      "clueText": "Fish's breathing organ",
-      "word": "GILL",
+      "cluesIndex": 0,
+      "label": "40",
+      "clueText": "Where Moses parted the waters",
+      "word": "REDSEA",
       "cells": [
         {
-          "row": 3,
+          "row": 8,
           "col": 3
         },
         {
-          "row": 4,
-          "col": 3
+          "row": 8,
+          "col": 4
         },
         {
-          "row": 5,
-          "col": 3
+          "row": 8,
+          "col": 5
         },
         {
-          "row": 6,
-          "col": 3
+          "row": 8,
+          "col": 6
+        },
+        {
+          "row": 8,
+          "col": 7
+        },
+        {
+          "row": 8,
+          "col": 8
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.4375,
-        "originY": 1
+        "scale": 2,
+        "originX": 0.5,
+        "originY": 0.85
       },
       "zoom2Scale": 2
     },
     {
       "index": 21,
-      "cluesIndex": 1,
-      "label": "15",
-      "clueText": "Swedish quartet behind 'Waterloo'",
-      "word": "ABBA",
+      "cluesIndex": 0,
+      "label": "42",
+      "clueText": "Drain-unclogging chemical",
+      "word": "LYE",
       "cells": [
         {
-          "row": 3,
-          "col": 5
+          "row": 8,
+          "col": 9
         },
         {
-          "row": 4,
-          "col": 5
+          "row": 8,
+          "col": 10
         },
         {
-          "row": 5,
-          "col": 5
-        },
-        {
-          "row": 6,
-          "col": 5
+          "row": 8,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 0.6875,
-        "originY": 1
+        "scale": 4,
+        "originX": 1,
+        "originY": 0.8666666666666667
       },
       "zoom2Scale": 2
     },
     {
       "index": 22,
-      "cluesIndex": 1,
-      "label": "16",
-      "clueText": "Where homework gets done",
-      "word": "DESK",
+      "cluesIndex": 0,
+      "label": "43",
+      "clueText": "Crafty like a fox",
+      "word": "SLY",
       "cells": [
         {
-          "row": 3,
-          "col": 7
+          "row": 9,
+          "col": 0
         },
         {
-          "row": 4,
-          "col": 7
+          "row": 9,
+          "col": 1
         },
         {
-          "row": 5,
-          "col": 7
-        },
-        {
-          "row": 6,
-          "col": 7
+          "row": 9,
+          "col": 2
         }
       ],
       "zoom1": {
-        "scale": 1.75,
-        "originX": 1,
+        "scale": 4,
+        "originX": 0,
         "originY": 1
       },
       "zoom2Scale": 2
     },
     {
       "index": 23,
-      "cluesIndex": 1,
-      "label": "17",
-      "clueText": "Tiny green legume in a pod",
-      "word": "PEA",
+      "cluesIndex": 0,
+      "label": "44",
+      "clueText": "Sophisticated and elegant",
+      "word": "CLASSY",
       "cells": [
         {
-          "row": 4,
-          "col": 0
+          "row": 9,
+          "col": 3
         },
         {
-          "row": 5,
-          "col": 0
+          "row": 9,
+          "col": 4
         },
         {
-          "row": 6,
-          "col": 0
+          "row": 9,
+          "col": 5
+        },
+        {
+          "row": 9,
+          "col": 6
+        },
+        {
+          "row": 9,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 8
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0,
+        "scale": 2,
+        "originX": 0.5,
         "originY": 1
       },
       "zoom2Scale": 2
     },
     {
       "index": 24,
-      "cluesIndex": 1,
-      "label": "18",
-      "clueText": "Noah's vessel",
-      "word": "ARK",
+      "cluesIndex": 0,
+      "label": "45",
+      "clueText": "Back muscle, or popular US west coast paper: Abbr.",
+      "word": "LAT",
       "cells": [
         {
-          "row": 4,
-          "col": 2
+          "row": 9,
+          "col": 9
         },
         {
-          "row": 5,
-          "col": 2
+          "row": 9,
+          "col": 10
         },
         {
-          "row": 6,
-          "col": 2
+          "row": 9,
+          "col": 11
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.3125,
+        "scale": 4,
+        "originX": 1,
         "originY": 1
       },
       "zoom2Scale": 2
@@ -2514,36 +4278,597 @@
     {
       "index": 25,
       "cluesIndex": 1,
-      "label": "19",
-      "clueText": "Female deer, or Jane ___",
-      "word": "DOE",
+      "label": "1",
+      "clueText": "Heaving cry of grief",
+      "word": "SOB",
       "cells": [
         {
-          "row": 4,
-          "col": 4
+          "row": 0,
+          "col": 0
         },
         {
-          "row": 5,
-          "col": 4
+          "row": 1,
+          "col": 0
         },
         {
-          "row": 6,
-          "col": 4
+          "row": 2,
+          "col": 0
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.5625,
-        "originY": 1
+        "scale": 3.3333333333333335,
+        "originX": 0,
+        "originY": 0
       },
       "zoom2Scale": 2
     },
     {
       "index": 26,
       "cluesIndex": 1,
+      "label": "2",
+      "clueText": "British slang for university",
+      "word": "UNI",
+      "cells": [
+        {
+          "row": 0,
+          "col": 1
+        },
+        {
+          "row": 1,
+          "col": 1
+        },
+        {
+          "row": 2,
+          "col": 1
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.11904761904761905,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 27,
+      "cluesIndex": 1,
+      "label": "3",
+      "clueText": "1, 50, 50, as Roman numeral letters",
+      "word": "ILL",
+      "cells": [
+        {
+          "row": 0,
+          "col": 2
+        },
+        {
+          "row": 1,
+          "col": 2
+        },
+        {
+          "row": 2,
+          "col": 2
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.20833333333333334,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 28,
+      "cluesIndex": 1,
+      "label": "4",
+      "clueText": "Don't Stop ___ You Get Enough' (Michael Jackson hit)",
+      "word": "TIL",
+      "cells": [
+        {
+          "row": 0,
+          "col": 3
+        },
+        {
+          "row": 1,
+          "col": 3
+        },
+        {
+          "row": 2,
+          "col": 3
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.2916666666666667,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 29,
+      "cluesIndex": 1,
+      "label": "5",
+      "clueText": "The loneliest number",
+      "word": "ONE",
+      "cells": [
+        {
+          "row": 0,
+          "col": 4
+        },
+        {
+          "row": 1,
+          "col": 4
+        },
+        {
+          "row": 2,
+          "col": 4
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.375,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 30,
+      "cluesIndex": 1,
+      "label": "6",
+      "clueText": "Seeing ___ (very angry)",
+      "word": "RED",
+      "cells": [
+        {
+          "row": 0,
+          "col": 5
+        },
+        {
+          "row": 1,
+          "col": 5
+        },
+        {
+          "row": 2,
+          "col": 5
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.4583333333333333,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 31,
+      "cluesIndex": 1,
+      "label": "7",
+      "clueText": "TV commercials, or pop-up annoyances",
+      "word": "ADS",
+      "cells": [
+        {
+          "row": 0,
+          "col": 6
+        },
+        {
+          "row": 1,
+          "col": 6
+        },
+        {
+          "row": 2,
+          "col": 6
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.5416666666666666,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 32,
+      "cluesIndex": 1,
+      "label": "8",
+      "clueText": "Microwave's quick cooking action",
+      "word": "ZAP",
+      "cells": [
+        {
+          "row": 0,
+          "col": 7
+        },
+        {
+          "row": 1,
+          "col": 7
+        },
+        {
+          "row": 2,
+          "col": 7
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.625,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 33,
+      "cluesIndex": 1,
+      "label": "9",
+      "clueText": "What 7 did to 9, in a classic math joke",
+      "word": "ATE",
+      "cells": [
+        {
+          "row": 0,
+          "col": 8
+        },
+        {
+          "row": 1,
+          "col": 8
+        },
+        {
+          "row": 2,
+          "col": 8
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.7083333333333334,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 34,
+      "cluesIndex": 1,
+      "label": "10",
+      "clueText": "Pinocchio's nose grower",
+      "word": "LIE",
+      "cells": [
+        {
+          "row": 0,
+          "col": 9
+        },
+        {
+          "row": 1,
+          "col": 9
+        },
+        {
+          "row": 2,
+          "col": 9
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.7916666666666666,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 35,
+      "cluesIndex": 1,
+      "label": "11",
+      "clueText": "Loose ___ (unresolved detail)",
+      "word": "END",
+      "cells": [
+        {
+          "row": 0,
+          "col": 10
+        },
+        {
+          "row": 1,
+          "col": 10
+        },
+        {
+          "row": 2,
+          "col": 10
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.880952380952381,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 36,
+      "cluesIndex": 1,
+      "label": "12",
+      "clueText": "\"Long, long ___\"",
+      "word": "AGO",
+      "cells": [
+        {
+          "row": 0,
+          "col": 11
+        },
+        {
+          "row": 1,
+          "col": 11
+        },
+        {
+          "row": 2,
+          "col": 11
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 1,
+        "originY": 0
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 37,
+      "cluesIndex": 1,
+      "label": "16",
+      "clueText": "\"For example\": Abbr.",
+      "word": "EG",
+      "cells": [
+        {
+          "row": 3,
+          "col": 0
+        },
+        {
+          "row": 4,
+          "col": 0
+        }
+      ],
+      "zoom1": {
+        "scale": 5,
+        "originX": 0,
+        "originY": 0.375
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 38,
+      "cluesIndex": 1,
+      "label": "17",
+      "clueText": "Kids' first step before baseball (2 wds.)",
+      "word": "TEEBALL",
+      "cells": [
+        {
+          "row": 3,
+          "col": 1
+        },
+        {
+          "row": 4,
+          "col": 1
+        },
+        {
+          "row": 5,
+          "col": 1
+        },
+        {
+          "row": 6,
+          "col": 1
+        },
+        {
+          "row": 7,
+          "col": 1
+        },
+        {
+          "row": 8,
+          "col": 1
+        },
+        {
+          "row": 9,
+          "col": 1
+        }
+      ],
+      "zoom1": {
+        "scale": 1.4285714285714286,
+        "originX": 0.125,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 39,
+      "cluesIndex": 1,
+      "label": "18",
+      "clueText": "Animator's transparent sheet",
+      "word": "CEL",
+      "cells": [
+        {
+          "row": 3,
+          "col": 2
+        },
+        {
+          "row": 4,
+          "col": 2
+        },
+        {
+          "row": 5,
+          "col": 2
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.20833333333333334,
+        "originY": 0.42857142857142855
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 40,
+      "cluesIndex": 1,
+      "label": "19",
+      "clueText": "Automated internet account, or a robotic suffix",
+      "word": "BOT",
+      "cells": [
+        {
+          "row": 3,
+          "col": 9
+        },
+        {
+          "row": 4,
+          "col": 9
+        },
+        {
+          "row": 5,
+          "col": 9
+        }
+      ],
+      "zoom1": {
+        "scale": 3.3333333333333335,
+        "originX": 0.7916666666666666,
+        "originY": 0.42857142857142855
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 41,
+      "cluesIndex": 1,
+      "label": "20",
+      "clueText": "\"Message received\", slang (3 wds.)",
+      "word": "IHEARYA",
+      "cells": [
+        {
+          "row": 3,
+          "col": 10
+        },
+        {
+          "row": 4,
+          "col": 10
+        },
+        {
+          "row": 5,
+          "col": 10
+        },
+        {
+          "row": 6,
+          "col": 10
+        },
+        {
+          "row": 7,
+          "col": 10
+        },
+        {
+          "row": 8,
+          "col": 10
+        },
+        {
+          "row": 9,
+          "col": 10
+        }
+      ],
+      "zoom1": {
+        "scale": 1.4285714285714286,
+        "originX": 0.875,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 42,
+      "cluesIndex": 1,
       "label": "21",
-      "clueText": "'Say ___ to the Dress' (TLC show)",
-      "word": "YES",
+      "clueText": "Metric length unit smaller than a meter: Abbr.",
+      "word": "CM",
+      "cells": [
+        {
+          "row": 3,
+          "col": 11
+        },
+        {
+          "row": 4,
+          "col": 11
+        }
+      ],
+      "zoom1": {
+        "scale": 5,
+        "originX": 1,
+        "originY": 0.375
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 43,
+      "cluesIndex": 1,
+      "label": "23",
+      "clueText": "Force someone into action",
+      "word": "COMPEL",
+      "cells": [
+        {
+          "row": 4,
+          "col": 4
+        },
+        {
+          "row": 5,
+          "col": 4
+        },
+        {
+          "row": 6,
+          "col": 4
+        },
+        {
+          "row": 7,
+          "col": 4
+        },
+        {
+          "row": 8,
+          "col": 4
+        },
+        {
+          "row": 9,
+          "col": 4
+        }
+      ],
+      "zoom1": {
+        "scale": 1.6666666666666667,
+        "originX": 0.375,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 44,
+      "cluesIndex": 1,
+      "label": "24",
+      "clueText": "Frozen potato brand, \"When it Says __, it's All Righta\"",
+      "word": "OREIDA",
+      "cells": [
+        {
+          "row": 4,
+          "col": 5
+        },
+        {
+          "row": 5,
+          "col": 5
+        },
+        {
+          "row": 6,
+          "col": 5
+        },
+        {
+          "row": 7,
+          "col": 5
+        },
+        {
+          "row": 8,
+          "col": 5
+        },
+        {
+          "row": 9,
+          "col": 5
+        }
+      ],
+      "zoom1": {
+        "scale": 1.6666666666666667,
+        "originX": 0.4583333333333333,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 45,
+      "cluesIndex": 1,
+      "label": "25",
+      "clueText": "Evaluate carefully",
+      "word": "ASSESS",
       "cells": [
         {
           "row": 4,
@@ -2556,11 +4881,240 @@
         {
           "row": 6,
           "col": 6
+        },
+        {
+          "row": 7,
+          "col": 6
+        },
+        {
+          "row": 8,
+          "col": 6
+        },
+        {
+          "row": 9,
+          "col": 6
         }
       ],
       "zoom1": {
-        "scale": 2.3333333333333335,
-        "originX": 0.8125,
+        "scale": 1.6666666666666667,
+        "originX": 0.5416666666666666,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 46,
+      "cluesIndex": 1,
+      "label": "26",
+      "clueText": "Throws, or restless turns in bed",
+      "word": "TOSSES",
+      "cells": [
+        {
+          "row": 4,
+          "col": 7
+        },
+        {
+          "row": 5,
+          "col": 7
+        },
+        {
+          "row": 6,
+          "col": 7
+        },
+        {
+          "row": 7,
+          "col": 7
+        },
+        {
+          "row": 8,
+          "col": 7
+        },
+        {
+          "row": 9,
+          "col": 7
+        }
+      ],
+      "zoom1": {
+        "scale": 1.6666666666666667,
+        "originX": 0.625,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 47,
+      "cluesIndex": 1,
+      "label": "28",
+      "clueText": "Gently lessens tension",
+      "word": "EASES",
+      "cells": [
+        {
+          "row": 5,
+          "col": 0
+        },
+        {
+          "row": 6,
+          "col": 0
+        },
+        {
+          "row": 7,
+          "col": 0
+        },
+        {
+          "row": 8,
+          "col": 0
+        },
+        {
+          "row": 9,
+          "col": 0
+        }
+      ],
+      "zoom1": {
+        "scale": 2,
+        "originX": 0,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 48,
+      "cluesIndex": 1,
+      "label": "31",
+      "clueText": "Slender white wading bird",
+      "word": "EGRET",
+      "cells": [
+        {
+          "row": 5,
+          "col": 11
+        },
+        {
+          "row": 6,
+          "col": 11
+        },
+        {
+          "row": 7,
+          "col": 11
+        },
+        {
+          "row": 8,
+          "col": 11
+        },
+        {
+          "row": 9,
+          "col": 11
+        }
+      ],
+      "zoom1": {
+        "scale": 2,
+        "originX": 1,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 49,
+      "cluesIndex": 1,
+      "label": "33",
+      "clueText": "Channel for sci-fi and fantasy programming",
+      "word": "SYFY",
+      "cells": [
+        {
+          "row": 6,
+          "col": 2
+        },
+        {
+          "row": 7,
+          "col": 2
+        },
+        {
+          "row": 8,
+          "col": 2
+        },
+        {
+          "row": 9,
+          "col": 2
+        }
+      ],
+      "zoom1": {
+        "scale": 2.5,
+        "originX": 0.20833333333333334,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 50,
+      "cluesIndex": 1,
+      "label": "35",
+      "clueText": "Taco ___, or a church tower ringer",
+      "word": "BELL",
+      "cells": [
+        {
+          "row": 6,
+          "col": 9
+        },
+        {
+          "row": 7,
+          "col": 9
+        },
+        {
+          "row": 8,
+          "col": 9
+        },
+        {
+          "row": 9,
+          "col": 9
+        }
+      ],
+      "zoom1": {
+        "scale": 2.5,
+        "originX": 0.7916666666666666,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 51,
+      "cluesIndex": 1,
+      "label": "40",
+      "clueText": "Controllable hobby car or helicopter",
+      "word": "RC",
+      "cells": [
+        {
+          "row": 8,
+          "col": 3
+        },
+        {
+          "row": 9,
+          "col": 3
+        }
+      ],
+      "zoom1": {
+        "scale": 5,
+        "originX": 0.2916666666666667,
+        "originY": 1
+      },
+      "zoom2Scale": 2
+    },
+    {
+      "index": 52,
+      "cluesIndex": 1,
+      "label": "41",
+      "clueText": "\"___, caramba!\"",
+      "word": "AY",
+      "cells": [
+        {
+          "row": 8,
+          "col": 8
+        },
+        {
+          "row": 9,
+          "col": 8
+        }
+      ],
+      "zoom1": {
+        "scale": 5,
+        "originX": 0.7083333333333334,
         "originY": 1
       },
       "zoom2Scale": 2
